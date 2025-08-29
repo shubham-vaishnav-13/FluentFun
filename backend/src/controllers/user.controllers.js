@@ -47,21 +47,18 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 
   const profileImagePath = req.files?.profileImage?.[0]?.path;
-
-  if (!profileImagePath) {
-    throw new ApiError(400, "Profile image is required");
-  }
-
-  const profileImage = await uploadOnClodinary(profileImagePath);
-
-  if (!profileImage || !profileImage.url) {
-    throw new ApiError(500, "Failed to upload profile image");
+  let uploadedImage = null;
+  if (profileImagePath) {
+    uploadedImage = await uploadOnClodinary(profileImagePath);
+    if (!uploadedImage || !uploadedImage.url) {
+      throw new ApiError(500, "Failed to upload profile image");
+    }
   }
 
   try {
     const user = await User.create({
       fullName,
-      profileImage: profileImage.url,
+      profileImage: uploadedImage?.url || process.env.DEFAULT_AVATAR_URL,
       email,
       password,
       username: username.toLowerCase(),
@@ -73,7 +70,9 @@ const registerUser = asyncHandler(async (req, res) => {
 
     if (!createdUser) {
       // If user creation seems to fail after the fact, delete the uploaded image
-      await deleteFromCloudinary(profileImage.public_id);
+      if (uploadedImage?.public_id) {
+        await deleteFromCloudinary(uploadedImage.public_id);
+      }
       throw new ApiError(500, "Something went wrong while registering user");
     }
 
@@ -83,8 +82,17 @@ const registerUser = asyncHandler(async (req, res) => {
 
   } catch (error) {
     // If any error occurs during user creation, delete the uploaded profile image
-    if (profileImage?.public_id) {
-        await deleteFromCloudinary(profileImage.public_id);
+    if (uploadedImage?.public_id) {
+      await deleteFromCloudinary(uploadedImage.public_id);
+    }
+    // Duplicate key (username/email)
+    if (error?.code === 11000) {
+      throw new ApiError(409, "User with email or username already exists");
+    }
+    // Mongoose validation error
+    if (error?.name === 'ValidationError') {
+      const messages = Object.values(error.errors).map((e) => e.message).join(', ');
+      throw new ApiError(400, messages || 'Invalid input');
     }
     // Re-throw the error to be handled by the global error handler
     throw new ApiError(500, error.message || "Something went wrong while registering the user");

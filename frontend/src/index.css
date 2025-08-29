@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Brand palette (static) */
+:root {
+  --brand-purple: #7c3aed; /* violet-600 */
+  --brand-pink: #ec4899;   /* pink-500 */
+  --brand-blue: #3b82f6;   /* blue-500 */
+}
+
+/* Theme variables */
+:root {
+  /* Light */
+  --bg-app: #f8fafc;         /* slate-50 */
+  --text-app: #0f172a;       /* slate-900 */
+  --surface: #ffffff;        /* white cards */
+  --muted: #64748b;          /* slate-500 */
+  --border: #e5e7eb;         /* gray-200 */
+  --elevate: 0 10px 30px rgba(2,6,23,0.06);
+  --glass-bg: rgba(255,255,255,0.8);
+  --glass-border: rgba(148,163,184,0.2);
+}
+
+.dark {
+  /* Dark (from game-frame.site) */
+  /* Tokens from :root in compiled CSS: 
+     --background: 240 10% 3.9%;
+     --foreground: 0 0% 98%;
+     --card: 240 10% 3.9%;
+     --muted: 240 3.7% 15.9%;
+     --muted-foreground: 240 5% 64.9%;
+     --border: 240 3.7% 15.9%;
+     --primary: 0 0% 100%;
+     --primary-foreground: 0 0% 0%;
+  */
+  --bg-app: hsl(240 10% 3.9%);
+  --text-app: hsl(0 0% 98%);
+  --surface: hsl(240 10% 3.9%);
+  --muted: hsl(240 5% 64.9%);
+  --border: hsl(240 3.7% 15.9%);
+  --elevate: 0 12px 40px rgba(0,0,0,0.45);
+  --glass-bg: rgba(15, 15, 15, 0.6);
+  --glass-border: rgba(64, 64, 64, 0.6);
+}
+
+/* Theme-aware utilities */
+.bg-app { background-color: var(--bg-app); }
+.text-app { color: var(--text-app); }
+.bg-surface { background-color: var(--surface); }
+.border-app { border-color: var(--border); }
+.muted-text { color: var(--muted); }
+
+/* Map existing custom classes to theme vars */
+.text-brand-dark { color: var(--text-app); }
+.text-brand-purple { color: var(--brand-purple); }
+.text-brand-blue { color: var(--brand-blue); }
+.bg-brand-dark { background-color: var(--text-app); }
+.bg-brand-gray { background-color: var(--bg-app); }
+.border-brand-border { border-color: var(--border); }
+
+.brand-gradient-text {
+  background-image: linear-gradient(90deg, var(--brand-purple), var(--brand-pink), var(--brand-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Gradient background helpers */
+.brand-gradient-bg {
+  background-image: linear-gradient(90deg, var(--brand-purple), var(--brand-pink));
+}
+.brand-progress-bg {
+  background-image: linear-gradient(90deg, var(--brand-blue), var(--brand-purple));
+}
+
+/* Glass and neon utils to emulate reference site */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+}
+.neon-card {
+  box-shadow: var(--elevate);
+  border: 1px solid var(--border);
+}
+.bg-grid-dark {
+  /* Subtle thin white grid on dark background */
+  background-color: var(--bg-app);
+  background-image:
+    linear-gradient(to right, hsla(0 0% 100% / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, hsla(0 0% 100% / 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.neon-btn {
+  background: hsl(0 0% 100%);
+  color: hsl(0 0% 0%);
+}
+.neon-btn:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+/* Dark mode overrides for common Tailwind classes used in components */
+.dark .bg-white { background-color: var(--surface) !important; }
+.dark .text-gray-600 { color: var(--muted) !important; }
+.dark .text-gray-500 { color: var(--muted) !important; }
+.dark .border-gray-200, .dark .border-brand-border { border-color: var(--border) !important; }
+.dark .bg-gray-100 { background-color: rgba(255,255,255,0.06) !important; }
+.dark .bg-brand-dark { background-color: #111827 !important; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Remove spinner from number inputs */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+/* Remove default focus styles */
+:focus:not(:focus-visible) {
+  outline: none;
+}

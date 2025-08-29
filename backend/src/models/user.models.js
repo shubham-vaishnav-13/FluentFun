@@ -27,7 +27,10 @@ const userSchema = new Schema(
         },
         profileImage: {
             type: String, // cloudinary url
-            required: true,
+            required: false,
+            default: function () {
+                return process.env.DEFAULT_AVATAR_URL || undefined;
+            },
         },
         password: {
             type: String,
