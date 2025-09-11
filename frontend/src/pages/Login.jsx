@@ -97,9 +97,41 @@ const Login = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full neon-btn py-3 rounded-lg font-semibold transition-all disabled:opacity-50"
+              className="w-full bg-black text-white py-3 rounded-lg font-semibold transition-all disabled:opacity-50"
             >
               {loading ? 'Signing In...' : 'Sign In'}
+            </button>
+            
+            <div className="relative my-4">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-gray-300"></div>
+              </div>
+              <div className="relative flex justify-center text-sm">
+                <span className="px-2 bg-white text-gray-500">Or continue with</span>
+              </div>
+            </div>
+            
+            <button
+              type="button"
+              onClick={() => {
+                const toastId = toast.loading('Redirecting to Google...');
+                try {
+                  // Use the API_URL from environment if available
+                  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+                  const googleAuthUrl = `${apiUrl.split('/api')[0]}/api/auth/google`;
+                  
+                  console.log('Redirecting to Google OAuth:', googleAuthUrl);
+                  window.location.href = googleAuthUrl;
+                } catch (error) {
+                  console.error('Failed to redirect to Google:', error);
+                  toast.error('Failed to redirect to Google authentication');
+                  toast.dismiss(toastId);
+                }
+              }}
+              className="w-full flex items-center justify-center space-x-2 border border-gray-300 py-2.5 rounded-lg hover:bg-black-100 transition-colors  text-black"
+            >
+              <img src="https://www.svgrepo.com/show/355037/google.svg" className="w-6 h-6" alt="Google" />
+              <span>Sign in with Google</span>
             </button>
           </form>
 

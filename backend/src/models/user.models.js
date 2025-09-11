@@ -4,6 +4,9 @@ import jwt from "jsonwebtoken";
 
 const userSchema = new Schema(
     {
+        googleId: {
+            type: String,
+        },
         username: {
             type: String,
             required: true,
@@ -32,12 +35,27 @@ const userSchema = new Schema(
                 return process.env.DEFAULT_AVATAR_URL || undefined;
             },
         },
+        preferredLanguages: {
+            type: [String],
+            default: []
+        },
         password: {
             type: String,
-            required: [true, "Password is required"],
+            //required: [true, "Password is required"],
         },
         refreshToken: {
             type: String,
+        },
+        isAdmin: {
+            type: Boolean,
+            default: false,
+        },
+        isActive: {
+            type: Boolean,
+            default: true,
+        },
+        lastLogin: {
+            type: Date,
         },
     },
     { timestamps: true }
@@ -45,13 +63,16 @@ const userSchema = new Schema(
 
 // Hash the password before saving
 userSchema.pre("save", async function (next) {
-    if (!this.isModified("password")) return next();
-    this.password = await bcrypt.hash(this.password, 10);
+    // Only hash password if it exists and was modified
+    if (this.password && this.isModified("password")) {
+        this.password = await bcrypt.hash(this.password, 10);
+    }
     next();
 });
 
-// Compare the password
+// Compare the password - safely handle OAuth users who don't have passwords
 userSchema.methods.isPasswordCorrect = async function (password) {
+    if (!this.password) return false;
     return await bcrypt.compare(password, this.password);
 };
 
@@ -63,6 +84,7 @@ userSchema.methods.generateAccessToken = function () {
             email: this.email,
             username: this.username,
             fullName: this.fullName,
+            isAdmin: this.isAdmin,
         },
         process.env.ACCESS_TOKEN_SECRET,
         {

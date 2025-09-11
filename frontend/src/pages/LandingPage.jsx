@@ -1,55 +1,59 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { 
-  Zap, 
-  Brain, 
-  Trophy, 
-  MessageCircle, 
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import {
+  Zap,
+  Brain,
+  Trophy,
+  MessageCircle,
   PenTool,
   Mic,
   ArrowRight,
   Sun,
-  Moon
-} from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
-import { useAuth } from '../context/AuthContext';
+  Moon,
+} from "lucide-react";
+import { useTheme } from "../context/ThemeContext";
+import { useAuth } from "../context/AuthContext";
 
 function LandingPage() {
   const { theme, toggleTheme } = useTheme();
   const { user, loading } = useAuth();
-    
+
   const features = [
     {
       icon: Brain,
-      title: 'AI-Powered Learning',
-      description: 'Personalized feedback on grammar, vocabulary, and pronunciation.'
+      title: "AI-Powered Learning",
+      description:
+        "Personalized feedback on grammar, vocabulary, and pronunciation.",
     },
     {
       icon: Trophy,
-      title: 'Gamified Experience',
-      description: 'Earn XP, unlock achievements, and climb the leaderboards.'
+      title: "Gamified Experience",
+      description: "Earn XP, unlock achievements, and climb the leaderboards.",
     },
     {
       icon: MessageCircle,
-      title: 'Interactive Quizzes',
-      description: 'Adaptive quizzes that adjust to your skill level and learning pace.'
+      title: "Interactive Quizzes",
+      description:
+        "Adaptive quizzes that adjust to your skill level and learning pace.",
     },
     {
       icon: PenTool,
-      title: 'Writing Practice',
-      description: 'Guided exercises with instant AI feedback on your compositions.'
+      title: "Writing Practice",
+      description:
+        "Guided exercises with instant AI feedback on your compositions.",
     },
     {
       icon: Mic,
-      title: 'Speaking Challenges',
-      description: 'Practice conversation with advanced speech recognition technology.'
+      title: "Speaking Challenges",
+      description:
+        "Practice conversation with advanced speech recognition technology.",
     },
     {
       icon: Zap,
-      title: 'Automated Content',
-      description: 'Endless practice with our auto-generated learning content.'
-    }
+      title: "Automated Content",
+      description: "Endless practice with our auto-generated learning content.",
+    },
   ];
 
   return (
@@ -62,7 +66,9 @@ function LandingPage() {
               <div className="w-8 h-8 bg-brand-dark rounded-lg flex items-center justify-center">
                 <Zap className="w-5 h-5 text-white" />
               </div>
-              <span className="font-bold text-xl text-brand-dark">FluentFun</span>
+              <span className="font-bold text-xl text-brand-dark">
+                FluentFun
+              </span>
             </div>
             <div className="flex items-center space-x-2">
               <button
@@ -70,7 +76,11 @@ function LandingPage() {
                 aria-label="Toggle theme"
                 className="px-3 py-2 rounded-lg border border-brand-border hover:bg-brand-gray transition"
               >
-                {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                {theme === "dark" ? (
+                  <Sun className="w-5 h-5" />
+                ) : (
+                  <Moon className="w-5 h-5" />
+                )}
               </button>
               {/* Auth-aware nav actions */}
               {!loading && user ? (
@@ -90,14 +100,14 @@ function LandingPage() {
                 </>
               ) : (
                 <>
-                  <Link 
-                    to="/login" 
+                  <Link
+                    to="/login"
                     className="text-gray-600 hover:text-brand-dark font-medium transition-colors px-4 py-2 rounded-lg"
                   >
                     Log In
                   </Link>
-                  <Link 
-                    to="/signup" 
+                  <Link
+                    to="/signup"
                     className="bg-brand-dark text-white px-4 py-2 rounded-lg font-medium hover:bg-gray-800 transition-all"
                   >
                     Get Started
@@ -122,17 +132,31 @@ function LandingPage() {
             <span className="brand-gradient-text">Master Languages</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-            FluentFun combines gamification and cutting-edge AI to create a language learning experience that's both effective and incredibly fun.
+            FluentFun combines gamification and cutting-edge AI to create a
+            language learning experience that's both effective and incredibly
+            fun.
           </p>
-          <div className="flex gap-4 justify-center">
-            <Link
-              to="/signup"
-              className="neon-btn px-6 py-3 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 inline-flex items-center"
-            >
-              Start Learning Free
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Link>
-          </div>
+          {!loading && user ? (
+            <div className="flex gap-4 justify-center">
+              <Link
+                to="/dashboard"
+                className="neon-btn px-6 py-3 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 inline-flex items-center"
+              >
+                Start Learning Free
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+            </div>
+          ) : (
+            <div className="flex gap-4 justify-center">
+              <Link
+                to="/signup"
+                className="neon-btn px-6 py-3 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 inline-flex items-center"
+              >
+                Start Learning Free
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+            </div>
+          )}
         </motion.div>
       </section>
 
@@ -144,7 +168,8 @@ function LandingPage() {
               A Smarter Way to Learn
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto mt-4">
-              Our platform is built on principles that maximize engagement and retention.
+              Our platform is built on principles that maximize engagement and
+              retention.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -181,15 +206,27 @@ function LandingPage() {
             Ready to Transform Your Learning?
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Join thousands of learners who are already mastering languages with FluentFun's innovative approach to education.
+            Join thousands of learners who are already mastering languages with
+            FluentFun's innovative approach to education.
           </p>
-          <Link
-            to="/signup"
-            className="bg-brand-dark text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all transform hover:scale-105 inline-flex items-center"
-          >
-            Start Your Journey Today
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Link>
+
+          {!loading && user ? (
+            <Link
+              to="/dashboard"
+              className="bg-brand-dark text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all transform hover:scale-105 inline-flex items-center"
+            >
+              Start Your Journey Today
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Link>
+          ) : (
+            <Link
+              to="/signup"
+              className="bg-brand-dark text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all transform hover:scale-105 inline-flex items-center"
+            >
+              Start Your Journey Today
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Link>
+          )}
         </div>
       </section>
 
@@ -209,10 +246,6 @@ function LandingPage() {
           </div>
         </div>
       </footer>
-
-            
-
-
     </div>
   );
 }

@@ -1,11 +1,14 @@
 import express from "express";
 import cors from "cors"
 import cookieParser from "cookie-parser";
+import passport from "./middlewares/passport.middlewares.js"; // Import passport
+
+
 const app = express();
 app.use(express.json());
 
 // CORS middleware (dev-friendly defaults)
-const rawOrigins = process.env.CORS_ORIGIN || "http://localhost:5173"; // Vite default
+const rawOrigins = process.env.CORS_ORIGIN || "http://localhost:5173,http://localhost:5174"; // Vite default + backup port
 const allowedOrigins = rawOrigins
   .split(",")
   .map(o => o.trim())
@@ -31,14 +34,26 @@ app.use(express.static("public"))
 // use cookies
 app.use(cookieParser())
 
+app.use(passport.initialize());
+
+
+
 // routes
 
 // import healthcheckRouter from "./routes/healthcheck.routes.js"
 import userRouter from "./routes/user.routes.js"
+import authRouter from "./routes/auth.routes.js"
+import adminRouter from "./routes/admin.routes.js"
+import contentRouter from "./routes/content.routes.js"
 // import { errorHandler } from "./middlewares/error.middleares.js";
 
 // app.use("/api/v1/healthcheck",healthcheckRouter)
 app.use("/api/v1/users",userRouter)
+app.use("/api/v1/admin",adminRouter)
+app.use("/api/v1/content",contentRouter)
+
+// Special route for Google OAuth
+app.use("/api/auth", authRouter)
 
 
 // Global error handler (simple)

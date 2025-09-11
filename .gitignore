@@ -11,6 +11,8 @@
 /backend/.env
 /frontend/.env
 /backend/config/config.env
+/backend/seed.js
+/backend/ADMIN_API.md
 
 # Build files
 /frontend/dist

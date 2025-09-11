@@ -41,6 +41,45 @@ const Dashboard = () => {
     { label: 'Current Level', value: level, icon: Star, color: 'text-brand-purple' }
   ];
 
+  // prefer languages from authenticated user, fallback to localStorage
+  const [preferredLanguages, setPreferredLanguages] = React.useState([]);
+
+  const languageMap = { en: 'English', hi: 'Hindi', gu: 'Gujarati', fr: 'French', es: 'Spanish', de: 'German' };
+
+  const normalizeLanguages = (raw) => {
+    if (!raw) return [];
+    // If it's already an array, normalize each code
+    if (Array.isArray(raw)) {
+      return raw.map(c => String(c).replace(/[^a-zA-Z]/g, '').toLowerCase()).filter(Boolean);
+    }
+    // If it's a string, try JSON.parse then fallback to splitting
+    if (typeof raw === 'string') {
+      try {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) return parsed.map(c => String(c).replace(/[^a-zA-Z]/g, '').toLowerCase()).filter(Boolean);
+      } catch (e) {
+        // not JSON — fall through
+      }
+  // split by comma or whitespace
+  return raw.split(/[,\s]+/).map(c => String(c).replace(/[^a-zA-Z]/g, '').toLowerCase()).filter(Boolean);
+    }
+    return [];
+  };
+
+  React.useEffect(() => {
+    // prefer user value when possible
+    if (user?.preferredLanguages) {
+      setPreferredLanguages(normalizeLanguages(user.preferredLanguages));
+      return;
+    }
+    try {
+      const saved = localStorage.getItem('preferredLanguages');
+      setPreferredLanguages(normalizeLanguages(saved));
+    } catch (e) {
+      setPreferredLanguages([]);
+    }
+  }, [user]);
+
   return (
     <div className="min-h-screen bg-app text-app">
       <Navbar borderClass="border-brand-border" />
@@ -56,23 +95,27 @@ const Dashboard = () => {
           {/* Main column */}
           <div className="lg:col-span-2 space-y-6">
             {/* Daily Challenge Card */}
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
-              <Link to="/daily-challenge" className="block group">
-                <div className="brand-gradient-bg text-white rounded-2xl p-6 flex items-center justify-between shadow-lg hover:shadow-xl transition-shadow">
-                  <div>
-                    <h2 className="text-xl font-bold">Daily Challenge</h2>
-                    <p className="opacity-80">Complete your task to keep your streak alive!</p>
-                  </div>
-                  <div className="bg-white/20 p-3 rounded-full">
-                    <ArrowRight className="w-5 h-5" />
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
+              {/* Daily Challenge Card removed */}
 
             {/* Learning Modules */}
             <div>
               <h2 className="text-xl font-bold text-brand-dark mb-4">Start a new lesson</h2>
+              {/* Language preferences card */}
+              <div className="mb-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <button onClick={() => navigate('/select-language')} className="w-full text-left bg-white rounded-2xl p-4 border border-brand-border hover:shadow-md transition">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <h3 className="font-semibold text-brand-dark">Language Preferences</h3>
+                          <p className="text-sm text-gray-500">Choose the language you want to learn in</p>
+                        </div>
+                        <ArrowRight className="w-5 h-5 text-gray-400" />
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
               <div className="grid grid-cols-1 gap-4">
                 {learningModules.map((module, index) => {
                   const Icon = module.icon;
@@ -130,6 +173,18 @@ const Dashboard = () => {
                     </div>
                   )
                 })}
+              </div>
+              <div className="mt-6">
+                <h4 className="text-sm font-semibold mb-2">Preferred Languages</h4>
+                {preferredLanguages.length ? (
+                  <div className="flex flex-wrap gap-2">
+                    {preferredLanguages.map((code) => (
+                      <span key={code} className="px-3 py-1 bg-gray-100 rounded-full text-sm">{languageMap[code] || code.toUpperCase()}</span>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-xs text-gray-500">No preferred languages selected.</p>
+                )}
               </div>
             </motion.div>
           </div>
