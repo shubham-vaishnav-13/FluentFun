@@ -1,31 +1,24 @@
 import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {
   LayoutGrid,
-  User,
   Trophy,
-  LogOut,
   ShieldCheck,
   Zap,
   Flame,
   Map
 } from 'lucide-react';
+import { Globe } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { useTheme } from '../context/ThemeContext';
+import { Sun, Moon } from 'lucide-react';
 
 function Navbar({ borderClass = 'border-brand-border' }) {
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
   const location = useLocation();
-  const navigate = useNavigate();
-
-  const handleLogout = async () => {
-    await logout();
-    navigate('/');
-  };
 
   const navItems = [
     { path: '/dashboard', icon: LayoutGrid, label: 'Dashboard' },
-    { path: '/learning-path', icon: Map, label: 'Learning Path' },
-    { path: '/daily-challenge', icon: Flame, label: 'Daily Challenge' },
     { path: '/leaderboard', icon: Trophy, label: 'Leaderboard' },
   ];
 
@@ -37,6 +30,7 @@ function Navbar({ borderClass = 'border-brand-border' }) {
   const userEmail = user?.email || '';
   const avatar = user?.profileImage || user?.avatar;
   const xp = user?.xp || 0;
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <header className={`sticky top-0 z-50 glass border-b ${borderClass}`}>
@@ -77,6 +71,10 @@ function Navbar({ borderClass = 'border-brand-border' }) {
 
             {/* User Menu */}
             <div className="flex items-center space-x-3">
+              {/* Theme toggle */}
+              <button onClick={toggleTheme} className="p-2 rounded-lg hover:bg-gray-100">
+                {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              </button>
               <div className="flex items-center space-x-2 bg-yellow-100 text-yellow-800 px-3 py-1.5 rounded-lg text-sm font-semibold">
                 <Zap className="w-4 h-4" />
                 <span>{xp}</span>
@@ -95,28 +93,15 @@ function Navbar({ borderClass = 'border-brand-border' }) {
                     </div>
                   )}
                 </Link>
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-2xl p-2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none group-hover:pointer-events-auto">
-                  <div className="p-2">
-                    <p className="font-semibold text-brand-dark">{userName}</p>
-                    {userEmail && <p className="text-sm text-gray-500">{userEmail}</p>}
+                <div className="absolute right-0 mt-2 w-40 bg-white rounded-xl shadow-2xl p-3 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none group-hover:pointer-events-auto">
+                  <div className="text-center">
+                    <p className="font-semibold text-brand-dark text-sm">{userName}</p>
                   </div>
-                  <div className="h-px bg-brand-border my-1"></div>
-                  <Link to="/profile" className="w-full text-left flex items-center space-x-2 p-2 rounded-lg text-sm text-gray-600 hover:bg-gray-100 transition-colors">
-                    <User className="w-4 h-4" />
-                    <span>Profile</span>
-                  </Link>
-                  <button
-                    onClick={handleLogout}
-                    className="w-full text-left flex items-center space-x-2 p-2 rounded-lg text-sm text-red-600 hover:bg-red-50 transition-colors"
-                  >
-                    <LogOut className="w-4 h-4" />
-                    <span>Logout</span>
-                  </button>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </div>  
       </div>
     </header>
   );

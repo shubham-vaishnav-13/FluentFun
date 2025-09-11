@@ -9,6 +9,17 @@ const api = axios.create({
   },
 });
 
+// Create a separate instance for auth endpoints
+export const authApi = axios.create({
+  baseURL: import.meta.env.VITE_API_URL 
+    ? `${import.meta.env.VITE_API_URL.split('/api')[0]}/api` 
+    : 'http://localhost:3000/api', // Direct to base API path for auth
+  withCredentials: true,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
 // Add request interceptor to add auth token to requests
 api.interceptors.request.use(
   (config) => {

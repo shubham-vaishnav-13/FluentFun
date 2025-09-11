@@ -232,7 +232,7 @@ const Register = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full neon-btn py-3 rounded-lg font-semibold transition-all disabled:opacity-50"
+              className="w-full bg-black text-white py-3 rounded-lg font-semibold transition-all disabled:opacity-50"
             >
               {loading ? 'Creating Account...' : 'Create Account'}
             </button>

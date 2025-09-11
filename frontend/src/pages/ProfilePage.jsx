@@ -14,8 +14,10 @@ const ProfilePage = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [editForm, setEditForm] = useState({
     fullName: '',
-    email: '',
-    profileImage: null
+  email: '',
+  username: '',
+  profileImage: null,
+  preferredLanguages: []
   });
   const [preview, setPreview] = useState('');
   const [loading, setLoading] = useState(false);
@@ -29,6 +31,8 @@ const ProfilePage = () => {
     setEditForm({
       fullName: user.fullName || user.name || '',
       email: user.email || '',
+  username: user.username || '',
+  preferredLanguages: user.preferredLanguages || [],
       profileImage: null
     });
     setPreview(user.profileImage || '');
@@ -59,6 +63,14 @@ const ProfilePage = () => {
     }
   };
 
+  const togglePreferredLanguage = (code) => {
+    setEditForm(prev => {
+      const list = prev.preferredLanguages || [];
+      if (list.includes(code)) return { ...prev, preferredLanguages: list.filter(c => c !== code) };
+      return { ...prev, preferredLanguages: [...list, code] };
+    });
+  };
+
   const handleSaveProfile = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -67,6 +79,8 @@ const ProfilePage = () => {
       const result = await updateProfile({
         fullName: editForm.fullName,
         email: editForm.email,
+  username: editForm.username,
+  preferredLanguages: editForm.preferredLanguages,
         profileImage: editForm.profileImage
       });
       
@@ -123,6 +137,19 @@ const ProfilePage = () => {
     { label: 'Day Streak', value: streak, icon: Flame, color: 'text-orange-500' },
     { label: 'Achievements', value: achievements.filter(a => a.unlocked).length, icon: Award, color: 'text-green-500' },
   ];
+
+  // map language codes to full display names
+  const languageMap = {
+    en: 'English',
+    hi: 'Hindi',
+    gu: 'Gujarati',
+    fr: 'French',
+    es: 'Spanish',
+    de: 'German'
+  };
+
+  // explicit order for display (first 3 on first row, next 3 on second)
+  const languages = ['en', 'hi', 'gu', 'fr', 'es', 'de'];
 
   return (
     <div className="min-h-screen bg-app text-app">
@@ -182,6 +209,13 @@ const ProfilePage = () => {
               >
                 <Edit className="w-4 h-4" />
                 <span className="text-sm">Edit Profile</span>
+              </button>
+              <button 
+                onClick={handleLogout}
+                className="flex items-center space-x-2 px-4 py-2 rounded-lg border border-red-300 text-red-600 hover:bg-red-50 transition"
+              >
+                <LogOut className="w-4 h-4" />
+                <span className="text-sm">Logout</span>
               </button>
             </div>
           </div>
@@ -384,6 +418,19 @@ const ProfilePage = () => {
                   </div>
                 </div>
 
+                {/* Username */}
+                <div>
+                  <label className="block text-sm font-medium text-app mb-2">Username</label>
+                  <input
+                    type="text"
+                    name="username"
+                    value={editForm.username}
+                    onChange={handleFormChange}
+                    className="w-full pr-4 py-2.5 border border-app rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent transition bg-transparent"
+                    placeholder="Enter username"
+                  />
+                </div>
+
                 {/* Email */}
                 <div>
                   <label className="block text-sm font-medium text-app mb-2">Email</label>
@@ -400,6 +447,28 @@ const ProfilePage = () => {
                     />
                   </div>
                 </div>
+
+                {/* Preferred languages multi-select UI */}
+
+                <div className="mt-4">
+                <h4 className="text-sm font-medium mb-2">Preferred Languages</h4>
+                <div className="grid grid-cols-3 gap-2">
+                  {languages.map(code => {
+                    const selected = (editForm.preferredLanguages || []).includes(code);
+                    return (
+                      <button
+                        key={code}
+                        type="button"
+                        onClick={() => togglePreferredLanguage(code)}
+                        className={`w-full text-center px-3 py-2 rounded-lg text-sm font-medium transition focus:outline-none ${selected ? 'bg-black text-white' : 'bg-white/5 text-app'}`}
+                      >
+                        {languageMap[code]}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
 
                 {/* Action Buttons */}
                 <div className="flex space-x-3 pt-4">
@@ -420,6 +489,7 @@ const ProfilePage = () => {
                   </button>
                 </div>
               </form>
+              
             </motion.div>
           </motion.div>
         )}
