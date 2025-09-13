@@ -88,6 +88,7 @@ const UserManager = () => {
       //   isAdmin: userForm.isAdmin
       // });
 
+      
       // Mock update for now
       await new Promise(resolve => setTimeout(resolve, 1000));
 
@@ -243,9 +244,9 @@ const UserManager = () => {
                 <th className="text-left p-4 font-medium text-app">Role</th>
                 <th className="text-left p-4 font-medium text-app">Status</th>
                 <th className="text-left p-4 font-medium text-app">Member Since</th>
-                <th className="text-left p-4 font-medium text-app">Joined</th>
                 <th className="text-left p-4 font-medium text-app">Last Active</th>
                 <th className="text-left p-4 font-medium text-app">Actions</th>
+                <th className='text-left p-4 font-medium text-app'>Points</th>
               </tr>
             </thead>
             <tbody>
@@ -307,12 +308,7 @@ const UserManager = () => {
                       <span>Member since {formatDate(user.createdAt)}</span>
                     </div>
                   </td>
-                  <td className="p-4">
-                    <div className="flex items-center space-x-2 text-sm muted-text">
-                      <Calendar className="w-4 h-4" />
-                      <span>{formatDate(user.joinedAt)}</span>
-                    </div>
-                  </td>
+
                   <td className="p-4">
                     <span className="text-sm muted-text">
                       {user.lastLogin ? formatDate(user.lastLogin) : 'Never'}
@@ -356,6 +352,15 @@ const UserManager = () => {
                       >
                         <Trash2 className="w-4 h-4" />
                       </button>
+                    </div>
+
+
+                  </td>
+
+                  <td>
+                    <div className="flex items-center space-x-2">
+                      <Award className="w-4 h-4 text-yellow-500" />
+                      <span className="text-sm font-medium text-app">{user.xp || 0}</span>
                     </div>
                   </td>
                 </motion.tr>

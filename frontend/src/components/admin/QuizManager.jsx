@@ -32,6 +32,8 @@ const QuizManager = () => {
   language: 'en',
     category: 'grammar',
     timeLimit: 300, // 5 minutes
+    sequence: 1,
+    minScoreToUnlockNext: 60,
     questions: [
       {
         question: '',
@@ -167,6 +169,8 @@ const QuizManager = () => {
   language: quiz.language || 'en',
       category: quiz.category,
       timeLimit: quiz.timeLimit,
+      sequence: quiz.sequence || 1,
+      minScoreToUnlockNext: quiz.minScoreToUnlockNext || 60,
       questions: [
         {
           question: 'Sample question',
@@ -199,8 +203,11 @@ const QuizManager = () => {
       title: '',
       description: '',
       difficulty: 'beginner',
+      language: 'en',
       category: 'grammar',
       timeLimit: 300,
+      sequence: 1,
+      minScoreToUnlockNext: 60,
       questions: [
         {
           question: '',
@@ -508,6 +515,31 @@ const QuizManager = () => {
                         <option key={code} value={code}>{name}</option>
                       ))}
                     </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-app mb-2">Sequence (Level Order)</label>
+                    <input
+                      type="number"
+                      min={1}
+                      value={quizForm.sequence}
+                      onChange={(e) => setQuizForm(prev => ({ ...prev, sequence: parseInt(e.target.value) || 1 }))}
+                      className="w-full px-4 py-2.5 border border-app rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent transition bg-transparent"
+                      placeholder="1"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-app mb-2">Min Score To Unlock Next (%)</label>
+                    <input
+                      type="number"
+                      min={0}
+                      max={100}
+                      value={quizForm.minScoreToUnlockNext}
+                      onChange={(e) => setQuizForm(prev => ({ ...prev, minScoreToUnlockNext: parseInt(e.target.value) || 0 }))}
+                      className="w-full px-4 py-2.5 border border-app rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent transition bg-transparent"
+                      placeholder="60"
+                      required
+                    />
                   </div>
                 </div>
 

@@ -211,7 +211,22 @@ export const AuthProvider = ({ children }) => {
     register,
     logout,
     setTokens,
-  updateProfile,
+    updateProfile,
+    updateUserXP: (deltaOrAbsolute) => {
+      setUser(prev => {
+        if (!prev) return prev;
+        // If number passed and >= prev.xp treat as absolute, else add
+        if (typeof deltaOrAbsolute === 'number') {
+          if (prev.xp == null) return { ...prev, xp: deltaOrAbsolute };
+          if (deltaOrAbsolute >= prev.xp) return { ...prev, xp: deltaOrAbsolute };
+          return { ...prev, xp: prev.xp + deltaOrAbsolute };
+        }
+        if (deltaOrAbsolute && typeof deltaOrAbsolute === 'object' && typeof deltaOrAbsolute.xp === 'number') {
+          return { ...prev, xp: deltaOrAbsolute.xp };
+        }
+        return prev;
+      });
+    }
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

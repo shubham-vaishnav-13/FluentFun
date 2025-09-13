@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Brain, PenTool, Mic, Flame, Star, Zap, ArrowRight } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import Navbar from '../components/Navbar';
+import api from '../config/api.config.js';
 
 const Dashboard = () => {
   const { user, logout } = useAuth();
@@ -30,7 +31,7 @@ const Dashboard = () => {
   const progressPercent = Math.min(((xp - currentLevelXP) / (nextLevelXP - currentLevelXP)) * 100, 100);
 
   const learningModules = [
-    { id: 'quiz', title: 'Interactive Quizzes', description: 'Test your knowledge', icon: Brain, color: 'text-brand-blue', path: '/quiz', xp: 25 },
+    { id: 'quiz', title: 'Interactive Quizzes', description: 'Test your knowledge', icon: Brain, color: 'text-brand-blue', path: '/quiz-list', xp: 25 },
     { id: 'writing', title: 'Writing Practice', description: 'Improve with AI feedback', icon: PenTool, color: 'text-green-500', path: '/writing', xp: 50 },
     { id: 'speaking', title: 'Speaking Challenges', description: 'Practice pronunciation', icon: Mic, color: 'text-brand-purple', path: '/speaking', xp: 75 }
   ];
@@ -43,8 +44,8 @@ const Dashboard = () => {
 
   // prefer languages from authenticated user, fallback to localStorage
   const [preferredLanguages, setPreferredLanguages] = React.useState([]);
-
-  const languageMap = { en: 'English', hi: 'Hindi', gu: 'Gujarati', fr: 'French', es: 'Spanish', de: 'German' };
+  const [languageMap, setLanguageMap] = React.useState({});
+  const [languagesLoading, setLanguagesLoading] = React.useState(true);
 
   const normalizeLanguages = (raw) => {
     if (!raw) return [];
@@ -67,18 +68,52 @@ const Dashboard = () => {
   };
 
   React.useEffect(() => {
-    // prefer user value when possible
-    if (user?.preferredLanguages) {
-      setPreferredLanguages(normalizeLanguages(user.preferredLanguages));
-      return;
-    }
-    try {
-      const saved = localStorage.getItem('preferredLanguages');
-      setPreferredLanguages(normalizeLanguages(saved));
-    } catch (e) {
+    const fetchLanguages = async () => {
+      try {
+        setLanguagesLoading(true);
+        const response = await api.get('/content/languages');
+        if (response.data.success && response.data.data) {
+          const langMap = {};
+          response.data.data.forEach(lang => {
+            langMap[lang.code] = lang.name;
+          });
+          setLanguageMap(langMap);
+        } else {
+          console.error('Failed to fetch languages: Invalid response');
+          setLanguageMap({});
+        }
+      } catch (error) {
+        console.error('Failed to fetch languages:', error);
+        setLanguageMap({});
+      } finally {
+        setLanguagesLoading(false);
+      }
+    };
+
+    fetchLanguages();
+  }, []);
+
+  React.useEffect(() => {
+    // Only use user database values for preferred languages
+    if (user?.preferredLanguages && Array.isArray(user.preferredLanguages)) {
+      // normalize and dedupe
+      const normalized = normalizeLanguages(user.preferredLanguages);
+      const deduped = Array.from(new Set(normalized));
+      setPreferredLanguages(deduped);
+    } else {
       setPreferredLanguages([]);
     }
   }, [user]);
+
+  // Ensure dashboard only displays languages that exist in languageMap
+  React.useEffect(() => {
+    if (!languageMap || Object.keys(languageMap).length === 0) return;
+    setPreferredLanguages((prev) => {
+      const codes = prev.map((c) => String(c).toLowerCase());
+      const filtered = Array.from(new Set(codes)).filter((c) => languageMap[c]);
+      return filtered;
+    });
+  }, [languageMap]);
 
   return (
     <div className="min-h-screen bg-app text-app">
@@ -94,6 +129,27 @@ const Dashboard = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Main column */}
           <div className="lg:col-span-2 space-y-6">
+            {/* Quick XP Card */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="bg-white rounded-2xl p-5 border border-brand-border flex items-center justify-between neon-card">
+                <div>
+                  <p className="text-xs uppercase tracking-wide text-gray-500 font-semibold">Total XP</p>
+                  <p className="text-2xl font-bold text-brand-dark mt-1 flex items-center gap-2"><Zap className="w-5 h-5 text-yellow-500" /> {xp}</p>
+                </div>
+              </div>
+              <div className="bg-white rounded-2xl p-5 border border-brand-border flex items-center justify-between neon-card">
+                <div>
+                  <p className="text-xs uppercase tracking-wide text-gray-500 font-semibold">Level</p>
+                  <p className="text-2xl font-bold text-brand-dark mt-1">{level}</p>
+                </div>
+              </div>
+              <div className="bg-white rounded-2xl p-5 border border-brand-border flex items-center justify-between neon-card">
+                <div>
+                  <p className="text-xs uppercase tracking-wide text-gray-500 font-semibold">Progress</p>
+                  <p className="text-2xl font-bold text-brand-dark mt-1">{Math.round(progressPercent)}%</p>
+                </div>
+              </div>
+            </div>
             {/* Daily Challenge Card */}
               {/* Daily Challenge Card removed */}
 
@@ -176,10 +232,14 @@ const Dashboard = () => {
               </div>
               <div className="mt-6">
                 <h4 className="text-sm font-semibold mb-2">Preferred Languages</h4>
-                {preferredLanguages.length ? (
+                {languagesLoading ? (
+                  <p className="text-xs text-gray-500">Loading languages...</p>
+                ) : preferredLanguages.length ? (
                   <div className="flex flex-wrap gap-2">
                     {preferredLanguages.map((code) => (
-                      <span key={code} className="px-3 py-1 bg-gray-100 rounded-full text-sm">{languageMap[code] || code.toUpperCase()}</span>
+                      <span key={code} className="px-3 py-1 bg-gray-100 rounded-full text-sm">
+                        {languageMap[code] || code.toUpperCase()}
+                      </span>
                     ))}
                   </div>
                 ) : (

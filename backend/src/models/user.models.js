@@ -57,6 +57,12 @@ const userSchema = new Schema(
         lastLogin: {
             type: Date,
         },
+        xp: {
+            type: Number,
+            default: 0,
+            min: 0,
+            index: true
+        }
     },
     { timestamps: true }
 );

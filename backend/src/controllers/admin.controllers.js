@@ -194,10 +194,17 @@ export const getAllQuizzes = asyncHandler(async (req, res) => {
 });
 
 export const createQuiz = asyncHandler(async (req, res) => {
-    const { title, description, category, difficulty, timeLimit, questions, tags } = req.body;
+    // Include language and progression metadata
+    const { title, description, category, difficulty, timeLimit, questions, tags, language, sequence, minScoreToUnlockNext } = req.body;
 
-    if (!title || !description || !category || !difficulty || !timeLimit || !questions) {
-        throw new ApiError(400, "All required fields must be provided");
+    if (!title || !description || !category || !difficulty || !timeLimit || !questions || !language) {
+        throw new ApiError(400, "All required fields (including language) must be provided");
+    }
+
+    const allowedLanguages = ['en', 'hi', 'gu', 'fr', 'es', 'de'];
+    const normalizedLanguage = String(language).toLowerCase();
+    if (!allowedLanguages.includes(normalizedLanguage)) {
+        throw new ApiError(400, `Invalid language. Allowed: ${allowedLanguages.join(', ')}`);
     }
 
     if (!Array.isArray(questions) || questions.length === 0) {
@@ -214,22 +221,41 @@ export const createQuiz = asyncHandler(async (req, res) => {
         }
     }
 
-    const quiz = await Quiz.create({
-        title,
-        description,
-        category,
-        difficulty,
-        timeLimit,
-        questions,
-        tags: tags || [],
-        createdBy: req.user._id
-    });
+    try {
+        const quiz = await Quiz.create({
+            title,
+            description,
+            category,
+            difficulty,
+            timeLimit,
+            questions,
+            language: normalizedLanguage,
+            sequence: sequence || 1,
+            minScoreToUnlockNext: typeof minScoreToUnlockNext === 'number' ? minScoreToUnlockNext : 60,
+            tags: tags || [],
+            createdBy: req.user._id
+        });
 
-    const populatedQuiz = await Quiz.findById(quiz._id).populate('createdBy', 'username fullName');
+        const populatedQuiz = await Quiz.findById(quiz._id).populate('createdBy', 'username fullName');
 
-    return res.status(201).json(
-        new ApiResponse(201, populatedQuiz, "Quiz created successfully")
-    );
+        return res.status(201).json(
+            new ApiResponse(201, populatedQuiz, "Quiz created successfully")
+        );
+    } catch (err) {
+        // Log detailed validation info in non-production
+        if (process.env.NODE_ENV !== 'production') {
+            console.error('[createQuiz:error]', {
+                message: err.message,
+                name: err.name,
+                code: err.code,
+                errors: err.errors && Object.fromEntries(Object.entries(err.errors).map(([k,v]) => [k, v.message]))
+            });
+        }
+        if (err.name === 'ValidationError') {
+            throw new ApiError(400, 'Validation failed', err.message);
+        }
+        throw new ApiError(500, 'Failed to create quiz');
+    }
 });
 
 export const updateQuiz = asyncHandler(async (req, res) => {
@@ -237,6 +263,31 @@ export const updateQuiz = asyncHandler(async (req, res) => {
 
     if (!mongoose.Types.ObjectId.isValid(quizId)) {
         throw new ApiError(400, "Invalid quiz ID");
+    }
+
+    // If language is being updated, validate it
+    if (req.body.language) {
+        const allowedLanguages = ['en', 'hi', 'gu', 'fr', 'es', 'de'];
+        const normalizedLanguage = String(req.body.language).toLowerCase();
+        if (!allowedLanguages.includes(normalizedLanguage)) {
+            throw new ApiError(400, `Invalid language. Allowed: ${allowedLanguages.join(', ')}`);
+        }
+        req.body.language = normalizedLanguage;
+    }
+    // Validate sequence/minScore if provided
+    if (req.body.sequence) {
+        const seq = Number(req.body.sequence);
+        if (!Number.isInteger(seq) || seq < 1) {
+            throw new ApiError(400, 'sequence must be a positive integer');
+        }
+        req.body.sequence = seq;
+    }
+    if (req.body.minScoreToUnlockNext) {
+        const ms = Number(req.body.minScoreToUnlockNext);
+        if (isNaN(ms) || ms < 0 || ms > 100) {
+            throw new ApiError(400, 'minScoreToUnlockNext must be between 0 and 100');
+        }
+        req.body.minScoreToUnlockNext = ms;
     }
 
     const quiz = await Quiz.findByIdAndUpdate(

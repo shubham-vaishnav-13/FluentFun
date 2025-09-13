@@ -77,43 +77,6 @@ class AdminAPI {
     }
   }
 
-  // Speaking Challenge Management
-  static async getAllSpeakingChallenges(params = {}) {
-    try {
-      const response = await api.get('/admin/speaking-challenges', { params });
-      return response.data;
-    } catch (error) {
-      throw error.response?.data || error;
-    }
-  }
-
-  static async createSpeakingChallenge(challengeData) {
-    try {
-      const response = await api.post('/admin/speaking-challenges', challengeData);
-      return response.data;
-    } catch (error) {
-      throw error.response?.data || error;
-    }
-  }
-
-  static async updateSpeakingChallenge(challengeId, challengeData) {
-    try {
-      const response = await api.patch(`/admin/speaking-challenges/${challengeId}`, challengeData);
-      return response.data;
-    } catch (error) {
-      throw error.response?.data || error;
-    }
-  }
-
-  static async deleteSpeakingChallenge(challengeId) {
-    try {
-      const response = await api.delete(`/admin/speaking-challenges/${challengeId}`);
-      return response.data;
-    } catch (error) {
-      throw error.response?.data || error;
-    }
-  }
-
   // Writing Challenge Management
   static async getAllWritingChallenges(params = {}) {
     try {

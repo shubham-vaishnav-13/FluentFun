@@ -1,98 +1,268 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Check, X, Brain, Zap, Clock } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ArrowLeft, Check, Brain, Zap, Clock } from 'lucide-react';
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import api from '../config/api.config.js';
 import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
 import Navbar from '../components/Navbar';
 
 function QuizPage() {
-  const { user } = useAuth();
+  const { user, updateUserXP } = useAuth();
+  const { quizId } = useParams();
+  const navigate = useNavigate();
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(30);
-  const [quizCompleted, setQuizCompleted] = useState(false);
+  const [quizCompleted, setQuizCompleted] = useState(false); // true when user just completed OR had prior attempt
+  const [quiz, setQuiz] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [submitting, setSubmitting] = useState(false);
+  const [answers, setAnswers] = useState([]); // store selected answers for backend submission
+  const [attemptReview, setAttemptReview] = useState(null); // store attempt + questions with correctness for review
 
-  const questions = [
-    { question: "What is the French word for 'hello'?", options: ["Bonjour", "Au revoir", "Merci", "S'il vous plaît"], correct: 0, xp: 25 },
-    { question: "Which Spanish word means 'thank you'?", options: ["Hola", "Gracias", "Adiós", "Por favor"], correct: 1, xp: 25 },
-    { question: "What does 'Guten Tag' mean in English?", options: ["Good night", "Good morning", "Good day", "Goodbye"], correct: 2, xp: 25 },
-    { question: "Choose the correct Italian phrase for 'How are you?'", options: ["Come stai?", "Dove sei?", "Cosa fai?", "Chi sei?"], correct: 0, xp: 25 },
-    { question: "What is the past tense of 'to go' in English?", options: ["Goes", "Going", "Went", "Gone"], correct: 2, xp: 25 }
-  ];
+  // Derived questions array from loaded quiz
+  const questions = React.useMemo(() => {
+    if (!quiz) return [];
+    return (quiz.questions || []).map(q => ({
+      question: q.question,
+      options: q.options,
+      xp: q.points || 10
+    }));
+  }, [quiz]);
 
+  // Fetch quiz on mount by id
   React.useEffect(() => {
-    if (timeLeft > 0 && !showResult && !quizCompleted) {
-      const timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
+    let ignore = false;
+    const fetchQuiz = async () => {
+      if (!quizId) {
+        setError('Missing quiz id');
+        setLoading(false);
+        return;
+      }
+      try {
+        setLoading(true);
+        setError(null);
+        const res = await api.get(`/content/quizzes/${quizId}`);
+        if (!ignore) {
+          if (res.data?.success) {
+            const q = res.data.data;
+            console.log('[QuizPage] loaded quiz', { incomingQuizId: quizId, apiQuizId: q._id, title: q.title, attempted: q.attempted });
+            // If user already attempted, immediately enter review mode
+            if (q.attempted && q.attempt) {
+              setQuizCompleted(true);
+              setScore(q.attempt.score);
+              setAttemptReview({
+                attempt: q.attempt,
+                questions: q.questions // already contains correctAnswer, selected, isCorrect
+              });
+            } else {
+              setQuizCompleted(false);
+            }
+            // Reset active quiz state for taking (only if not previously attempted)
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowResult(false);
+            setAnswers([]);
+            setQuiz(q);
+            const tl = q.timeLimit ? q.timeLimit * 60 : 30;
+            setTimeLeft(Math.min(tl, 3600));
+          } else {
+            setError('Failed to load quiz');
+          }
+        }
+      } catch (e) {
+        if (!ignore) setError(e.response?.data?.message || 'Error fetching quiz');
+      } finally {
+        if (!ignore) setLoading(false);
+      }
+    };
+    fetchQuiz();
+    return () => { ignore = true; };
+  }, [quizId]);
+
+  // Countdown timer
+  React.useEffect(() => {
+    if (timeLeft > 0 && !showResult && !quizCompleted && questions.length) {
+      const timer = setTimeout(() => setTimeLeft(t => t - 1), 1000);
       return () => clearTimeout(timer);
-    } else if (timeLeft === 0 && !showResult) {
+    } else if (timeLeft === 0 && !showResult && questions.length) {
       handleAnswerSubmit();
     }
-  }, [timeLeft, showResult, quizCompleted]);
+  }, [timeLeft, showResult, quizCompleted, questions.length]);
 
   const handleAnswerSelect = (answerIndex) => {
     if (!showResult) setSelectedAnswer(answerIndex);
   };
 
   const handleAnswerSubmit = () => {
-    const isCorrect = selectedAnswer === questions[currentQuestion].correct;
-    if (isCorrect) setScore(score + 1);
+    if (!questions.length) return;
+    const selected = selectedAnswer;
     setShowResult(true);
+    // Update answers immediately
+    setAnswers(prev => {
+      const next = [...prev];
+      next[currentQuestion] = selected;
+      return next;
+    });
     setTimeout(() => {
       if (currentQuestion + 1 < questions.length) {
-        setCurrentQuestion(currentQuestion + 1);
+        setCurrentQuestion(q => q + 1);
         setSelectedAnswer(null);
         setShowResult(false);
-        setTimeLeft(30);
+        setTimeLeft(prev => prev); // keep remaining time; alternatively reset per question
       } else {
-        setQuizCompleted(true);
-        const finalScore = isCorrect ? score + 1 : score;
-        const xpEarned = finalScore * questions[0].xp;
-        toast.success(`Quiz completed! You earned ${xpEarned} XP!`);
+        // Build a finalized answers array to avoid state timing issues
+        submitAttempt();
       }
-    }, 2000);
+    }, 800);
   };
 
-  if (quizCompleted) {
+  const submitAttempt = async () => {
+    if (!quizId || !questions.length) return;
+    try {
+      setSubmitting(true);
+      // Construct full answers array now (in case state not fully flushed)
+      const finalAnswers = (() => {
+        const arr = [...answers];
+        for (let i = 0; i < questions.length; i++) {
+          if (arr[i] == null) arr[i] = -1; // mark unanswered
+        }
+        return arr;
+      })();
+      const res = await api.post(`/content/quizzes/${quizId}/attempt`, {
+        answers: finalAnswers,
+        timeTaken: (quiz?.timeLimit ? quiz.timeLimit * 60 : 30) - timeLeft
+      });
+      if (res.data?.success) {
+        const attemptScore = res.data.data.attempt?.score ?? res.data.data.score;
+        setScore(attemptScore); // store percentage
+        if (res.data.data.user?.xp != null) {
+          updateUserXP({ xp: res.data.data.user.xp });
+        }
+        // Build review data from response (questions include correctAnswer & selection)
+        setAttemptReview({
+          attempt: res.data.data.attempt,
+          questions: res.data.data.questions
+        });
+        toast.success(`Quiz submitted! Score ${attemptScore}%`);
+      } else {
+        toast.error(res.data?.message || 'Failed to submit attempt');
+      }
+    } catch (e) {
+      toast.error(e.response?.data?.message || 'Error submitting attempt');
+    } finally {
+      setQuizCompleted(true);
+      setSubmitting(false);
+    }
+  };
+
+  if (loading) {
     return (
       <div className="min-h-screen bg-app text-app">
         <Navbar borderClass="border-brand-border" />
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+          <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-brand-purple mx-auto"></div>
+          <p className="mt-6 text-gray-500">Loading quiz...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-app text-app">
+        <Navbar borderClass="border-brand-border" />
+        <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+          <h2 className="text-2xl font-semibold text-brand-dark mb-4">Unable to load quiz</h2>
+          <p className="text-gray-500 mb-6">{error}</p>
+          <Link to="/dashboard" className="inline-block bg-brand-dark text-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-800">Back to Dashboard</Link>
+        </div>
+      </div>
+    );
+  }
+
+  if (!questions.length) {
+    return (
+      <div className="min-h-screen bg-app text-app">
+        <Navbar borderClass="border-brand-border" />
+        <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+          <h2 className="text-2xl font-semibold text-brand-dark mb-4">No questions available</h2>
+          <p className="text-gray-500 mb-6">This quiz currently has no questions to display.</p>
+          <Link to="/dashboard" className="inline-block bg-brand-dark text-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-800">Back to Dashboard</Link>
+        </div>
+      </div>
+    );
+  }
+
+  if (quizCompleted && attemptReview) {
+    // Review screen (either after submit or revisiting attempted quiz)
+    return (
+      <div className="min-h-screen bg-app text-app">
+        <Navbar borderClass="border-brand-border" />
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="glass neon-card bg-white/5 rounded-2xl p-8 border border-brand-border text-center"
+            className="glass neon-card bg-white/5 rounded-2xl p-8 border border-brand-border"
           >
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Check className="w-8 h-8 text-green-600" />
-            </div>
-            <h2 className="text-3xl font-bold text-brand-dark mb-2">Quiz Completed!</h2>
-            <p className="text-lg text-gray-500 mb-6">You scored {score} out of {questions.length} correct.</p>
-            <div className="flex items-center justify-center space-x-6 mb-8">
-              <div className="text-center">
-                <p className="text-2xl font-bold text-green-600">+{score * questions[0].xp}</p>
-                <p className="text-sm text-gray-500">XP Earned</p>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-4">
+              <div>
+                <h2 className="text-3xl font-bold text-brand-dark mb-2">Quiz Review</h2>
+                <p className="text-gray-500">You scored <span className="font-semibold text-brand-dark">{score}%</span>. Below is your answer breakdown.</p>
               </div>
-              <div className="text-center">
-                <p className="text-2xl font-bold text-brand-purple">{((score / questions.length) * 100).toFixed(0)}%</p>
-                <p className="text-sm text-gray-500">Accuracy</p>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => navigate('/quiz-list')}
+                  className="bg-brand-dark text-white px-4 py-2 rounded-xl font-semibold hover:bg-gray-800 transition-all"
+                >
+                  Back to Quizzes
+                </button>
+                <Link
+                  to="/dashboard"
+                  className="bg-gray-100 text-gray-700 px-4 py-2 rounded-xl font-semibold hover:bg-gray-200 transition-all"
+                >
+                  Dashboard
+                </Link>
               </div>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() => window.location.reload()}
-                className="bg-brand-dark text-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-800 transition-all"
-              >
-                Take Another Quiz
-              </button>
-              <Link
-                to="/dashboard"
-                className="bg-gray-100 text-gray-700 px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition-all"
-              >
-                Back to Dashboard
-              </Link>
+            <div className="grid gap-6">
+              {attemptReview.questions.map((q, idx) => {
+                const correct = q.isCorrect;
+                const selected = q.selected;
+                return (
+                  <div key={idx} className={`rounded-xl border-2 p-5 ${correct ? 'border-green-400 bg-green-50/40' : 'border-red-300 bg-red-50/40'}`}>
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="font-semibold text-brand-dark text-lg">Q{idx + 1}. {q.question}</h3>
+                      <div className={`text-xs font-semibold px-2 py-1 rounded ${correct ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>{correct ? 'Correct' : 'Incorrect'}</div>
+                    </div>
+                    <ul className="space-y-2">
+                      {q.options.map((opt, oIdx) => {
+                        const isCorrectAnswer = oIdx === q.correctAnswer;
+                        const isSelected = oIdx === selected;
+                        let cls = 'px-3 py-2 rounded-lg border text-sm flex items-center gap-2 ';
+                        if (isCorrectAnswer) cls += 'border-green-500 bg-green-50';
+                        else cls += 'border-brand-border bg-white/40';
+                        if (isSelected && !isCorrectAnswer) cls += ' ring-2 ring-red-300';
+                        if (isSelected && isCorrectAnswer) cls += ' ring-2 ring-green-300';
+                        return (
+                          <li key={oIdx} className={cls}>
+                            <span className="font-mono text-xs w-6 h-6 flex items-center justify-center rounded-full bg-gray-100 text-gray-600">{String.fromCharCode(65 + oIdx)}</span>
+                            <span className="flex-1">{opt}</span>
+                            {isCorrectAnswer && <span className="text-green-600 font-medium text-xs">Correct</span>}
+                            {isSelected && !isCorrectAnswer && <span className="text-red-600 font-medium text-xs">Your choice</span>}
+                            {isSelected && isCorrectAnswer && <span className="text-green-600 font-medium text-xs">Your choice</span>}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                );
+              })}
             </div>
           </motion.div>
         </div>
@@ -107,7 +277,7 @@ function QuizPage() {
       <Navbar borderClass="border-brand-border" />
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="flex items-center justify-between mb-4 text-sm">
-          <Link to="/dashboard" className="flex items-center space-x-2 text-gray-500 hover:text-brand-dark">
+          <Link to="/quiz-list" className="flex items-center space-x-2 text-gray-500 hover:text-brand-dark">
             <ArrowLeft className="w-4 h-4" />
             <span>Exit Quiz</span>
           </Link>
@@ -129,6 +299,16 @@ function QuizPage() {
             transition={{ duration: 0.5 }}
           />
         </div>
+        {/* Quiz metadata header */}
+        {quiz && (
+          <div className="mb-6 text-sm text-gray-600 flex flex-wrap gap-4">
+            <div><span className="font-semibold text-brand-dark">Title:</span> {quiz.title}</div>
+            {quiz.language && <div><span className="font-semibold text-brand-dark">Language:</span> {quiz.language.toUpperCase()}</div>}
+            {quiz.difficulty && <div><span className="font-semibold text-brand-dark">Difficulty:</span> {quiz.difficulty}</div>}
+            {quiz.sequence && <div><span className="font-semibold text-brand-dark">Sequence:</span> {quiz.sequence}</div>}
+            <div><span className="font-semibold text-brand-dark">Quiz ID:</span> <code className="text-xs bg-gray-100 px-1 py-0.5 rounded">{quiz._id}</code></div>
+          </div>
+        )}
         <motion.div
           key={currentQuestion}
           initial={{ opacity: 0, y: 20 }}
@@ -146,8 +326,7 @@ function QuizPage() {
             {current.options.map((option, index) => {
               let optionClass = "w-full p-4 text-left rounded-xl border-2 transition-all font-medium ";
               if (showResult) {
-                if (index === current.correct) optionClass += "border-green-500 bg-green-50 text-green-700";
-                else if (index === selectedAnswer) optionClass += "border-red-500 bg-red-50 text-red-700";
+                if (index === selectedAnswer) optionClass += "border-brand-purple bg-purple-50 text-brand-purple"; // highlight selection briefly
                 else optionClass += "border-brand-border bg-gray-50 text-gray-500";
               } else if (selectedAnswer === index) {
                 optionClass += "border-brand-purple bg-purple-50 text-brand-purple";
@@ -161,14 +340,17 @@ function QuizPage() {
               );
             })}
           </div>
-          <div className="mt-8">
+          <div className="mt-8 flex gap-3">
             <button
               onClick={handleAnswerSubmit}
-              disabled={selectedAnswer === null || showResult}
-              className="w-full bg-brand-dark text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition-all disabled:opacity-50"
+              disabled={selectedAnswer === null || showResult || submitting}
+              className="flex-1 bg-brand-dark text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition-all disabled:opacity-50"
             >
-              {showResult ? (selectedAnswer === current.correct ? 'Correct!' : 'Incorrect') : 'Submit Answer'}
+              {currentQuestion + 1 === questions.length ? 'Submit Quiz' : 'Next'}
             </button>
+            {process.env.NODE_ENV !== 'production' && (
+              <div className="text-xs text-gray-400 self-center">Answered {answers.filter(a => a != null).length}/{questions.length}</div>
+            )}
           </div>
         </motion.div>
       </div>

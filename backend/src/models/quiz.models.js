@@ -97,6 +97,20 @@ const quizSchema = new Schema(
             type: Number,
             default: 0,
         },
+        // Sequence (level) ordering within a given language + difficulty track
+        sequence: {
+            type: Number,
+            default: 1,
+            min: 1,
+            index: true,
+        },
+        // Minimum percentage score required to unlock the next sequence quiz
+        minScoreToUnlockNext: {
+            type: Number,
+            default: 60, // 60%
+            min: 0,
+            max: 100,
+        },
     },
     { timestamps: true }
 );
@@ -111,6 +125,10 @@ quizSchema.pre('save', function(next) {
 
 // Index for searching
 quizSchema.index({ title: 'text', description: 'text', tags: 'text' });
+// Compound index to speed up language+difficulty active quiz filtering
+quizSchema.index({ language: 1, difficulty: 1, isActive: 1 });
+// Index for progression ordering queries
+quizSchema.index({ language: 1, difficulty: 1, sequence: 1 });
 
 // Human friendly language name virtual
 const LANGUAGE_MAP = {
