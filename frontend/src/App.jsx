@@ -12,6 +12,8 @@ import ProfilePage from './pages/ProfilePage';
 import LeaderboardPage from './pages/LeaderboardPage';
 import QuizPage from './pages/QuizPage';
 import QuizListByLanguage from './pages/QuizListByLanguage';
+import WritingChallengeList from './components/WritingChallengeList';
+import WritingChallenge from './components/WritingChallenge';
 import AdminPage from './pages/AdminPage';
 import OAuthCallback from './pages/OAuthCallback';
 import { Toaster } from 'react-hot-toast';
@@ -40,6 +42,8 @@ function App() {
               <Route path="/quiz" element={<QuizPage />} />
               <Route path="/quiz/:quizId" element={<QuizPage />} />
               <Route path="/quiz-list" element={<QuizListByLanguage />} />
+              <Route path="/challenges/writing" element={<WritingChallengeList />} />
+              <Route path="/challenges/writing/:challengeId" element={<WritingChallenge />} />
               <Route path="/admin" element={<AdminPage />} />
             </Route>
             

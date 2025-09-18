@@ -2,59 +2,52 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
 import Navbar from '../components/Navbar';
-import { Trophy, Zap, Star } from 'lucide-react';
+import { Trophy, Zap, Star, RefreshCcw, AlertCircle } from 'lucide-react';
+import { computeLevel } from '../utils/level';
+import { fetchLeaderboard } from '../services/leaderboardAPI';
 
 function LeaderboardPage() {
   const { user } = useAuth();
   const [leaderboardData, setLeaderboardData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // Lightweight name generator to avoid adding faker dependency
-  const randomName = () => {
-    const first = [
-      'Alex','Sam','Jamie','Taylor','Jordan','Casey','Riley','Cameron','Morgan','Avery',
-      'Quinn','Drew','Hayden','Logan','Rowan','Parker','Reese','Blake','Elliot','Harper'
-    ];
-    const last = [
-      'Johnson','Smith','Brown','Williams','Davis','Miller','Wilson','Moore','Taylor','Anderson',
-      'Thomas','Jackson','White','Harris','Martin','Thompson','Garcia','Martinez','Robinson','Clark'
-    ];
-    return `${first[Math.floor(Math.random()*first.length)]} ${last[Math.floor(Math.random()*last.length)]}`;
-  };
-
-  const makeMockPlayer = () => {
-    const seed = Math.random().toString(36).slice(2);
-    return {
-      id: seed,
-      name: randomName(),
-      avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=${seed}`,
-      xp: Math.floor(500 + Math.random() * 9500),
-      level: Math.floor(1 + Math.random() * 40)
-    };
-  };
+  const toPlayerShape = (doc) => ({
+    id: doc._id || doc.id,
+    name: doc.fullName || doc.username || 'Unknown',
+    avatar: doc.profileImage || `https://api.dicebear.com/7.x/avataaars/svg?seed=${doc._id || doc.id}`,
+    xp: doc.xp ?? 0,
+    level: computeLevel(doc.xp ?? 0),
+    rank: doc.rank
+  });
 
   const currentUserEntry = useMemo(() => {
     if (!user) return null;
     const id = user.id || user._id || 'me';
     const name = user.fullName || user.username || user.name || 'You';
     const avatar = user.profileImage || user.avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${id}`;
-    const xp = user.xp ?? Math.floor(1000 + Math.random() * 4000);
-    const level = user.level ?? Math.max(1, Math.floor(xp / 250));
+    const xp = user.xp ?? 0;
+    const level = computeLevel(xp);
     return { id, name, avatar, xp, level };
   }, [user]);
 
   useEffect(() => {
-    let data = Array.from({ length: 20 }, () => makeMockPlayer());
-    if (currentUserEntry) {
-      // If current user exists in mock list, update it; otherwise append
-      const idx = data.findIndex(p => p.id === currentUserEntry.id);
-      if (idx >= 0) {
-        data[idx] = { ...data[idx], ...currentUserEntry };
-      } else {
-        data.push(currentUserEntry);
+    let ignore = false;
+    const load = async () => {
+      setLoading(true); setError(null);
+      try {
+        const { leaderboard } = await fetchLeaderboard({ limit: 50 });
+        if (ignore) return;
+        const players = (leaderboard || []).map(toPlayerShape);
+        setLeaderboardData(players);
+      } catch (e) {
+        if (!ignore) setError(e.message || 'Failed to load leaderboard');
+      } finally {
+        if (!ignore) setLoading(false);
       }
-    }
-    data.sort((a, b) => b.xp - a.xp);
-    setLeaderboardData(data);
+    };
+    load();
+    return () => { ignore = true; };
   }, [currentUserEntry]);
 
   const getRankColor = (rank) => {
@@ -81,8 +74,36 @@ function LeaderboardPage() {
         </motion.div>
 
         <div className="space-y-3">
+          {loading && (
+            <div className="p-6 text-center rounded-xl border border-brand-border glass animate-pulse">
+              <p className="text-sm text-gray-500">Loading leaderboard...</p>
+            </div>
+          )}
+          {error && !loading && (
+            <div className="p-4 flex items-center space-x-3 rounded-xl border border-red-300 bg-red-50 text-red-700">
+              <AlertCircle className="w-5 h-5" />
+              <div className="flex-1 text-left">
+                <p className="font-semibold">Could not load leaderboard</p>
+                <p className="text-xs opacity-80">{error}</p>
+              </div>
+              <button onClick={() => { setError(null); setLoading(true); setTimeout(()=>{
+                // Re-trigger effect by updating dependency (simple manual call)
+                fetchLeaderboard({ limit: 50 }).then(({ leaderboard }) => {
+                  const players = (leaderboard || []).map(toPlayerShape);
+                  setLeaderboardData(players); setLoading(false);
+                }).catch(err => { setError(err.message); setLoading(false); });
+              }, 50); }} className="text-xs inline-flex items-center gap-1 px-3 py-1.5 rounded-md bg-brand-purple text-white hover:opacity-90">
+                <RefreshCcw className="w-3 h-3" /> Retry
+              </button>
+            </div>
+          )}
+          {!loading && !error && leaderboardData.length === 0 && (
+            <div className="p-6 text-center rounded-xl border border-brand-border glass">
+              <p className="text-sm text-gray-500">No leaderboard data yet. Start completing quizzes to earn XP!</p>
+            </div>
+          )}
           {leaderboardData.map((player, index) => {
-            const rank = index + 1;
+            const rank = player.rank || index + 1;
             const current = isCurrentUser(player);
 
             return (
@@ -110,7 +131,7 @@ function LeaderboardPage() {
                 </div>
                 <div className="flex items-center space-x-1.5 font-bold text-lg text-inherit">
                   <Zap className="w-5 h-5 text-yellow-500" />
-                  <span>{player.xp.toLocaleString()}</span>
+                  <span>{player.xp?.toLocaleString?.() || 0}</span>
                 </div>
               </motion.div>
             );

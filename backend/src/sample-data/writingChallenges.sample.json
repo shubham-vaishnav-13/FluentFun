@@ -1,0 +1,152 @@
+[
+  {
+    "language": "en",
+    "title": "My Most Memorable Day",
+    "description": "Write a short reflective essay about a single day that significantly influenced you.",
+    "prompt": "Describe one memorable day in your life. Focus on what happened, how you felt, and why it still matters. Use clear paragraphs: introduction, key moments (2–3), and a short conclusion reflecting on lessons learned.",
+    "category": "essay",
+    "difficulty": "beginner",
+    "wordLimit": { "min": 120, "max": 200 },
+    "timeLimit": 30,
+    "rubric": [
+      { "name": "Content Relevance", "weight": 30, "description": "Stays on topic; addresses prompt fully." },
+      { "name": "Organization", "weight": 20, "description": "Clear paragraphing and logical flow." },
+      { "name": "Language Clarity", "weight": 20, "description": "Simple, understandable sentences." },
+      { "name": "Grammar & Mechanics", "weight": 15, "description": "Few basic errors (spelling, punctuation)." },
+      { "name": "Reflection", "weight": 15, "description": "Shows feelings or lesson learned." }
+    ],
+    "keyPoints": ["Introduce context (when & where)", "Describe 2–3 vivid moments", "Explain feelings and impact"],
+    "instructions": [
+      "Aim for 3–5 short paragraphs.",
+      "Keep sentences simple and clear.",
+      "Avoid repeating the same verbs."
+    ],
+    "tips": [
+      "Past tense is expected for events.",
+      "Use one emotion word per paragraph to avoid repetition."
+    ],
+    "targetVocabulary": ["memorable", "influence", "reflect", "moment", "lesson"],
+    "sampleResponse": "The most memorable day of my life was the first time I spoke on stage...",
+    "tags": ["beginner", "memory", "reflection", "personal"],
+    "isActive": true,
+    "createdBy": "ADMIN_USER_ID"
+  },
+  {
+    "language": "hi",
+    "title": "एक रहस्यमय सुबह",
+    "description": "रचनात्मक शैली में एक ऐसी सुबह का वर्णन कीजिए जो सामान्य नहीं थी।",
+    "prompt": "कल्पना कीजिए कि आप सुबह उठे और शहर बिलकुल शांत था। कोई वाहन, कोई शोर नहीं। आपने क्या देखा, क्या महसूस किया और आगे क्या हुआ? दृश्य, ध्वनि (या उसकी कमी), और भावनात्मक बदलावों पर ध्यान दें।",
+    "category": "creative",
+    "difficulty": "intermediate",
+    "wordLimit": { "min": 180, "max": 320 },
+    "timeLimit": 40,
+    "rubric": [
+      { "name": "कल्पनाशीलता", "weight": 25, "description": "रचनात्मक और मौલિક विचार" },
+      { "name": "वर्णनात्मक शैली", "weight": 25, "description": "इंद्रियों का प्रयोग (दृश्य, ध्वनि, गंध)" },
+      { "name": "संरचना", "weight": 20, "description": "आरंभ, मध्य, निष्कर्ष स्पष्ट" },
+      { "name": "भाषाई शुद्धता", "weight": 15, "description": "व्याकरण और वर्तनी" },
+      { "name": "भावनात्मक गहराई", "weight": 15, "description": "भावनाओं का सूक्ष्म प्रदर्शन" }
+    ],
+    "keyPoints": ["असामान्य चुप्पी", "अंतरंग भाव", "अंत में खुलासा / संकेत"],
+    "instructions": ["सीधे क्रिया से शुरुआत करें", "अत्यधिक विशेषणों से बचें", "अंत में किसी परिवर्तन का संकेत दें"],
+    "tips": ["भविष्यसूचक संकेत जोड़ें", "प्रसંગ में वातावरण का चित्र बनाएं"],
+    "targetVocabulary": ["रहस्यमय", "शांत", "स्पंदन", "अनुभूति", "परत"],
+    "tags": ["creative", "hindi", "imagination"],
+    "isActive": true,
+    "createdBy": "ADMIN_USER_ID"
+  },
+  {
+    "language": "gu",
+    "title": "મારો પ્રિય તહેવાર",
+    "description": "તમારો મનપસંદ તહેવાર કયો છે અને શા માટે તે ખાસ છે તે લખો.",
+    "prompt": "તમારો પસંદીદા તહેવાર પસંદ કરો (જેમ કે દ્વારકા, ઉત્સવ, દિવાળી). તે દિવસ કેવો લાગે છે? તમે અને તમારો પરિવાર શું તૈયારીઓ કરો છો? અંતમાં શા માટે આ તહેવાર તમને ગમે છે તે લખો.",
+    "category": "informal",
+    "difficulty": "beginner",
+    "wordLimit": { "min": 110, "max": 190 },
+    "timeLimit": 25,
+    "rubric": [
+      { "name": "વિષય સંબંધિતા", "weight": 35, "description": "પ્રોમ્પ્ટ મુજબ લખાણ" },
+      { "name": "સરળ ભાષા", "weight": 20, "description": "સ્પષ્ટ અને સરળ વાક્ય રચના" },
+      { "name": "રચના", "weight": 15, "description": "પ્રારંભ, મધ્ય, અંત" },
+      { "name": "શબ્દસંપત્તિ", "weight": 15, "description": "યોગ્ય શબ્દચયન" },
+      { "name": "વ્યાકરણ", "weight": 15, "description": "મૂળભૂત ભૂલો ઓછી" }
+    ],
+    "instructions": ["3–4 ફકરા રાખો", "પ્રત્યેક ફકરામાં 2–3 મુખ્ય વાક્યો", "અંતમાં કારણ સ્પષ્ટ કરો"],
+    "tips": ["એક જ શબ્દનું પુનરાવર્તન ટાળો", "વર્ણનાત્મક શબ્દોનો મર્યાદિત ઉપયોગ કરો"],
+    "targetVocabulary": ["ઉત્સવ", "પ્રકાશ", "આનંદ", "પરંપરા", "તૈયારી"],
+    "tags": ["festival", "informal", "gujarati"],
+    "isActive": true,
+    "createdBy": "ADMIN_USER_ID"
+  },
+  {
+    "language": "fr",
+    "title": "Impact des Réseaux Sociaux sur la Concentration",
+    "description": "Rédigez un essai argumentatif sur l'effet des réseaux sociaux sur la capacité de concentration des jeunes adultes.",
+    "prompt": "Analysez dans quelle mesure l’utilisation fréquente des réseaux sociaux influence les mécanismes de concentration et de gestion cognitive. Présentez une thèse claire, deux à trois arguments soutenus par des exemples ou études, envisagez une objection, puis concluez avec une ouverture.",
+    "category": "academic",
+    "difficulty": "advanced",
+    "wordLimit": { "min": 450, "max": 750 },
+    "timeLimit": 70,
+    "rubric": [
+      { "name": "Thèse & Clarté", "weight": 20, "description": "Position explicite dès l'introduction" },
+      { "name": "Argumentation", "weight": 25, "description": "Arguments logiques et structurés" },
+      { "name": "Evidence & Références", "weight": 20, "description": "Exemples convaincants / études" },
+      { "name": "Contre-argument", "weight": 15, "description": "Objection traitée rigoureusement" },
+      { "name": "Style & Langue", "weight": 20, "description": "Register académique, grammaire solide" }
+    ],
+    "keyPoints": ["Thèse claire", "Arguments hiérarchisés", "Objection traitée", "Conclusion ouverte"],
+    "instructions": ["Pas de liste à puces", "Transitions logiques", "Éviter les généralisations non sourcées"],
+    "tips": ["Utiliser des connecteurs: cependant, toutefois, par conséquent", "Limiter les phrases > 30 mots"],
+    "targetVocabulary": ["plasticité", "cognitive", "dispersion", "dopamine", "attention soutenue"],
+    "sampleResponse": "L’impact des réseaux sociaux sur la concentration suscite un débat croissant...",
+    "tags": ["academic", "attention", "réseaux-sociaux", "advanced"],
+    "isActive": true,
+    "createdBy": "ADMIN_USER_ID"
+  },
+  {
+    "language": "es",
+    "title": "Correo de Seguimiento a un Cliente",
+    "description": "Redacta un correo profesional de seguimiento después de una reunión inicial con un posible cliente.",
+    "prompt": "Imagina que tuviste una videollamada introductoria con una empresa interesada en tus servicios de consultoría. Escribe un correo de seguimiento: agradece el tiempo, resume necesidades clave, propone próximos pasos concretos y cierra invitando a confirmar una fecha.",
+    "category": "business",
+    "difficulty": "intermediate",
+    "wordLimit": { "min": 180, "max": 260 },
+    "timeLimit": 35,
+    "rubric": [
+      { "name": "Tono Profesional", "weight": 25, "description": "Cortesía y formalidad adecuadas" },
+      { "name": "Claridad de Objetivo", "weight": 20, "description": "Propósito explícito del correo" },
+      { "name": "Resumen de Reunión", "weight": 20, "description": "Necesidades clave bien sintetizadas" },
+      { "name": "Próximos Pasos", "weight": 20, "description": "Acciones accionables y fechas tentativas" },
+      { "name": "Corrección Lingüística", "weight": 15, "description": "Ortografía y gramática" }
+    ],
+    "instructions": ["Saludo formal inicial", "Un solo párrafo de resumen", "Lista breve de acciones (máx 3)"],
+    "tips": ["Evitar coloquialismos", "Usar cierre profesional (Atentamente / Cordialmente)"],
+    "targetVocabulary": ["seguimiento", "agenda", "propuesta", "confirmar", "implementación"],
+    "tags": ["business", "email", "spanish"],
+    "isActive": true,
+    "createdBy": "ADMIN_USER_ID"
+  },
+  {
+    "language": "de",
+    "title": "Formeller Beschwerdebrief über Lieferverzögerungen",
+    "description": "Schreiben Sie einen professionellen Beschwerdebrief an einen Lieferanten wegen wiederholter Verzögerungen.",
+    "prompt": "Sie vertreten ein mittelständisches Unternehmen. Drei Bestellungen in Folge trafen 10–14 Tage später als vereinbart ein. Verfassen Sie einen formellen Brief: (1) Kontext & Referenzen, (2) Beschreibung der Abweichungen, (3) Auswirkungen, (4) Forderungen, (5) Hinweis auf zukünftige Geschäftsbeziehung.",
+    "category": "formal",
+    "difficulty": "advanced",
+    "wordLimit": { "min": 320, "max": 480 },
+    "timeLimit": 55,
+    "rubric": [
+      { "name": "Struktur & Aufbau", "weight": 20, "description": "Logische Absatzgliederung" },
+      { "name": "Formeller Ton", "weight": 20, "description": "Höflich aber bestimmt" },
+      { "name": "Sachlichkeit & Präzision", "weight": 20, "description": "Konkrete Daten und Auswirkungen" },
+      { "name": "Forderungen & Lösungsorientierung", "weight": 25, "description": "Klare Erwartungen / Vorschläge" },
+      { "name": "Sprachrichtigkeit", "weight": 15, "description": "Grammatik / Orthographie" }
+    ],
+    "instructions": ["Kein Umgangston", "Emotionale Übertreibungen vermeiden", "Konkrete Datumsangaben falls möglich"],
+    "tips": ["Modalverben diplomatisch nutzen (sollte, müsste)", "Aktive Formulierungen bevorzugen"],
+    "targetVocabulary": ["Verzug", "Lieferkette", "Verlässlichkeit", "Eskalation", "Kulanz"],
+    "tags": ["formal", "complaint", "german", "supply"],
+    "isActive": true,
+    "createdBy": "ADMIN_USER_ID"
+  }
+]
