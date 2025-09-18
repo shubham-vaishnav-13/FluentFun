@@ -358,18 +358,137 @@ export const getAllWritingChallenges = asyncHandler(async (req, res) => {
 });
 
 export const createWritingChallenge = asyncHandler(async (req, res) => {
-    const challengeData = {
-        ...req.body,
-        createdBy: req.user._id
-    };
+    // Support both single object and array bulk import
+    const payload = req.body;
 
-    const challenge = await WritingChallenge.create(challengeData);
-    const populatedChallenge = await WritingChallenge.findById(challenge._id)
-        .populate('createdBy', 'username fullName');
+    if (Array.isArray(payload)) {
+        if (payload.length === 0) {
+            throw new ApiError(400, 'Empty array payload');
+        }
+        // Normalize and attach createdBy
+        const docs = payload.map((c, idx) => ({
+            ...c,
+            createdBy: req.user._id,
+        }));
 
-    return res.status(201).json(
-        new ApiResponse(201, populatedChallenge, "Writing challenge created successfully")
-    );
+        // Validate rubric weights early (mirrors pre hook but gives aggregated feedback)
+        for (const [i, d] of docs.entries()) {
+            if (!d.rubric || d.rubric.length === 0) {
+                throw new ApiError(400, `Item ${i} missing rubric array`);
+            }
+            const sum = d.rubric.reduce((a, r) => a + (r.weight || 0), 0);
+            if (Math.abs(sum - 100) > 0.0001) {
+                throw new ApiError(400, `Item ${i} rubric weights must sum to 100 (got ${sum})`);
+            }
+        }
+
+        try {
+            const inserted = await WritingChallenge.insertMany(docs, { ordered: false });
+            const populated = await WritingChallenge.find({ _id: { $in: inserted.map(d => d._id) } })
+                .populate('createdBy', 'username fullName');
+            return res.status(201).json(new ApiResponse(201, { count: populated.length, challenges: populated }, 'Writing challenges imported successfully'));
+        } catch (err) {
+            // If some failed due to validation, collect messages
+            if (err.writeErrors) {
+                const details = err.writeErrors.map(e => ({ index: e.index, error: e.errmsg || e.message }));
+                return res.status(207).json(new ApiResponse(207, { partial: true, errors: details }, 'Partial import: some documents failed'));
+            }
+            throw err;
+        }
+    } else {
+        // ---- SINGLE DOCUMENT PATH ----
+        // Defensive normalization (trim & lower where appropriate)
+        const normalizeCategory = (val) => (val || '').toString().trim();
+        const normalizeDifficulty = (val) => (val || '').toString().trim().toLowerCase();
+        const normalizeLanguage = (val) => (val || '').toString().trim().toLowerCase();
+        const allowedCategories = ['essay','creative','formal','informal','academic','business','descriptive','reflective','analytical'];
+        const allowedDifficulties = ['beginner','intermediate','advanced'];
+        const allowedLanguages = ['en','hi','gu','fr','es','de'];
+
+        const incomingRubric = Array.isArray(payload.rubric) ? payload.rubric : [];
+        const challengeData = {
+            title: (payload.title || '').trim(),
+            description: (payload.description || '').trim(),
+            prompt: (payload.prompt || payload.description || '').trim(),
+            category: normalizeCategory(payload.category),
+            difficulty: normalizeDifficulty(payload.difficulty),
+            language: normalizeLanguage(payload.language),
+            wordLimit: payload.wordLimit && typeof payload.wordLimit === 'object' ? {
+                min: Number(payload.wordLimit.min),
+                max: Number(payload.wordLimit.max)
+            } : undefined,
+            timeLimit: Number(payload.timeLimit),
+            rubric: incomingRubric.map(r => ({
+                name: (r.name || '').trim(),
+                weight: Number(r.weight),
+                description: r.description?.toString().trim() || ''
+            })),
+            keyPoints: Array.isArray(payload.keyPoints) ? payload.keyPoints : [],
+            instructions: Array.isArray(payload.instructions) ? payload.instructions : [],
+            tips: Array.isArray(payload.tips) ? payload.tips : [],
+            targetVocabulary: Array.isArray(payload.targetVocabulary) ? payload.targetVocabulary : [],
+            tags: Array.isArray(payload.tags) ? payload.tags : [],
+            isActive: payload.isActive !== false,
+            createdBy: req.user._id
+        };
+
+        // Pre-flight validation (mirrors schema) to catch & report clearly
+        const errors = [];
+        if (!challengeData.title) errors.push('title is required');
+        if (!challengeData.description) errors.push('description is required');
+        if (!challengeData.prompt) errors.push('prompt is required');
+        if (!allowedCategories.includes(challengeData.category)) errors.push(`category '${challengeData.category}' invalid`);
+        if (!allowedDifficulties.includes(challengeData.difficulty)) errors.push(`difficulty '${challengeData.difficulty}' invalid`);
+        if (!allowedLanguages.includes(challengeData.language)) errors.push(`language '${challengeData.language}' invalid`);
+        if (!challengeData.wordLimit || isNaN(challengeData.wordLimit.min) || isNaN(challengeData.wordLimit.max)) {
+            errors.push('wordLimit.min & wordLimit.max required');
+        } else {
+            if (!Number.isInteger(challengeData.wordLimit.min) || !Number.isInteger(challengeData.wordLimit.max)) errors.push('wordLimit values must be integers');
+            if (challengeData.wordLimit.min < 50) errors.push('wordLimit.min must be >= 50');
+            if (challengeData.wordLimit.max > 2000) errors.push('wordLimit.max must be <= 2000');
+            if (challengeData.wordLimit.min >= challengeData.wordLimit.max) errors.push('wordLimit.min must be < wordLimit.max');
+        }
+        if (!Number.isInteger(challengeData.timeLimit)) errors.push('timeLimit must be integer');
+        else if (challengeData.timeLimit < 15 || challengeData.timeLimit > 180) errors.push('timeLimit must be between 15 and 180');
+
+        if (!challengeData.rubric.length) errors.push('rubric required (non-empty array)');
+        else {
+            const sum = challengeData.rubric.reduce((a,r)=>a + (r.weight || 0), 0);
+            if (Math.abs(sum - 100) > 0.0001) errors.push(`rubric weights must sum 100 (got ${sum})`);
+            const normNames = challengeData.rubric.map(r=>r.name.toLowerCase());
+            const dups = normNames.filter((n,i)=>normNames.indexOf(n)!==i);
+            if (dups.length) errors.push(`duplicate rubric names: ${[...new Set(dups)].join(', ')}`);
+        }
+
+        if (errors.length) {
+            if (process.env.NODE_ENV !== 'production') {
+                console.warn('[createWritingChallenge:preflight] Rejecting payload', { title: challengeData.title, language: challengeData.language, errors });
+            }
+            throw new ApiError(400, 'Preflight validation failed: ' + errors.join('; '));
+        }
+
+        try {
+            const challenge = await WritingChallenge.create(challengeData);
+            const populatedChallenge = await WritingChallenge.findById(challenge._id)
+                .populate('createdBy', 'username fullName');
+
+            return res.status(201).json(
+                new ApiResponse(201, populatedChallenge, "Writing challenge created successfully")
+            );
+        } catch (err) {
+            if (process.env.NODE_ENV !== 'production') {
+                console.error('[createWritingChallenge:single] error', {
+                    message: err.message,
+                    name: err.name,
+                    errors: err.errors && Object.values(err.errors).map(e=>e.message)
+                });
+            }
+            if (err.name === 'ValidationError') {
+                throw new ApiError(400, 'Validation failed: ' + Object.values(err.errors).map(e=>e.message).join('; '));
+            }
+            throw new ApiError(500, 'Failed to create writing challenge');
+        }
+    }
 });
 
 export const updateWritingChallenge = asyncHandler(async (req, res) => {

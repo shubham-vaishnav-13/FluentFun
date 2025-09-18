@@ -326,11 +326,12 @@ router.get('/quizzes/:quizId/next', asyncHandler(async (req, res) => {
 
 // Get all active writing challenges
 router.get('/writing-challenges', asyncHandler(async (req, res) => {
-    const { category, difficulty, page = 1, limit = 10 } = req.query;
+    const { category, difficulty, page = 1, limit = 10, language } = req.query;
     
     const query = { isActive: true };
     if (category) query.category = category;
     if (difficulty) query.difficulty = difficulty;
+    if (language) query.language = String(language).toLowerCase();
 
     const challenges = await WritingChallenge.find(query)
         .populate('createdBy', 'username fullName')
@@ -348,6 +349,27 @@ router.get('/writing-challenges', asyncHandler(async (req, res) => {
             total
         }, "Writing challenges retrieved successfully")
     );
+}));
+
+// Get available languages for writing challenges (intersection with user preferredLanguages if any)
+router.get('/writing-challenges/languages/available', asyncHandler(async (req, res) => {
+    // Distinct languages from active challenges
+    const activeLangs = await WritingChallenge.distinct('language', { isActive: true });
+    let codes = activeLangs.map(l => String(l).toLowerCase());
+
+    // If user has preferredLanguages, intersect (but if intersection empty, fall back to all to avoid lockout)
+    if (Array.isArray(req.user?.preferredLanguages) && req.user.preferredLanguages.length) {
+        const preferred = req.user.preferredLanguages.map(l => l.toLowerCase());
+        const inter = codes.filter(c => preferred.includes(c));
+        if (inter.length) codes = inter; // only reduce if we get at least one match
+    }
+
+    // Map to objects (name resolved optionally through Language collection if exists)
+    const languageDocs = await Language.find({ code: { $in: codes } }).select('code name').lean();
+    const nameMap = new Map(languageDocs.map(l => [l.code.toLowerCase(), l.name]));
+    const payload = codes.sort().map(code => ({ code, name: nameMap.get(code) || code }));
+
+    return res.status(200).json(new ApiResponse(200, { languages: payload }, 'Available writing challenge languages'));
 }));
 
 // Get single writing challenge

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Brain, PenTool, Mic, Flame, Star, Zap, ArrowRight } from 'lucide-react';
+import { levelBoundaries } from '../utils/level';
 import { useAuth } from '../context/AuthContext';
 import Navbar from '../components/Navbar';
 import api from '../config/api.config.js';
@@ -22,22 +23,18 @@ const Dashboard = () => {
   }
 
   const name = user.fullName || user.username || user.name || 'Learner';
-  const level = user.level || 1;
   const xp = user.xp || 0;
+  const { level, currentLevelXP, nextLevelXP, progressPercent } = levelBoundaries(xp);
   const streak = user.streak || 0;
   const language = user.language || 'your language';
-  const nextLevelXP = level * 250;
-  const currentLevelXP = (level - 1) * 250;
-  const progressPercent = Math.min(((xp - currentLevelXP) / (nextLevelXP - currentLevelXP)) * 100, 100);
 
   const learningModules = [
-    { id: 'quiz', title: 'Interactive Quizzes', description: 'Test your knowledge', icon: Brain, color: 'text-brand-blue', path: '/quiz-list', xp: 25 },
-    { id: 'writing', title: 'Writing Practice', description: 'Improve with AI feedback', icon: PenTool, color: 'text-green-500', path: '/writing', xp: 50 },
-    { id: 'speaking', title: 'Speaking Challenges', description: 'Practice pronunciation', icon: Mic, color: 'text-brand-purple', path: '/speaking', xp: 75 }
+    { id: 'quiz', title: 'Interactive Quizzes', description: 'Test your knowledge', icon: Brain, color: 'text-brand-blue', path: '/quiz-list', xp: 25, available: true },
+    { id: 'writing', title: 'Writing Practice', description: 'Improve with AI feedback', icon: PenTool, color: 'text-green-500', path: '/challenges/writing', xp: 50, available: true },
+    { id: 'speaking', title: 'Speaking Challenges', description: 'Coming soon – practice pronunciation with AI', icon: Mic, color: 'text-brand-purple', path: null, xp: 75, available: false }
   ];
 
   const stats = [
-    { label: 'Current Streak', value: `${streak} days`, icon: Flame, color: 'text-orange-500' },
     { label: 'Total XP', value: xp, icon: Zap, color: 'text-yellow-500' },
     { label: 'Current Level', value: level, icon: Star, color: 'text-brand-purple' }
   ];
@@ -177,21 +174,39 @@ const Dashboard = () => {
                   const Icon = module.icon;
                   return (
                     <motion.div key={module.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}>
-                      <Link to={module.path} className="block group">
-                        <div className="bg-white rounded-2xl p-6 border border-brand-border hover:border-brand-purple transition-colors flex items-center space-x-4 neon-card">
-                          <div className={`p-3 rounded-xl bg-gray-100 ${module.color}`}>
-                            <Icon className="w-6 h-6" />
+                      {module.available ? (
+                        <Link to={module.path} className="block group">
+                          <div className="bg-white rounded-2xl p-6 border border-brand-border hover:border-brand-purple transition-colors flex items-center space-x-4 neon-card">
+                            <div className={`p-3 rounded-xl bg-gray-100 ${module.color}`}>
+                              <Icon className="w-6 h-6" />
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="font-semibold text-brand-dark">{module.title}</h3>
+                              <p className="text-sm text-gray-500">{module.description}</p>
+                            </div>
+                            <div className="flex items-center space-x-1 text-sm font-medium text-green-600">
+                              <span>+{module.xp} XP</span>
+                            </div>
+                            <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-brand-purple transition-colors" />
                           </div>
-                          <div className="flex-1">
-                            <h3 className="font-semibold text-brand-dark">{module.title}</h3>
-                            <p className="text-sm text-gray-500">{module.description}</p>
+                        </Link>
+                      ) : (
+                        <div className="block group cursor-not-allowed select-none">
+                          <div className="bg-white rounded-2xl p-6 border border-brand-border flex items-center space-x-4 neon-card opacity-80">
+                            <div className={`p-3 rounded-xl bg-gray-100 ${module.color}`}>
+                              <Icon className="w-6 h-6" />
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="font-semibold text-brand-dark">{module.title}</h3>
+                              <p className="text-sm text-gray-500">{module.description}</p>
+                            </div>
+                            <div className="flex items-center space-x-1 text-sm font-medium text-green-600">
+                              <span>+{module.xp} XP</span>
+                            </div>
+                            <ArrowRight className="w-5 h-5 text-gray-300" />
                           </div>
-                          <div className="flex items-center space-x-1 text-sm font-medium text-green-600">
-                            <span>+{module.xp} XP</span>
-                          </div>
-                          <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-brand-purple transition-colors" />
                         </div>
-                      </Link>
+                      )}
                     </motion.div>
                   );
                 })}

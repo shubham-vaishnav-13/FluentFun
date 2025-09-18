@@ -1,6 +1,7 @@
 import { asyncHandler } from "../utils/async.js";
 import { ApiError } from "../utils/ApiError.js";
 import { User } from "../models/user.models.js";
+import { QuizAttempt } from "../models/quizAttempt.models.js";
 import {
   uploadOnClodinary,
   deleteFromCloudinary,
@@ -330,4 +331,58 @@ const updateProfile = asyncHandler(async (req, res) => {
   return res.status(200).json(new ApiResponse(200, updated, 'Profile updated successfully'));
 });
 
-export { registerUser, loginUser, logoutUser, getCurrentUser, updateProfile };
+// (intermediate export removed to avoid duplication)
+
+/*
+  ===========================
+      Leaderboard (XP based)
+  ===========================
+  GET /api/users/leaderboard?limit=50&days=30
+  - limit: number of top users to return (default 50, max 200)
+  - days: optionally weight by recency of activity (quiz attempts within last N days)
+  Response: [{ _id, fullName, username, profileImage, xp, rank }]
+  Also returns current user rank if authenticated via middleware (optional chaining)
+*/
+
+const getLeaderboard = asyncHandler(async (req, res) => {
+  const limit = Math.min(parseInt(req.query.limit) || 50, 200);
+  const days = parseInt(req.query.days) || null;
+
+  // Base match: active non-admin users only
+  const match = { isActive: true, isAdmin: { $ne: true } };
+
+  // Build aggregation on User collection (xp already indexed)
+  const pipeline = [
+    { $match: match },
+    { $project: { fullName: 1, username: 1, profileImage: 1, xp: 1 } },
+    { $sort: { xp: -1, _id: 1 } },
+    { $limit: limit }
+  ];
+
+  const topUsers = await User.aggregate(pipeline);
+
+  // Map ranks
+  topUsers.forEach((u, idx) => { u.rank = idx + 1; });
+
+  let currentUserRank = null;
+  if (req.user?._id) {
+    // If current user not in top list, compute their rank separately (count users with higher xp)
+    const inTop = topUsers.find(u => String(u._id) === String(req.user._id));
+    if (inTop) {
+      currentUserRank = inTop.rank;
+    } else {
+      const userDoc = await User.findById(req.user._id).select('xp fullName username profileImage');
+      if (userDoc && !userDoc.isAdmin) { // only rank non-admin users
+        const higherCount = await User.countDocuments({ isActive: true, isAdmin: { $ne: true }, xp: { $gt: userDoc.xp } });
+        currentUserRank = higherCount + 1;
+        topUsers.push({ ...userDoc.toObject(), rank: currentUserRank });
+      }
+    }
+  }
+
+  return res.status(200).json(new ApiResponse(200, { leaderboard: topUsers, currentUserRank }, 'Leaderboard fetched successfully'));
+});
+
+// Final exports (single consolidated)
+export { registerUser, loginUser, logoutUser, getCurrentUser, updateProfile, getLeaderboard };
+

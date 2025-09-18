@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
 import { Star, Zap, Flame, Award, Edit, Camera, Sun, Moon, LogOut, Settings, Trophy, Target, Calendar, X, Save, User, Mail } from 'lucide-react';
+import { levelBoundaries } from '../utils/level';
 import toast from 'react-hot-toast';
 import Navbar from '../components/Navbar';
 
@@ -115,12 +116,9 @@ const ProfilePage = () => {
   }
 
   const name = user.fullName || user.username || user.name || 'Learner';
-  const level = user.level || 1;
   const xp = user.xp || 0;
+  const { level, currentLevelXP, nextLevelXP, progressPercent } = levelBoundaries(xp);
   const streak = user.streak || 0;
-  const nextLevelXP = level * 250;
-  const currentLevelXP = (level - 1) * 250;
-  const progressPercent = Math.min(((xp - currentLevelXP) / (nextLevelXP - currentLevelXP)) * 100, 100);
 
   const achievements = [
     { name: 'First Steps', icon: Target, unlocked: true, description: 'Complete your first lesson' },

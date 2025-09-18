@@ -1,5 +1,5 @@
 import {Router } from "express";
-import { registerUser, loginUser, logoutUser, getCurrentUser, updateProfile } from "../controllers/user.controllers.js";
+import { registerUser, loginUser, logoutUser, getCurrentUser, updateProfile, getLeaderboard } from "../controllers/user.controllers.js";
 
 import {verifyJWT} from "../middlewares/auth.middlewares.js";
 import { upload } from "../middlewares/multer.middlewares.js";
@@ -27,6 +27,9 @@ router.route("/login").post(loginUser)
 router.route("/logout").get(verifyJWT, logoutUser);
 router.route("/me").get(verifyJWT, getCurrentUser);
 router.route("/me").patch(verifyJWT, upload.fields([{ name: 'profileImage', maxCount: 1 }]), updateProfile);
+
+// Leaderboard (requires auth for now to personalize rank)
+router.route('/leaderboard').get(verifyJWT, getLeaderboard);
 
 // 981
 export default router;
