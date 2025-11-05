@@ -46,6 +46,13 @@ app.use(cookieParser())
 
 app.use(passport.initialize());
 
+app.get("/", (req, res) => {
+    res.json({ 
+        message: "MockCrux API is running",
+        status: "success",
+        timestamp: new Date().toISOString()
+    });
+});
 
 
 // routes
