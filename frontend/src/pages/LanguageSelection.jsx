@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
 import api from '../config/api.config.js';
+import { API_PATHS } from '../config/apiPaths.js';
 
 function LanguageSelection() {
   const navigate = useNavigate();
@@ -17,14 +18,14 @@ function LanguageSelection() {
     const fetchLanguages = async () => {
       try {
         setError(null);
-        const response = await api.get('/content/languages');
+        const response = await api.get(API_PATHS.CONTENT.GET_LANGUAGES);
         if (response.data.success && response.data.data) {
           setAvailableLanguages(response.data.data);
         } else {
           throw new Error('Failed to fetch languages from server');
         }
       } catch (error) {
-        console.error('Failed to fetch languages:', error);
+        // toast removed to avoid duplicate with inline error display
         setError('Unable to load languages. Please check your connection and try again.');
         // Don't set fallback languages - show error instead
       } finally {
@@ -90,7 +91,7 @@ function LanguageSelection() {
         toast.error(res.error || 'Failed to save preferences');
         return;
       } catch (err) {
-        console.error('Failed to update preferences:', err);
+  toast.error('Failed to update preferences');
         toast.error('Failed to save preferences');
         return;
       }

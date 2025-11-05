@@ -1,0 +1,122 @@
+[
+  {
+    "_id": "68a75ed084cbaf8f2b09a175",
+    "username": "yaksh12",
+    "email": "wejepih130@litepax.com",
+    "fullName": "Yaksh",
+    "profileImage": "http://res.cloudinary.com/dduwnc6xv/image/upload/v1757608947/aeckduzaxuuuo1ubw0tg.jpg",
+    "password": "$2b$10$d3wp9lx5otxwvCbYU2W3AexQvnwgTfImefja2FSW39J2Dr.n5JvFK",
+    "createdAt": "2025-08-21T18:00:48.504Z",
+    "updatedAt": "2025-09-28T08:14:29.102Z",
+    "__v": 1,
+    "isActive": true,
+    "isAdmin": false,
+    "preferredLanguages": [
+      "es",
+      "fr",
+      "en"
+    ],
+    "lastLogin": "2025-09-28T08:08:20.953Z",
+    "xp": 471
+  },
+  {
+    "_id": "68c2428d20038d334927ceaf",
+    "username": "admin",
+    "email": "admin@fluentfun.com",
+    "fullName": "FluentFun Admin",
+    "password": "$2b$10$vE8KsTl6eb7PuQbG7HwrCOOSCaofpYLpcdmjQox847vtkDHJK3EsK",
+    "isAdmin": true,
+    "isActive": true,
+    "createdAt": "2025-09-11T03:31:25.898Z",
+    "updatedAt": "2025-09-26T01:45:25.657Z",
+    "__v": 1,
+    "lastLogin": "2025-09-26T01:45:25.657Z",
+    "preferredLanguages": [
+      "es",
+      "en",
+      "fr",
+      "de",
+      "hi",
+      "gu"
+    ],
+    "xp": 64,
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OGMyNDI4ZDIwMDM4ZDMzNDkyN2NlYWYiLCJpYXQiOjE3NTg4NTExMjUsImV4cCI6MTc1OTcxNTEyNX0.hoJy05CPy1d5Oo1CWejsWb639g7jiDNmcX2mUdDAlQQ"
+  },
+  {
+    "_id": "68c2f3b4fbd7c555f4520f68",
+    "username": "jaimin123",
+    "email": "jaimin@gmail.com",
+    "fullName": "Jaimin Raval",
+    "profileImage": "http://res.cloudinary.com/dduwnc6xv/image/upload/v1757606833/l5wlozn2qpstxkxonysm.jpg",
+    "password": "$2b$10$8oy3ntW40yU4RsnmadYE3OtNJ5n5OI9TNyqdJzuO6V15FcNSm4HQC",
+    "isAdmin": false,
+    "isActive": true,
+    "createdAt": "2025-09-11T16:07:16.378Z",
+    "updatedAt": "2025-09-13T13:58:44.090Z",
+    "__v": 1,
+    "lastLogin": "2025-09-13T13:28:44.228Z",
+    "preferredLanguages": [
+      "en",
+      "fr"
+    ],
+    "xp": 33
+  },
+  {
+    "_id": "68cc39e8924bea693d9cee12",
+    "googleId": "103281672043343916161",
+    "username": "shubham13",
+    "email": "23ceubs158@ddu.ac.in",
+    "fullName": "Shubham Vaishnav",
+    "profileImage": "http://res.cloudinary.com/dduwnc6xv/image/upload/v1759461235/b15ubil9ob4ehweyhjww.jpg",
+    "preferredLanguages": [
+      "en",
+      "fr"
+    ],
+    "isAdmin": false,
+    "isActive": true,
+    "xp": 67,
+    "createdAt": "2025-09-18T16:57:12.264Z",
+    "updatedAt": "2025-10-03T03:13:56.024Z",
+    "__v": 0,
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OGNjMzllODkyNGJlYTY5M2Q5Y2VlMTIiLCJpYXQiOjE3NTk0NjEyMDcsImV4cCI6MTc2MDMyNTIwN30.eFL71Zg_nGk1lDQ-y6f7EXYlK_DWKypzG6V5j_Siwec"
+  },
+  {
+    "_id": "68ccda5034c87ba6734ea55a",
+    "username": "jeni",
+    "email": "jeni@gmail.com",
+    "fullName": "Jenisha Ribadiya",
+    "profileImage": "http://res.cloudinary.com/dduwnc6xv/image/upload/v1758255696/aejuzyiwpdpt1peocivm.jpg",
+    "preferredLanguages": [
+      "fr",
+      "en",
+      "es"
+    ],
+    "password": "$2b$10$83DWAl4ZRRQg/c1sBckDvO48cQdAhybzFZnZiITqSoS1L/OmIpJgS",
+    "isAdmin": false,
+    "isActive": true,
+    "xp": 82,
+    "createdAt": "2025-09-19T04:21:36.335Z",
+    "updatedAt": "2025-09-19T04:36:15.176Z",
+    "__v": 0,
+    "lastLogin": "2025-09-19T04:22:04.221Z"
+  },
+  {
+    "_id": "68d5efd23042f50d6af0e229",
+    "googleId": "115102002917652143862",
+    "username": "vaishnavshubham857995",
+    "email": "vaishnavshubham857@gmail.com",
+    "fullName": "Shubham Vaishnav",
+    "profileImage": "http://res.cloudinary.com/dduwnc6xv/image/upload/v1758851067/ubra7s992p64mbeuxmoi.jpg",
+    "preferredLanguages": [
+      "en",
+      "fr"
+    ],
+    "isAdmin": false,
+    "isActive": true,
+    "xp": 383,
+    "createdAt": "2025-09-26T01:43:46.980Z",
+    "updatedAt": "2025-11-03T16:57:03.851Z",
+    "__v": 0,
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OGQ1ZWZkMjMwNDJmNTBkNmFmMGUyMjkiLCJpYXQiOjE3NjIxODg4OTcsImV4cCI6MTc2MzA1Mjg5N30.xhD1R7yjEkyv2in5mml9hMQz70fEDbbNNf7DKnFYN1I"
+  }
+]

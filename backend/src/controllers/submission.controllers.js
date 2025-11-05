@@ -15,11 +15,12 @@ function countWords(text) {
 }
 
 export const createSubmission = asyncHandler(async (req, res) => {
-  console.log('Creating submission:', {
+  // Prepare submission data
+  const submissionData = {
     challengeId: req.params.challengeId,
     userId: req.user?._id,
     textLength: req.body?.text?.length
-  });
+  };
 
   const { challengeId } = req.params;
   const { text } = req.body;
@@ -52,7 +53,7 @@ export const createSubmission = asyncHandler(async (req, res) => {
 
   // Word count validation
   const wordCount = countWords(text);
-  console.log('Word count:', { wordCount, min: challenge.wordLimit.min, max: challenge.wordLimit.max });
+  // Word count checked
 
   if (wordCount < challenge.wordLimit.min) {
     throw new ApiError(400, `Minimum word count is ${challenge.wordLimit.min} (current: ${wordCount})`);
@@ -61,132 +62,136 @@ export const createSubmission = asyncHandler(async (req, res) => {
     throw new ApiError(400, `Maximum word count is ${challenge.wordLimit.max} (current: ${wordCount})`);
   }
 
-  try {
-    // Get attempt number
-    const attemptNumber = (await Submission.countDocuments({ 
-      challenge: challenge._id, 
-      user: req.user._id 
-    })) + 1;
+  // Get attempt number
+  const attemptNumber = (await Submission.countDocuments({ 
+    challenge: challenge._id, 
+    user: req.user._id 
+  })) + 1;
 
-    console.log('Starting AI evaluation...');
-    // Evaluate with AI
-    const ai = await evaluateSubmission({ challenge, essayText: text });
-    console.log('AI evaluation complete', { 
-      modelUsed: ai.model,
-      processingTime: ai.processingTimeMs,
-      categoriesReceived: ai.categories?.length
-    });
-
-    // Process scores
-    const rubricMap = new Map(challenge.rubric.map(r => [r.name.toLowerCase(), r]));
-    const categories = (ai.categories || []).map(c => {
-      const lookup = rubricMap.get((c.key || c.label || '').toLowerCase());
-      if (!lookup) {
-        console.warn('Category mismatch:', { received: c.key || c.label, available: [...rubricMap.keys()] });
-      }
-      const weight = lookup ? lookup.weight : 0;
-      const rawScore = Math.min(100, Math.max(0, Math.round(c.score || 0)));
-      const weightedScore = +(rawScore * (weight / 100)).toFixed(2);
-      
+  // Local fallback generator (mirrors heuristic in aiScoring.service)
+  const buildFallback = () => {
+    const hash = [...text].reduce((a, c) => (a + c.charCodeAt(0)) % 1000, 0);
+    const cats = challenge.rubric.map((r, i) => {
+      const base = (hash + (i * 37)) % 101;
+      const adjusted = Math.round((base * 0.7) + (r.weight * 0.3));
       return {
-        key: lookup?.name || c.key || 'unknown',
-        label: c.label || lookup?.name || c.key,
-        rawScore,
-        weight,
-        weightedScore,
-        comment: c.comment || ''
+        key: r.name,
+        label: r.name,
+        score: Math.min(100, Math.max(0, adjusted)),
+        comment: `Provisional heuristic score for ${r.name}.`
       };
     });
+    return {
+      model: 'heuristic-fallback',
+      categories: cats,
+      overallFeedback: 'Heuristic fallback used due to AI evaluation error.'
+    };
+  };
 
-    const totalScore = +categories.reduce((a, b) => a + b.weightedScore, 0).toFixed(2);
-
-    // =============================
-    // XP Awarding Logic
-    // =============================
-    // Formula (tunable):
-    //   baseByDifficulty: beginner 40, intermediate 60, advanced 80
-    //   performanceMultiplier = totalScore / 100 (linear scaling)
-    //   attemptPenalty: first attempt 1.0, second 0.6, third 0.4, 4+ 0.25 (to discourage farming)
-    //   finalXP = round(baseByDifficulty * performanceMultiplier * attemptPenalty)
-    //   Minimum 5 XP when totalScore >= 30 to ensure some reward; 0 if very low score
-    const difficultyBase = {
-      beginner: 40,
-      intermediate: 60,
-      advanced: 80
-    }[challenge.difficulty] || 40;
-    let attemptPenalty = 1;
-    if (attemptNumber === 2) attemptPenalty = 0.6;
-    else if (attemptNumber === 3) attemptPenalty = 0.4;
-    else if (attemptNumber >= 4) attemptPenalty = 0.25;
-
-    let xpAwarded = 0;
-    if (totalScore >= 30) { // require minimal quality
-      xpAwarded = Math.round(difficultyBase * (totalScore / 100) * attemptPenalty);
-      if (xpAwarded < 5) xpAwarded = 5; // floor reward
+  let ai;
+  let usedFallback = false;
+  // Starting AI evaluation
+  try {
+    ai = await evaluateSubmission({ challenge, essayText: text });
+    if (ai?.model === 'heuristic-fallback') {
+      usedFallback = true;
+  // AI service returned heuristic without throwing
     }
-
-    // Atomically increment user XP
-    let updatedUser = null;
-    if (xpAwarded > 0) {
-      updatedUser = await User.findByIdAndUpdate(
-        req.user._id,
-        { $inc: { xp: xpAwarded } },
-        { new: true, projection: 'xp' }
-      );
-    }
-
-    // Create submission document with xpAwarded stored
-    const submission = await Submission.create({
-      challenge: challenge._id,
-      user: req.user._id,
-      attemptNumber,
-      text,
-      wordCount,
-      scores: categories,
-      totalScore,
-      xpAwarded,
-      feedback: ai.overallFeedback || '',
-      aiModel: ai.model,
-      rawAIResponse: process.env.NODE_ENV === 'production' ? undefined : ai,
-      processingTimeMs: ai.processingTimeMs
-    });
-
-    // Update challenge stats
-    await WritingChallenge.recordSubmissionScore(challenge._id, totalScore);
-    const updatedChallenge = await WritingChallenge.findById(challenge._id)
-      .select('averageScore attemptsCount')
-      .lean();
-
-    console.log('Submission complete:', {
-      submissionId: submission._id,
-      totalScore,
-      attemptNumber
-    });
-
-    return res.status(201).json(new ApiResponse(201, {
-      submissionId: submission._id,
-      attemptNumber: submission.attemptNumber,
-      totalScore: submission.totalScore,
-      scores: submission.scores,
-      feedback: submission.feedback,
-      xpAwarded: submission.xpAwarded,
-      user: updatedUser ? { xp: updatedUser.xp } : undefined,
-      averageScore: updatedChallenge?.averageScore ?? null,
-      attemptsCount: updatedChallenge?.attemptsCount ?? null
-    }, 'Submission evaluated & stored'));
-
   } catch (error) {
-    // Add context to AI errors
-    if (error.code === 'AI_EVAL_ERROR') {
-      error.context = {
-        ...error.context,
-        challengeId,
-        wordCount,
-        attemptTime: new Date().toISOString()
-      };
-    }
-    throw error;
+  // AI evaluation failed, using fallback
+    ai = buildFallback();
+    usedFallback = true;
   }
+  // Evaluation complete
+
+  // Process scores
+  const rubricMap = new Map(challenge.rubric.map(r => [r.name.toLowerCase(), r]));
+  const categories = (ai.categories || []).map(c => {
+    const lookup = rubricMap.get((c.key || c.label || '').toLowerCase());
+    if (!lookup) {
+  // Category mismatch encountered
+    }
+    const weight = lookup ? lookup.weight : 0;
+    const rawScore = Math.min(100, Math.max(0, Math.round(c.score || 0)));
+    const weightedScore = +(rawScore * (weight / 100)).toFixed(2);
+    
+    return {
+      key: lookup?.name || c.key || 'unknown',
+      label: c.label || lookup?.name || c.key,
+      rawScore,
+      weight,
+      weightedScore,
+      comment: c.comment || ''
+    };
+  });
+
+  const totalScore = +categories.reduce((a, b) => a + b.weightedScore, 0).toFixed(2);
+
+  // =============================
+  // XP Awarding Logic
+  // =============================
+  const difficultyBase = {
+    beginner: 40,
+    intermediate: 60,
+    advanced: 80
+  }[challenge.difficulty] || 40;
+  let attemptPenalty = 1;
+  if (attemptNumber === 2) attemptPenalty = 0.6;
+  else if (attemptNumber === 3) attemptPenalty = 0.4;
+  else if (attemptNumber >= 4) attemptPenalty = 0.25;
+
+  let xpAwarded = 0;
+  if (totalScore >= 30) { // require minimal quality
+    xpAwarded = Math.round(difficultyBase * (totalScore / 100) * attemptPenalty);
+    if (xpAwarded < 5) xpAwarded = 5; // floor reward
+  }
+
+  // Atomically increment user XP
+  let updatedUser = null;
+  if (xpAwarded > 0) {
+    updatedUser = await User.findByIdAndUpdate(
+      req.user._id,
+      { $inc: { xp: xpAwarded } },
+      { new: true, projection: 'xp' }
+    );
+  }
+
+  // Create submission document with xpAwarded stored
+  const submission = await Submission.create({
+    challenge: challenge._id,
+    user: req.user._id,
+    attemptNumber,
+    text,
+    wordCount,
+    scores: categories,
+    totalScore,
+    xpAwarded,
+    feedback: ai.overallFeedback || '',
+    aiModel: ai.model,
+    rawAIResponse: process.env.NODE_ENV === 'production' ? undefined : ai,
+    processingTimeMs: ai.processingTimeMs
+
+  });
+  // Update challenge stats
+  await WritingChallenge.recordSubmissionScore(challenge._id, totalScore);
+  const updatedChallenge = await WritingChallenge.findById(challenge._id)
+    .select('averageScore attemptsCount')
+    .lean();
+
+  return res.status(201).json(new ApiResponse(201, {
+    submissionId: submission._id,
+    attemptNumber: submission.attemptNumber,
+    totalScore: submission.totalScore,
+    scores: submission.scores,
+    feedback: submission.feedback,
+    xpAwarded: submission.xpAwarded,
+    createdAt: submission.createdAt,
+    user: updatedUser ? { xp: updatedUser.xp } : undefined,
+    averageScore: updatedChallenge?.averageScore ?? null,
+    attemptsCount: updatedChallenge?.attemptsCount ?? null,
+    evaluationMode: usedFallback ? 'fallback' : 'ai',
+    aiDebug: process.env.NODE_ENV === 'production' ? undefined : ai?.debug
+  }, usedFallback ? 'Submission stored with fallback scoring' : 'Submission evaluated & stored'));
 });
 
 export const listMySubmissions = asyncHandler(async (req, res) => {

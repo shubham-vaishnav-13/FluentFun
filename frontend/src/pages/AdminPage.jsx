@@ -29,7 +29,6 @@ const AdminPage = () => {
         const response = await AdminAPI.getDashboardStats();
         setDashboardStats(response.data);
       } catch (error) {
-        console.error('Failed to fetch dashboard stats:', error);
         toast.error('Failed to load dashboard statistics');
       } finally {
         setLoading(false);

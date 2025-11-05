@@ -57,7 +57,7 @@ const SpeakingChallengeManager = () => {
         const res = await api.get('/admin/speaking-challenges');
         if (mounted) setChallenges(res.data.data.challenges || []);
       } catch (e) {
-        console.error('Failed to load speaking challenges', e);
+  toast.error('Failed to load speaking challenges');
         toast.error('Failed to load speaking challenges');
       } finally {
         if (mounted) setLoading(false);
@@ -119,7 +119,7 @@ const SpeakingChallengeManager = () => {
         setChallenges(prev => prev.filter(c => (c._id || c.id) !== challengeId));
         toast.success('Speaking challenge deleted successfully!');
       } catch (e) {
-        console.error('Failed to delete speaking challenge', e);
+  toast.error('Failed to delete speaking challenge');
         toast.error('Failed to delete speaking challenge');
       }
     }

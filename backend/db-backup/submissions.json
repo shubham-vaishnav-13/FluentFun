@@ -1,0 +1,2328 @@
+  [
+  {
+    "_id": "68c55c51bb9bb4175b658e15",
+    "challenge": "68c3961cd7bdb0df7382786e",
+    "user": "68a75ed084cbaf8f2b09a175",
+    "attemptNumber": 1,
+    "text": "My favorite hobby is reading books. I started reading seriously when I was in middle school, after a teacher recommended a story collection to me. Since then, I have developed a deep love for books of all kinds—novels, biographies, and even self-improvement guides.\n\nI enjoy reading because it allows me to travel to new worlds without leaving my room. Through stories, I can experience different cultures, meet fascinating characters, and imagine situations far beyond my daily life. Reading also helps me relax; after a stressful day, immersing myself in a good book feels like entering a peaceful escape.\n\nAnother reason I enjoy this hobby is that it continuously teaches me something new. Books broaden my vocabulary, sharpen my thinking, and improve my ability to express ideas clearly. Non-fiction books, in particular, give me practical knowledge about history, science, and personal growth.\n\nThis hobby benefits me in many ways. It strengthens my focus, enhances my imagination, and even improves my communication skills. Most importantly, it makes me more empathetic, as I can see the world from different perspectives.\n\nIn short, reading is more than just entertainment for me—it is a lifelong companion that enriches my mind and shapes who I am.",
+    "wordCount": 200,
+    "scores": [
+      {
+        "key": "Content & Ideas",
+        "label": "Content & Ideas",
+        "rawScore": 90,
+        "weight": 40,
+        "weightedScore": 36,
+        "comment": "The essay clearly explains the hobby and provides relevant reasons for its enjoyment and benefits.  The connection between reading and personal growth is well-articulated.  Could benefit from a slightly more specific example or two to illustrate the points made."
+      },
+      {
+        "key": "Grammar & Vocabulary",
+        "label": "Grammar & Vocabulary",
+        "rawScore": 95,
+        "weight": 30,
+        "weightedScore": 28.5,
+        "comment": "The essay demonstrates excellent grammar and vocabulary use. The language is precise and appropriate for the topic. Minor improvements could be made by varying sentence structure for better flow."
+      },
+      {
+        "key": "Organization",
+        "label": "Organization",
+        "rawScore": 90,
+        "weight": 20,
+        "weightedScore": 18,
+        "comment": "The essay is well-organized with a clear introduction, body paragraphs that logically develop the central idea, and a concise conclusion. The transitions between paragraphs could be slightly smoother."
+      },
+      {
+        "key": "Creativity",
+        "label": "Creativity",
+        "rawScore": 75,
+        "weight": 10,
+        "weightedScore": 7.5,
+        "comment": "While the essay is well-written and effectively conveys the author's appreciation for reading, it lacks a particularly unique or creative approach to the topic.  The descriptions, while accurate, are somewhat conventional."
+      }
+    ],
+    "totalScore": 90,
+    "feedback": "This is a well-written essay that effectively addresses the prompt. The content is clear, well-organized, and grammatically sound.  To improve, focus on adding more specific examples to support claims and explore more creative ways to describe the enjoyment and impact of reading. Consider incorporating a more vivid and engaging writing style.",
+    "aiModel": "GPT-3.5",
+    "rawAIResponse": {
+      "model": "GPT-3.5",
+      "categories": [
+        {
+          "key": "Content & Ideas",
+          "score": 90,
+          "comment": "The essay clearly explains the hobby and provides relevant reasons for its enjoyment and benefits.  The connection between reading and personal growth is well-articulated.  Could benefit from a slightly more specific example or two to illustrate the points made.",
+          "label": "Content & Ideas"
+        },
+        {
+          "key": "Grammar & Vocabulary",
+          "score": 95,
+          "comment": "The essay demonstrates excellent grammar and vocabulary use. The language is precise and appropriate for the topic. Minor improvements could be made by varying sentence structure for better flow.",
+          "label": "Grammar & Vocabulary"
+        },
+        {
+          "key": "Organization",
+          "score": 90,
+          "comment": "The essay is well-organized with a clear introduction, body paragraphs that logically develop the central idea, and a concise conclusion. The transitions between paragraphs could be slightly smoother.",
+          "label": "Organization"
+        },
+        {
+          "key": "Creativity",
+          "score": 75,
+          "comment": "While the essay is well-written and effectively conveys the author's appreciation for reading, it lacks a particularly unique or creative approach to the topic.  The descriptions, while accurate, are somewhat conventional.",
+          "label": "Creativity"
+        }
+      ],
+      "overallFeedback": "This is a well-written essay that effectively addresses the prompt. The content is clear, well-organized, and grammatically sound.  To improve, focus on adding more specific examples to support claims and explore more creative ways to describe the enjoyment and impact of reading. Consider incorporating a more vivid and engaging writing style.",
+      "processingTimeMs": 6754
+    },
+    "processingTimeMs": 6754,
+    "createdAt": "2025-09-13T11:58:09.519Z",
+    "updatedAt": "2025-09-13T11:58:09.519Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c55cb5bb9bb4175b658e1d",
+    "challenge": "68c3961cd7bdb0df7382786e",
+    "user": "68a75ed084cbaf8f2b09a175",
+    "attemptNumber": 2,
+    "text": "My favorite hobby is reading books. I started reading when I was a small child in school. At first, I liked reading short storybooks with pictures, but later I began reading bigger novels and other types of books. Reading makes me very happy because it takes me to a new world. When I read a story, I can imagine the characters, places, and events in my mind. It feels like traveling without moving anywhere.\n\nReading is also very useful. It helps me learn new words and improves my English. I also get new knowledge about science, history, and life. When I feel bored or stressed, reading gives me peace and relaxation. It makes my mind fresh and active again.\n\nI believe reading is a good habit that gives both fun and learning. That is why reading is not just my hobby, but also my best friend.This is  lkhgk djflg  kjd",
+    "wordCount": 150,
+    "scores": [
+      {
+        "key": "Content & Ideas",
+        "label": "Content & Ideas",
+        "rawScore": 85,
+        "weight": 40,
+        "weightedScore": 34,
+        "comment": "The essay clearly identifies the hobby and explains why the author enjoys it.  The connection between reading and personal benefits is well-established. However, more specific examples of books read or knowledge gained would strengthen the content."
+      },
+      {
+        "key": "Grammar & Vocabulary",
+        "label": "Grammar & Vocabulary",
+        "rawScore": 70,
+        "weight": 30,
+        "weightedScore": 21,
+        "comment": "Grammar is mostly correct, with a few minor errors. Vocabulary is simple but appropriate for the topic. The inclusion of nonsensical text at the end significantly detracts from the score."
+      },
+      {
+        "key": "Organization",
+        "label": "Organization",
+        "rawScore": 90,
+        "weight": 20,
+        "weightedScore": 18,
+        "comment": "The essay follows a logical structure: introduction, explanation of the hobby, benefits, and conclusion. The flow of ideas is smooth and easy to follow."
+      },
+      {
+        "key": "Creativity",
+        "label": "Creativity",
+        "rawScore": 60,
+        "weight": 10,
+        "weightedScore": 6,
+        "comment": "While the essay is well-written, it lacks originality in its approach. The description of reading as 'traveling without moving' is a common metaphor.  More unique perspectives or personal anecdotes would enhance creativity."
+      }
+    ],
+    "totalScore": 79,
+    "feedback": "This is a good essay that effectively communicates the author's enjoyment of reading and its benefits.  To improve, focus on adding more specific details and examples to enrich the content and consider using more unique and engaging language.  It's crucial to proofread carefully to eliminate errors like the nonsensical text at the end.",
+    "aiModel": "GPT-4",
+    "rawAIResponse": {
+      "model": "GPT-4",
+      "categories": [
+        {
+          "key": "Content & Ideas",
+          "score": 85,
+          "comment": "The essay clearly identifies the hobby and explains why the author enjoys it.  The connection between reading and personal benefits is well-established. However, more specific examples of books read or knowledge gained would strengthen the content.",
+          "label": "Content & Ideas"
+        },
+        {
+          "key": "Grammar & Vocabulary",
+          "score": 70,
+          "comment": "Grammar is mostly correct, with a few minor errors. Vocabulary is simple but appropriate for the topic. The inclusion of nonsensical text at the end significantly detracts from the score.",
+          "label": "Grammar & Vocabulary"
+        },
+        {
+          "key": "Organization",
+          "score": 90,
+          "comment": "The essay follows a logical structure: introduction, explanation of the hobby, benefits, and conclusion. The flow of ideas is smooth and easy to follow.",
+          "label": "Organization"
+        },
+        {
+          "key": "Creativity",
+          "score": 60,
+          "comment": "While the essay is well-written, it lacks originality in its approach. The description of reading as 'traveling without moving' is a common metaphor.  More unique perspectives or personal anecdotes would enhance creativity.",
+          "label": "Creativity"
+        }
+      ],
+      "overallFeedback": "This is a good essay that effectively communicates the author's enjoyment of reading and its benefits.  To improve, focus on adding more specific details and examples to enrich the content and consider using more unique and engaging language.  It's crucial to proofread carefully to eliminate errors like the nonsensical text at the end.",
+      "processingTimeMs": 3527
+    },
+    "processingTimeMs": 3527,
+    "createdAt": "2025-09-13T11:59:49.116Z",
+    "updatedAt": "2025-09-13T11:59:49.116Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c57238bb9bb4175b658e7f",
+    "challenge": "68c3961cd7bdb0df7382786e",
+    "user": "68c2f3b4fbd7c555f4520f68",
+    "attemptNumber": 1,
+    "text": "My hobby is reading book. I start read when I small boy in school. First I read small story, comic, picture book. Slowly I read big book also. Reading make me happy. When I read, I feel I go new world. I see many place, many people, many idea. I no need travel, but I feel travel in story.\n\nReading also give me knowledge. I learn new word, new thing, new lesson. It help my English little bit. When I feel sad or stress, I take book and read. Then mind feel relax, calm.\n\nBook also give me imagination. I can think more big, more different. Reading is not only fun, it also good for brain. That why I love reading. It is my best hobby.\nI believe reading is a good habit that gives both fun and learning. That is why reading is not just my hobby, but also my best friend.",
+    "wordCount": 153,
+    "scores": [
+      {
+        "key": "Content & Ideas",
+        "label": "Content & Ideas",
+        "rawScore": 70,
+        "weight": 40,
+        "weightedScore": 28,
+        "comment": "The essay clearly states the hobby and offers some explanation of why the author enjoys it.  However, the explanation could be more detailed and developed.  The benefits are mentioned but lack specific examples. For instance, instead of saying 'I learn new words,' the author could mention specific words learned or types of knowledge gained."
+      },
+      {
+        "key": "Grammar & Vocabulary",
+        "label": "Grammar & Vocabulary",
+        "rawScore": 60,
+        "weight": 30,
+        "weightedScore": 18,
+        "comment": "There are several grammatical errors and issues with word choice throughout the essay.  For example, 'I start read' should be 'I started reading,' and 'Reading make me happy' should be 'Reading makes me happy.'  The vocabulary is simple but adequate for conveying the main idea, though more sophisticated language would improve the essay."
+      },
+      {
+        "key": "Organization",
+        "label": "Organization",
+        "rawScore": 75,
+        "weight": 20,
+        "weightedScore": 15,
+        "comment": "The essay follows a logical structure.  It introduces the hobby, explains when it started, discusses reasons for enjoyment, and describes the benefits. The flow of ideas is generally smooth, but could be improved with more transitional phrases."
+      },
+      {
+        "key": "Creativity",
+        "label": "Creativity",
+        "rawScore": 50,
+        "weight": 10,
+        "weightedScore": 5,
+        "comment": "The writing style is straightforward and lacks originality.  While the topic itself is common, there's potential to make the description of the experience more vivid and engaging.  Using more descriptive language and sensory details would enhance creativity."
+      }
+    ],
+    "totalScore": 66,
+    "feedback": "This essay conveys the main points but suffers from grammatical errors and a lack of detail and descriptive language. Focusing on improving grammar and expanding on the reasons for enjoying reading, along with adding specific examples of the benefits, would significantly strengthen the essay.  Using more vivid language and descriptive sentences would also increase the essay's engagement and creativity.",
+    "aiModel": "GPT-4",
+    "rawAIResponse": {
+      "model": "GPT-4",
+      "categories": [
+        {
+          "key": "Content & Ideas",
+          "score": 70,
+          "comment": "The essay clearly states the hobby and offers some explanation of why the author enjoys it.  However, the explanation could be more detailed and developed.  The benefits are mentioned but lack specific examples. For instance, instead of saying 'I learn new words,' the author could mention specific words learned or types of knowledge gained.",
+          "label": "Content & Ideas"
+        },
+        {
+          "key": "Grammar & Vocabulary",
+          "score": 60,
+          "comment": "There are several grammatical errors and issues with word choice throughout the essay.  For example, 'I start read' should be 'I started reading,' and 'Reading make me happy' should be 'Reading makes me happy.'  The vocabulary is simple but adequate for conveying the main idea, though more sophisticated language would improve the essay.",
+          "label": "Grammar & Vocabulary"
+        },
+        {
+          "key": "Organization",
+          "score": 75,
+          "comment": "The essay follows a logical structure.  It introduces the hobby, explains when it started, discusses reasons for enjoyment, and describes the benefits. The flow of ideas is generally smooth, but could be improved with more transitional phrases.",
+          "label": "Organization"
+        },
+        {
+          "key": "Creativity",
+          "score": 50,
+          "comment": "The writing style is straightforward and lacks originality.  While the topic itself is common, there's potential to make the description of the experience more vivid and engaging.  Using more descriptive language and sensory details would enhance creativity.",
+          "label": "Creativity"
+        }
+      ],
+      "overallFeedback": "This essay conveys the main points but suffers from grammatical errors and a lack of detail and descriptive language. Focusing on improving grammar and expanding on the reasons for enjoying reading, along with adding specific examples of the benefits, would significantly strengthen the essay.  Using more vivid language and descriptive sentences would also increase the essay's engagement and creativity.",
+      "processingTimeMs": 4270
+    },
+    "processingTimeMs": 4270,
+    "createdAt": "2025-09-13T13:31:36.076Z",
+    "updatedAt": "2025-09-13T13:31:36.076Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c583c898d3ff0a1679f50b",
+    "challenge": "68c57d7653414e9b0e3f1be0",
+    "user": "68a75ed084cbaf8f2b09a175",
+    "attemptNumber": 1,
+    "text": "I remember a time when I worked in a team for a school science project. Our task was to make a model of the solar system. At first, everyone was thinking their own ideas. But we learned to share our thoughts and listen to each other. That is what teamwork means: helping each other and working together.\n\nWe divided the work. I made the planets from clay, another friend painted them, and someone else made the labels. We also helped each other when someone had a problem. For example, I did not know how to make Saturn’s rings, so my friend showed me. This made the work faster and better.\n\nDuring the project, we had some arguments, but we talked calmly and solved them. I felt happy when everyone worked together. I realized that teamwork is not only about sharing work but also understanding each other.\n\nIn the end, our project looked very nice. The teacher appreciated our effort. I learned that teamwork is important in life because it teaches cooperation, patience, and responsibility this is what i have done",
+    "wordCount": 180,
+    "scores": [
+      {
+        "key": "Content Relevance",
+        "label": "Content Relevance",
+        "rawScore": 90,
+        "weight": 25,
+        "weightedScore": 22.5,
+        "comment": "The essay clearly focuses on teamwork and provides a relevant example. The explanation of teamwork is straightforward and easy to understand."
+      },
+      {
+        "key": "Organization",
+        "label": "Organization",
+        "rawScore": 80,
+        "weight": 20,
+        "weightedScore": 16,
+        "comment": "The essay has a clear introduction and conclusion.  The experience is described in a logical manner. However, the transition between paragraphs could be smoother."
+      },
+      {
+        "key": "Examples",
+        "label": "Examples",
+        "rawScore": 90,
+        "weight": 20,
+        "weightedScore": 18,
+        "comment": "A specific example of a school science project is used effectively to illustrate teamwork.  The example of making Saturn's rings is a good supporting detail."
+      },
+      {
+        "key": "Language",
+        "label": "Language",
+        "rawScore": 70,
+        "weight": 20,
+        "weightedScore": 14,
+        "comment": "The language is simple and understandable. However, there is room for improvement in vocabulary and sentence structure. Some sentences are slightly choppy.  The final sentence is grammatically incorrect."
+      },
+      {
+        "key": "Reflection",
+        "label": "Reflection",
+        "rawScore": 85,
+        "weight": 15,
+        "weightedScore": 12.75,
+        "comment": "The essay offers a thoughtful reflection on the importance of teamwork, highlighting cooperation, patience, and responsibility.  However, the reflection could be more in-depth."
+      }
+    ],
+    "totalScore": 83.25,
+    "xpAwarded": 50,
+    "feedback": "This is a good essay that effectively demonstrates understanding of teamwork through a clear example. To improve, focus on enhancing sentence structure and vocabulary, creating smoother transitions between paragraphs, and deepening the reflection on the significance of teamwork in life.  Proofreading for grammar errors is also essential.",
+    "aiModel": "gpt-4",
+    "rawAIResponse": {
+      "model": "gpt-4",
+      "categories": [
+        {
+          "key": "Content Relevance",
+          "score": 90,
+          "comment": "The essay clearly focuses on teamwork and provides a relevant example. The explanation of teamwork is straightforward and easy to understand.",
+          "label": "Content Relevance"
+        },
+        {
+          "key": "Organization",
+          "score": 80,
+          "comment": "The essay has a clear introduction and conclusion.  The experience is described in a logical manner. However, the transition between paragraphs could be smoother.",
+          "label": "Organization"
+        },
+        {
+          "key": "Examples",
+          "score": 90,
+          "comment": "A specific example of a school science project is used effectively to illustrate teamwork.  The example of making Saturn's rings is a good supporting detail.",
+          "label": "Examples"
+        },
+        {
+          "key": "Language",
+          "score": 70,
+          "comment": "The language is simple and understandable. However, there is room for improvement in vocabulary and sentence structure. Some sentences are slightly choppy.  The final sentence is grammatically incorrect.",
+          "label": "Language"
+        },
+        {
+          "key": "Reflection",
+          "score": 85,
+          "comment": "The essay offers a thoughtful reflection on the importance of teamwork, highlighting cooperation, patience, and responsibility.  However, the reflection could be more in-depth.",
+          "label": "Reflection"
+        }
+      ],
+      "overallFeedback": "This is a good essay that effectively demonstrates understanding of teamwork through a clear example. To improve, focus on enhancing sentence structure and vocabulary, creating smoother transitions between paragraphs, and deepening the reflection on the significance of teamwork in life.  Proofreading for grammar errors is also essential.",
+      "processingTimeMs": 11020
+    },
+    "processingTimeMs": 11020,
+    "createdAt": "2025-09-13T14:46:32.801Z",
+    "updatedAt": "2025-09-13T14:46:32.801Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c5843998d3ff0a1679f56f",
+    "challenge": "68c57d7553414e9b0e3f1bd1",
+    "user": "68a75ed084cbaf8f2b09a175",
+    "attemptNumber": 1,
+    "text": "My favorite place is the park near my house. It is big and green. There are many trees, flowers, and benches. The air is fresh, and I can hear birds singing. I like the small playground where children play.\n\nI go to the park every morning. I walk on the path and sometimes play football with my friends. I also sit on a bench and read books. Sometimes, I take photos of flowers and trees.\n\nThe park is important to me because it makes me happy and relaxed. I feel calm when I sit under a tree. I also meet my friends there and talk about school and games.\n\nI enjoy spending time in the park. It is a place where I can play, learn, and rest. I always feel good when I leave the park.",
+    "wordCount": 136,
+    "scores": [
+      {
+        "key": "Description",
+        "label": "Description",
+        "rawScore": 90,
+        "weight": 30,
+        "weightedScore": 27,
+        "comment": "The essay provides a good description of the park, using sensory details like 'fresh air' and 'birds singing.'  More specific details about the types of trees or flowers would elevate the description."
+      },
+      {
+        "key": "Organization",
+        "label": "Organization",
+        "rawScore": 100,
+        "weight": 20,
+        "weightedScore": 20,
+        "comment": "The essay follows a clear structure with a beginning (introduction of the park), middle (activities in the park), and end (feelings about the park). The paragraphs are well-organized and flow logically."
+      },
+      {
+        "key": "Clarity",
+        "label": "Clarity",
+        "rawScore": 95,
+        "weight": 20,
+        "weightedScore": 19,
+        "comment": "The language used is simple and easy to understand.  The sentences are short and to the point. The writing is very clear."
+      },
+      {
+        "key": "Grammar",
+        "label": "Grammar",
+        "rawScore": 100,
+        "weight": 15,
+        "weightedScore": 15,
+        "comment": "The essay is free of grammatical errors."
+      },
+      {
+        "key": "Personal Feelings",
+        "label": "Personal Feelings",
+        "rawScore": 85,
+        "weight": 15,
+        "weightedScore": 12.75,
+        "comment": "The essay explains that the park makes the author happy and relaxed, but could benefit from more detailed and specific examples illustrating those feelings. For example, describing a particular moment of joy or calm would strengthen this aspect."
+      }
+    ],
+    "totalScore": 93.75,
+    "xpAwarded": 38,
+    "feedback": "This is a well-written essay that effectively describes the author's favorite place. The descriptive language is good, and the organization is excellent.  To improve, focus on adding more specific details to enhance the description and elaborate on the personal feelings to make them more impactful and relatable.",
+    "aiModel": "GPT-4",
+    "rawAIResponse": {
+      "model": "GPT-4",
+      "categories": [
+        {
+          "key": "Description",
+          "score": 90,
+          "comment": "The essay provides a good description of the park, using sensory details like 'fresh air' and 'birds singing.'  More specific details about the types of trees or flowers would elevate the description.",
+          "label": "Description"
+        },
+        {
+          "key": "Organization",
+          "score": 100,
+          "comment": "The essay follows a clear structure with a beginning (introduction of the park), middle (activities in the park), and end (feelings about the park). The paragraphs are well-organized and flow logically.",
+          "label": "Organization"
+        },
+        {
+          "key": "Clarity",
+          "score": 95,
+          "comment": "The language used is simple and easy to understand.  The sentences are short and to the point. The writing is very clear.",
+          "label": "Clarity"
+        },
+        {
+          "key": "Grammar",
+          "score": 100,
+          "comment": "The essay is free of grammatical errors.",
+          "label": "Grammar"
+        },
+        {
+          "key": "Personal Feelings",
+          "score": 85,
+          "comment": "The essay explains that the park makes the author happy and relaxed, but could benefit from more detailed and specific examples illustrating those feelings. For example, describing a particular moment of joy or calm would strengthen this aspect.",
+          "label": "Personal Feelings"
+        }
+      ],
+      "overallFeedback": "This is a well-written essay that effectively describes the author's favorite place. The descriptive language is good, and the organization is excellent.  To improve, focus on adding more specific details to enhance the description and elaborate on the personal feelings to make them more impactful and relatable.",
+      "processingTimeMs": 3390
+    },
+    "processingTimeMs": 3390,
+    "createdAt": "2025-09-13T14:48:25.957Z",
+    "updatedAt": "2025-09-13T14:48:25.957Z",
+    "__v": 0
+  },
+  {
+    "_id": "68cc3a91924bea693d9ceec3",
+    "challenge": "68c57d7553414e9b0e3f1bc2",
+    "user": "68cc39e8924bea693d9cee12",
+    "attemptNumber": 1,
+    "text": "Sketching is my favorite hobby. I started it in childhood, tracing shapes and filling pages with quick lines. It grew into a daily habit.\n\nI enjoy the quiet focus and the small, steady satisfaction of turning observation into marks. Sketching sharpens my attention and teaches me to notice light, texture, and proportion.\n\nIt makes me calm and energized at once — relaxed while alert, patient while curious. After a sketch I feel clearer, more present, and ready to take on the rest of the day. I sketch whenever ideas or calm moments appear.This is all about what i think about",
+    "wordCount": 100,
+    "scores": [
+      {
+        "key": "Content",
+        "label": "Content",
+        "rawScore": 85,
+        "weight": 30,
+        "weightedScore": 25.5,
+        "comment": "The essay effectively describes the hobby of sketching and provides clear reasons for enjoying it.  The connection between sketching and personal feelings is well-established."
+      },
+      {
+        "key": "Organization",
+        "label": "Organization",
+        "rawScore": 70,
+        "weight": 20,
+        "weightedScore": 14,
+        "comment": "The essay has a clear introduction and body, but lacks a distinct conclusion. The final sentence feels abrupt."
+      },
+      {
+        "key": "Clarity",
+        "label": "Clarity",
+        "rawScore": 90,
+        "weight": 20,
+        "weightedScore": 18,
+        "comment": "The sentences are generally simple and easy to follow. The language is clear and descriptive."
+      },
+      {
+        "key": "Grammar",
+        "label": "Grammar",
+        "rawScore": 80,
+        "weight": 15,
+        "weightedScore": 12,
+        "comment": "Minor grammatical issues are present. The final sentence is a run-on sentence and lacks proper punctuation. Some sentence structure could be improved for stronger flow."
+      },
+      {
+        "key": "Personal Touch",
+        "label": "Personal Touch",
+        "rawScore": 95,
+        "weight": 15,
+        "weightedScore": 14.25,
+        "comment": "The essay effectively conveys the author's feelings and enjoyment of sketching. The descriptive language creates a strong sense of personal connection to the hobby."
+      }
+    ],
+    "totalScore": 83.75,
+    "xpAwarded": 34,
+    "feedback": "This is a well-written essay that effectively conveys the author's passion for sketching.  The essay would benefit from a stronger concluding sentence to provide a sense of closure and improved grammar and sentence structure for a more polished piece.  Consider adding a brief concluding thought to summarize the overall impact of sketching on your life.",
+    "aiModel": "GPT-3.5",
+    "rawAIResponse": {
+      "model": "GPT-3.5",
+      "categories": [
+        {
+          "key": "Content",
+          "score": 85,
+          "comment": "The essay effectively describes the hobby of sketching and provides clear reasons for enjoying it.  The connection between sketching and personal feelings is well-established.",
+          "label": "Content"
+        },
+        {
+          "key": "Organization",
+          "score": 70,
+          "comment": "The essay has a clear introduction and body, but lacks a distinct conclusion. The final sentence feels abrupt.",
+          "label": "Organization"
+        },
+        {
+          "key": "Clarity",
+          "score": 90,
+          "comment": "The sentences are generally simple and easy to follow. The language is clear and descriptive.",
+          "label": "Clarity"
+        },
+        {
+          "key": "Grammar",
+          "score": 80,
+          "comment": "Minor grammatical issues are present. The final sentence is a run-on sentence and lacks proper punctuation. Some sentence structure could be improved for stronger flow.",
+          "label": "Grammar"
+        },
+        {
+          "key": "Personal Touch",
+          "score": 95,
+          "comment": "The essay effectively conveys the author's feelings and enjoyment of sketching. The descriptive language creates a strong sense of personal connection to the hobby.",
+          "label": "Personal Touch"
+        }
+      ],
+      "overallFeedback": "This is a well-written essay that effectively conveys the author's passion for sketching.  The essay would benefit from a stronger concluding sentence to provide a sense of closure and improved grammar and sentence structure for a more polished piece.  Consider adding a brief concluding thought to summarize the overall impact of sketching on your life.",
+      "processingTimeMs": 3627
+    },
+    "processingTimeMs": 3627,
+    "createdAt": "2025-09-18T17:00:01.438Z",
+    "updatedAt": "2025-09-18T17:00:01.438Z",
+    "__v": 0
+  },
+  {
+    "_id": "68ccdcb534c87ba6734ea6ad",
+    "challenge": "68c57d7553414e9b0e3f1bc2",
+    "user": "68ccda5034c87ba6734ea55a",
+    "attemptNumber": 1,
+    "text": "My favorite hobby is reading books. I started this hobby when I was in school, and since then it has become an important part of my life. At first, I used to read storybooks, but later I began exploring novels, biographies, and self-help books.\n\nI enjoy reading because it takes me to different worlds and teaches me new ideas. Books help me imagine things that I have never seen before. Sometimes, I also learn useful lessons that I can apply in my daily life.\n\nReading makes me feel relaxed and happy. It reduces stress and gives me peace of mind. Whenever I feel bored or upset, I pick up a book, and it always lifts my mood.",
+    "wordCount": 117,
+    "scores": [
+      {
+        "key": "Content",
+        "label": "Content",
+        "rawScore": 90,
+        "weight": 30,
+        "weightedScore": 27,
+        "comment": "The essay clearly explains the hobby of reading and provides sufficient personal reasons for enjoying it.  The explanation could be slightly more detailed, perhaps mentioning specific books or authors to enhance the personal touch."
+      },
+      {
+        "key": "Organization",
+        "label": "Organization",
+        "rawScore": 80,
+        "weight": 20,
+        "weightedScore": 16,
+        "comment": "The essay follows a logical structure with an introduction, body, and a concluding paragraph.  While effective, a more developed conclusion that summarizes feelings or reflects on the hobby's impact might improve it."
+      },
+      {
+        "key": "Clarity",
+        "label": "Clarity",
+        "rawScore": 95,
+        "weight": 20,
+        "weightedScore": 19,
+        "comment": "The sentences are simple, clear, and easy to understand. The writing style is straightforward and accessible."
+      },
+      {
+        "key": "Grammar",
+        "label": "Grammar",
+        "rawScore": 100,
+        "weight": 15,
+        "weightedScore": 15,
+        "comment": "The essay is free of grammatical errors."
+      },
+      {
+        "key": "Personal Touch",
+        "label": "Personal Touch",
+        "rawScore": 85,
+        "weight": 15,
+        "weightedScore": 12.75,
+        "comment": "The essay conveys enjoyment of reading but could benefit from more specific examples or anecdotes to further showcase personal feelings and experiences related to the hobby."
+      }
+    ],
+    "totalScore": 89.75,
+    "xpAwarded": 36,
+    "feedback": "This is a well-written essay that effectively describes the author's favorite hobby. To improve, focus on adding more specific details and examples to enhance the personal touch and strengthen the conclusion.  Consider including a specific example of a book that impacted you or a time when reading helped you through a difficult situation. This would add depth and strengthen the overall impact of your writing.",
+    "aiModel": "GPT-3.5",
+    "rawAIResponse": {
+      "model": "GPT-3.5",
+      "categories": [
+        {
+          "key": "Content",
+          "score": 90,
+          "comment": "The essay clearly explains the hobby of reading and provides sufficient personal reasons for enjoying it.  The explanation could be slightly more detailed, perhaps mentioning specific books or authors to enhance the personal touch.",
+          "label": "Content"
+        },
+        {
+          "key": "Organization",
+          "score": 80,
+          "comment": "The essay follows a logical structure with an introduction, body, and a concluding paragraph.  While effective, a more developed conclusion that summarizes feelings or reflects on the hobby's impact might improve it.",
+          "label": "Organization"
+        },
+        {
+          "key": "Clarity",
+          "score": 95,
+          "comment": "The sentences are simple, clear, and easy to understand. The writing style is straightforward and accessible.",
+          "label": "Clarity"
+        },
+        {
+          "key": "Grammar",
+          "score": 100,
+          "comment": "The essay is free of grammatical errors.",
+          "label": "Grammar"
+        },
+        {
+          "key": "Personal Touch",
+          "score": 85,
+          "comment": "The essay conveys enjoyment of reading but could benefit from more specific examples or anecdotes to further showcase personal feelings and experiences related to the hobby.",
+          "label": "Personal Touch"
+        }
+      ],
+      "overallFeedback": "This is a well-written essay that effectively describes the author's favorite hobby. To improve, focus on adding more specific details and examples to enhance the personal touch and strengthen the conclusion.  Consider including a specific example of a book that impacted you or a time when reading helped you through a difficult situation. This would add depth and strengthen the overall impact of your writing.",
+      "processingTimeMs": 7408
+    },
+    "processingTimeMs": 7408,
+    "createdAt": "2025-09-19T04:31:49.645Z",
+    "updatedAt": "2025-09-19T04:31:49.645Z",
+    "__v": 0
+  },
+  {
+    "_id": "68ccdd6034c87ba6734ea734",
+    "challenge": "68c57d7553414e9b0e3f1bc2",
+    "user": "68ccda5034c87ba6734ea55a",
+    "attemptNumber": 2,
+    "text": "Climate change is one of the biggest challenges of our time, and everyone has a role to play in solving it. Some people believe only governments and industries are responsible, but individual actions also make a big difference.\n\nEach person can reduce their carbon footprint by using less plastic, saving electricity, recycling, and choosing public transport. Small actions may seem unimportant, but when millions of people do them, the impact becomes powerful.\n\nOf course, governments must create strong policies, but individuals cannot wait for them alone. Responsibility begins with us. By making eco-friendly choices in our daily lives, we contribute to a safer planet for future generations.",
+    "wordCount": 107,
+    "scores": [
+      {
+        "key": "Content",
+        "label": "Content",
+        "rawScore": 20,
+        "weight": 30,
+        "weightedScore": 6,
+        "comment": "The essay discusses climate change, a serious issue, but not a personal hobby as requested.  It lacks the personal reflection and description of a hobby that the prompt requires."
+      },
+      {
+        "key": "Organization",
+        "label": "Organization",
+        "rawScore": 80,
+        "weight": 20,
+        "weightedScore": 16,
+        "comment": "The essay follows a clear structure with an introduction, body paragraphs, and a conclusion, though the topic is not suitable for the prompt."
+      },
+      {
+        "key": "Clarity",
+        "label": "Clarity",
+        "rawScore": 90,
+        "weight": 20,
+        "weightedScore": 18,
+        "comment": "The sentences are simple, clear, and easy to understand. The language is concise and effective."
+      },
+      {
+        "key": "Grammar",
+        "label": "Grammar",
+        "rawScore": 100,
+        "weight": 15,
+        "weightedScore": 15,
+        "comment": "The essay is grammatically correct with no errors."
+      },
+      {
+        "key": "Personal Touch",
+        "label": "Personal Touch",
+        "rawScore": 0,
+        "weight": 15,
+        "weightedScore": 0,
+        "comment": "The essay lacks a personal touch. It presents a general argument about climate change rather than a personal experience or hobby."
+      }
+    ],
+    "totalScore": 55,
+    "xpAwarded": 13,
+    "feedback": "The essay is well-written and grammatically correct, but it completely misses the prompt's instructions. It addresses climate change instead of a personal hobby. To improve, the student needs to write about their favorite hobby, including when they started it, why they enjoy it, and how it makes them feel. The current essay would be suitable for a different prompt focused on environmental responsibility.",
+    "aiModel": "GPT-3",
+    "rawAIResponse": {
+      "model": "GPT-3",
+      "categories": [
+        {
+          "key": "Content",
+          "score": 20,
+          "comment": "The essay discusses climate change, a serious issue, but not a personal hobby as requested.  It lacks the personal reflection and description of a hobby that the prompt requires.",
+          "label": "Content"
+        },
+        {
+          "key": "Organization",
+          "score": 80,
+          "comment": "The essay follows a clear structure with an introduction, body paragraphs, and a conclusion, though the topic is not suitable for the prompt.",
+          "label": "Organization"
+        },
+        {
+          "key": "Clarity",
+          "score": 90,
+          "comment": "The sentences are simple, clear, and easy to understand. The language is concise and effective.",
+          "label": "Clarity"
+        },
+        {
+          "key": "Grammar",
+          "score": 100,
+          "comment": "The essay is grammatically correct with no errors.",
+          "label": "Grammar"
+        },
+        {
+          "key": "Personal Touch",
+          "score": 0,
+          "comment": "The essay lacks a personal touch. It presents a general argument about climate change rather than a personal experience or hobby.",
+          "label": "Personal Touch"
+        }
+      ],
+      "overallFeedback": "The essay is well-written and grammatically correct, but it completely misses the prompt's instructions. It addresses climate change instead of a personal hobby. To improve, the student needs to write about their favorite hobby, including when they started it, why they enjoy it, and how it makes them feel. The current essay would be suitable for a different prompt focused on environmental responsibility.",
+      "processingTimeMs": 22166
+    },
+    "processingTimeMs": 22166,
+    "createdAt": "2025-09-19T04:34:40.771Z",
+    "updatedAt": "2025-09-19T04:34:40.771Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d5ff7b0fe8d87710697c65",
+    "challenge": "68c57d7653414e9b0e3f1bfe",
+    "user": "68d5efd23042f50d6af0e229",
+    "attemptNumber": 1,
+    "text": "Climate change is one of the most pressing challenges of our time, affecting ecosystems, economies, and human health worldwide. While governments and corporations possess the resources and authority to enact large-scale policies and technological changes, individuals also play a crucial role in combating climate change. This essay argues that although systemic action from governments and companies is essential, individuals have a real and meaningful responsibility to contribute to the fight against climate change.\n\nFirstly, individual actions collectively shape demand, which in turn influences corporate and governmental decisions. For example, when more people choose to use public transportation or electric vehicles instead of gasoline-powered cars, it reduces overall carbon emissions and pushes the automobile industry to invest in cleaner technologies. Similarly, consumers who prefer eco-friendly products encourage companies to adopt sustainable production methods. These small choices may seem insignificant on their own, but together they create powerful market shifts.\n\nSecondly, individuals have a direct impact on energy consumption and waste reduction at home. Simple actions—such as turning off unnecessary lights, reducing water usage, composting organic waste, and recycling—help reduce greenhouse gas emissions. For instance, if households worldwide reduced food waste by half, millions of tons of methane, a potent greenhouse gas, could be avoided each year. These measures are affordable, accessible, and collectively significant in mitigating climate change.\n\nHowever, it would be unrealistic to place the primary burden solely on individuals. Governments and corporations control large-scale industrial emissions, infrastructure development, and energy production—areas where personal choices have limited influence. For example, without policies that regulate emissions from factories or promote renewable energy, the efforts of individuals alone cannot offset the vast amount of greenhouse gases produced by industrial sectors. Thus, systemic changes led by authorities are indispensable.\n\nCritics argue that emphasizing individual responsibility distracts from the need for structural reforms. While this concern is valid, personal actions and advocacy can complement rather than replace institutional efforts. By voting for environmentally conscious leaders, supporting climate-friendly businesses, and participating in community initiatives, individuals can push for the systemic changes that are urgently needed.\n\nIn conclusion, both individuals and institutions share the responsibility to combat climate change, but their roles differ in scale and nature. Governments and corporations must lead with policies and innovation, yet individuals cannot remain passive observers. By making sustainable choices and demanding action from leaders, people can amplify the global effort. Ultimately, fighting climate change requires a partnership between collective will and institutional power.",
+    "wordCount": 404,
+    "scores": [
+      {
+        "key": "Thesis & Clarity",
+        "label": "Thesis & Clarity",
+        "rawScore": 23,
+        "weight": 20,
+        "weightedScore": 4.6,
+        "comment": "Provisional heuristic score for Thesis & Clarity."
+      },
+      {
+        "key": "Argumentation",
+        "label": "Argumentation",
+        "rawScore": 50,
+        "weight": 25,
+        "weightedScore": 12.5,
+        "comment": "Provisional heuristic score for Argumentation."
+      },
+      {
+        "key": "Evidence & Examples",
+        "label": "Evidence & Examples",
+        "rawScore": 75,
+        "weight": 20,
+        "weightedScore": 15,
+        "comment": "Provisional heuristic score for Evidence & Examples."
+      },
+      {
+        "key": "Counter-argument",
+        "label": "Counter-argument",
+        "rawScore": 28,
+        "weight": 15,
+        "weightedScore": 4.2,
+        "comment": "Provisional heuristic score for Counter-argument."
+      },
+      {
+        "key": "Language & Style",
+        "label": "Language & Style",
+        "rawScore": 56,
+        "weight": 20,
+        "weightedScore": 11.2,
+        "comment": "Provisional heuristic score for Language & Style."
+      }
+    ],
+    "totalScore": 47.5,
+    "xpAwarded": 38,
+    "feedback": "Heuristic fallback used due to AI evaluation error.",
+    "aiModel": "heuristic-fallback",
+    "rawAIResponse": {
+      "model": "heuristic-fallback",
+      "categories": [
+        {
+          "key": "Thesis & Clarity",
+          "label": "Thesis & Clarity",
+          "score": 23,
+          "comment": "Provisional heuristic score for Thesis & Clarity."
+        },
+        {
+          "key": "Argumentation",
+          "label": "Argumentation",
+          "score": 50,
+          "comment": "Provisional heuristic score for Argumentation."
+        },
+        {
+          "key": "Evidence & Examples",
+          "label": "Evidence & Examples",
+          "score": 75,
+          "comment": "Provisional heuristic score for Evidence & Examples."
+        },
+        {
+          "key": "Counter-argument",
+          "label": "Counter-argument",
+          "score": 28,
+          "comment": "Provisional heuristic score for Counter-argument."
+        },
+        {
+          "key": "Language & Style",
+          "label": "Language & Style",
+          "score": 56,
+          "comment": "Provisional heuristic score for Language & Style."
+        }
+      ],
+      "overallFeedback": "Heuristic fallback used due to AI evaluation error."
+    },
+    "createdAt": "2025-09-26T02:50:35.948Z",
+    "updatedAt": "2025-09-26T02:50:35.948Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d600445dbbb09549c14bf1",
+    "challenge": "68c57d7653414e9b0e3f1bfe",
+    "user": "68d5efd23042f50d6af0e229",
+    "attemptNumber": 2,
+    "text": "Climate change is one of the most pressing challenges of our time, affecting ecosystems, economies, and human health worldwide. While governments and corporations possess the resources and authority to enact large-scale policies and technological changes, individuals also play a crucial role in combating climate change. This essay argues that although systemic action from governments and companies is essential, individuals have a real and meaningful responsibility to contribute to the fight against climate change.\n\nFirstly, individual actions collectively shape demand, which in turn influences corporate and governmental decisions. For example, when more people choose to use public transportation or electric vehicles instead of gasoline-powered cars, it reduces overall carbon emissions and pushes the automobile industry to invest in cleaner technologies. Similarly, consumers who prefer eco-friendly products encourage companies to adopt sustainable production methods. These small choices may seem insignificant on their own, but together they create powerful market shifts.\n\nSecondly, individuals have a direct impact on energy consumption and waste reduction at home. Simple actions—such as turning off unnecessary lights, reducing water usage, composting organic waste, and recycling—help reduce greenhouse gas emissions. For instance, if households worldwide reduced food waste by half, millions of tons of methane, a potent greenhouse gas, could be avoided each year. These measures are affordable, accessible, and collectively significant in mitigating climate change.\n\nHowever, it would be unrealistic to place the primary burden solely on individuals. Governments and corporations control large-scale industrial emissions, infrastructure development, and energy production—areas where personal choices have limited influence. For example, without policies that regulate emissions from factories or promote renewable energy, the efforts of individuals alone cannot offset the vast amount of greenhouse gases produced by industrial sectors. Thus, systemic changes led by authorities are indispensable.\n\nCritics argue that emphasizing individual responsibility distracts from the need for structural reforms. While this concern is valid, personal actions and advocacy can complement rather than replace institutional efforts. By voting for environmentally conscious leaders, supporting climate-friendly businesses, and participating in community initiatives, individuals can push for the systemic changes that are urgently needed.\n\nIn conclusion, both individuals and institutions share the responsibility to combat climate change, but their roles differ in scale and nature. Governments and corporations must lead with policies and innovation, yet individuals cannot remain passive observers. By making sustainable choices and demanding action from leaders, people can amplify the global effort. Ultimately, fighting climate change requires a partnership between collective will and institutional power.",
+    "wordCount": 404,
+    "scores": [
+      {
+        "key": "Thesis & Clarity",
+        "label": "Thesis & Clarity",
+        "rawScore": 23,
+        "weight": 20,
+        "weightedScore": 4.6,
+        "comment": "Provisional heuristic score for Thesis & Clarity."
+      },
+      {
+        "key": "Argumentation",
+        "label": "Argumentation",
+        "rawScore": 50,
+        "weight": 25,
+        "weightedScore": 12.5,
+        "comment": "Provisional heuristic score for Argumentation."
+      },
+      {
+        "key": "Evidence & Examples",
+        "label": "Evidence & Examples",
+        "rawScore": 75,
+        "weight": 20,
+        "weightedScore": 15,
+        "comment": "Provisional heuristic score for Evidence & Examples."
+      },
+      {
+        "key": "Counter-argument",
+        "label": "Counter-argument",
+        "rawScore": 28,
+        "weight": 15,
+        "weightedScore": 4.2,
+        "comment": "Provisional heuristic score for Counter-argument."
+      },
+      {
+        "key": "Language & Style",
+        "label": "Language & Style",
+        "rawScore": 56,
+        "weight": 20,
+        "weightedScore": 11.2,
+        "comment": "Provisional heuristic score for Language & Style."
+      }
+    ],
+    "totalScore": 47.5,
+    "xpAwarded": 23,
+    "feedback": "Heuristic fallback used due to AI evaluation error.",
+    "aiModel": "heuristic-fallback",
+    "rawAIResponse": {
+      "model": "heuristic-fallback",
+      "categories": [
+        {
+          "key": "Thesis & Clarity",
+          "label": "Thesis & Clarity",
+          "score": 23,
+          "comment": "Provisional heuristic score for Thesis & Clarity."
+        },
+        {
+          "key": "Argumentation",
+          "label": "Argumentation",
+          "score": 50,
+          "comment": "Provisional heuristic score for Argumentation."
+        },
+        {
+          "key": "Evidence & Examples",
+          "label": "Evidence & Examples",
+          "score": 75,
+          "comment": "Provisional heuristic score for Evidence & Examples."
+        },
+        {
+          "key": "Counter-argument",
+          "label": "Counter-argument",
+          "score": 28,
+          "comment": "Provisional heuristic score for Counter-argument."
+        },
+        {
+          "key": "Language & Style",
+          "label": "Language & Style",
+          "score": 56,
+          "comment": "Provisional heuristic score for Language & Style."
+        }
+      ],
+      "overallFeedback": "Heuristic fallback used due to AI evaluation error."
+    },
+    "createdAt": "2025-09-26T02:53:56.680Z",
+    "updatedAt": "2025-09-26T02:53:56.680Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d601d90024805f65b8ad0e",
+    "challenge": "68c57d7553414e9b0e3f1bd1",
+    "user": "68d5efd23042f50d6af0e229",
+    "attemptNumber": 1,
+    "text": "A place I really like is my grandparents’ village. It is surrounded by green fields, tall trees, and a calm river that flows nearby. I love visiting it because the air feels fresh and peaceful, far away from the noise of the city. Every morning, I wake up to the sound of birds singing and the soft breeze coming through the window. I enjoy helping my grandfather in the garden and listening to my grandmother’s stories in the evening. The nights are beautiful with a clear sky full of stars. This place makes me feel relaxed and happy, like home. Good to seeu guys i am happy to tell aboyt his",
+    "wordCount": 111,
+    "scores": [
+      {
+        "key": "Description",
+        "label": "Description",
+        "rawScore": 11,
+        "weight": 30,
+        "weightedScore": 3.3,
+        "comment": "Provisional heuristic score for Description."
+      },
+      {
+        "key": "Organization",
+        "label": "Organization",
+        "rawScore": 34,
+        "weight": 20,
+        "weightedScore": 6.8,
+        "comment": "Provisional heuristic score for Organization."
+      },
+      {
+        "key": "Clarity",
+        "label": "Clarity",
+        "rawScore": 60,
+        "weight": 20,
+        "weightedScore": 12,
+        "comment": "Provisional heuristic score for Clarity."
+      },
+      {
+        "key": "Grammar",
+        "label": "Grammar",
+        "rawScore": 14,
+        "weight": 15,
+        "weightedScore": 2.1,
+        "comment": "Provisional heuristic score for Grammar."
+      },
+      {
+        "key": "Personal Feelings",
+        "label": "Personal Feelings",
+        "rawScore": 40,
+        "weight": 15,
+        "weightedScore": 6,
+        "comment": "Provisional heuristic score for Personal Feelings."
+      }
+    ],
+    "totalScore": 30.2,
+    "xpAwarded": 12,
+    "feedback": "Heuristic fallback used due to AI evaluation error.",
+    "aiModel": "heuristic-fallback",
+    "rawAIResponse": {
+      "model": "heuristic-fallback",
+      "categories": [
+        {
+          "key": "Description",
+          "label": "Description",
+          "score": 11,
+          "comment": "Provisional heuristic score for Description."
+        },
+        {
+          "key": "Organization",
+          "label": "Organization",
+          "score": 34,
+          "comment": "Provisional heuristic score for Organization."
+        },
+        {
+          "key": "Clarity",
+          "label": "Clarity",
+          "score": 60,
+          "comment": "Provisional heuristic score for Clarity."
+        },
+        {
+          "key": "Grammar",
+          "label": "Grammar",
+          "score": 14,
+          "comment": "Provisional heuristic score for Grammar."
+        },
+        {
+          "key": "Personal Feelings",
+          "label": "Personal Feelings",
+          "score": 40,
+          "comment": "Provisional heuristic score for Personal Feelings."
+        }
+      ],
+      "overallFeedback": "Heuristic fallback used due to AI evaluation error."
+    },
+    "createdAt": "2025-09-26T03:00:41.576Z",
+    "updatedAt": "2025-09-26T03:00:41.576Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d604cb0024805f65b8ad5b",
+    "challenge": "68c57d2653414e9b0e3f1b99",
+    "user": "68a75ed084cbaf8f2b09a175",
+    "attemptNumber": 1,
+    "text": "La Tecnología en la Vida Diaria\n\nLa tecnología se ha convertido en una parte esencial de nuestra rutina diaria, transformando la manera en que trabajamos, estudiamos y nos comunicamos. Gracias a los avances tecnológicos, muchas tareas que antes requerían tiempo y esfuerzo ahora son más rápidas y eficientes. Por ejemplo, los teléfonos inteligentes nos permiten estar conectados con familiares y amigos en cualquier momento y lugar. Además, el acceso a internet facilita el aprendizaje en línea y el trabajo remoto, ofreciendo comodidad y flexibilidad.\n\nSin embargo, el uso excesivo de la tecnología también tiene aspectos negativos. Pasar demasiado tiempo frente a las pantallas puede afectar la salud física, como la vista o la postura, y puede generar adicción a redes sociales. Además, la dependencia de los dispositivos electrónicos reduce el contacto personal y, a veces, interfiere en nuestras relaciones cara a cara.\n\nEn conclusión, la tecnología influye de manera positiva al hacernos la vida más sencilla y eficiente, pero también presenta desafíos que debemos gestionar con responsabilidad. Encontrar un equilibrio entre su uso y el tiempo desconectado es clave para aprovechar sus beneficios sin afectar nuestra salud y relaciones.\n\nLa tecnología se ha convertido en una parte esencial de nuestra rutina diaria, transformando la manera en que trabajamos, estudiamos y nos comunicamos. Gracias a los avances tecnológicos, muchas tareas que antes requerían tiempo y esfuerzo ahora son más rápidas y eficientes. Por ejemplo, los teléfonos inteligentes nos permiten estar conectados con familiares y amigos en cualquier momento y lugar. Además, el acceso a internet facilita el aprendizaje en línea y el trabajo remoto, ofreciendo comodidad y flexibilidad en casi todas las actividades cotidianas.",
+    "wordCount": 273,
+    "scores": [
+      {
+        "key": "Tesis y Enfoque",
+        "label": "Tesis y Enfoque",
+        "rawScore": 70,
+        "weight": 25,
+        "weightedScore": 17.5,
+        "comment": "Provisional heuristic score for Tesis y Enfoque."
+      },
+      {
+        "key": "Ejemplos",
+        "label": "Ejemplos",
+        "rawScore": 25,
+        "weight": 25,
+        "weightedScore": 6.25,
+        "comment": "Provisional heuristic score for Ejemplos."
+      },
+      {
+        "key": "Equilibrio",
+        "label": "Equilibrio",
+        "rawScore": 49,
+        "weight": 20,
+        "weightedScore": 9.8,
+        "comment": "Provisional heuristic score for Equilibrio."
+      },
+      {
+        "key": "Estructura",
+        "label": "Estructura",
+        "rawScore": 74,
+        "weight": 15,
+        "weightedScore": 11.1,
+        "comment": "Provisional heuristic score for Estructura."
+      },
+      {
+        "key": "Lenguaje",
+        "label": "Lenguaje",
+        "rawScore": 29,
+        "weight": 15,
+        "weightedScore": 4.35,
+        "comment": "Provisional heuristic score for Lenguaje."
+      }
+    ],
+    "totalScore": 49,
+    "xpAwarded": 29,
+    "feedback": "Heuristic fallback used due to AI evaluation error.",
+    "aiModel": "heuristic-fallback",
+    "rawAIResponse": {
+      "model": "heuristic-fallback",
+      "categories": [
+        {
+          "key": "Tesis y Enfoque",
+          "label": "Tesis y Enfoque",
+          "score": 70,
+          "comment": "Provisional heuristic score for Tesis y Enfoque."
+        },
+        {
+          "key": "Ejemplos",
+          "label": "Ejemplos",
+          "score": 25,
+          "comment": "Provisional heuristic score for Ejemplos."
+        },
+        {
+          "key": "Equilibrio",
+          "label": "Equilibrio",
+          "score": 49,
+          "comment": "Provisional heuristic score for Equilibrio."
+        },
+        {
+          "key": "Estructura",
+          "label": "Estructura",
+          "score": 74,
+          "comment": "Provisional heuristic score for Estructura."
+        },
+        {
+          "key": "Lenguaje",
+          "label": "Lenguaje",
+          "score": 29,
+          "comment": "Provisional heuristic score for Lenguaje."
+        }
+      ],
+      "overallFeedback": "Heuristic fallback used due to AI evaluation error."
+    },
+    "createdAt": "2025-09-26T03:13:15.469Z",
+    "updatedAt": "2025-09-26T03:13:15.469Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d6063a7879d6fa05350f3a",
+    "challenge": "68c57d7553414e9b0e3f1bd1",
+    "user": "68a75ed084cbaf8f2b09a175",
+    "attemptNumber": 2,
+    "text": "A place that is very special to me is my village. Surrounded by greenery, open fields, and peaceful silence, it gives me a sense of comfort and relaxation that I cannot find in busy cities. I like visiting my village because it reminds me of simplicity and closeness to nature. Waking up to the sound of birds, breathing fresh air, and walking through the farms make me feel refreshed and happy.\n\nAnother reason I like this place is the people. Everyone in the village is friendly, caring, and supportive. Spending time with family and neighbors creates strong bonds and unforgettable memories. For me, my village is not just a location but a place of love, peace, and belonging.",
+    "wordCount": 118,
+    "scores": [
+      {
+        "key": "Description",
+        "label": "Description",
+        "rawScore": 62,
+        "weight": 30,
+        "weightedScore": 18.6,
+        "comment": "Provisional heuristic score for Description."
+      },
+      {
+        "key": "Organization",
+        "label": "Organization",
+        "rawScore": 14,
+        "weight": 20,
+        "weightedScore": 2.8,
+        "comment": "Provisional heuristic score for Organization."
+      },
+      {
+        "key": "Clarity",
+        "label": "Clarity",
+        "rawScore": 40,
+        "weight": 20,
+        "weightedScore": 8,
+        "comment": "Provisional heuristic score for Clarity."
+      },
+      {
+        "key": "Grammar",
+        "label": "Grammar",
+        "rawScore": 64,
+        "weight": 15,
+        "weightedScore": 9.6,
+        "comment": "Provisional heuristic score for Grammar."
+      },
+      {
+        "key": "Personal Feelings",
+        "label": "Personal Feelings",
+        "rawScore": 19,
+        "weight": 15,
+        "weightedScore": 2.85,
+        "comment": "Provisional heuristic score for Personal Feelings."
+      }
+    ],
+    "totalScore": 41.85,
+    "xpAwarded": 10,
+    "feedback": "Heuristic fallback used due to AI evaluation error.",
+    "aiModel": "heuristic-fallback",
+    "rawAIResponse": {
+      "model": "heuristic-fallback",
+      "categories": [
+        {
+          "key": "Description",
+          "label": "Description",
+          "score": 62,
+          "comment": "Provisional heuristic score for Description."
+        },
+        {
+          "key": "Organization",
+          "label": "Organization",
+          "score": 14,
+          "comment": "Provisional heuristic score for Organization."
+        },
+        {
+          "key": "Clarity",
+          "label": "Clarity",
+          "score": 40,
+          "comment": "Provisional heuristic score for Clarity."
+        },
+        {
+          "key": "Grammar",
+          "label": "Grammar",
+          "score": 64,
+          "comment": "Provisional heuristic score for Grammar."
+        },
+        {
+          "key": "Personal Feelings",
+          "label": "Personal Feelings",
+          "score": 19,
+          "comment": "Provisional heuristic score for Personal Feelings."
+        }
+      ],
+      "overallFeedback": "Heuristic fallback used due to AI evaluation error."
+    },
+    "createdAt": "2025-09-26T03:19:22.697Z",
+    "updatedAt": "2025-09-26T03:19:22.697Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d606557879d6fa05350f5b",
+    "challenge": "68c57d7553414e9b0e3f1bd1",
+    "user": "68a75ed084cbaf8f2b09a175",
+    "attemptNumber": 3,
+    "text": "A place that is very special to me is my village. Surrounded by greenery, open fields, and peaceful silence, it gives me a sense of comfort and relaxation that I cannot find in busy cities. I like visiting my village because it reminds me of simplicity and closeness to nature. Waking up to the sound of birds, breathing fresh air, and walking through the farms make me feel refreshed and happy.\n\nAnother reason I like this place is the people. Everyone in the village is friendly, caring, and supportive. Spending time with family and neighbors creates strong bonds and unforgettable memories. For me, my village is not just a location but a place of love, peace, and belonging.\n\n(120 words)",
+    "wordCount": 120,
+    "scores": [
+      {
+        "key": "Description",
+        "label": "Description",
+        "rawScore": 76,
+        "weight": 30,
+        "weightedScore": 22.8,
+        "comment": "Provisional heuristic score for Description."
+      },
+      {
+        "key": "Organization",
+        "label": "Organization",
+        "rawScore": 28,
+        "weight": 20,
+        "weightedScore": 5.6,
+        "comment": "Provisional heuristic score for Organization."
+      },
+      {
+        "key": "Clarity",
+        "label": "Clarity",
+        "rawScore": 54,
+        "weight": 20,
+        "weightedScore": 10.8,
+        "comment": "Provisional heuristic score for Clarity."
+      },
+      {
+        "key": "Grammar",
+        "label": "Grammar",
+        "rawScore": 8,
+        "weight": 15,
+        "weightedScore": 1.2,
+        "comment": "Provisional heuristic score for Grammar."
+      },
+      {
+        "key": "Personal Feelings",
+        "label": "Personal Feelings",
+        "rawScore": 34,
+        "weight": 15,
+        "weightedScore": 5.1,
+        "comment": "Provisional heuristic score for Personal Feelings."
+      }
+    ],
+    "totalScore": 45.5,
+    "xpAwarded": 7,
+    "feedback": "Heuristic fallback used due to AI evaluation error.",
+    "aiModel": "heuristic-fallback",
+    "rawAIResponse": {
+      "model": "heuristic-fallback",
+      "categories": [
+        {
+          "key": "Description",
+          "label": "Description",
+          "score": 76,
+          "comment": "Provisional heuristic score for Description."
+        },
+        {
+          "key": "Organization",
+          "label": "Organization",
+          "score": 28,
+          "comment": "Provisional heuristic score for Organization."
+        },
+        {
+          "key": "Clarity",
+          "label": "Clarity",
+          "score": 54,
+          "comment": "Provisional heuristic score for Clarity."
+        },
+        {
+          "key": "Grammar",
+          "label": "Grammar",
+          "score": 8,
+          "comment": "Provisional heuristic score for Grammar."
+        },
+        {
+          "key": "Personal Feelings",
+          "label": "Personal Feelings",
+          "score": 34,
+          "comment": "Provisional heuristic score for Personal Feelings."
+        }
+      ],
+      "overallFeedback": "Heuristic fallback used due to AI evaluation error."
+    },
+    "createdAt": "2025-09-26T03:19:49.792Z",
+    "updatedAt": "2025-09-26T03:19:49.792Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d60adee62f52ccf9f18267",
+    "challenge": "68c57d7653414e9b0e3f1bfe",
+    "user": "68a75ed084cbaf8f2b09a175",
+    "attemptNumber": 1,
+    "text": "Do Individuals Have a Real Responsibility to Fight Climate Change, or Is It Mainly the Role of Governments and Companies?\n\nClimate change is one of the most pressing challenges of our time, affecting ecosystems, economies, and human health worldwide. While governments and corporations possess the resources and authority to enact large-scale policies and technological changes, individuals also play a crucial role in combating climate change. This essay argues that although systemic action from governments and companies is essential, individuals have a real and meaningful responsibility to contribute to the fight against climate change.\n\nFirstly, individual actions collectively shape demand, which in turn influences corporate and governmental decisions. For example, when more people choose to use public transportation or electric vehicles instead of gasoline-powered cars, it reduces overall carbon emissions and pushes the automobile industry to invest in cleaner technologies. Similarly, consumers who prefer eco-friendly products encourage companies to adopt sustainable production methods. These small choices may seem insignificant on their own, but together they create powerful market shifts.\n\nSecondly, individuals have a direct impact on energy consumption and waste reduction at home. Simple actions—such as turning off unnecessary lights, reducing water usage, composting organic waste, and recycling—help reduce greenhouse gas emissions. For instance, if households worldwide reduced food waste by half, millions of tons of methane, a potent greenhouse gas, could be avoided each year. These measures are affordable, accessible, and collectively significant in mitigating climate change.\n\nHowever, it would be unrealistic to place the primary burden solely on individuals. Governments and corporations control large-scale industrial emissions, infrastructure development, and energy production—areas where personal choices have limited influence. For example, without policies that regulate emissions from factories or promote renewable energy, the efforts of individuals alone cannot offset the vast amount of greenhouse gases produced by industrial sectors. Thus, systemic changes led by authorities are indispensable.\n\nCritics argue that emphasizing individual responsibility distracts from the need for structural reforms. While this concern is valid, personal actions and advocacy can complement rather than replace institutional efforts. By voting for environmentally conscious leaders, supporting climate-friendly businesses, and participating in community initiatives, individuals can push for the systemic changes that are urgently needed.\n\nIn conclusion, both individuals and institutions share the responsibility to combat climate change, but their roles differ in scale and nature. Governments and corporations must lead with policies and innovation, yet individuals cannot remain passive observers. By making sustainable choices and demanding action from leaders, people can amplify the global effort. Ultimately, fighting climate change requires a partnership between collective will and institutional power.\n\n(Word count: ~404 words)",
+    "wordCount": 428,
+    "scores": [
+      {
+        "key": "Thesis & Clarity",
+        "label": "Thesis & Clarity",
+        "rawScore": 73,
+        "weight": 20,
+        "weightedScore": 14.6,
+        "comment": "Provisional heuristic score for Thesis & Clarity."
+      },
+      {
+        "key": "Argumentation",
+        "label": "Argumentation",
+        "rawScore": 30,
+        "weight": 25,
+        "weightedScore": 7.5,
+        "comment": "Provisional heuristic score for Argumentation."
+      },
+      {
+        "key": "Evidence & Examples",
+        "label": "Evidence & Examples",
+        "rawScore": 54,
+        "weight": 20,
+        "weightedScore": 10.8,
+        "comment": "Provisional heuristic score for Evidence & Examples."
+      },
+      {
+        "key": "Counter-argument",
+        "label": "Counter-argument",
+        "rawScore": 8,
+        "weight": 15,
+        "weightedScore": 1.2,
+        "comment": "Provisional heuristic score for Counter-argument."
+      },
+      {
+        "key": "Language & Style",
+        "label": "Language & Style",
+        "rawScore": 35,
+        "weight": 20,
+        "weightedScore": 7,
+        "comment": "Provisional heuristic score for Language & Style."
+      }
+    ],
+    "totalScore": 41.1,
+    "xpAwarded": 33,
+    "feedback": "Heuristic fallback used due to AI evaluation error.",
+    "aiModel": "heuristic-fallback",
+    "rawAIResponse": {
+      "model": "heuristic-fallback",
+      "categories": [
+        {
+          "key": "Thesis & Clarity",
+          "label": "Thesis & Clarity",
+          "score": 73,
+          "comment": "Provisional heuristic score for Thesis & Clarity."
+        },
+        {
+          "key": "Argumentation",
+          "label": "Argumentation",
+          "score": 30,
+          "comment": "Provisional heuristic score for Argumentation."
+        },
+        {
+          "key": "Evidence & Examples",
+          "label": "Evidence & Examples",
+          "score": 54,
+          "comment": "Provisional heuristic score for Evidence & Examples."
+        },
+        {
+          "key": "Counter-argument",
+          "label": "Counter-argument",
+          "score": 8,
+          "comment": "Provisional heuristic score for Counter-argument."
+        },
+        {
+          "key": "Language & Style",
+          "label": "Language & Style",
+          "score": 35,
+          "comment": "Provisional heuristic score for Language & Style."
+        }
+      ],
+      "overallFeedback": "Heuristic fallback used due to AI evaluation error."
+    },
+    "createdAt": "2025-09-26T03:39:10.762Z",
+    "updatedAt": "2025-09-26T03:39:10.762Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d60c8bcf43d19b77d69e26",
+    "challenge": "68c57d7653414e9b0e3f1bfe",
+    "user": "68a75ed084cbaf8f2b09a175",
+    "attemptNumber": 2,
+    "text": "Do Individuals Have a Real Responsibility to Fight Climate Change, or Is It Mainly the Role of Governments and Companies?\n\nClimate change is one of the most pressing challenges of our time, affecting ecosystems, economies, and human health worldwide. While governments and corporations possess the resources and authority to enact large-scale policies and technological changes, individuals also play a crucial role in combating climate change. This essay argues that although systemic action from governments and companies is essential, individuals have a real and meaningful responsibility to contribute to the fight against climate change.\n\nFirstly, individual actions collectively shape demand, which in turn influences corporate and governmental decisions. For example, when more people choose to use public transportation or electric vehicles instead of gasoline-powered cars, it reduces overall carbon emissions and pushes the automobile industry to invest in cleaner technologies. Similarly, consumers who prefer eco-friendly products encourage companies to adopt sustainable production methods. These small choices may seem insignificant on their own, but together they create powerful market shifts.\n\nSecondly, individuals have a direct impact on energy consumption and waste reduction at home. Simple actions—such as turning off unnecessary lights, reducing water usage, composting organic waste, and recycling—help reduce greenhouse gas emissions. For instance, if households worldwide reduced food waste by half, millions of tons of methane, a potent greenhouse gas, could be avoided each year. These measures are affordable, accessible, and collectively significant in mitigating climate change.\n\nHowever, it would be unrealistic to place the primary burden solely on individuals. Governments and corporations control large-scale industrial emissions, infrastructure development, and energy production—areas where personal choices have limited influence. For example, without policies that regulate emissions from factories or promote renewable energy, the efforts of individuals alone cannot offset the vast amount of greenhouse gases produced by industrial sectors. Thus, systemic changes led by authorities are indispensable.\n\nCritics argue that emphasizing individual responsibility distracts from the need for structural reforms. While this concern is valid, personal actions and advocacy can complement rather than replace institutional efforts. By voting for environmentally conscious leaders, supporting climate-friendly businesses, and participating in community initiatives, individuals can push for the systemic changes that are urgently needed.\n\nIn conclusion, both individuals and institutions share the responsibility to combat climate change, but their roles differ in scale and nature. Governments and corporations must lead with policies and innovation, yet individuals cannot remain passive observers. By making sustainable choices and demanding action from leaders, people can amplify the global effort. Ultimately, fighting climate change requires a partnership between collective will and institutional power.\n\n(Word count: ~404 words)",
+    "wordCount": 428,
+    "scores": [
+      {
+        "key": "Thesis & Clarity",
+        "label": "Thesis & Clarity",
+        "rawScore": 73,
+        "weight": 20,
+        "weightedScore": 14.6,
+        "comment": "Provisional heuristic score for Thesis & Clarity."
+      },
+      {
+        "key": "Argumentation",
+        "label": "Argumentation",
+        "rawScore": 30,
+        "weight": 25,
+        "weightedScore": 7.5,
+        "comment": "Provisional heuristic score for Argumentation."
+      },
+      {
+        "key": "Evidence & Examples",
+        "label": "Evidence & Examples",
+        "rawScore": 54,
+        "weight": 20,
+        "weightedScore": 10.8,
+        "comment": "Provisional heuristic score for Evidence & Examples."
+      },
+      {
+        "key": "Counter-argument",
+        "label": "Counter-argument",
+        "rawScore": 8,
+        "weight": 15,
+        "weightedScore": 1.2,
+        "comment": "Provisional heuristic score for Counter-argument."
+      },
+      {
+        "key": "Language & Style",
+        "label": "Language & Style",
+        "rawScore": 35,
+        "weight": 20,
+        "weightedScore": 7,
+        "comment": "Provisional heuristic score for Language & Style."
+      }
+    ],
+    "totalScore": 41.1,
+    "xpAwarded": 20,
+    "feedback": "Heuristic fallback used due to AI evaluation error.",
+    "aiModel": "heuristic-fallback",
+    "rawAIResponse": {
+      "model": "heuristic-fallback",
+      "categories": [
+        {
+          "key": "Thesis & Clarity",
+          "label": "Thesis & Clarity",
+          "score": 73,
+          "comment": "Provisional heuristic score for Thesis & Clarity."
+        },
+        {
+          "key": "Argumentation",
+          "label": "Argumentation",
+          "score": 30,
+          "comment": "Provisional heuristic score for Argumentation."
+        },
+        {
+          "key": "Evidence & Examples",
+          "label": "Evidence & Examples",
+          "score": 54,
+          "comment": "Provisional heuristic score for Evidence & Examples."
+        },
+        {
+          "key": "Counter-argument",
+          "label": "Counter-argument",
+          "score": 8,
+          "comment": "Provisional heuristic score for Counter-argument."
+        },
+        {
+          "key": "Language & Style",
+          "label": "Language & Style",
+          "score": 35,
+          "comment": "Provisional heuristic score for Language & Style."
+        }
+      ],
+      "overallFeedback": "Heuristic fallback used due to AI evaluation error."
+    },
+    "createdAt": "2025-09-26T03:46:19.866Z",
+    "updatedAt": "2025-09-26T03:46:19.866Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d60d2dc995e9e9fdec4fb3",
+    "challenge": "68c57d7653414e9b0e3f1bef",
+    "user": "68a75ed084cbaf8f2b09a175",
+    "attemptNumber": 1,
+    "text": "Do Individuals Have a Real Responsibility to Fight Climate Change, or Is It Mainly the Role of Governments and Companies?\n\nClimate change is one of the most pressing challenges of our time, affecting ecosystems, economies, and human health worldwide. While governments and corporations possess the resources and authority to enact large-scale policies and technological changes, individuals also play a crucial role in combating climate change. This essay argues that although systemic action from governments and companies is essential, individuals have a real and meaningful responsibility to contribute to the fight against climate change.\n\nFirstly, individual actions collectively shape demand, which in turn influences corporate and governmental decisions. For example, when more people choose to use public transportation or electric vehicles instead of gasoline-powered cars, it reduces overall carbon emissions and pushes the automobile industry to invest in cleaner technologies. Similarly, consumers who prefer eco-friendly products encourage companies to adopt sustainable production methods. These small choices may seem insignificant on their own, but together they create powerful market shifts.\n\nSecondly, individuals have a direct impact on energy consumption and waste reduction at home. Simple actions—such as turning off unnecessary lights, reducing water usage, composting organic waste, and recycling—help reduce greenhouse gas emissions. For instance, if households worldwide reduced food waste by half, millions of tons of methane, a potent greenhouse gas, could be avoided each year. These measures are affordable, accessible, and collectively",
+    "wordCount": 232,
+    "scores": [
+      {
+        "key": "Thesis & Focus",
+        "label": "Thesis & Focus",
+        "rawScore": 57,
+        "weight": 25,
+        "weightedScore": 14.25,
+        "comment": "Provisional heuristic score for Thesis & Focus."
+      },
+      {
+        "key": "Examples",
+        "label": "Examples",
+        "rawScore": 12,
+        "weight": 25,
+        "weightedScore": 3,
+        "comment": "Provisional heuristic score for Examples."
+      },
+      {
+        "key": "Balance",
+        "label": "Balance",
+        "rawScore": 36,
+        "weight": 20,
+        "weightedScore": 7.2,
+        "comment": "Provisional heuristic score for Balance."
+      },
+      {
+        "key": "Structure",
+        "label": "Structure",
+        "rawScore": 61,
+        "weight": 15,
+        "weightedScore": 9.15,
+        "comment": "Provisional heuristic score for Structure."
+      },
+      {
+        "key": "Language Use",
+        "label": "Language Use",
+        "rawScore": 16,
+        "weight": 15,
+        "weightedScore": 2.4,
+        "comment": "Provisional heuristic score for Language Use."
+      }
+    ],
+    "totalScore": 36,
+    "xpAwarded": 22,
+    "feedback": "Heuristic fallback used due to AI evaluation error.",
+    "aiModel": "heuristic-fallback",
+    "rawAIResponse": {
+      "model": "heuristic-fallback",
+      "categories": [
+        {
+          "key": "Thesis & Focus",
+          "label": "Thesis & Focus",
+          "score": 57,
+          "comment": "Provisional heuristic score for Thesis & Focus."
+        },
+        {
+          "key": "Examples",
+          "label": "Examples",
+          "score": 12,
+          "comment": "Provisional heuristic score for Examples."
+        },
+        {
+          "key": "Balance",
+          "label": "Balance",
+          "score": 36,
+          "comment": "Provisional heuristic score for Balance."
+        },
+        {
+          "key": "Structure",
+          "label": "Structure",
+          "score": 61,
+          "comment": "Provisional heuristic score for Structure."
+        },
+        {
+          "key": "Language Use",
+          "label": "Language Use",
+          "score": 16,
+          "comment": "Provisional heuristic score for Language Use."
+        }
+      ],
+      "overallFeedback": "Heuristic fallback used due to AI evaluation error."
+    },
+    "createdAt": "2025-09-26T03:49:01.685Z",
+    "updatedAt": "2025-09-26T03:49:01.685Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d6169f8d4708e1855bac74",
+    "challenge": "68c57d7653414e9b0e3f1bfe",
+    "user": "68d5efd23042f50d6af0e229",
+    "attemptNumber": 3,
+    "text": "Do Individuals Have a Real Responsibility to Fight Climate Change, or Is It Mainly the Role of Governments and Companies?\n\nClimate change is one of the most pressing challenges of our time, affecting ecosystems, economies, and human health worldwide. While governments and corporations possess the resources and authority to enact large-scale policies and technological changes, individuals also play a crucial role in combating climate change. This essay argues that although systemic action from governments and companies is essential, individuals have a real and meaningful responsibility to contribute to the fight against climate change.\n\nFirstly, individual actions collectively shape demand, which in turn influences corporate and governmental decisions. For example, when more people choose to use public transportation or electric vehicles instead of gasoline-powered cars, it reduces overall carbon emissions and pushes the automobile industry to invest in cleaner technologies. Similarly, consumers who prefer eco-friendly products encourage companies to adopt sustainable production methods. These small choices may seem insignificant on their own, but together they create powerful market shifts.\n\nSecondly, individuals have a direct impact on energy consumption and waste reduction at home. Simple actions—such as turning off unnecessary lights, reducing water usage, composting organic waste, and recycling—help reduce greenhouse gas emissions. For instance, if households worldwide reduced food waste by half, millions of tons of methane, a potent greenhouse gas, could be avoided each year. These measures are affordable, accessible, and collectively significant in mitigating climate change.\n\nHowever, it would be unrealistic to place the primary burden solely on individuals. Governments and corporations control large-scale industrial emissions, infrastructure development, and energy production—areas where personal choices have limited influence. For example, without policies that regulate emissions from factories or promote renewable energy, the efforts of individuals alone cannot offset the vast amount of greenhouse gases produced by industrial sectors. Thus, systemic changes led by authorities are indispensable.\n\nCritics argue that emphasizing individual responsibility distracts from the need for structural reforms. While this concern is valid, personal actions and advocacy can complement rather than replace institutional efforts. By voting for environmentally conscious leaders, supporting climate-friendly businesses, and participating in community initiatives, individuals can push for the systemic changes that are urgently needed.\n\nIn conclusion, both individuals and institutions share the responsibility to combat climate change, but their roles differ in scale and nature. Governments and corporations must lead with policies and innovation, yet individuals cannot remain passive observers. By making sustainable choices and demanding action from leaders, people can amplify the global effort. Ultimately, fighting climate change requires a partnership between collective will and institutional power.\n\n(Word count: ~404 words)",
+    "wordCount": 428,
+    "scores": [
+      {
+        "key": "Thesis & Clarity",
+        "label": "Thesis & Clarity",
+        "rawScore": 73,
+        "weight": 20,
+        "weightedScore": 14.6,
+        "comment": "Provisional heuristic score for Thesis & Clarity."
+      },
+      {
+        "key": "Argumentation",
+        "label": "Argumentation",
+        "rawScore": 30,
+        "weight": 25,
+        "weightedScore": 7.5,
+        "comment": "Provisional heuristic score for Argumentation."
+      },
+      {
+        "key": "Evidence & Examples",
+        "label": "Evidence & Examples",
+        "rawScore": 54,
+        "weight": 20,
+        "weightedScore": 10.8,
+        "comment": "Provisional heuristic score for Evidence & Examples."
+      },
+      {
+        "key": "Counter-argument",
+        "label": "Counter-argument",
+        "rawScore": 8,
+        "weight": 15,
+        "weightedScore": 1.2,
+        "comment": "Provisional heuristic score for Counter-argument."
+      },
+      {
+        "key": "Language & Style",
+        "label": "Language & Style",
+        "rawScore": 35,
+        "weight": 20,
+        "weightedScore": 7,
+        "comment": "Provisional heuristic score for Language & Style."
+      }
+    ],
+    "totalScore": 41.1,
+    "xpAwarded": 13,
+    "feedback": "Heuristic fallback used due to AI evaluation error.",
+    "aiModel": "heuristic-fallback",
+    "rawAIResponse": {
+      "model": "heuristic-fallback",
+      "categories": [
+        {
+          "key": "Thesis & Clarity",
+          "label": "Thesis & Clarity",
+          "score": 73,
+          "comment": "Provisional heuristic score for Thesis & Clarity."
+        },
+        {
+          "key": "Argumentation",
+          "label": "Argumentation",
+          "score": 30,
+          "comment": "Provisional heuristic score for Argumentation."
+        },
+        {
+          "key": "Evidence & Examples",
+          "label": "Evidence & Examples",
+          "score": 54,
+          "comment": "Provisional heuristic score for Evidence & Examples."
+        },
+        {
+          "key": "Counter-argument",
+          "label": "Counter-argument",
+          "score": 8,
+          "comment": "Provisional heuristic score for Counter-argument."
+        },
+        {
+          "key": "Language & Style",
+          "label": "Language & Style",
+          "score": 35,
+          "comment": "Provisional heuristic score for Language & Style."
+        }
+      ],
+      "overallFeedback": "Heuristic fallback used due to AI evaluation error."
+    },
+    "createdAt": "2025-09-26T04:29:19.506Z",
+    "updatedAt": "2025-09-26T04:29:19.506Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d617581033a06166c2ce8c",
+    "challenge": "68c57d7653414e9b0e3f1bfe",
+    "user": "68d5efd23042f50d6af0e229",
+    "attemptNumber": 4,
+    "text": "Do Individuals Have a Real Responsibility to Fight Climate Change, or Is It Mainly the Role of Governments and Companies?\n\nClimate change is one of the most pressing challenges of our time, affecting ecosystems, economies, and human health worldwide. While governments and corporations possess the resources and authority to enact large-scale policies and technological changes, individuals also play a crucial role in combating climate change. This essay argues that although systemic action from governments and companies is essential, individuals have a real and meaningful responsibility to contribute to the fight against climate change.\n\nFirstly, individual actions collectively shape demand, which in turn influences corporate and governmental decisions. For example, when more people choose to use public transportation or electric vehicles instead of gasoline-powered cars, it reduces overall carbon emissions and pushes the automobile industry to invest in cleaner technologies. Similarly, consumers who prefer eco-friendly products encourage companies to adopt sustainable production methods. These small choices may seem insignificant on their own, but together they create powerful market shifts.\n\nSecondly, individuals have a direct impact on energy consumption and waste reduction at home. Simple actions—such as turning off unnecessary lights, reducing water usage, composting organic waste, and recycling—help reduce greenhouse gas emissions. For instance, if households worldwide reduced food waste by half, millions of tons of methane, a potent greenhouse gas, could be avoided each year. These measures are affordable, accessible, and collectively significant in mitigating climate change.\n\nHowever, it would be unrealistic to place the primary burden solely on individuals. Governments and corporations control large-scale industrial emissions, infrastructure development, and energy production—areas where personal choices have limited influence. For example, without policies that regulate emissions from factories or promote renewable energy, the efforts of individuals alone cannot offset the vast amount of greenhouse gases produced by industrial sectors. Thus, systemic changes led by authorities are indispensable.\n\nCritics argue that emphasizing individual responsibility distracts from the need for structural reforms. While this concern is valid, personal actions and advocacy can complement rather than replace institutional efforts. By voting for environmentally conscious leaders, supporting climate-friendly businesses, and participating in community initiatives, individuals can push for the systemic changes that are urgently needed.\n\nIn conclusion, both individuals and institutions share the responsibility to combat climate change, but their roles differ in scale and nature. Governments and corporations must lead with policies and innovation, yet individuals cannot remain passive observers. By making sustainable choices and demanding action from leaders, people can amplify the global effort. Ultimately, fighting climate change requires a partnership between collective will and institutional power.\n\n(Word count: ~404 words)",
+    "wordCount": 428,
+    "scores": [
+      {
+        "key": "Thesis & Clarity",
+        "label": "Thesis & Clarity",
+        "rawScore": 73,
+        "weight": 20,
+        "weightedScore": 14.6,
+        "comment": "Provisional heuristic score for Thesis & Clarity."
+      },
+      {
+        "key": "Argumentation",
+        "label": "Argumentation",
+        "rawScore": 30,
+        "weight": 25,
+        "weightedScore": 7.5,
+        "comment": "Provisional heuristic score for Argumentation."
+      },
+      {
+        "key": "Evidence & Examples",
+        "label": "Evidence & Examples",
+        "rawScore": 54,
+        "weight": 20,
+        "weightedScore": 10.8,
+        "comment": "Provisional heuristic score for Evidence & Examples."
+      },
+      {
+        "key": "Counter-argument",
+        "label": "Counter-argument",
+        "rawScore": 8,
+        "weight": 15,
+        "weightedScore": 1.2,
+        "comment": "Provisional heuristic score for Counter-argument."
+      },
+      {
+        "key": "Language & Style",
+        "label": "Language & Style",
+        "rawScore": 35,
+        "weight": 20,
+        "weightedScore": 7,
+        "comment": "Provisional heuristic score for Language & Style."
+      }
+    ],
+    "totalScore": 41.1,
+    "xpAwarded": 8,
+    "feedback": "Heuristic fallback used due to AI evaluation error.",
+    "aiModel": "heuristic-fallback",
+    "rawAIResponse": {
+      "model": "heuristic-fallback",
+      "categories": [
+        {
+          "key": "Thesis & Clarity",
+          "label": "Thesis & Clarity",
+          "score": 73,
+          "comment": "Provisional heuristic score for Thesis & Clarity."
+        },
+        {
+          "key": "Argumentation",
+          "label": "Argumentation",
+          "score": 30,
+          "comment": "Provisional heuristic score for Argumentation."
+        },
+        {
+          "key": "Evidence & Examples",
+          "label": "Evidence & Examples",
+          "score": 54,
+          "comment": "Provisional heuristic score for Evidence & Examples."
+        },
+        {
+          "key": "Counter-argument",
+          "label": "Counter-argument",
+          "score": 8,
+          "comment": "Provisional heuristic score for Counter-argument."
+        },
+        {
+          "key": "Language & Style",
+          "label": "Language & Style",
+          "score": 35,
+          "comment": "Provisional heuristic score for Language & Style."
+        }
+      ],
+      "overallFeedback": "Heuristic fallback used due to AI evaluation error."
+    },
+    "createdAt": "2025-09-26T04:32:24.194Z",
+    "updatedAt": "2025-09-26T04:32:24.194Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d61887f990e91ecb68219a",
+    "challenge": "68c57d7653414e9b0e3f1be0",
+    "user": "68d5efd23042f50d6af0e229",
+    "attemptNumber": 1,
+    "text": "Do Individuals Have a Real Responsibility to Fight Climate Change, or Is It Mainly the Role of Governments and Companies?\n\nClimate change is one of the most pressing challenges of our time, affecting ecosystems, economies, and human health worldwide. While governments and corporations possess the resources and authority to enact large-scale policies and technological changes, individuals also play a crucial role in combating climate change. This essay argues that although systemic action from governments and companies is essential, individuals have a real and meaningful responsibility to contribute to the fight against climate change.\n\nFirstly, individual actions collectively shape demand, which in turn influences corporate and governmental decisions. For example, when more people choose to use public transportation or electric vehicles instead of gasoline-powered cars, it reduces overall carbon emissions and pushes the automobile industry to invest in cleaner technologies. Similarly, consumers who prefer eco-friendly products encourage companies to adopt sustainable production methods. These small choices may seem insignificant on their own, but together they create powerful market shifts.\n\nSecondly, individuals have a direct impact on energy consumption and waste reduction at home. Simple actions—such as turning off unnecessary lights, reducing water usage, composting organic waste, and recycling—help reduce greenhouse gas emissions. For instance, if households worldwide reduced food waste by half, millions of tons of methane, a potent greenhouse gas, could be avoided each year. These measures are affordable, accessible, and collectively significant in mitigating climate change.",
+    "wordCount": 237,
+    "scores": [
+      {
+        "key": "Content Relevance",
+        "label": "Content Relevance",
+        "rawScore": 59,
+        "weight": 25,
+        "weightedScore": 14.75,
+        "comment": "Provisional heuristic score for Content Relevance."
+      },
+      {
+        "key": "Organization",
+        "label": "Organization",
+        "rawScore": 13,
+        "weight": 20,
+        "weightedScore": 2.6,
+        "comment": "Provisional heuristic score for Organization."
+      },
+      {
+        "key": "Examples",
+        "label": "Examples",
+        "rawScore": 39,
+        "weight": 20,
+        "weightedScore": 7.8,
+        "comment": "Provisional heuristic score for Examples."
+      },
+      {
+        "key": "Language",
+        "label": "Language",
+        "rawScore": 65,
+        "weight": 20,
+        "weightedScore": 13,
+        "comment": "Provisional heuristic score for Language."
+      },
+      {
+        "key": "Reflection",
+        "label": "Reflection",
+        "rawScore": 19,
+        "weight": 15,
+        "weightedScore": 2.85,
+        "comment": "Provisional heuristic score for Reflection."
+      }
+    ],
+    "totalScore": 41,
+    "xpAwarded": 25,
+    "feedback": "Heuristic fallback used due to AI evaluation error.",
+    "aiModel": "heuristic-fallback",
+    "rawAIResponse": {
+      "model": "heuristic-fallback",
+      "categories": [
+        {
+          "key": "Content Relevance",
+          "label": "Content Relevance",
+          "score": 59,
+          "comment": "Provisional heuristic score for Content Relevance."
+        },
+        {
+          "key": "Organization",
+          "label": "Organization",
+          "score": 13,
+          "comment": "Provisional heuristic score for Organization."
+        },
+        {
+          "key": "Examples",
+          "label": "Examples",
+          "score": 39,
+          "comment": "Provisional heuristic score for Examples."
+        },
+        {
+          "key": "Language",
+          "label": "Language",
+          "score": 65,
+          "comment": "Provisional heuristic score for Language."
+        },
+        {
+          "key": "Reflection",
+          "label": "Reflection",
+          "score": 19,
+          "comment": "Provisional heuristic score for Reflection."
+        }
+      ],
+      "overallFeedback": "Heuristic fallback used due to AI evaluation error."
+    },
+    "createdAt": "2025-09-26T04:37:27.698Z",
+    "updatedAt": "2025-09-26T04:37:27.698Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d6199d08b291b141c968ab",
+    "challenge": "68c57d7653414e9b0e3f1be0",
+    "user": "68d5efd23042f50d6af0e229",
+    "attemptNumber": 2,
+    "text": "Do Individuals Have a Real Responsibility to Fight Climate Change, or Is It Mainly the Role of Governments and Companies?\n\nClimate change is one of the most pressing challenges of our time, affecting ecosystems, economies, and human health worldwide. While governments and corporations possess the resources and authority to enact large-scale policies and technological changes, individuals also play a crucial role in combating climate change. This essay argues that although systemic action from governments and companies is essential, individuals have a real and meaningful responsibility to contribute to the fight against climate change.\n\nFirstly, individual actions collectively shape demand, which in turn influences corporate and governmental decisions. For example, when more people choose to use public transportation or electric vehicles instead of gasoline-powered cars, it reduces overall carbon emissions and pushes the automobile industry to invest in cleaner technologies. Similarly, consumers who prefer eco-friendly products encourage companies to adopt sustainable production methods. These small choices may seem insignificant on their own, but together they create powerful market shifts.\n\nSecondly, individuals have a direct impact on energy consumption and waste reduction at home. Simple actions—such as turning off unnecessary lights, reducing water usage, composting organic waste, and recycling—help reduce greenhouse gas emissions. For instance, if households worldwide reduced food waste by half, millions of tons of methane, a potent greenhouse gas, could be avoided each year. These measures are affordable, accessible, and collectively significant in mitigating climate change.",
+    "wordCount": 237,
+    "scores": [
+      {
+        "key": "Content Relevance",
+        "label": "Content Relevance",
+        "rawScore": 22,
+        "weight": 25,
+        "weightedScore": 5.5,
+        "comment": "While the essay touches on the role of individuals, it could be stronger in explicitly discussing teamwork.  The focus is more on individual actions rather than collaborative efforts.  Mentioning how individuals can support government policies or corporate initiatives would strengthen the teamwork aspect."
+      },
+      {
+        "key": "Organization",
+        "label": "Organization",
+        "rawScore": 20,
+        "weight": 20,
+        "weightedScore": 4,
+        "comment": "The essay has a clear introduction and conclusion, and the two main points are presented logically.  The structure is well-organized."
+      },
+      {
+        "key": "Examples",
+        "label": "Examples",
+        "rawScore": 20,
+        "weight": 20,
+        "weightedScore": 4,
+        "comment": "The essay provides good examples, such as choosing public transport and eco-friendly products, and reducing food waste.  These examples illustrate the impact of individual actions."
+      },
+      {
+        "key": "Language",
+        "label": "Language",
+        "rawScore": 18,
+        "weight": 20,
+        "weightedScore": 3.6,
+        "comment": "The language is generally clear and simple, but could be improved by using more varied vocabulary.  For example, instead of just saying 'reduce,' using terms like 'mitigate' or 'minimize' would enhance the writing."
+      },
+      {
+        "key": "Reflection",
+        "label": "Reflection",
+        "rawScore": 14,
+        "weight": 15,
+        "weightedScore": 2.1,
+        "comment": "The essay explains the importance of individual actions, but does not fully explain how these actions contribute to a larger team effort.  There's a lack of discussion on how individual actions can support broader systemic change or how individuals can collaborate to achieve a common goal."
+      }
+    ],
+    "totalScore": 19.2,
+    "xpAwarded": 0,
+    "feedback": "The essay is a good starting point for discussing the importance of individual actions in climate change.  However, to fully address the challenge of \"teamwork,\" it needs to explicitly show how individual actions contribute to a larger, collaborative effort.  More emphasis on collective action and support for government/corporate initiatives would strengthen the essay's argument.",
+    "aiModel": "gemini-1.5-flash-8b-latest",
+    "rawAIResponse": {
+      "model": "gemini-1.5-flash-8b-latest",
+      "categories": [
+        {
+          "key": "Content Relevance",
+          "score": 22,
+          "comment": "While the essay touches on the role of individuals, it could be stronger in explicitly discussing teamwork.  The focus is more on individual actions rather than collaborative efforts.  Mentioning how individuals can support government policies or corporate initiatives would strengthen the teamwork aspect."
+        },
+        {
+          "key": "Organization",
+          "score": 20,
+          "comment": "The essay has a clear introduction and conclusion, and the two main points are presented logically.  The structure is well-organized."
+        },
+        {
+          "key": "Examples",
+          "score": 20,
+          "comment": "The essay provides good examples, such as choosing public transport and eco-friendly products, and reducing food waste.  These examples illustrate the impact of individual actions."
+        },
+        {
+          "key": "Language",
+          "score": 18,
+          "comment": "The language is generally clear and simple, but could be improved by using more varied vocabulary.  For example, instead of just saying 'reduce,' using terms like 'mitigate' or 'minimize' would enhance the writing."
+        },
+        {
+          "key": "Reflection",
+          "score": 14,
+          "comment": "The essay explains the importance of individual actions, but does not fully explain how these actions contribute to a larger team effort.  There's a lack of discussion on how individual actions can support broader systemic change or how individuals can collaborate to achieve a common goal."
+        }
+      ],
+      "overallFeedback": "The essay is a good starting point for discussing the importance of individual actions in climate change.  However, to fully address the challenge of \"teamwork,\" it needs to explicitly show how individual actions contribute to a larger, collaborative effort.  More emphasis on collective action and support for government/corporate initiatives would strengthen the essay's argument.",
+      "debug": {
+        "modelTried": "gemini-1.5-flash-8b-latest",
+        "attempts": [
+          {
+            "model": "gemini-1.5-flash-latest",
+            "status": 404,
+            "message": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent: [404 Not Found] Publisher Model `projects/generativelanguage-ga/locations/us-central1/publishers/google/models/gemini-1.5-flash-002` was not found or your project does not have access to it. Please ensure you are using a valid model version. For more information, see: https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versions"
+          }
+        ]
+      },
+      "processingTimeMs": 3837
+    },
+    "processingTimeMs": 3837,
+    "createdAt": "2025-09-26T04:42:05.459Z",
+    "updatedAt": "2025-09-26T04:42:05.459Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d619ce08b291b141c968b3",
+    "challenge": "68c57d7653414e9b0e3f1be0",
+    "user": "68d5efd23042f50d6af0e229",
+    "attemptNumber": 3,
+    "text": "The Importance of Teamwork\n\nTeamwork is an essential skill that plays a significant role in both school and everyday life. It allows people to combine their strengths, share ideas, and work toward a common goal. When students collaborate on projects or group activities, they can divide tasks according to their abilities. This not only saves time but also encourages each member to contribute their best efforts.\n\nIn school, teamwork helps students learn from each other. For example, a student good at research can assist others, while another skilled in presenting can lead discussions. This exchange of knowledge builds confidence and strengthens problem-solving skills. Teamwork also teaches patience, communication, and respect for different opinions—qualities that are essential for success in the real world.\n\nIn life, almost every profession requires working with others. Doctors, engineers, teachers, and athletes achieve better results by cooperating with their teams. By working together, people can overcome challenges that might seem too difficult alone.\n\nIn conclusion, teamwork is more than just sharing responsibilities; it fosters learning, friendship, and growth. Developing teamwork skills early in school prepares individuals to face future challenges effectively and achieve their goals through unity and collaboration.",
+    "wordCount": 193,
+    "scores": [
+      {
+        "key": "Content Relevance",
+        "label": "Content Relevance",
+        "rawScore": 22,
+        "weight": 25,
+        "weightedScore": 5.5,
+        "comment": "While the essay touches on the importance of teamwork, it lacks depth.  The explanation of how teamwork fosters learning and growth could be more detailed and specific."
+      },
+      {
+        "key": "Organization",
+        "label": "Organization",
+        "rawScore": 20,
+        "weight": 20,
+        "weightedScore": 4,
+        "comment": "The essay has a clear introduction, body paragraphs, and conclusion. The structure is logical."
+      },
+      {
+        "key": "Examples",
+        "label": "Examples",
+        "rawScore": 18,
+        "weight": 20,
+        "weightedScore": 3.6,
+        "comment": "The essay provides a general example of students collaborating on projects.  More specific examples or anecdotes would strengthen the argument."
+      },
+      {
+        "key": "Language",
+        "label": "Language",
+        "rawScore": 23,
+        "weight": 20,
+        "weightedScore": 4.6,
+        "comment": "The vocabulary is generally simple and accessible, but there's room for more varied and sophisticated language to enhance the writing."
+      },
+      {
+        "key": "Reflection",
+        "label": "Reflection",
+        "rawScore": 14,
+        "weight": 15,
+        "weightedScore": 2.1,
+        "comment": "The essay mentions the importance of teamwork, but doesn't fully explain *why* it's so crucial.  The reflection on the personal and professional benefits could be more insightful."
+      }
+    ],
+    "totalScore": 19.8,
+    "xpAwarded": 0,
+    "feedback": "The essay demonstrates a basic understanding of teamwork.  To improve, the writer should provide more specific examples, explore the deeper implications of teamwork, and use more varied language to strengthen the argument.",
+    "aiModel": "gemini-1.5-flash-8b-latest",
+    "rawAIResponse": {
+      "model": "gemini-1.5-flash-8b-latest",
+      "categories": [
+        {
+          "key": "Content Relevance",
+          "score": 22,
+          "comment": "While the essay touches on the importance of teamwork, it lacks depth.  The explanation of how teamwork fosters learning and growth could be more detailed and specific."
+        },
+        {
+          "key": "Organization",
+          "score": 20,
+          "comment": "The essay has a clear introduction, body paragraphs, and conclusion. The structure is logical."
+        },
+        {
+          "key": "Examples",
+          "score": 18,
+          "comment": "The essay provides a general example of students collaborating on projects.  More specific examples or anecdotes would strengthen the argument."
+        },
+        {
+          "key": "Language",
+          "score": 23,
+          "comment": "The vocabulary is generally simple and accessible, but there's room for more varied and sophisticated language to enhance the writing."
+        },
+        {
+          "key": "Reflection",
+          "score": 14,
+          "comment": "The essay mentions the importance of teamwork, but doesn't fully explain *why* it's so crucial.  The reflection on the personal and professional benefits could be more insightful."
+        }
+      ],
+      "overallFeedback": "The essay demonstrates a basic understanding of teamwork.  To improve, the writer should provide more specific examples, explore the deeper implications of teamwork, and use more varied language to strengthen the argument.",
+      "debug": {
+        "modelTried": "gemini-1.5-flash-8b-latest",
+        "attempts": [
+          {
+            "model": "gemini-1.5-flash-latest",
+            "status": 404,
+            "message": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent: [404 Not Found] Publisher Model `projects/generativelanguage-ga/locations/us-central1/publishers/google/models/gemini-1.5-flash-002` was not found or your project does not have access to it. Please ensure you are using a valid model version. For more information, see: https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versions"
+          }
+        ]
+      },
+      "processingTimeMs": 3710
+    },
+    "processingTimeMs": 3710,
+    "createdAt": "2025-09-26T04:42:54.720Z",
+    "updatedAt": "2025-09-26T04:42:54.720Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d61b6c7d9e6813e9ff1d34",
+    "challenge": "68c57d7653414e9b0e3f1be0",
+    "user": "68d5efd23042f50d6af0e229",
+    "attemptNumber": 4,
+    "text": "The Importance of Teamwork\n\nTeamwork is an essential skill that plays a significant role in both school and everyday life. It allows people to combine their strengths, share ideas, and work toward a common goal. When students collaborate on projects or group activities, they can divide tasks according to their abilities. This not only saves time but also encourages each member to contribute their best efforts.\n\nIn school, teamwork helps students learn from each other. For example, a student good at research can assist others, while another skilled in presenting can lead discussions. This exchange of knowledge builds confidence and strengthens problem-solving skills. Teamwork also teaches patience, communication, and respect for different opinions—qualities that are essential for success in the real world.\n\nIn life, almost every profession requires working with others. Doctors, engineers, teachers, and athletes achieve better results by cooperating with their teams. By working together, people can overcome challenges that might seem too difficult alone.\n\nIn conclusion, teamwork is more than just sharing responsibilities; it fosters learning, friendship, and growth. Developing teamwork skills early in school prepares individuals to face future challenges effectively and achieve their goals through unity and collaboration.",
+    "wordCount": 193,
+    "scores": [
+      {
+        "key": "Content Relevance",
+        "label": "Content Relevance",
+        "rawScore": 68,
+        "weight": 25,
+        "weightedScore": 17,
+        "comment": "The essay stays on topic and adequately explains the importance of teamwork in school and everyday life.  It covers the key aspects of shared strengths, goal achievement, and the benefits of collaboration."
+      },
+      {
+        "key": "Organization",
+        "label": "Organization",
+        "rawScore": 64,
+        "weight": 20,
+        "weightedScore": 12.8,
+        "comment": "The essay has a clear introduction, body paragraphs discussing school and life applications, and a conclusion.  The structure is logical, though the development could be slightly more nuanced."
+      },
+      {
+        "key": "Examples",
+        "label": "Examples",
+        "rawScore": 61,
+        "weight": 20,
+        "weightedScore": 12.2,
+        "comment": "The essay provides a general example of students collaborating on research and presentations.  More specific, concrete examples would strengthen the argument."
+      },
+      {
+        "key": "Language",
+        "label": "Language",
+        "rawScore": 72,
+        "weight": 20,
+        "weightedScore": 14.4,
+        "comment": "The essay uses a variety of simple but effective vocabulary. The language is clear and easy to understand."
+      },
+      {
+        "key": "Reflection",
+        "label": "Reflection",
+        "rawScore": 61,
+        "weight": 15,
+        "weightedScore": 9.15,
+        "comment": "The essay touches on the reasons why teamwork matters, but the reflection could be more in-depth.  It mentions learning, friendship, and growth, but doesn't delve deeply into the *why* behind these benefits."
+      }
+    ],
+    "totalScore": 65.55,
+    "xpAwarded": 10,
+    "feedback": "The essay is a solid, intermediate-level response to the prompt.  It effectively argues for the importance of teamwork.  Adding more specific examples and a more profound reflection on the *why* behind the benefits of teamwork would elevate the essay to a higher score.",
+    "aiModel": "gemini-1.5-flash-8b-latest",
+    "rawAIResponse": {
+      "model": "gemini-1.5-flash-8b-latest",
+      "categories": [
+        {
+          "key": "Content Relevance",
+          "score": 68,
+          "comment": "The essay stays on topic and adequately explains the importance of teamwork in school and everyday life.  It covers the key aspects of shared strengths, goal achievement, and the benefits of collaboration."
+        },
+        {
+          "key": "Organization",
+          "score": 64,
+          "comment": "The essay has a clear introduction, body paragraphs discussing school and life applications, and a conclusion.  The structure is logical, though the development could be slightly more nuanced."
+        },
+        {
+          "key": "Examples",
+          "score": 61,
+          "comment": "The essay provides a general example of students collaborating on research and presentations.  More specific, concrete examples would strengthen the argument."
+        },
+        {
+          "key": "Language",
+          "score": 72,
+          "comment": "The essay uses a variety of simple but effective vocabulary. The language is clear and easy to understand."
+        },
+        {
+          "key": "Reflection",
+          "score": 61,
+          "comment": "The essay touches on the reasons why teamwork matters, but the reflection could be more in-depth.  It mentions learning, friendship, and growth, but doesn't delve deeply into the *why* behind these benefits."
+        }
+      ],
+      "overallFeedback": "The essay is a solid, intermediate-level response to the prompt.  It effectively argues for the importance of teamwork.  Adding more specific examples and a more profound reflection on the *why* behind the benefits of teamwork would elevate the essay to a higher score.",
+      "debug": {
+        "modelTried": "gemini-1.5-flash-8b-latest",
+        "attempts": [
+          {
+            "model": "gemini-1.5-flash-latest",
+            "status": 404,
+            "message": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent: [404 Not Found] Publisher Model `projects/generativelanguage-ga/locations/us-central1/publishers/google/models/gemini-1.5-flash-002` was not found or your project does not have access to it. Please ensure you are using a valid model version. For more information, see: https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versions"
+          }
+        ],
+        "calibration": {
+          "enabled": true,
+          "targetMean": 62,
+          "weight": 0.75,
+          "min": 35,
+          "max": 100,
+          "rawMean": 66,
+          "adjustedMean": 65.2
+        }
+      },
+      "processingTimeMs": 3704
+    },
+    "processingTimeMs": 3704,
+    "createdAt": "2025-09-26T04:49:48.211Z",
+    "updatedAt": "2025-09-26T04:49:48.211Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d8ee11c49c4615c64a4a3c",
+    "challenge": "68c57d7553414e9b0e3f1bc2",
+    "user": "68a75ed084cbaf8f2b09a175",
+    "attemptNumber": 1,
+    "text": "My favorite hobby is reading books. I enjoy reading because it takes me to different worlds and lets me explore new ideas. Whether it’s fiction, adventure, or self-help, every book teaches me something valuable. Reading helps me relax after a long day and sparks my imagination. It also improves my vocabulary and communication skills, which is useful in school and life. I especially love reading stories with strong characters and exciting plots. This hobby makes me feel happy and inspired, and I can spend hours with a good book without noticing the time pass.This is all about my hobby. That's it.",
+    "wordCount": 101,
+    "scores": [
+      {
+        "key": "Content",
+        "label": "Content",
+        "rawScore": 57,
+        "weight": 30,
+        "weightedScore": 17.1,
+        "comment": "Provisional heuristic score for Content."
+      },
+      {
+        "key": "Organization",
+        "label": "Organization",
+        "rawScore": 9,
+        "weight": 20,
+        "weightedScore": 1.8,
+        "comment": "Provisional heuristic score for Organization."
+      },
+      {
+        "key": "Clarity",
+        "label": "Clarity",
+        "rawScore": 35,
+        "weight": 20,
+        "weightedScore": 7,
+        "comment": "Provisional heuristic score for Clarity."
+      },
+      {
+        "key": "Grammar",
+        "label": "Grammar",
+        "rawScore": 59,
+        "weight": 15,
+        "weightedScore": 8.85,
+        "comment": "Provisional heuristic score for Grammar."
+      },
+      {
+        "key": "Personal Touch",
+        "label": "Personal Touch",
+        "rawScore": 14,
+        "weight": 15,
+        "weightedScore": 2.1,
+        "comment": "Provisional heuristic score for Personal Touch."
+      }
+    ],
+    "totalScore": 36.85,
+    "xpAwarded": 15,
+    "feedback": "Heuristic fallback used due to AI evaluation error.",
+    "aiModel": "heuristic-fallback",
+    "rawAIResponse": {
+      "model": "heuristic-fallback",
+      "categories": [
+        {
+          "key": "Content",
+          "label": "Content",
+          "score": 57,
+          "comment": "Provisional heuristic score for Content."
+        },
+        {
+          "key": "Organization",
+          "label": "Organization",
+          "score": 9,
+          "comment": "Provisional heuristic score for Organization."
+        },
+        {
+          "key": "Clarity",
+          "label": "Clarity",
+          "score": 35,
+          "comment": "Provisional heuristic score for Clarity."
+        },
+        {
+          "key": "Grammar",
+          "label": "Grammar",
+          "score": 59,
+          "comment": "Provisional heuristic score for Grammar."
+        },
+        {
+          "key": "Personal Touch",
+          "label": "Personal Touch",
+          "score": 14,
+          "comment": "Provisional heuristic score for Personal Touch."
+        }
+      ],
+      "overallFeedback": "Heuristic fallback used due to AI evaluation error."
+    },
+    "createdAt": "2025-09-28T08:13:05.951Z",
+    "updatedAt": "2025-09-28T08:13:05.951Z",
+    "__v": 0
+  },
+  {
+    "_id": "6908dedf27decfc36708d982",
+    "challenge": "68c57d7653414e9b0e3f1bfe",
+    "user": "68d5efd23042f50d6af0e229",
+    "attemptNumber": 5,
+    "text": "Climate change is one of the most urgent global challenges of our time, threatening ecosystems, economies, and human well-being. While governments and corporations play major roles in shaping environmental policies and practices, individuals also bear responsibility. Each person’s daily choices contribute to either worsening or mitigating climate change. Therefore, individuals do have a real responsibility to fight climate change, even though large-scale actions by governments and companies are crucial for broader systemic change.\n\nFirstly, individual actions collectively have a significant environmental impact. Simple habits such as reducing electricity use, minimizing waste, and choosing public transport over private vehicles can reduce carbon emissions. For instance, if millions of people switched to energy-efficient appliances or reduced single-use plastics, the cumulative effect would be substantial. Public participation in sustainable practices creates a culture of responsibility and signals to industries and governments that citizens care about the planet. This, in turn, can influence policies and corporate decisions.\n\nSecondly, consumer behavior has the power to shape market trends. When individuals demand eco-friendly products or boycott brands that harm the environment, companies are forced to adapt. For example, the rise in popularity of electric vehicles and plant-based diets has been driven largely by consumer demand. These shifts push industries toward greener innovation. Thus, individuals act as catalysts for change, driving corporations to adopt sustainable business models and invest in renewable energy.\n\nHowever, it is true that governments and corporations hold the greatest power to address climate change effectively. Large-scale problems such as deforestation, industrial pollution, and fossil fuel dependency require policies, regulations, and technological advancements that individuals alone cannot implement. Governments can enforce carbon taxes, promote renewable energy, and regulate emissions. Likewise, corporations have the resources to invest in clean technology and reduce industrial waste. Without their commitment, individual efforts may seem small and insufficient.\n\nDespite this, it would be wrong to conclude that individuals have no role. Governments and companies often respond to public opinion and social movements. When citizens take responsibility—by voting for leaders with green policies, joining climate campaigns, and practicing sustainable lifestyles—they create political and social pressure for large-scale change. Personal responsibility complements, rather than replaces, institutional action.\n\nIn conclusion, fighting climate change is a shared responsibility. While governments and corporations must lead through policies and innovation, individuals play a vital supporting role through conscious choices and advocacy. Every action, no matter how small, contributes to a collective effort toward a sustainable future. Climate change demands unity—a partnership between citizens, businesses, and governments—to protect the planet for generations to come.",
+    "wordCount": 418,
+    "scores": [
+      {
+        "key": "Thesis & Clarity",
+        "label": "Thesis & Clarity",
+        "rawScore": 8,
+        "weight": 20,
+        "weightedScore": 1.6,
+        "comment": "Provisional heuristic score for Thesis & Clarity."
+      },
+      {
+        "key": "Argumentation",
+        "label": "Argumentation",
+        "rawScore": 36,
+        "weight": 25,
+        "weightedScore": 9,
+        "comment": "Provisional heuristic score for Argumentation."
+      },
+      {
+        "key": "Evidence & Examples",
+        "label": "Evidence & Examples",
+        "rawScore": 60,
+        "weight": 20,
+        "weightedScore": 12,
+        "comment": "Provisional heuristic score for Evidence & Examples."
+      },
+      {
+        "key": "Counter-argument",
+        "label": "Counter-argument",
+        "rawScore": 14,
+        "weight": 15,
+        "weightedScore": 2.1,
+        "comment": "Provisional heuristic score for Counter-argument."
+      },
+      {
+        "key": "Language & Style",
+        "label": "Language & Style",
+        "rawScore": 41,
+        "weight": 20,
+        "weightedScore": 8.2,
+        "comment": "Provisional heuristic score for Language & Style."
+      }
+    ],
+    "totalScore": 32.9,
+    "xpAwarded": 7,
+    "feedback": "Heuristic fallback used due to AI evaluation error.",
+    "aiModel": "heuristic-fallback",
+    "rawAIResponse": {
+      "model": "heuristic-fallback",
+      "categories": [
+        {
+          "key": "Thesis & Clarity",
+          "label": "Thesis & Clarity",
+          "score": 8,
+          "comment": "Provisional heuristic score for Thesis & Clarity."
+        },
+        {
+          "key": "Argumentation",
+          "label": "Argumentation",
+          "score": 36,
+          "comment": "Provisional heuristic score for Argumentation."
+        },
+        {
+          "key": "Evidence & Examples",
+          "label": "Evidence & Examples",
+          "score": 60,
+          "comment": "Provisional heuristic score for Evidence & Examples."
+        },
+        {
+          "key": "Counter-argument",
+          "label": "Counter-argument",
+          "score": 14,
+          "comment": "Provisional heuristic score for Counter-argument."
+        },
+        {
+          "key": "Language & Style",
+          "label": "Language & Style",
+          "score": 41,
+          "comment": "Provisional heuristic score for Language & Style."
+        }
+      ],
+      "overallFeedback": "Heuristic fallback used due to AI evaluation error."
+    },
+    "createdAt": "2025-11-03T16:57:03.922Z",
+    "updatedAt": "2025-11-03T16:57:03.922Z",
+    "__v": 0
+  }
+]

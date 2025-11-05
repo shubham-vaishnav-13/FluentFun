@@ -1,0 +1,1325 @@
+[
+  {
+    "_id": "68c57b705aeb64ed211195e5",
+    "language": "es",
+    "title": "Mi Pasatiempo Favorito",
+    "description": "Escribe un texto corto sobre tu pasatiempo favorito y por qué lo disfrutas.",
+    "prompt": "Describe tu pasatiempo favorito. ¿Cuándo empezaste a hacerlo? ¿Por qué te gusta? ¿Cómo te hace sentir? Escribe en 3–4 párrafos cortos con oraciones claras.",
+    "category": "essay",
+    "difficulty": "beginner",
+    "wordLimit": {
+      "min": 100,
+      "max": 160
+    },
+    "timeLimit": 25,
+    "rubric": [
+      {
+        "name": "Contenido",
+        "weight": 30,
+        "description": "Explica el pasatiempo y razones personales",
+        "_id": "68c57b705aeb64ed211195e6"
+      },
+      {
+        "name": "Organización",
+        "weight": 20,
+        "description": "Tiene introducción, desarrollo y conclusión",
+        "_id": "68c57b705aeb64ed211195e7"
+      },
+      {
+        "name": "Claridad",
+        "weight": 20,
+        "description": "Oraciones simples y fáciles de entender",
+        "_id": "68c57b705aeb64ed211195e8"
+      },
+      {
+        "name": "Gramática",
+        "weight": 15,
+        "description": "Pocos errores básicos",
+        "_id": "68c57b705aeb64ed211195e9"
+      },
+      {
+        "name": "Toque Personal",
+        "weight": 15,
+        "description": "Muestra sentimientos o disfrute",
+        "_id": "68c57b705aeb64ed211195ea"
+      }
+    ],
+    "keyPoints": [],
+    "instructions": [],
+    "tips": [],
+    "targetVocabulary": [],
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "beginner",
+      "hobby",
+      "personal",
+      "spanish"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "totalScoreAccumulator": 0,
+    "createdAt": "2025-09-13T14:10:56.410Z",
+    "updatedAt": "2025-09-13T14:10:56.410Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c57b705aeb64ed21119609",
+    "language": "es",
+    "title": "Cambio Climático y Responsabilidad",
+    "description": "Escribe un ensayo argumentativo sobre la responsabilidad individual frente al cambio climático.",
+    "prompt": "¿Tienen las personas responsabilidad real en la lucha contra el cambio climático o es sobre todo tarea de gobiernos y empresas? Presenta una tesis clara, 2–3 argumentos con ejemplos, considera brevemente la postura contraria y concluye con tu opinión final. Escribe en 5–6 párrafos.",
+    "category": "academic",
+    "difficulty": "advanced",
+    "wordLimit": {
+      "min": 400,
+      "max": 600
+    },
+    "timeLimit": 65,
+    "rubric": [
+      {
+        "name": "Tesis y Claridad",
+        "weight": 20,
+        "description": "Postura clara en la introducción",
+        "_id": "68c57b705aeb64ed2111960a"
+      },
+      {
+        "name": "Argumentación",
+        "weight": 25,
+        "description": "Argumentos lógicos y fuertes",
+        "_id": "68c57b705aeb64ed2111960b"
+      },
+      {
+        "name": "Evidencia y Ejemplos",
+        "weight": 20,
+        "description": "Ejemplos reales o realistas",
+        "_id": "68c57b705aeb64ed2111960c"
+      },
+      {
+        "name": "Contraargumento",
+        "weight": 15,
+        "description": "Reconoce y responde a otra visión",
+        "_id": "68c57b705aeb64ed2111960d"
+      },
+      {
+        "name": "Lenguaje y Estilo",
+        "weight": 20,
+        "description": "Tono formal y vocabulario académico",
+        "_id": "68c57b705aeb64ed2111960e"
+      }
+    ],
+    "keyPoints": [],
+    "instructions": [],
+    "tips": [],
+    "targetVocabulary": [],
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "advanced",
+      "climate",
+      "argumentative",
+      "academic",
+      "spanish"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "totalScoreAccumulator": 0,
+    "createdAt": "2025-09-13T14:10:56.699Z",
+    "updatedAt": "2025-09-13T14:10:56.699Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c57d2653414e9b0e3f1b7b",
+    "language": "es",
+    "title": "Un Lugar que Me Gusta",
+    "description": "Escribe sobre un lugar especial para ti y por qué te gusta visitarlo.",
+    "prompt": "Elige un lugar (parque, escuela, habitación, ciudad). Describe cómo es, qué haces allí y por qué es importante para ti. Escribe en 3–4 párrafos cortos.",
+    "category": "descriptive",
+    "difficulty": "beginner",
+    "wordLimit": {
+      "min": 110,
+      "max": 170
+    },
+    "timeLimit": 25,
+    "rubric": [
+      {
+        "name": "Descripción",
+        "weight": 30,
+        "description": "Da una imagen clara del lugar",
+        "_id": "68c57d2653414e9b0e3f1b7c"
+      },
+      {
+        "name": "Organización",
+        "weight": 20,
+        "description": "Inicio, desarrollo y final",
+        "_id": "68c57d2653414e9b0e3f1b7d"
+      },
+      {
+        "name": "Claridad",
+        "weight": 20,
+        "description": "Palabras simples y claras",
+        "_id": "68c57d2653414e9b0e3f1b7e"
+      },
+      {
+        "name": "Gramática",
+        "weight": 15,
+        "description": "Estructuras correctas",
+        "_id": "68c57d2653414e9b0e3f1b7f"
+      },
+      {
+        "name": "Sentimientos",
+        "weight": 15,
+        "description": "Explica por qué es especial",
+        "_id": "68c57d2653414e9b0e3f1b80"
+      }
+    ],
+    "keyPoints": [],
+    "instructions": [],
+    "tips": [],
+    "targetVocabulary": [],
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "beginner",
+      "place",
+      "descriptive",
+      "spanish",
+      "essay",
+      "creative",
+      "formal",
+      "informal",
+      "academic",
+      "business",
+      "reflective",
+      "analytical"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "totalScoreAccumulator": 0,
+    "createdAt": "2025-09-13T14:18:14.415Z",
+    "updatedAt": "2025-09-13T14:18:14.415Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c57d2653414e9b0e3f1b8a",
+    "language": "es",
+    "title": "La Importancia del Trabajo en Equipo",
+    "description": "Escribe un texto explicando por qué el trabajo en equipo es importante en la escuela o en la vida.",
+    "prompt": "Piensa en una vez que trabajaste en equipo (proyecto escolar, deporte, evento). Explica qué significa trabajo en equipo, describe tu experiencia y reflexiona por qué es importante en la vida. Escribe en 4–5 párrafos.",
+    "category": "reflective",
+    "difficulty": "intermediate",
+    "wordLimit": {
+      "min": 180,
+      "max": 260
+    },
+    "timeLimit": 35,
+    "rubric": [
+      {
+        "name": "Contenido",
+        "weight": 25,
+        "description": "Explica claramente el tema del trabajo en equipo",
+        "_id": "68c57d2653414e9b0e3f1b8b"
+      },
+      {
+        "name": "Organización",
+        "weight": 20,
+        "description": "Introducción, experiencia y conclusión",
+        "_id": "68c57d2653414e9b0e3f1b8c"
+      },
+      {
+        "name": "Ejemplos",
+        "weight": 20,
+        "description": "Da al menos un ejemplo real o imaginado",
+        "_id": "68c57d2653414e9b0e3f1b8d"
+      },
+      {
+        "name": "Lenguaje",
+        "weight": 20,
+        "description": "Usa vocabulario variado y sencillo",
+        "_id": "68c57d2653414e9b0e3f1b8e"
+      },
+      {
+        "name": "Reflexión",
+        "weight": 15,
+        "description": "Explica por qué es importante",
+        "_id": "68c57d2653414e9b0e3f1b8f"
+      }
+    ],
+    "keyPoints": [],
+    "instructions": [],
+    "tips": [],
+    "targetVocabulary": [],
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "intermediate",
+      "teamwork",
+      "reflection",
+      "spanish",
+      "essay",
+      "creative",
+      "formal",
+      "informal",
+      "academic",
+      "business",
+      "descriptive",
+      "analytical"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "totalScoreAccumulator": 0,
+    "createdAt": "2025-09-13T14:18:14.570Z",
+    "updatedAt": "2025-09-13T14:18:14.570Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c57d2653414e9b0e3f1b99",
+    "language": "es",
+    "title": "La Tecnología en la Vida Diaria",
+    "description": "Escribe un ensayo sobre cómo la tecnología influye en tu rutina diaria de manera positiva y negativa.",
+    "prompt": "Explica cómo la tecnología (teléfonos, computadoras, internet) ayuda en tu vida diaria y qué problemas a veces causa. Da 2–3 ejemplos y concluye con una reflexión. Escribe en 4–5 párrafos.",
+    "category": "analytical",
+    "difficulty": "intermediate",
+    "wordLimit": {
+      "min": 200,
+      "max": 280
+    },
+    "timeLimit": 40,
+    "rubric": [
+      {
+        "name": "Tesis y Enfoque",
+        "weight": 25,
+        "description": "Muestra una opinión clara sobre la tecnología",
+        "_id": "68c57d2653414e9b0e3f1b9a"
+      },
+      {
+        "name": "Ejemplos",
+        "weight": 25,
+        "description": "Da al menos dos ejemplos concretos",
+        "_id": "68c57d2653414e9b0e3f1b9b"
+      },
+      {
+        "name": "Equilibrio",
+        "weight": 20,
+        "description": "Menciona ventajas y desventajas",
+        "_id": "68c57d2653414e9b0e3f1b9c"
+      },
+      {
+        "name": "Estructura",
+        "weight": 15,
+        "description": "Bien organizado en párrafos",
+        "_id": "68c57d2653414e9b0e3f1b9d"
+      },
+      {
+        "name": "Lenguaje",
+        "weight": 15,
+        "description": "Vocabulario y conectores adecuados",
+        "_id": "68c57d2653414e9b0e3f1b9e"
+      }
+    ],
+    "keyPoints": [],
+    "instructions": [],
+    "tips": [],
+    "targetVocabulary": [],
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "intermediate",
+      "technology",
+      "daily life",
+      "spanish",
+      "essay",
+      "creative",
+      "formal",
+      "informal",
+      "academic",
+      "business",
+      "descriptive",
+      "reflective"
+    ],
+    "attemptsCount": 1,
+    "averageScore": 49,
+    "totalScoreAccumulator": 49,
+    "createdAt": "2025-09-13T14:18:14.677Z",
+    "updatedAt": "2025-09-26T03:13:15.645Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c57d7553414e9b0e3f1bc2",
+    "language": "en",
+    "title": "My Favorite Hobby",
+    "description": "Write a short essay about your favorite hobby and why you enjoy it.",
+    "prompt": "Describe your favorite hobby. When did you start it? Why do you enjoy it? How does it make you feel? Write in 3–4 short paragraphs with clear sentences.",
+    "category": "essay",
+    "difficulty": "beginner",
+    "wordLimit": {
+      "min": 100,
+      "max": 160
+    },
+    "timeLimit": 25,
+    "rubric": [
+      {
+        "name": "Content",
+        "weight": 30,
+        "description": "Explains the hobby and personal reasons",
+        "_id": "68c57d7553414e9b0e3f1bc3"
+      },
+      {
+        "name": "Organization",
+        "weight": 20,
+        "description": "Intro, body, and conclusion present",
+        "_id": "68c57d7553414e9b0e3f1bc4"
+      },
+      {
+        "name": "Clarity",
+        "weight": 20,
+        "description": "Simple and easy-to-follow sentences",
+        "_id": "68c57d7553414e9b0e3f1bc5"
+      },
+      {
+        "name": "Grammar",
+        "weight": 15,
+        "description": "Few basic errors",
+        "_id": "68c57d7553414e9b0e3f1bc6"
+      },
+      {
+        "name": "Personal Touch",
+        "weight": 15,
+        "description": "Shows feelings or enjoyment",
+        "_id": "68c57d7553414e9b0e3f1bc7"
+      }
+    ],
+    "keyPoints": [],
+    "instructions": [],
+    "tips": [],
+    "targetVocabulary": [],
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "beginner",
+      "hobby",
+      "personal"
+    ],
+    "attemptsCount": 4,
+    "averageScore": 66.34,
+    "totalScoreAccumulator": 265.35,
+    "createdAt": "2025-09-13T14:19:33.781Z",
+    "updatedAt": "2025-09-28T08:13:06.065Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c57d7553414e9b0e3f1bd1",
+    "language": "en",
+    "title": "A Place I Like",
+    "description": "Write about a place that is special to you and why you like visiting it.",
+    "prompt": "Choose a place (park, school, room, city). Describe what it looks like, what you do there, and why it is important to you. Write in 3–4 short paragraphs.",
+    "category": "descriptive",
+    "difficulty": "beginner",
+    "wordLimit": {
+      "min": 110,
+      "max": 170
+    },
+    "timeLimit": 25,
+    "rubric": [
+      {
+        "name": "Description",
+        "weight": 30,
+        "description": "Gives clear picture of the place",
+        "_id": "68c57d7553414e9b0e3f1bd2"
+      },
+      {
+        "name": "Organization",
+        "weight": 20,
+        "description": "Has beginning, middle, and end",
+        "_id": "68c57d7553414e9b0e3f1bd3"
+      },
+      {
+        "name": "Clarity",
+        "weight": 20,
+        "description": "Uses simple and clear words",
+        "_id": "68c57d7553414e9b0e3f1bd4"
+      },
+      {
+        "name": "Grammar",
+        "weight": 15,
+        "description": "Correct basic structures",
+        "_id": "68c57d7553414e9b0e3f1bd5"
+      },
+      {
+        "name": "Personal Feelings",
+        "weight": 15,
+        "description": "Explains why place is special",
+        "_id": "68c57d7553414e9b0e3f1bd6"
+      }
+    ],
+    "keyPoints": [],
+    "instructions": [],
+    "tips": [],
+    "targetVocabulary": [],
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "beginner",
+      "place",
+      "descriptive"
+    ],
+    "attemptsCount": 4,
+    "averageScore": 52.83,
+    "totalScoreAccumulator": 211.3,
+    "createdAt": "2025-09-13T14:19:33.915Z",
+    "updatedAt": "2025-09-26T03:19:49.964Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c57d7653414e9b0e3f1be0",
+    "language": "en",
+    "title": "The Importance of Teamwork",
+    "description": "Write a short essay explaining why teamwork is important in school or life.",
+    "prompt": "Think about a time you worked in a team (class project, sports, or event). Explain what teamwork means, describe your experience, and reflect on why it is important in life. Write in 4–5 paragraphs.",
+    "category": "reflective",
+    "difficulty": "intermediate",
+    "wordLimit": {
+      "min": 180,
+      "max": 260
+    },
+    "timeLimit": 35,
+    "rubric": [
+      {
+        "name": "Content Relevance",
+        "weight": 25,
+        "description": "Stays on topic and explains teamwork",
+        "_id": "68c57d7653414e9b0e3f1be1"
+      },
+      {
+        "name": "Organization",
+        "weight": 20,
+        "description": "Intro, experience, conclusion clear",
+        "_id": "68c57d7653414e9b0e3f1be2"
+      },
+      {
+        "name": "Examples",
+        "weight": 20,
+        "description": "Gives at least one real or imagined example",
+        "_id": "68c57d7653414e9b0e3f1be3"
+      },
+      {
+        "name": "Language",
+        "weight": 20,
+        "description": "Uses varied but simple vocabulary",
+        "_id": "68c57d7653414e9b0e3f1be4"
+      },
+      {
+        "name": "Reflection",
+        "weight": 15,
+        "description": "Explains why teamwork matters",
+        "_id": "68c57d7653414e9b0e3f1be5"
+      }
+    ],
+    "keyPoints": [],
+    "instructions": [],
+    "tips": [],
+    "targetVocabulary": [],
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "intermediate",
+      "teamwork",
+      "reflection"
+    ],
+    "attemptsCount": 5,
+    "averageScore": 45.76,
+    "totalScoreAccumulator": 228.8,
+    "createdAt": "2025-09-13T14:19:34.019Z",
+    "updatedAt": "2025-09-26T04:49:48.417Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c57d7653414e9b0e3f1bef",
+    "language": "en",
+    "title": "Technology and Daily Life",
+    "description": "Discuss how technology affects your everyday routine in positive and negative ways.",
+    "prompt": "Write an essay explaining how technology (phones, computers, internet) helps your daily life and what problems it sometimes causes. Give 2–3 examples and end with a conclusion. Write in 4–5 paragraphs.",
+    "category": "analytical",
+    "difficulty": "intermediate",
+    "wordLimit": {
+      "min": 200,
+      "max": 280
+    },
+    "timeLimit": 40,
+    "rubric": [
+      {
+        "name": "Thesis & Focus",
+        "weight": 25,
+        "description": "States clear opinion about technology",
+        "_id": "68c57d7653414e9b0e3f1bf0"
+      },
+      {
+        "name": "Examples",
+        "weight": 25,
+        "description": "Gives at least two specific examples",
+        "_id": "68c57d7653414e9b0e3f1bf1"
+      },
+      {
+        "name": "Balance",
+        "weight": 20,
+        "description": "Mentions both advantages and disadvantages",
+        "_id": "68c57d7653414e9b0e3f1bf2"
+      },
+      {
+        "name": "Structure",
+        "weight": 15,
+        "description": "Well-organized into clear paragraphs",
+        "_id": "68c57d7653414e9b0e3f1bf3"
+      },
+      {
+        "name": "Language Use",
+        "weight": 15,
+        "description": "Uses appropriate vocabulary and connectors",
+        "_id": "68c57d7653414e9b0e3f1bf4"
+      }
+    ],
+    "keyPoints": [],
+    "instructions": [],
+    "tips": [],
+    "targetVocabulary": [],
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "intermediate",
+      "technology",
+      "daily life"
+    ],
+    "attemptsCount": 2,
+    "averageScore": 36,
+    "totalScoreAccumulator": 72,
+    "createdAt": "2025-09-13T14:19:34.121Z",
+    "updatedAt": "2025-09-26T03:51:18.727Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c57d7653414e9b0e3f1bfe",
+    "language": "en",
+    "title": "Climate Change and Responsibility",
+    "description": "Write an argumentative essay about individual responsibility in tackling climate change.",
+    "prompt": "Do individuals have a real responsibility to fight climate change, or is it mainly the role of governments and companies? Present a clear thesis, 2–3 arguments with examples, consider the other side briefly, and conclude with your final opinion. Write in 5–6 paragraphs.",
+    "category": "academic",
+    "difficulty": "advanced",
+    "wordLimit": {
+      "min": 400,
+      "max": 600
+    },
+    "timeLimit": 65,
+    "rubric": [
+      {
+        "name": "Thesis & Clarity",
+        "weight": 20,
+        "description": "Clear stance in the introduction",
+        "_id": "68c57d7653414e9b0e3f1bff"
+      },
+      {
+        "name": "Argumentation",
+        "weight": 25,
+        "description": "Strong, logical arguments",
+        "_id": "68c57d7653414e9b0e3f1c00"
+      },
+      {
+        "name": "Evidence & Examples",
+        "weight": 20,
+        "description": "Real or realistic examples used",
+        "_id": "68c57d7653414e9b0e3f1c01"
+      },
+      {
+        "name": "Counter-argument",
+        "weight": 15,
+        "description": "Acknowledges and responds to other view",
+        "_id": "68c57d7653414e9b0e3f1c02"
+      },
+      {
+        "name": "Language & Style",
+        "weight": 20,
+        "description": "Formal tone and academic vocabulary",
+        "_id": "68c57d7653414e9b0e3f1c03"
+      }
+    ],
+    "keyPoints": [],
+    "instructions": [],
+    "tips": [],
+    "targetVocabulary": [],
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "advanced",
+      "climate",
+      "argumentative",
+      "academic"
+    ],
+    "attemptsCount": 10,
+    "averageScore": 41.56,
+    "totalScoreAccumulator": 415.6,
+    "createdAt": "2025-09-13T14:19:34.204Z",
+    "updatedAt": "2025-11-03T16:57:04.085Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c57e1c53414e9b0e3f1c0d",
+    "language": "fr",
+    "title": "Mon Passe-temps Préféré",
+    "description": "Écris sur ton passe-temps préféré et pourquoi tu l’aimes.",
+    "prompt": "Choisis un passe-temps que tu aimes (lire, dessiner, jouer, etc.). Décris ce que c’est, quand tu as commencé et pourquoi tu l’aimes. Écris en 3–4 courts paragraphes.",
+    "category": "descriptive",
+    "difficulty": "beginner",
+    "wordLimit": {
+      "min": 110,
+      "max": 170
+    },
+    "timeLimit": 25,
+    "rubric": [
+      {
+        "name": "Description",
+        "weight": 30,
+        "description": "Donne une image claire du passe-temps",
+        "_id": "68c57e1c53414e9b0e3f1c0e"
+      },
+      {
+        "name": "Organisation",
+        "weight": 20,
+        "description": "Début, milieu et fin",
+        "_id": "68c57e1c53414e9b0e3f1c0f"
+      },
+      {
+        "name": "Clarté",
+        "weight": 20,
+        "description": "Phrases simples et claires",
+        "_id": "68c57e1c53414e9b0e3f1c10"
+      },
+      {
+        "name": "Grammaire",
+        "weight": 15,
+        "description": "Structures de base correctes",
+        "_id": "68c57e1c53414e9b0e3f1c11"
+      },
+      {
+        "name": "Sentiments",
+        "weight": 15,
+        "description": "Explique pourquoi c’est agréable",
+        "_id": "68c57e1c53414e9b0e3f1c12"
+      }
+    ],
+    "keyPoints": [],
+    "instructions": [],
+    "tips": [],
+    "targetVocabulary": [],
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "beginner",
+      "hobby",
+      "descriptive",
+      "french",
+      "essay",
+      "creative",
+      "academic"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "totalScoreAccumulator": 0,
+    "createdAt": "2025-09-13T14:22:20.767Z",
+    "updatedAt": "2025-09-13T14:22:20.767Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c57e1c53414e9b0e3f1c1c",
+    "language": "fr",
+    "title": "Un Endroit Spécial",
+    "description": "Écris sur un lieu spécial pour toi et pourquoi il est important.",
+    "prompt": "Choisis un lieu (parc, chambre, école, ville). Décris comment il est, ce que tu y fais et pourquoi il est spécial pour toi. Écris en 3–4 courts paragraphes.",
+    "category": "descriptive",
+    "difficulty": "beginner",
+    "wordLimit": {
+      "min": 120,
+      "max": 180
+    },
+    "timeLimit": 25,
+    "rubric": [
+      {
+        "name": "Description",
+        "weight": 30,
+        "description": "Décrit le lieu clairement",
+        "_id": "68c57e1c53414e9b0e3f1c1d"
+      },
+      {
+        "name": "Organisation",
+        "weight": 20,
+        "description": "Introduction, détails, conclusion",
+        "_id": "68c57e1c53414e9b0e3f1c1e"
+      },
+      {
+        "name": "Clarté",
+        "weight": 20,
+        "description": "Langage simple et compréhensible",
+        "_id": "68c57e1c53414e9b0e3f1c1f"
+      },
+      {
+        "name": "Grammaire",
+        "weight": 15,
+        "description": "Phrases simples correctes",
+        "_id": "68c57e1c53414e9b0e3f1c20"
+      },
+      {
+        "name": "Sentiments",
+        "weight": 15,
+        "description": "Explique pourquoi il est spécial",
+        "_id": "68c57e1c53414e9b0e3f1c21"
+      }
+    ],
+    "keyPoints": [],
+    "instructions": [],
+    "tips": [],
+    "targetVocabulary": [],
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "beginner",
+      "place",
+      "descriptive",
+      "french",
+      "essay",
+      "reflective"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "totalScoreAccumulator": 0,
+    "createdAt": "2025-09-13T14:22:20.898Z",
+    "updatedAt": "2025-09-13T14:22:20.898Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c57e1d53414e9b0e3f1c2b",
+    "language": "fr",
+    "title": "L’Importance du Travail en Équipe",
+    "description": "Écris un texte expliquant pourquoi le travail en équipe est important à l’école ou dans la vie.",
+    "prompt": "Pense à une fois où tu as travaillé en équipe (projet scolaire, sport, événement). Explique ce que signifie travailler en équipe, décris ton expérience et réfléchis à son importance dans la vie. Écris en 4–5 paragraphes.",
+    "category": "reflective",
+    "difficulty": "intermediate",
+    "wordLimit": {
+      "min": 180,
+      "max": 260
+    },
+    "timeLimit": 35,
+    "rubric": [
+      {
+        "name": "Contenu",
+        "weight": 25,
+        "description": "Explique clairement le sujet du travail en équipe",
+        "_id": "68c57e1d53414e9b0e3f1c2c"
+      },
+      {
+        "name": "Organisation",
+        "weight": 20,
+        "description": "Introduction, expérience, conclusion",
+        "_id": "68c57e1d53414e9b0e3f1c2d"
+      },
+      {
+        "name": "Exemples",
+        "weight": 20,
+        "description": "Donne au moins un exemple réel ou imaginé",
+        "_id": "68c57e1d53414e9b0e3f1c2e"
+      },
+      {
+        "name": "Langage",
+        "weight": 20,
+        "description": "Vocabulaire varié et simple",
+        "_id": "68c57e1d53414e9b0e3f1c2f"
+      },
+      {
+        "name": "Réflexion",
+        "weight": 15,
+        "description": "Explique pourquoi c’est important",
+        "_id": "68c57e1d53414e9b0e3f1c30"
+      }
+    ],
+    "keyPoints": [],
+    "instructions": [],
+    "tips": [],
+    "targetVocabulary": [],
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "intermediate",
+      "teamwork",
+      "reflection",
+      "french",
+      "essay",
+      "academic",
+      "analytical"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "totalScoreAccumulator": 0,
+    "createdAt": "2025-09-13T14:22:21.014Z",
+    "updatedAt": "2025-09-13T14:22:21.014Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c57e1d53414e9b0e3f1c3a",
+    "language": "fr",
+    "title": "La Technologie dans la Vie Quotidienne",
+    "description": "Écris un essai sur la manière dont la technologie influence ta routine quotidienne, positivement et négativement.",
+    "prompt": "Explique comment la technologie (téléphones, ordinateurs, internet) aide ta vie quotidienne et quels problèmes elle cause parfois. Donne 2–3 exemples et conclue avec une réflexion. Écris en 4–5 paragraphes.",
+    "category": "analytical",
+    "difficulty": "intermediate",
+    "wordLimit": {
+      "min": 200,
+      "max": 280
+    },
+    "timeLimit": 40,
+    "rubric": [
+      {
+        "name": "Thèse et Focus",
+        "weight": 25,
+        "description": "Donne une opinion claire sur la technologie",
+        "_id": "68c57e1d53414e9b0e3f1c3b"
+      },
+      {
+        "name": "Exemples",
+        "weight": 25,
+        "description": "Donne au moins deux exemples concrets",
+        "_id": "68c57e1d53414e9b0e3f1c3c"
+      },
+      {
+        "name": "Équilibre",
+        "weight": 20,
+        "description": "Mentionne avantages et inconvénients",
+        "_id": "68c57e1d53414e9b0e3f1c3d"
+      },
+      {
+        "name": "Structure",
+        "weight": 15,
+        "description": "Bien organisé en paragraphes",
+        "_id": "68c57e1d53414e9b0e3f1c3e"
+      },
+      {
+        "name": "Langage",
+        "weight": 15,
+        "description": "Vocabulaire et connecteurs adéquats",
+        "_id": "68c57e1d53414e9b0e3f1c3f"
+      }
+    ],
+    "keyPoints": [],
+    "instructions": [],
+    "tips": [],
+    "targetVocabulary": [],
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "intermediate",
+      "technology",
+      "daily life",
+      "french",
+      "essay",
+      "analytical"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "totalScoreAccumulator": 0,
+    "createdAt": "2025-09-13T14:22:21.139Z",
+    "updatedAt": "2025-09-13T14:22:21.139Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c57e1d53414e9b0e3f1c49",
+    "language": "fr",
+    "title": "L’Avenir de Notre Planète",
+    "description": "Rédige un essai sur les défis environnementaux et les solutions possibles pour un avenir durable.",
+    "prompt": "Parle de problèmes comme le changement climatique, la pollution ou la déforestation. Propose des solutions possibles et explique pourquoi elles sont importantes. Écris en 5–6 paragraphes.",
+    "category": "analytical",
+    "difficulty": "advanced",
+    "wordLimit": {
+      "min": 250,
+      "max": 320
+    },
+    "timeLimit": 50,
+    "rubric": [
+      {
+        "name": "Thèse",
+        "weight": 25,
+        "description": "Présente clairement un point de vue",
+        "_id": "68c57e1d53414e9b0e3f1c4a"
+      },
+      {
+        "name": "Arguments",
+        "weight": 25,
+        "description": "Donne des arguments logiques et cohérents",
+        "_id": "68c57e1d53414e9b0e3f1c4b"
+      },
+      {
+        "name": "Exemples",
+        "weight": 20,
+        "description": "Utilise des exemples concrets",
+        "_id": "68c57e1d53414e9b0e3f1c4c"
+      },
+      {
+        "name": "Structure",
+        "weight": 15,
+        "description": "Bonne progression des idées",
+        "_id": "68c57e1d53414e9b0e3f1c4d"
+      },
+      {
+        "name": "Langage",
+        "weight": 15,
+        "description": "Vocabulaire riche et précis",
+        "_id": "68c57e1d53414e9b0e3f1c4e"
+      }
+    ],
+    "keyPoints": [],
+    "instructions": [],
+    "tips": [],
+    "targetVocabulary": [],
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "advanced",
+      "environment",
+      "analytical",
+      "french",
+      "essay",
+      "academic"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "totalScoreAccumulator": 0,
+    "createdAt": "2025-09-13T14:22:21.257Z",
+    "updatedAt": "2025-09-13T14:22:21.257Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c57e8853414e9b0e3f1c58",
+    "language": "de",
+    "title": "Mein Lieblingshobby",
+    "description": "Schreibe über dein Lieblingshobby und warum du es magst.",
+    "prompt": "Wähle ein Hobby, das du liebst (lesen, zeichnen, spielen, etc.). Beschreibe, was es ist, wann du damit angefangen hast und warum du es magst. Schreibe 3–4 kurze Absätze.",
+    "category": "descriptive",
+    "difficulty": "beginner",
+    "wordLimit": {
+      "min": 110,
+      "max": 170
+    },
+    "timeLimit": 25,
+    "rubric": [
+      {
+        "name": "Beschreibung",
+        "weight": 30,
+        "description": "Gibt ein klares Bild vom Hobby",
+        "_id": "68c57e8853414e9b0e3f1c59"
+      },
+      {
+        "name": "Organisation",
+        "weight": 20,
+        "description": "Anfang, Mitte und Ende",
+        "_id": "68c57e8853414e9b0e3f1c5a"
+      },
+      {
+        "name": "Klarheit",
+        "weight": 20,
+        "description": "Einfache, klare Sätze",
+        "_id": "68c57e8853414e9b0e3f1c5b"
+      },
+      {
+        "name": "Grammatik",
+        "weight": 15,
+        "description": "Grundlegende korrekte Strukturen",
+        "_id": "68c57e8853414e9b0e3f1c5c"
+      },
+      {
+        "name": "Gefühle",
+        "weight": 15,
+        "description": "Erklärt, warum es Spaß macht",
+        "_id": "68c57e8853414e9b0e3f1c5d"
+      }
+    ],
+    "keyPoints": [],
+    "instructions": [],
+    "tips": [],
+    "targetVocabulary": [],
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "beginner",
+      "hobby",
+      "descriptive",
+      "german",
+      "essay",
+      "creative"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "totalScoreAccumulator": 0,
+    "createdAt": "2025-09-13T14:24:08.782Z",
+    "updatedAt": "2025-09-13T14:24:08.782Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c57e8853414e9b0e3f1c67",
+    "language": "de",
+    "title": "Ein Besonderer Ort",
+    "description": "Schreibe über einen Ort, der dir wichtig ist, und warum er für dich besonders ist.",
+    "prompt": "Wähle einen Ort (Park, Zimmer, Schule, Stadt). Beschreibe, wie er aussieht, was du dort machst und warum er dir wichtig ist. Schreibe 3–4 kurze Absätze.",
+    "category": "descriptive",
+    "difficulty": "beginner",
+    "wordLimit": {
+      "min": 120,
+      "max": 180
+    },
+    "timeLimit": 25,
+    "rubric": [
+      {
+        "name": "Beschreibung",
+        "weight": 30,
+        "description": "Beschreibt den Ort klar",
+        "_id": "68c57e8853414e9b0e3f1c68"
+      },
+      {
+        "name": "Organisation",
+        "weight": 20,
+        "description": "Einleitung, Details, Schluss",
+        "_id": "68c57e8853414e9b0e3f1c69"
+      },
+      {
+        "name": "Klarheit",
+        "weight": 20,
+        "description": "Einfache und verständliche Sprache",
+        "_id": "68c57e8853414e9b0e3f1c6a"
+      },
+      {
+        "name": "Grammatik",
+        "weight": 15,
+        "description": "Einfache Sätze korrekt",
+        "_id": "68c57e8853414e9b0e3f1c6b"
+      },
+      {
+        "name": "Gefühle",
+        "weight": 15,
+        "description": "Erklärt, warum er besonders ist",
+        "_id": "68c57e8853414e9b0e3f1c6c"
+      }
+    ],
+    "keyPoints": [],
+    "instructions": [],
+    "tips": [],
+    "targetVocabulary": [],
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "beginner",
+      "place",
+      "descriptive",
+      "german",
+      "essay",
+      "reflective"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "totalScoreAccumulator": 0,
+    "createdAt": "2025-09-13T14:24:08.940Z",
+    "updatedAt": "2025-09-13T14:24:08.940Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c57e8953414e9b0e3f1c76",
+    "language": "de",
+    "title": "Die Bedeutung von Teamarbeit",
+    "description": "Schreibe einen Text, warum Teamarbeit in der Schule oder im Leben wichtig ist.",
+    "prompt": "Denke an eine Zeit, in der du im Team gearbeitet hast (Schulprojekt, Sport, Ereignis). Erkläre, was Teamarbeit bedeutet, beschreibe deine Erfahrung und reflektiere, warum sie wichtig ist. Schreibe 4–5 Absätze.",
+    "category": "reflective",
+    "difficulty": "intermediate",
+    "wordLimit": {
+      "min": 180,
+      "max": 260
+    },
+    "timeLimit": 35,
+    "rubric": [
+      {
+        "name": "Inhalt",
+        "weight": 25,
+        "description": "Erklärt das Thema Teamarbeit klar",
+        "_id": "68c57e8953414e9b0e3f1c77"
+      },
+      {
+        "name": "Organisation",
+        "weight": 20,
+        "description": "Einleitung, Erfahrung, Schluss",
+        "_id": "68c57e8953414e9b0e3f1c78"
+      },
+      {
+        "name": "Beispiele",
+        "weight": 20,
+        "description": "Mindestens ein reales oder erfundenes Beispiel",
+        "_id": "68c57e8953414e9b0e3f1c79"
+      },
+      {
+        "name": "Sprache",
+        "weight": 20,
+        "description": "Einfache, aber vielfältige Wörter",
+        "_id": "68c57e8953414e9b0e3f1c7a"
+      },
+      {
+        "name": "Reflexion",
+        "weight": 15,
+        "description": "Erklärt, warum es wichtig ist",
+        "_id": "68c57e8953414e9b0e3f1c7b"
+      }
+    ],
+    "keyPoints": [],
+    "instructions": [],
+    "tips": [],
+    "targetVocabulary": [],
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "intermediate",
+      "teamwork",
+      "reflection",
+      "german",
+      "essay",
+      "analytical"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "totalScoreAccumulator": 0,
+    "createdAt": "2025-09-13T14:24:09.072Z",
+    "updatedAt": "2025-09-13T14:24:09.072Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c57e8953414e9b0e3f1c85",
+    "language": "de",
+    "title": "Technologie im Alltag",
+    "description": "Schreibe einen Aufsatz darüber, wie Technologie dein tägliches Leben positiv und negativ beeinflusst.",
+    "prompt": "Erkläre, wie Technologie (Handys, Computer, Internet) im Alltag hilft und welche Probleme sie manchmal verursacht. Gib 2–3 Beispiele und schließe mit einer Reflexion. Schreibe 4–5 Absätze.",
+    "category": "analytical",
+    "difficulty": "intermediate",
+    "wordLimit": {
+      "min": 200,
+      "max": 280
+    },
+    "timeLimit": 40,
+    "rubric": [
+      {
+        "name": "These und Fokus",
+        "weight": 25,
+        "description": "Klare Meinung über Technologie",
+        "_id": "68c57e8953414e9b0e3f1c86"
+      },
+      {
+        "name": "Beispiele",
+        "weight": 25,
+        "description": "Mindestens zwei konkrete Beispiele",
+        "_id": "68c57e8953414e9b0e3f1c87"
+      },
+      {
+        "name": "Balance",
+        "weight": 20,
+        "description": "Vorteile und Nachteile erwähnen",
+        "_id": "68c57e8953414e9b0e3f1c88"
+      },
+      {
+        "name": "Struktur",
+        "weight": 15,
+        "description": "Gut organisierte Absätze",
+        "_id": "68c57e8953414e9b0e3f1c89"
+      },
+      {
+        "name": "Sprache",
+        "weight": 15,
+        "description": "Passendes Vokabular und Konnektoren",
+        "_id": "68c57e8953414e9b0e3f1c8a"
+      }
+    ],
+    "keyPoints": [],
+    "instructions": [],
+    "tips": [],
+    "targetVocabulary": [],
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "intermediate",
+      "technology",
+      "daily life",
+      "german",
+      "essay",
+      "analytical"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "totalScoreAccumulator": 0,
+    "createdAt": "2025-09-13T14:24:09.174Z",
+    "updatedAt": "2025-09-13T14:24:09.174Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c57e8953414e9b0e3f1c94",
+    "language": "de",
+    "title": "Die Zukunft Unseres Planeten",
+    "description": "Schreibe einen Aufsatz über Umweltprobleme und mögliche Lösungen für eine nachhaltige Zukunft.",
+    "prompt": "Sprich über Probleme wie Klimawandel, Verschmutzung oder Abholzung. Schlage Lösungen vor und erkläre, warum sie wichtig sind. Schreibe 5–6 Absätze.",
+    "category": "analytical",
+    "difficulty": "advanced",
+    "wordLimit": {
+      "min": 250,
+      "max": 320
+    },
+    "timeLimit": 50,
+    "rubric": [
+      {
+        "name": "These",
+        "weight": 25,
+        "description": "Stellt eine klare Meinung dar",
+        "_id": "68c57e8953414e9b0e3f1c95"
+      },
+      {
+        "name": "Argumente",
+        "weight": 25,
+        "description": "Logische und überzeugende Argumente",
+        "_id": "68c57e8953414e9b0e3f1c96"
+      },
+      {
+        "name": "Beispiele",
+        "weight": 20,
+        "description": "Verwendet konkrete Beispiele",
+        "_id": "68c57e8953414e9b0e3f1c97"
+      },
+      {
+        "name": "Struktur",
+        "weight": 15,
+        "description": "Gute Abfolge der Ideen",
+        "_id": "68c57e8953414e9b0e3f1c98"
+      },
+      {
+        "name": "Sprache",
+        "weight": 15,
+        "description": "Reiches und genaues Vokabular",
+        "_id": "68c57e8953414e9b0e3f1c99"
+      }
+    ],
+    "keyPoints": [],
+    "instructions": [],
+    "tips": [],
+    "targetVocabulary": [],
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "advanced",
+      "environment",
+      "analytical",
+      "german",
+      "essay",
+      "academic"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "totalScoreAccumulator": 0,
+    "createdAt": "2025-09-13T14:24:09.324Z",
+    "updatedAt": "2025-09-13T14:24:09.324Z",
+    "__v": 0
+  }
+]

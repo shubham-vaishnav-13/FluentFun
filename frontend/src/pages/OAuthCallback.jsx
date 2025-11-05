@@ -31,27 +31,27 @@ function OAuthCallback() {
         const error = searchParams.get('error');
         
         if (error) {
-          console.error('OAuth error from params:', error);
+          toast.error(error || 'OAuth error');
           toast.error(`Authentication failed: ${error}`);
           navigate('/login');
           return;
         }
         
         if (!accessToken) {
-          console.error('Missing access token in callback URL');
+          toast.error('Missing access token in callback URL');
           toast.error('Missing authentication tokens');
           navigate('/login');
           return;
         }
         
-        console.log('Processing OAuth callback with token...');
+  // Processing OAuth callback with token...
         setStatus('Setting up authentication...');
         
         // Use the setTokens function from context, which will store tokens and fetch user
         const result = await setTokens(accessToken, refreshToken || '');
         
         if (result.success) {
-          console.log('OAuth authentication successful');
+          // OAuth authentication successful
           setStatus('Success! Redirecting...');
           
           // Show success toast only once
@@ -68,8 +68,7 @@ function OAuthCallback() {
           throw new Error(result.error || 'Failed to authenticate');
         }
       } catch (error) {
-        console.error('OAuth callback processing failed:', error);
-        console.error('Error details:', error.response?.data || error.message);
+        toast.error(error?.response?.data?.message || error?.message || 'OAuth callback failed');
         toast.error('Authentication error. Please try again.');
         navigate('/login');
       } finally {

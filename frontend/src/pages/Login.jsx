@@ -120,10 +120,10 @@ const Login = () => {
                   const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
                   const googleAuthUrl = `${apiUrl.split('/api')[0]}/api/auth/google`;
                   
-                  console.log('Redirecting to Google OAuth:', googleAuthUrl);
+                  // Redirecting to Google OAuth
                   window.location.href = googleAuthUrl;
                 } catch (error) {
-                  console.error('Failed to redirect to Google:', error);
+                  toast.error('Failed to start Google OAuth');
                   toast.error('Failed to redirect to Google authentication');
                   toast.dismiss(toastId);
                 }

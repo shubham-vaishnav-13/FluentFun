@@ -1,0 +1,46 @@
+[
+  {
+    "_id": "68c2428e20038d334927cec2",
+    "title": "Introduce Yourself",
+    "description": "Practice introducing yourself in English",
+    "prompt": "Please introduce yourself. Include your name, age, where you are from, and what you like to do in your free time.",
+    "category": "conversation",
+    "difficulty": "beginner",
+    "timeLimit": 120,
+    "targetWords": [
+      "name",
+      "age",
+      "from",
+      "like",
+      "hobby"
+    ],
+    "evaluationCriteria": {
+      "pronunciation": 25,
+      "fluency": 25,
+      "vocabulary": 25,
+      "grammar": 25
+    },
+    "instructions": [
+      "Speak clearly and at a comfortable pace",
+      "Try to use complete sentences",
+      "Don't worry about making mistakes"
+    ],
+    "tips": [
+      "Practice pronouncing your name clearly",
+      "Use simple present tense",
+      "Include specific details about your hobbies"
+    ],
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "introduction",
+      "beginner",
+      "conversation"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "createdAt": "2025-09-11T03:31:26.738Z",
+    "updatedAt": "2025-09-11T03:31:26.738Z",
+    "__v": 0
+  }
+]

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Check, Brain, Zap, Clock } from 'lucide-react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { Link, useParams, useNavigate, useLocation } from 'react-router-dom';
 import api from '../config/api.config.js';
+import { API_PATHS } from '../config/apiPaths.js';
 import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
 import Navbar from '../components/Navbar';
@@ -11,6 +12,9 @@ function QuizPage() {
   const { user, updateUserXP } = useAuth();
   const { quizId } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
+  const search = React.useMemo(() => new URLSearchParams(location.search), [location.search]);
+  const retryFlag = React.useMemo(() => search.get('retry'), [search]);
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -47,36 +51,45 @@ function QuizPage() {
       try {
         setLoading(true);
         setError(null);
-        const res = await api.get(`/content/quizzes/${quizId}`);
+        const res = await api.get(API_PATHS.CONTENT.GET_QUIZ(quizId) + (retryFlag ? '?fresh=1' : ''));
         if (!ignore) {
-          if (res.data?.success) {
+          if (res.data?.success && res.data?.data) {
             const q = res.data.data;
-            console.log('[QuizPage] loaded quiz', { incomingQuizId: quizId, apiQuizId: q._id, title: q.title, attempted: q.attempted });
+            // Loaded quiz data
+            
             // If user already attempted, immediately enter review mode
             if (q.attempted && q.attempt) {
               setQuizCompleted(true);
-              setScore(q.attempt.score);
+              setScore(q.attempt.score || 0);
               setAttemptReview({
                 attempt: q.attempt,
-                questions: q.questions // already contains correctAnswer, selected, isCorrect
+                questions: q.questions || []
               });
             } else {
               setQuizCompleted(false);
             }
-            // Reset active quiz state for taking (only if not previously attempted)
+            
+            // Reset active quiz state for taking
             setCurrentQuestion(0);
             setSelectedAnswer(null);
             setShowResult(false);
             setAnswers([]);
             setQuiz(q);
-            const tl = q.timeLimit ? q.timeLimit * 60 : 30;
-            setTimeLeft(Math.min(tl, 3600));
+            
+            // Safely set timeLeft - validate timeLimit
+            const timeLimit = q.timeLimit && typeof q.timeLimit === 'number' 
+              ? Math.max(q.timeLimit * 60, 300)
+              : 1800; // 30 min default
+            setTimeLeft(timeLimit);
           } else {
-            setError('Failed to load quiz');
+            setError(res.data?.message || 'Failed to load quiz');
           }
         }
       } catch (e) {
-        if (!ignore) setError(e.response?.data?.message || 'Error fetching quiz');
+        if (!ignore) {
+          toast.error('Failed to load quiz');
+          setError(e.response?.data?.message || e.message || 'Error fetching quiz');
+        }
       } finally {
         if (!ignore) setLoading(false);
       }
@@ -134,7 +147,7 @@ function QuizPage() {
         }
         return arr;
       })();
-      const res = await api.post(`/content/quizzes/${quizId}/attempt`, {
+      const res = await api.post(API_PATHS.CONTENT.ATTEMPT_QUIZ(quizId), {
         answers: finalAnswers,
         timeTaken: (quiz?.timeLimit ? quiz.timeLimit * 60 : 30) - timeLeft
       });
@@ -216,6 +229,35 @@ function QuizPage() {
                 <p className="text-gray-500">You scored <span className="font-semibold text-brand-dark">{score}%</span>. Below is your answer breakdown.</p>
               </div>
               <div className="flex gap-2">
+                {quiz && (score < (quiz.minScoreToUnlockNext ?? 0)) && (
+                  <button
+                    onClick={async () => {
+                      // Reset to allow retry: fetch fresh quiz (without attempt answers)
+                      try {
+                        const res = await api.get(API_PATHS.CONTENT.GET_QUIZ(quizId) + '?fresh=1');
+                        if (res.data?.success) {
+                          const q = res.data.data;
+                          // Force taking mode regardless of previous attempt
+                          setQuiz(q);
+                          setQuizCompleted(false);
+                          setAttemptReview(null);
+                          setCurrentQuestion(0);
+                          setSelectedAnswer(null);
+                          setShowResult(false);
+                          setAnswers([]);
+                          const tl = q.timeLimit ? q.timeLimit * 60 : 30;
+                          setTimeLeft(Math.min(tl, 3600));
+                          toast('Retry started. Good luck!', { icon: '🔁' });
+                        }
+                      } catch (e) {
+                        toast.error(e.response?.data?.message || 'Unable to start retry');
+                      }
+                    }}
+                    className="bg-brand-purple text-white px-4 py-2 rounded-xl font-semibold hover:bg-brand-purple/90 transition-all"
+                  >
+                    Retry Quiz
+                  </button>
+                )}
                 <button
                   onClick={() => navigate('/quiz-list')}
                   className="bg-brand-dark text-white px-4 py-2 rounded-xl font-semibold hover:bg-gray-800 transition-all"

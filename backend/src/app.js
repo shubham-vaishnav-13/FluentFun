@@ -12,7 +12,7 @@ app.use((req, res, next) => {
   const start = Date.now();
   res.on('finish', () => {
     const ms = Date.now() - start;
-    console.log(`[REQ] ${req.method} ${req.originalUrl} ${res.statusCode} - ${ms}ms`);
+  // Request completed
   });
   next();
 });

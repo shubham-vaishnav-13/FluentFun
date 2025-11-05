@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import api from '../../config/api.config';
+import AdminAPI from '../../services/adminAPI';
 
 const WritingChallengeManager = () => {
   const [challenges, setChallenges] = useState([]);
@@ -26,6 +27,7 @@ const WritingChallengeManager = () => {
   const [filterDifficulty, setFilterDifficulty] = useState('all');
   const [loading, setLoading] = useState(false);
   const [importing, setImporting] = useState(false);
+  const [generating, setGenerating] = useState(false);
 
   const LANGUAGE_MAP = {
     en: 'English',
@@ -60,11 +62,17 @@ const WritingChallengeManager = () => {
     const load = async () => {
       setLoading(true);
       try {
-        const res = await api.get('/admin/writing-challenges');
-        if (mounted) setChallenges(res.data.data.challenges || []);
+  // Fetching writing challenges from API...
+        const res = await api.get('/admin/writing-challenges',{ params: { limit: 100 } });
+  // API response received
+        
+        const loadedChallenges = res.data.data.challenges || [];
+  // Received writing challenges
+        
+        if (mounted) setChallenges(loadedChallenges);
       } catch (e) {
-        console.error('Failed to load writing challenges', e);
-        toast.error('Failed to load writing challenges');
+  toast.error('Failed to load writing challenges');
+        toast.error('Failed to load writing challenges: ' + (e.message || 'Unknown error'));
       } finally {
         if (mounted) setLoading(false);
       }
@@ -166,7 +174,7 @@ const WritingChallengeManager = () => {
         setChallenges(prev => prev.filter(c => (c._id || c.id) !== challengeId));
         toast.success('Writing challenge deleted successfully!');
       } catch (e) {
-        console.error('Failed to delete writing challenge', e);
+  toast.error('Failed to delete writing challenge');
         toast.error('Failed to delete writing challenge');
       }
     }
@@ -305,7 +313,7 @@ const WritingChallengeManager = () => {
                   // Validate language
                   const validLanguages = ['en', 'hi', 'gu', 'fr', 'es', 'de'];
                   if (!validLanguages.includes(transformedItem.language)) {
-                    console.warn(`Invalid language "${transformedItem.language}" for "${transformedItem.title}", defaulting to "en"`);
+                    // Invalid language for item, defaulted to en
                     transformedItem.language = 'en';
                   }
 
@@ -317,12 +325,12 @@ const WritingChallengeManager = () => {
                   const res = await api.post('/admin/writing-challenges', transformedItem);
                   if (res && res.data && res.data.data) {
                     created.push(res.data.data);
-                    console.log(`Successfully imported: ${transformedItem.title}`);
+                    toast.success(`Imported: ${transformedItem.title}`);
                   } else {
                     throw new Error('Invalid response from server');
                   }
                 } catch (err) {
-                  console.error('Failed to import writing challenge:', err.message || err, item);
+                  toast.error('Failed to import writing challenge');
                   // Continue with other items even if one fails
                 }
               }
@@ -334,13 +342,39 @@ const WritingChallengeManager = () => {
                 toast.error('No writing challenges were imported. Check the console for details on validation errors.');
               }
             } catch (err) {
-              console.error('Failed to read/parse JSON file', err);
+              toast.error('Failed to read/parse JSON file');
               toast.error('Invalid JSON file');
             } finally {
               e.target.value = '';
               setImporting(false);
             }
           }} className="hidden" />
+
+          <button
+            onClick={async () => {
+              setGenerating(true);
+              try {
+                const payload = { language: 'en', difficulty: filterDifficulty === 'all' ? 'beginner' : filterDifficulty, count: 3 };
+                const resp = await AdminAPI.generateWritingChallenges(payload);
+                if (resp?.success) {
+                  const created = resp.data?.challenges || [];
+                  if (created.length) setChallenges(prev => [...created, ...prev]);
+                  toast.success(`Generated ${resp.data?.count || created.length} challenges via n8n`);
+                } else {
+                  toast.error(resp?.message || 'Generation failed');
+                }
+              } catch (err) {
+                toast.error(err?.message || 'Failed to generate challenges');
+              } finally {
+                setGenerating(false);
+              }
+            }}
+            className="neon-btn px-4 py-2 rounded-lg font-medium transition flex items-center space-x-2 disabled:opacity-50"
+            disabled={generating}
+          >
+            <Plus className="w-4 h-4" />
+            <span>{generating ? 'Generating…' : 'Generate via n8n'}</span>
+          </button>
 
           <button
             onClick={() => setShowAddModal(true)}

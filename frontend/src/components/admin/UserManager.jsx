@@ -48,7 +48,7 @@ const UserManager = () => {
         });
         setUsers(response.data.users || []);
       } catch (error) {
-        console.error('Failed to fetch users:', error);
+  toast.error('Failed to fetch users');
         toast.error('Failed to load users');
       } finally {
         setLoading(false);
@@ -80,7 +80,7 @@ const UserManager = () => {
       }
 
       // Here you would make an API call to update the user
-      console.log('Updating user:', editingUser._id || editingUser.id, userForm);
+  // Updating user
       
       // Mock API call - replace with real API
       // await AdminAPI.updateUserStatus(editingUser._id || editingUser.id, {
@@ -112,7 +112,7 @@ const UserManager = () => {
         setUsers(prev => prev.filter(u => (u._id || u.id) !== userId));
         toast.success('User deleted successfully!');
       } catch (error) {
-        console.error('Failed to delete user:', error);
+  toast.error('Failed to delete user');
         toast.error('Failed to delete user');
       }
     }
@@ -130,7 +130,7 @@ const UserManager = () => {
         ));
         toast.success(`Admin status ${user.isAdmin ? 'removed from' : 'granted to'} ${user.fullName}!`);
       } catch (error) {
-        console.error('Failed to update admin status:', error);
+  toast.error('Failed to update admin status');
         toast.error('Failed to update admin status');
       }
     }
@@ -147,7 +147,7 @@ const UserManager = () => {
       ));
       toast.success(`User ${user.isActive ? 'deactivated' : 'activated'} successfully!`);
     } catch (error) {
-      console.error('Failed to update user status:', error);
+  toast.error('Failed to update user status');
       toast.error('Failed to update user status');
     }
   };

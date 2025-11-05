@@ -1,0 +1,958 @@
+[
+  {
+    "_id": "68c5110fab82fde9cf9494c2",
+    "user": "68a75ed084cbaf8f2b09a175",
+    "quiz": "68c3a6629bf0898edd2d3d7b",
+    "score": 0,
+    "correct": 0,
+    "total": 2,
+    "timeTaken": 6,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 0,
+        "isCorrect": false,
+        "_id": "68c5110fab82fde9cf9494c3"
+      },
+      {
+        "questionIndex": 1,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68c5110fab82fde9cf9494c4"
+      }
+    ],
+    "createdAt": "2025-09-13T06:37:03.012Z",
+    "updatedAt": "2025-09-13T06:37:03.012Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c513c9c8bda86ddbe5b584",
+    "user": "68a75ed084cbaf8f2b09a175",
+    "quiz": "68c309d3acc8536a4027f712",
+    "score": 50,
+    "correct": 1,
+    "total": 2,
+    "timeTaken": 6,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 1,
+        "isCorrect": true,
+        "_id": "68c513c9c8bda86ddbe5b585"
+      },
+      {
+        "questionIndex": 1,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68c513c9c8bda86ddbe5b586"
+      }
+    ],
+    "createdAt": "2025-09-13T06:48:41.399Z",
+    "updatedAt": "2025-09-13T06:48:41.399Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c5148d8bf4749577ae8021",
+    "user": "68a75ed084cbaf8f2b09a175",
+    "quiz": "68c3961cd7bdb0df7382786a",
+    "score": 50,
+    "correct": 1,
+    "total": 2,
+    "timeTaken": 6,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 2,
+        "isCorrect": true,
+        "_id": "68c5148d8bf4749577ae8022"
+      },
+      {
+        "questionIndex": 1,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68c5148d8bf4749577ae8023"
+      }
+    ],
+    "createdAt": "2025-09-13T06:51:57.871Z",
+    "updatedAt": "2025-09-13T06:51:57.871Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c514a58bf4749577ae8051",
+    "user": "68a75ed084cbaf8f2b09a175",
+    "quiz": "68c50b955e5311fb1a17e160",
+    "score": 0,
+    "correct": 0,
+    "total": 1,
+    "timeTaken": 14222,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68c514a58bf4749577ae8052"
+      }
+    ],
+    "createdAt": "2025-09-13T06:52:21.010Z",
+    "updatedAt": "2025-09-13T06:52:21.010Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c516e7682296ebc5005658",
+    "user": "68c2428d20038d334927ceaf",
+    "quiz": "68c51693682296ebc50055fa",
+    "score": 67,
+    "correct": 2,
+    "total": 3,
+    "timeTaken": 29,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68c516e7682296ebc5005659"
+      },
+      {
+        "questionIndex": 1,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68c516e7682296ebc500565a"
+      },
+      {
+        "questionIndex": 2,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68c516e7682296ebc500565b"
+      }
+    ],
+    "createdAt": "2025-09-13T07:01:59.894Z",
+    "updatedAt": "2025-09-13T07:01:59.894Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51897682296ebc50057f2",
+    "user": "68c2428d20038d334927ceaf",
+    "quiz": "68c51835682296ebc500571d",
+    "score": 80,
+    "correct": 4,
+    "total": 5,
+    "timeTaken": 47,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68c51897682296ebc50057f3"
+      },
+      {
+        "questionIndex": 1,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68c51897682296ebc50057f4"
+      },
+      {
+        "questionIndex": 2,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68c51897682296ebc50057f5"
+      },
+      {
+        "questionIndex": 3,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68c51897682296ebc50057f6"
+      },
+      {
+        "questionIndex": 4,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68c51897682296ebc50057f7"
+      }
+    ],
+    "createdAt": "2025-09-13T07:09:11.046Z",
+    "updatedAt": "2025-09-13T07:09:11.046Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c578657f9931f12a24b3c5",
+    "user": "68c2f3b4fbd7c555f4520f68",
+    "quiz": "68c51949682296ebc5005945",
+    "score": 60,
+    "correct": 3,
+    "total": 5,
+    "timeTaken": 38,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68c578657f9931f12a24b3c6"
+      },
+      {
+        "questionIndex": 1,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68c578657f9931f12a24b3c7"
+      },
+      {
+        "questionIndex": 2,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68c578657f9931f12a24b3c8"
+      },
+      {
+        "questionIndex": 3,
+        "selected": 2,
+        "isCorrect": false,
+        "_id": "68c578657f9931f12a24b3c9"
+      },
+      {
+        "questionIndex": 4,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68c578657f9931f12a24b3ca"
+      }
+    ],
+    "createdAt": "2025-09-13T13:57:57.951Z",
+    "updatedAt": "2025-09-13T13:57:57.951Z",
+    "__v": 0
+  },
+  {
+    "_id": "68cc3a38924bea693d9cee79",
+    "user": "68cc39e8924bea693d9cee12",
+    "quiz": "68c51949682296ebc5005945",
+    "score": 60,
+    "correct": 3,
+    "total": 5,
+    "timeTaken": 20,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68cc3a38924bea693d9cee7a"
+      },
+      {
+        "questionIndex": 1,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68cc3a38924bea693d9cee7b"
+      },
+      {
+        "questionIndex": 2,
+        "selected": 1,
+        "isCorrect": false,
+        "_id": "68cc3a38924bea693d9cee7c"
+      },
+      {
+        "questionIndex": 3,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68cc3a38924bea693d9cee7d"
+      },
+      {
+        "questionIndex": 4,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68cc3a38924bea693d9cee7e"
+      }
+    ],
+    "createdAt": "2025-09-18T16:58:32.478Z",
+    "updatedAt": "2025-09-18T16:58:32.478Z",
+    "__v": 0
+  },
+  {
+    "_id": "68ccdb4134c87ba6734ea5e8",
+    "user": "68ccda5034c87ba6734ea55a",
+    "quiz": "68c51949682296ebc5005945",
+    "score": 60,
+    "correct": 3,
+    "total": 5,
+    "timeTaken": 32,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68ccdb4134c87ba6734ea5e9"
+      },
+      {
+        "questionIndex": 1,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68ccdb4134c87ba6734ea5ea"
+      },
+      {
+        "questionIndex": 2,
+        "selected": 1,
+        "isCorrect": false,
+        "_id": "68ccdb4134c87ba6734ea5eb"
+      },
+      {
+        "questionIndex": 3,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68ccdb4134c87ba6734ea5ec"
+      },
+      {
+        "questionIndex": 4,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68ccdb4134c87ba6734ea5ed"
+      }
+    ],
+    "createdAt": "2025-09-19T04:25:37.749Z",
+    "updatedAt": "2025-09-19T04:25:37.749Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d5f0843042f50d6af0e4b0",
+    "user": "68d5efd23042f50d6af0e229",
+    "quiz": "68ccd83101c5a125267ec631",
+    "score": 0,
+    "correct": 0,
+    "total": 4,
+    "timeTaken": 14434,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 1,
+        "isCorrect": false,
+        "_id": "68d5f0843042f50d6af0e4b1"
+      },
+      {
+        "questionIndex": 1,
+        "selected": 0,
+        "isCorrect": false,
+        "_id": "68d5f0843042f50d6af0e4b2"
+      },
+      {
+        "questionIndex": 2,
+        "selected": 3,
+        "isCorrect": false,
+        "_id": "68d5f0843042f50d6af0e4b3"
+      },
+      {
+        "questionIndex": 3,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68d5f0843042f50d6af0e4b4"
+      }
+    ],
+    "createdAt": "2025-09-26T01:46:44.498Z",
+    "updatedAt": "2025-09-26T01:46:44.498Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d5fd1c2b045f0fc80164a3",
+    "user": "68d5efd23042f50d6af0e229",
+    "quiz": "68ccd83101c5a125267ec631",
+    "attemptNumber": 2,
+    "score": 50,
+    "correct": 2,
+    "total": 4,
+    "timeTaken": 14412,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 0,
+        "isCorrect": false,
+        "_id": "68d5fd1c2b045f0fc80164a4"
+      },
+      {
+        "questionIndex": 1,
+        "selected": 3,
+        "isCorrect": true,
+        "_id": "68d5fd1c2b045f0fc80164a5"
+      },
+      {
+        "questionIndex": 2,
+        "selected": 2,
+        "isCorrect": true,
+        "_id": "68d5fd1c2b045f0fc80164a6"
+      },
+      {
+        "questionIndex": 3,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68d5fd1c2b045f0fc80164a7"
+      }
+    ],
+    "createdAt": "2025-09-26T02:40:28.821Z",
+    "updatedAt": "2025-09-26T02:40:28.821Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d5fd6f2b045f0fc80166cf",
+    "user": "68d5efd23042f50d6af0e229",
+    "quiz": "68c51949682296ebc5005945",
+    "attemptNumber": 1,
+    "score": 0,
+    "correct": 0,
+    "total": 5,
+    "timeTaken": 18,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 2,
+        "isCorrect": false,
+        "_id": "68d5fd6f2b045f0fc80166d0"
+      },
+      {
+        "questionIndex": 1,
+        "selected": 3,
+        "isCorrect": false,
+        "_id": "68d5fd6f2b045f0fc80166d1"
+      },
+      {
+        "questionIndex": 2,
+        "selected": 2,
+        "isCorrect": false,
+        "_id": "68d5fd6f2b045f0fc80166d2"
+      },
+      {
+        "questionIndex": 3,
+        "selected": 3,
+        "isCorrect": false,
+        "_id": "68d5fd6f2b045f0fc80166d3"
+      },
+      {
+        "questionIndex": 4,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68d5fd6f2b045f0fc80166d4"
+      }
+    ],
+    "createdAt": "2025-09-26T02:41:51.773Z",
+    "updatedAt": "2025-09-26T02:41:51.773Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d5fdc42b045f0fc8016713",
+    "user": "68d5efd23042f50d6af0e229",
+    "quiz": "68c51949682296ebc5005945",
+    "attemptNumber": 2,
+    "score": 80,
+    "correct": 4,
+    "total": 5,
+    "timeTaken": 69,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d5fdc42b045f0fc8016714"
+      },
+      {
+        "questionIndex": 1,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d5fdc42b045f0fc8016715"
+      },
+      {
+        "questionIndex": 2,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d5fdc42b045f0fc8016716"
+      },
+      {
+        "questionIndex": 3,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d5fdc42b045f0fc8016717"
+      },
+      {
+        "questionIndex": 4,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68d5fdc42b045f0fc8016718"
+      }
+    ],
+    "createdAt": "2025-09-26T02:43:16.675Z",
+    "updatedAt": "2025-09-26T02:43:16.675Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d5fe562b045f0fc801678b",
+    "user": "68d5efd23042f50d6af0e229",
+    "quiz": "68ccd83101c5a125267ec631",
+    "attemptNumber": 3,
+    "score": 75,
+    "correct": 3,
+    "total": 4,
+    "timeTaken": 14409,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 2,
+        "isCorrect": true,
+        "_id": "68d5fe562b045f0fc801678c"
+      },
+      {
+        "questionIndex": 1,
+        "selected": 3,
+        "isCorrect": true,
+        "_id": "68d5fe562b045f0fc801678d"
+      },
+      {
+        "questionIndex": 2,
+        "selected": 2,
+        "isCorrect": true,
+        "_id": "68d5fe562b045f0fc801678e"
+      },
+      {
+        "questionIndex": 3,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68d5fe562b045f0fc801678f"
+      }
+    ],
+    "createdAt": "2025-09-26T02:45:42.715Z",
+    "updatedAt": "2025-09-26T02:45:42.715Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d605768c2b192166cf4e4d",
+    "user": "68a75ed084cbaf8f2b09a175",
+    "quiz": "68c51949682296ebc5005945",
+    "attemptNumber": 1,
+    "score": 60,
+    "correct": 3,
+    "total": 5,
+    "timeTaken": 15,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d605768c2b192166cf4e4e"
+      },
+      {
+        "questionIndex": 1,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d605768c2b192166cf4e4f"
+      },
+      {
+        "questionIndex": 2,
+        "selected": 1,
+        "isCorrect": false,
+        "_id": "68d605768c2b192166cf4e50"
+      },
+      {
+        "questionIndex": 3,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d605768c2b192166cf4e51"
+      },
+      {
+        "questionIndex": 4,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68d605768c2b192166cf4e52"
+      }
+    ],
+    "createdAt": "2025-09-26T03:16:06.097Z",
+    "updatedAt": "2025-09-26T03:16:06.097Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d605978c2b192166cf4eab",
+    "user": "68a75ed084cbaf8f2b09a175",
+    "quiz": "68c51949682296ebc5005945",
+    "attemptNumber": 2,
+    "score": 60,
+    "correct": 3,
+    "total": 5,
+    "timeTaken": 17,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d605978c2b192166cf4eac"
+      },
+      {
+        "questionIndex": 1,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d605978c2b192166cf4ead"
+      },
+      {
+        "questionIndex": 2,
+        "selected": 3,
+        "isCorrect": false,
+        "_id": "68d605978c2b192166cf4eae"
+      },
+      {
+        "questionIndex": 3,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d605978c2b192166cf4eaf"
+      },
+      {
+        "questionIndex": 4,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68d605978c2b192166cf4eb0"
+      }
+    ],
+    "createdAt": "2025-09-26T03:16:39.373Z",
+    "updatedAt": "2025-09-26T03:16:39.373Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d605bf8c2b192166cf4ef7",
+    "user": "68a75ed084cbaf8f2b09a175",
+    "quiz": "68c51949682296ebc5005945",
+    "attemptNumber": 3,
+    "score": 80,
+    "correct": 4,
+    "total": 5,
+    "timeTaken": 19,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d605bf8c2b192166cf4ef8"
+      },
+      {
+        "questionIndex": 1,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d605bf8c2b192166cf4ef9"
+      },
+      {
+        "questionIndex": 2,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d605bf8c2b192166cf4efa"
+      },
+      {
+        "questionIndex": 3,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d605bf8c2b192166cf4efb"
+      },
+      {
+        "questionIndex": 4,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68d605bf8c2b192166cf4efc"
+      }
+    ],
+    "createdAt": "2025-09-26T03:17:19.609Z",
+    "updatedAt": "2025-09-26T03:17:19.609Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d605dc8c2b192166cf4f3e",
+    "user": "68a75ed084cbaf8f2b09a175",
+    "quiz": "68ccd83101c5a125267ec631",
+    "attemptNumber": 1,
+    "score": 75,
+    "correct": 3,
+    "total": 4,
+    "timeTaken": 14412,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 2,
+        "isCorrect": true,
+        "_id": "68d605dc8c2b192166cf4f3f"
+      },
+      {
+        "questionIndex": 1,
+        "selected": 3,
+        "isCorrect": true,
+        "_id": "68d605dc8c2b192166cf4f40"
+      },
+      {
+        "questionIndex": 2,
+        "selected": 2,
+        "isCorrect": true,
+        "_id": "68d605dc8c2b192166cf4f41"
+      },
+      {
+        "questionIndex": 3,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68d605dc8c2b192166cf4f42"
+      }
+    ],
+    "createdAt": "2025-09-26T03:17:48.660Z",
+    "updatedAt": "2025-09-26T03:17:48.660Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d60fa7aed78da8d53f8328",
+    "user": "68d5efd23042f50d6af0e229",
+    "quiz": "68c51949682296ebc5005954",
+    "attemptNumber": 1,
+    "score": 40,
+    "correct": 2,
+    "total": 5,
+    "timeTaken": 18,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 3,
+        "isCorrect": false,
+        "_id": "68d60fa7aed78da8d53f8329"
+      },
+      {
+        "questionIndex": 1,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d60fa7aed78da8d53f832a"
+      },
+      {
+        "questionIndex": 2,
+        "selected": 3,
+        "isCorrect": false,
+        "_id": "68d60fa7aed78da8d53f832b"
+      },
+      {
+        "questionIndex": 3,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d60fa7aed78da8d53f832c"
+      },
+      {
+        "questionIndex": 4,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68d60fa7aed78da8d53f832d"
+      }
+    ],
+    "createdAt": "2025-09-26T03:59:35.704Z",
+    "updatedAt": "2025-09-26T03:59:35.704Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d61011aed78da8d53f8370",
+    "user": "68d5efd23042f50d6af0e229",
+    "quiz": "68c51949682296ebc5005954",
+    "attemptNumber": 2,
+    "score": 80,
+    "correct": 4,
+    "total": 5,
+    "timeTaken": 62,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d61011aed78da8d53f8371"
+      },
+      {
+        "questionIndex": 1,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d61011aed78da8d53f8372"
+      },
+      {
+        "questionIndex": 2,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d61011aed78da8d53f8373"
+      },
+      {
+        "questionIndex": 3,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d61011aed78da8d53f8374"
+      },
+      {
+        "questionIndex": 4,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68d61011aed78da8d53f8375"
+      }
+    ],
+    "createdAt": "2025-09-26T04:01:21.030Z",
+    "updatedAt": "2025-09-26T04:01:21.030Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d610a3aed78da8d53f8476",
+    "user": "68d5efd23042f50d6af0e229",
+    "quiz": "68c51949682296ebc5005963",
+    "attemptNumber": 1,
+    "score": 40,
+    "correct": 2,
+    "total": 5,
+    "timeTaken": 12,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 1,
+        "isCorrect": false,
+        "_id": "68d610a3aed78da8d53f8477"
+      },
+      {
+        "questionIndex": 1,
+        "selected": 1,
+        "isCorrect": false,
+        "_id": "68d610a3aed78da8d53f8478"
+      },
+      {
+        "questionIndex": 2,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d610a3aed78da8d53f8479"
+      },
+      {
+        "questionIndex": 3,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d610a3aed78da8d53f847a"
+      },
+      {
+        "questionIndex": 4,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68d610a3aed78da8d53f847b"
+      }
+    ],
+    "createdAt": "2025-09-26T04:03:47.435Z",
+    "updatedAt": "2025-09-26T04:03:47.435Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d8ed93c49c4615c64a497a",
+    "user": "68a75ed084cbaf8f2b09a175",
+    "quiz": "68c51949682296ebc5005972",
+    "attemptNumber": 1,
+    "score": 40,
+    "correct": 2,
+    "total": 5,
+    "timeTaken": 65,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 1,
+        "isCorrect": false,
+        "_id": "68d8ed93c49c4615c64a497b"
+      },
+      {
+        "questionIndex": 1,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d8ed93c49c4615c64a497c"
+      },
+      {
+        "questionIndex": 2,
+        "selected": 2,
+        "isCorrect": false,
+        "_id": "68d8ed93c49c4615c64a497d"
+      },
+      {
+        "questionIndex": 3,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d8ed93c49c4615c64a497e"
+      },
+      {
+        "questionIndex": 4,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68d8ed93c49c4615c64a497f"
+      }
+    ],
+    "createdAt": "2025-09-28T08:10:59.585Z",
+    "updatedAt": "2025-09-28T08:10:59.585Z",
+    "__v": 0
+  },
+  {
+    "_id": "68d8edb9c49c4615c64a49c7",
+    "user": "68a75ed084cbaf8f2b09a175",
+    "quiz": "68c51949682296ebc5005972",
+    "attemptNumber": 2,
+    "score": 80,
+    "correct": 4,
+    "total": 5,
+    "timeTaken": 11,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d8edb9c49c4615c64a49c8"
+      },
+      {
+        "questionIndex": 1,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d8edb9c49c4615c64a49c9"
+      },
+      {
+        "questionIndex": 2,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d8edb9c49c4615c64a49ca"
+      },
+      {
+        "questionIndex": 3,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "68d8edb9c49c4615c64a49cb"
+      },
+      {
+        "questionIndex": 4,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "68d8edb9c49c4615c64a49cc"
+      }
+    ],
+    "createdAt": "2025-09-28T08:11:37.224Z",
+    "updatedAt": "2025-09-28T08:11:37.224Z",
+    "__v": 0
+  },
+  {
+    "_id": "6908de8927decfc36708d93a",
+    "user": "68d5efd23042f50d6af0e229",
+    "quiz": "68c51949682296ebc5005963",
+    "attemptNumber": 2,
+    "score": 40,
+    "correct": 2,
+    "total": 5,
+    "timeTaken": 8,
+    "answers": [
+      {
+        "questionIndex": 0,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "6908de8927decfc36708d93b"
+      },
+      {
+        "questionIndex": 1,
+        "selected": 2,
+        "isCorrect": false,
+        "_id": "6908de8927decfc36708d93c"
+      },
+      {
+        "questionIndex": 2,
+        "selected": 0,
+        "isCorrect": true,
+        "_id": "6908de8927decfc36708d93d"
+      },
+      {
+        "questionIndex": 3,
+        "selected": 2,
+        "isCorrect": false,
+        "_id": "6908de8927decfc36708d93e"
+      },
+      {
+        "questionIndex": 4,
+        "selected": -1,
+        "isCorrect": false,
+        "_id": "6908de8927decfc36708d93f"
+      }
+    ],
+    "createdAt": "2025-11-03T16:55:37.869Z",
+    "updatedAt": "2025-11-03T16:55:37.869Z",
+    "__v": 0
+  }
+]

@@ -5,10 +5,7 @@ import {
   Trophy,
   ShieldCheck,
   Zap,
-  Flame,
-  Map
 } from 'lucide-react';
-import { Globe } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
 import { Sun, Moon } from 'lucide-react';

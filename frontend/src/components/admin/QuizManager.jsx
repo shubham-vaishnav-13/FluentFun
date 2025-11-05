@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import api from '../../config/api.config';
+import AdminAPI from '../../services/adminAPI';
 
 const QuizManager = () => {
   const [quizzes, setQuizzes] = useState([]);
@@ -24,6 +25,9 @@ const QuizManager = () => {
   const [filterDifficulty, setFilterDifficulty] = useState('all');
   const [loading, setLoading] = useState(false);
   const [importing, setImporting] = useState(false);
+  const [generating, setGenerating] = useState(false);
+  const [showGenerateModal, setShowGenerateModal] = useState(false);
+  const [generateForm, setGenerateForm] = useState({ language: 'en', difficulty: 'beginner', questionsCount: 3, category: 'grammar' });
 
   const [quizForm, setQuizForm] = useState({
     title: '',
@@ -59,11 +63,11 @@ const QuizManager = () => {
     const load = async () => {
       setLoading(true);
       try {
-        const res = await api.get('/admin/quizzes');
-        if (mounted) setQuizzes(res.data.data.quizzes || []);
+        const res = await api.get('/admin/quizzes', { params: { limit: 100 } });
+        const loadedQuizzes = res.data.data.quizzes || [];
+        if (mounted) setQuizzes(loadedQuizzes);
       } catch (e) {
-        console.error('Failed to load quizzes', e);
-        toast.error('Failed to load quizzes');
+        toast.error('Failed to load quizzes: ' + (e.message || 'Unknown error'));
       } finally {
         if (mounted) setLoading(false);
       }
@@ -190,7 +194,6 @@ const QuizManager = () => {
         setQuizzes(prev => prev.filter(q => (q._id || q.id) !== quizId));
         toast.success('Quiz deleted successfully!');
       } catch (e) {
-        console.error('Failed to delete quiz', e);
         toast.error('Failed to delete quiz');
       }
     }
@@ -276,7 +279,7 @@ const QuizManager = () => {
                   const res = await api.post('/admin/quizzes', item);
                   if (res && res.data && res.data.data) created.push(res.data.data);
                 } catch (err) {
-                  console.error('Failed to import item', err, item);
+                  toast.error('Failed to import item');
                 }
               }
 
@@ -287,13 +290,142 @@ const QuizManager = () => {
                 toast.error('No quizzes were imported. Check file format or permissions.');
               }
             } catch (err) {
-              console.error('Failed to read/parse JSON file', err);
               toast.error('Invalid JSON file');
             } finally {
               e.target.value = '';
               setImporting(false);
             }
           }} className="hidden" />
+
+          <button
+            onClick={() => setShowGenerateModal(true)}
+            className="neon-btn px-4 py-2 rounded-lg font-medium transition flex items-center space-x-2 disabled:opacity-50"
+            disabled={generating}
+          >
+            <Plus className="w-4 h-4" />
+            <span>{generating ? 'Generating…' : 'Generate via n8n'}</span>
+          </button>
+      {/* Generate Quiz Modal */}
+      <AnimatePresence>
+        {showGenerateModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={() => setShowGenerateModal(false)}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="bg-surface glass neon-card rounded-2xl border border-app p-6 w-full max-w-md"
+              onClick={e => e.stopPropagation()}
+            >
+              <h2 className="text-xl font-semibold text-app mb-4">Generate Quizzes via n8n</h2>
+              <form
+                onSubmit={async e => {
+                  e.preventDefault();
+                  setGenerating(true);
+                  try {
+                    const payload = { 
+                      language: generateForm.language,
+                      difficulty: generateForm.difficulty,
+                      questionsCount: Number(generateForm.questionsCount) || 3,
+                      category: generateForm.category
+                    };
+                    const resp = await AdminAPI.generateQuizzes(payload);
+                    if (resp?.success) {
+                      const created = resp.data?.quizzes || [];
+                      if (created.length) setQuizzes(prev => [...created, ...prev]);
+                      toast.success(`Generated ${resp.data?.count || created.length} quizzes via n8n`);
+                      setShowGenerateModal(false);
+                    } else {
+                      toast.error(resp?.message || 'Generation failed');
+                    }
+                  } catch (err) {
+                    toast.error('Generate quizzes failed');
+                    toast.error(err?.message || 'Failed to generate quizzes');
+                  } finally {
+                    setGenerating(false);
+                  }
+                }}
+                className="space-y-4"
+              >
+                <div>
+                  <label className="block text-sm font-medium text-app mb-2">Language</label>
+                  <select
+                    value={generateForm.language}
+                    onChange={e => setGenerateForm(f => ({ ...f, language: e.target.value }))}
+                    className="w-full px-4 py-2.5 border border-app rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent transition bg-transparent"
+                  >
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                    <option value="gu">Gujarati</option>
+                    <option value="fr">French</option>
+                    <option value="es">Spanish</option>
+                    <option value="de">German</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-app mb-2">Difficulty</label>
+                  <select
+                    value={generateForm.difficulty}
+                    onChange={e => setGenerateForm(f => ({ ...f, difficulty: e.target.value }))}
+                    className="w-full px-4 py-2.5 border border-app rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent transition bg-transparent"
+                  >
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-app mb-2">Category</label>
+                  <select
+                    value={generateForm.category}
+                    onChange={e => setGenerateForm(f => ({ ...f, category: e.target.value }))}
+                    className="w-full px-4 py-2.5 border border-app rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent transition bg-transparent"
+                  >
+                    <option value="grammar">Grammar</option>
+                    <option value="vocabulary">Vocabulary</option>
+                    <option value="reading">Reading</option>
+                    <option value="listening">Listening</option>
+                    <option value="mixed">Mixed</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-app mb-2">Questions per quiz</label>
+                  <input
+                    type="number"
+                    min={1}
+                    max={10}
+                    value={generateForm.questionsCount}
+                    onChange={e => setGenerateForm(f => ({ ...f, questionsCount: Math.max(1, Math.min(10, Number(e.target.value))) }))}
+                    className="w-full px-4 py-2.5 border border-app rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent transition bg-transparent"
+                  />
+                </div>
+                <div className="flex space-x-3 pt-2">
+                  <button
+                    type="button"
+                    onClick={() => setShowGenerateModal(false)}
+                    className="flex-1 px-4 py-2.5 border border-app rounded-lg hover:bg-white/5 transition"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={generating}
+                    className="flex-1 neon-btn px-4 py-2.5 rounded-lg font-medium transition disabled:opacity-50 flex items-center justify-center space-x-2"
+                  >
+                    <Plus className="w-4 h-4" />
+                    <span>{generating ? 'Generating…' : 'Generate'}</span>
+                  </button>
+                </div>
+              </form>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
           <button
             onClick={() => setShowAddModal(true)}

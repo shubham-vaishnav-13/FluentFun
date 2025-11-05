@@ -20,8 +20,8 @@ const generateAccessAndRefreshToken = async (userId) => {
     const refreshToken = user.generateRefreshToken();
 
     user.refreshToken = refreshToken;
-    await user.save({ validateBeforeSave: false }); // Fixed typo: validareBeforeSave -> validateBeforeSave
-    return { accessToken, refreshToken }; // Fixed typo: accesToken -> accessToken
+    await user.save({ validateBeforeSave: false }); 
+    return { accessToken, refreshToken }; 
   } catch (error) {
     throw new ApiError(500, "Failed to generate access and refresh tokens");
   }
@@ -111,8 +111,7 @@ const registerUser = asyncHandler(async (req, res) => {
 const loginUser = asyncHandler(async (req, res) => {
   const { email, username, password } = req.body;
   
-  console.log('=== LOGIN ATTEMPT ===');
-  console.log('Login attempt with:', { email, username, hasPassword: !!password });
+  // login attempt
 
   if ((!email && !username) || !password) {
     throw new ApiError(400, "Email or username and password are required ...");
@@ -123,64 +122,24 @@ const loginUser = asyncHandler(async (req, res) => {
   if (email) queryConditions.push({ email });
   if (username) queryConditions.push({ username });
   
-  console.log('Query conditions:', queryConditions);
+  // query conditions prepared
 
-  // Debug: show mongoose connection and collection info to ensure we're querying the expected DB
-  try {
-    console.log('Mongoose readyState:', mongoose.connection.readyState);
-    if (mongoose.connection?.db) {
-      console.log('DB name:', mongoose.connection.db.databaseName);
-    }
-    console.log('User collection name:', User.collection && User.collection.name);
-    try {
-      const totalUsers = await User.countDocuments();
-      console.log('Total users visible to this process:', totalUsers);
-    } catch (e) {
-      console.log('countDocuments error:', e.message);
-    }
-  } catch (e) {
-    console.error('Connection debug error:', e.message);
-  }
 
   const user = await User.findOne({
     $or: queryConditions,
   });
 
-  console.log('User search result:', !!user);
+  // user search result
 
-  if (!user) {
-    // Fallback: try a case-insensitive regex search (handles odd casing/whitespace)
-    const escapeRegex = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    let fallbackUser = null;
-    try {
-      if (email) {
-        fallbackUser = await User.findOne({ email: { $regex: `^${escapeRegex(email)}$`, $options: 'i' } });
-      }
-      if (!fallbackUser && username) {
-        fallbackUser = await User.findOne({ username: { $regex: `^${escapeRegex(username)}$`, $options: 'i' } });
-      }
-    } catch (e) {
-      console.error('Fallback user search error:', e.message);
-    }
-
-    if (!fallbackUser) {
-      console.log('=== USER NOT FOUND ===');
-      throw new ApiError(404, "User not found ...");
-    }
-
-    // If we found a fallback user, use it
-    console.log('User found by fallback (case-insensitive)');
-    user = fallbackUser;
-  }
 
   const isPasswordValid = await user.isPasswordCorrect(password);
-  console.log('Password validation result:', isPasswordValid);
+  // password validated
   
   if (!isPasswordValid) {
     throw new ApiError(401, "Invalid password ...");
   }
 
-  console.log('=== LOGIN SUCCESSFUL ===');
+  // login successful
   const { accessToken, refreshToken } = await generateAccessAndRefreshToken(user._id);
 
   // Update last login time
@@ -338,10 +297,7 @@ const updateProfile = asyncHandler(async (req, res) => {
       Leaderboard (XP based)
   ===========================
   GET /api/users/leaderboard?limit=50&days=30
-  - limit: number of top users to return (default 50, max 200)
-  - days: optionally weight by recency of activity (quiz attempts within last N days)
-  Response: [{ _id, fullName, username, profileImage, xp, rank }]
-  Also returns current user rank if authenticated via middleware (optional chaining)
+
 */
 
 const getLeaderboard = asyncHandler(async (req, res) => {

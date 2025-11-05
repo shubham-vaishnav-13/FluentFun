@@ -1,8 +1,10 @@
+import { toast } from 'react-hot-toast';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { useAuth } from '../context/AuthContext';
 import api from '../config/api.config.js';
+import { API_PATHS } from '../config/apiPaths.js';
 import { motion } from 'framer-motion';
 import { Brain, ArrowRight, Flame, School, Award, Lock, CheckCircle2, Play } from 'lucide-react';
 import { getProgression } from '../services/quizAPI.js';
@@ -24,10 +26,10 @@ export default function QuizListByLanguage() {
     const fetchLanguages = async () => {
       try {
         setLoading(true);
-        const res = await api.get('/content/languages');
+        const res = await api.get(API_PATHS.CONTENT.GET_LANGUAGES);
         if (res.data?.success) setLanguages(res.data.data || []);
       } catch (e) {
-        console.error('Failed to load languages', e);
+  toast.error('Failed to load languages');
       } finally {
         setLoading(false);
       }
@@ -43,7 +45,7 @@ export default function QuizListByLanguage() {
         const res = await api.get('/content/quizzes/counts', { params: { language: code } });
         if (res.data?.success) setCounts(prev => ({ ...prev, [code]: res.data.data }));
       } catch (err) {
-        console.error('Failed to load quiz counts', code, err);
+  toast.error('Failed to load quiz counts');
       } finally {
         setLoadingCounts(prev => ({ ...prev, [code]: false }));
       }
@@ -67,7 +69,7 @@ export default function QuizListByLanguage() {
         setErrorProgression(res?.message || 'Failed to load progression');
       }
     } catch (e) {
-      console.error('Failed to load progression', e);
+  toast.error('Failed to load progression');
       setErrorProgression(e.message || 'Error loading progression');
     } finally {
       setLoadingProgression(false);
@@ -79,8 +81,10 @@ export default function QuizListByLanguage() {
     setActiveDifficulty(null);
   };
 
-  const launchQuiz = (quizId) => {
-    if (quizId) navigate(`/quiz/${quizId}`);
+  const launchQuiz = (quizId, opts = {}) => {
+    if (!quizId) return;
+    const { retry } = opts;
+    navigate(`/quiz/${quizId}${retry ? '?retry=1' : ''}`);
   };
 
   return (
@@ -221,18 +225,20 @@ function ProgressionModal({ language, difficulty, loading, error, progression, o
           <ul className="space-y-3 max-h-[60vh] overflow-y-auto pr-2">
             {progression.map(item => {
               const locked = isLocked(item);
-              const canPlay = !locked && !item.attempted;
+              const passed = item.attempted && (item.score ?? 0) >= (item.required ?? 0);
+              const failed = item.attempted && !passed;
+              const canPlay = !locked && (!item.attempted || failed);
               return (
                 <li
                   key={item.quizId}
-                  onClick={() => canPlay && onLaunch(item.quizId)}
+                  onClick={() => canPlay && onLaunch(item.quizId, { retry: failed })}
                   className={`border rounded-xl p-4 flex items-center justify-between ${locked ? 'opacity-60 bg-gray-50' : 'bg-white hover:border-brand-purple cursor-pointer'} transition`}
                 >
                   <div>
                     <div className="flex items-center gap-2">
                       <span className="text-sm font-mono px-2 py-0.5 rounded bg-brand-purple/10 text-brand-purple">Lv {item.sequence}</span>
                       <h4 className="font-semibold text-brand-dark">{item.title || `Quiz ${item.sequence}`}</h4>
-                      {item.attempted && <CheckCircle2 className="w-4 h-4 text-green-500" />}
+                      {passed && <CheckCircle2 className="w-4 h-4 text-green-500" />}
                     </div>
                     <div className="text-xs text-gray-500 mt-1">
                       {item.attempted ? `Score: ${item.score}%` : canPlay ? (item.required ? `Need ${item.required}% to unlock next` : 'Ready') : 'Locked'}
@@ -242,13 +248,14 @@ function ProgressionModal({ language, difficulty, loading, error, progression, o
                     {locked && <Lock className="w-5 h-5 text-gray-400" />}
                     {canPlay && (
                       <button
-                        onClick={(e) => { e.stopPropagation(); onLaunch(item.quizId); }}
+                        onClick={(e) => { e.stopPropagation(); onLaunch(item.quizId, { retry: failed }); }}
                         className="inline-flex items-center px-3 py-2 text-sm bg-brand-purple text-white rounded-lg hover:bg-brand-purple/90 focus:ring-2 focus:ring-brand-purple/40 focus:outline-none"
                       >
-                        <Play className="w-4 h-4 mr-1" /> Play
+                        <Play className="w-4 h-4 mr-1" /> {failed ? 'Retry' : 'Play'}
                       </button>
                     )}
-                    {item.attempted && <span className="text-xs text-green-600 font-medium">Completed</span>}
+                    {passed && <span className="text-xs text-green-600 font-medium">Passed</span>}
+                    {failed && <span className="text-xs text-red-600 font-medium">Failed</span>}
                   </div>
                 </li>
               );

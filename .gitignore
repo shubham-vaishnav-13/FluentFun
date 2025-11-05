@@ -17,3 +17,5 @@
 # Build files
 /frontend/dist
 /frontend/.DS_Store
+
+DEPLOYMENT_SUMMARY.md

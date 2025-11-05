@@ -9,9 +9,9 @@ export const verifyJWT = asyncHandler(async (req, res, next) => {
         throw new ApiError(401, "You are not authenticated!");
     }
     try {
-        console.log("Verifying token:", token.substring(0, 15) + "...");
+    // Verifying token
         const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
-        console.log("Decoded JWT:", decoded._id);
+    // Decoded JWT
         
         const user = await User.findById(decoded._id);
         if (!user) {
@@ -19,7 +19,7 @@ export const verifyJWT = asyncHandler(async (req, res, next) => {
             throw new ApiError(401, "User not found!");
         }
         
-        console.log("Authentication successful for user:", user.email || user.username);
+    // Authentication successful
         req.user = user;
         next(); // transfer to controller
     } catch (error) {

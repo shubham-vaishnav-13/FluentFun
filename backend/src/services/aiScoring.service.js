@@ -1,22 +1,160 @@
+import dotenv from 'dotenv';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-// Lazy init (so dev without key can still run with heuristic fallback)
+dotenv.config({
+    path: './.env',
+    quiet: true
+});
+
 let genAI = null;
+
 function getGenAI() {
     if (genAI) return genAI;
-    const key = process.env.GEMINI_API_KEY;
-    if (!key) {
+    
+    const key = process.env.GEMINI_API_KEY?.trim();
+    
+    if (!key || key === 'undefined') {
         if (process.env.NODE_ENV !== 'production') {
-            console.warn('[AI] GEMINI_API_KEY not set – using heuristic fallback scoring');
+            console.warn('[AI] GEMINI_API_KEY not configured - heuristic fallback enabled');
             return null;
         }
         throw new Error('GEMINI_API_KEY environment variable is not set');
     }
+    
     genAI = new GoogleGenerativeAI(key);
     return genAI;
 }
 
-// Validate AI response schema
+/**
+ * Clean JSON response from AI model
+ * Removes markdown code blocks and extracts pure JSON
+ */
+
+function cleanAIResponse(rawText) {
+    if (typeof rawText !== 'string') return null;
+    
+    // Remove markdown code blocks
+    let cleaned = rawText.replace(/^```json\s*/i, '')
+                        .replace(/^```\s*/i, '')
+                        .replace(/```\s*$/i, '')
+                        .trim();
+    
+    // Extract JSON array/object by finding first { or [ and last } or ]
+    const firstBrace = cleaned.indexOf('{');
+    const lastBrace = cleaned.lastIndexOf('}');
+    const firstBracket = cleaned.indexOf('[');
+    const lastBracket = cleaned.lastIndexOf(']');
+    
+    // Determine if we have an object or array
+    if (firstBrace !== -1 && lastBrace !== -1 && 
+        (firstBracket === -1 || firstBrace < firstBracket)) {
+        cleaned = cleaned.substring(firstBrace, lastBrace + 1);
+    } else if (firstBracket !== -1 && lastBracket !== -1) {
+        cleaned = cleaned.substring(firstBracket, lastBracket + 1);
+    }
+    
+    return cleaned;
+}
+
+/**
+ * Safely parse JSON with cleanup
+ */
+function safeParseJSON(text) {
+    try {
+        const cleaned = cleanAIResponse(text);
+        if (!cleaned) return null;
+        return JSON.parse(cleaned);
+    } catch (error) {
+        console.error('[AI] JSON Parse Error:', error.message);
+        console.error('[AI] Raw text:', text.substring(0, 500));
+        return null;
+    }
+}
+
+/**
+ * Create evaluation prompt for writing challenge
+ */
+function createEvaluationPrompt(challenge, essayText) {
+    const rubricLines = challenge.rubric
+        .map(r => `${r.name} (${r.weight}%): ${r.description || 'No description'}`)
+        .join('\n');
+    
+    return `You are an AI trained to evaluate writing submissions for language learning.
+
+Task:
+- Evaluate the essay based on the rubric provided
+- Provide scores (0-100) for each rubric category
+- Give constructive feedback
+
+Context:
+- Challenge: ${challenge.title}
+- Language: ${challenge.language}
+- Category: ${challenge.category}
+- Difficulty: ${challenge.difficulty}
+- Word Limit: ${challenge.wordLimit.min}-${challenge.wordLimit.max} words
+
+Rubric:
+${rubricLines}
+
+Essay to evaluate:
+"""
+${essayText}
+"""
+
+CRITICAL RULES:
+1. Return ONLY valid JSON - no extra text before or after
+2. Use double quotes for all strings
+3. Escape any double quotes inside strings with backslash
+4. The response must be a single JSON object
+5. For on-topic, coherent essays, most scores should be 55-75
+6. Reserve scores below 30 only for off-topic or incoherent content
+7. Avoid being overly harsh - grade proportionally
+
+Required JSON format:
+{
+    "categories": [
+        {
+            "key": "rubric category name",
+            "score": 70,
+            "comment": "Brief feedback for this category"
+        }
+    ],
+    "overallFeedback": "Comprehensive feedback on the essay"
+}
+
+Important: Return ONLY the JSON object. No additional text.`;
+}
+
+/**
+ * Generate heuristic fallback scores when AI is unavailable
+ */
+function generateHeuristicScores(challenge, essayText) {
+    const hash = [...essayText].reduce((a, c) => (a + c.charCodeAt(0)) % 1000, 0);
+    
+    const categories = challenge.rubric.map((r, i) => {
+        const base = (hash + (i * 37)) % 101;
+        const adjusted = Math.round((base * 0.7) + (r.weight * 0.3));
+        const score = Math.min(100, Math.max(35, adjusted));
+        
+        return {
+            key: r.name,
+            label: r.name,
+            score,
+            comment: `Heuristic score for ${r.name}. Enable GEMINI_API_KEY for AI evaluation.`
+        };
+    });
+    
+    return {
+        model: 'heuristic-fallback',
+        categories,
+        overallFeedback: 'Heuristic fallback used. Add GEMINI_API_KEY environment variable for real AI evaluation.',
+        fallbackReason: 'NO_API_KEY'
+    };
+}
+
+/**
+ * Validate AI response structure
+ */
 function validateAIResponse(data) {
     if (!data || typeof data !== 'object') {
         throw new Error('AI response must be an object');
@@ -26,17 +164,15 @@ function validateAIResponse(data) {
         throw new Error('AI response must include categories array');
     }
 
-    // Validate each category
     data.categories.forEach((cat, idx) => {
-        if (!cat.key && !cat.label) {
-            throw new Error(`Category ${idx} missing both key and label`);
+        if (!cat.key) {
+            throw new Error(`Category ${idx} missing key`);
         }
         if (typeof cat.score !== 'number' || cat.score < 0 || cat.score > 100) {
-            throw new Error(`Category ${idx} (${cat.key || cat.label}) has invalid score: ${cat.score}`);
+            throw new Error(`Category ${idx} (${cat.key}) has invalid score: ${cat.score}`);
         }
     });
 
-    // Ensure required fields
     if (typeof data.overallFeedback !== 'string' || !data.overallFeedback.trim()) {
         throw new Error('AI response missing overallFeedback');
     }
@@ -44,6 +180,9 @@ function validateAIResponse(data) {
     return true;
 }
 
+/**
+ * Retry function with exponential backoff
+ */
 async function retryWithBackoff(fn, retries = 2, baseDelay = 1000) {
     let lastError;
     for (let i = 0; i <= retries; i++) {
@@ -53,7 +192,6 @@ async function retryWithBackoff(fn, retries = 2, baseDelay = 1000) {
             lastError = error;
             if (i === retries) break;
             
-            // Exponential backoff
             const delay = baseDelay * Math.pow(2, i);
             await new Promise(resolve => setTimeout(resolve, delay));
         }
@@ -62,57 +200,17 @@ async function retryWithBackoff(fn, retries = 2, baseDelay = 1000) {
 }
 
 /**
- * Evaluate a writing submission according to challenge rubric.
+ * Main evaluation function
  * @param {Object} params
- * @param {import('../models/writingChallenge.models.js').WritingChallenge} params.challenge
- * @param {string} params.essayText
- * @returns {Promise<{model:string,categories:Array<{key:string,label?:string,score:number,comment?:string}>,overallFeedback:string,processingTimeMs:number}>}
+ * @param {Object} params.challenge - Writing challenge object
+ * @param {string} params.essayText - User's essay text
+ * @returns {Promise<Object>} Evaluation result
  */
 export async function evaluateSubmission({ challenge, essayText }) {
-    if (!challenge?.rubric?.length) {
-        throw new Error('Challenge must have a rubric defined');
-    }
-
-    if (!essayText?.trim()) {
-        throw new Error('Essay text is required');
-    }
-
-    const rubricLines = challenge.rubric
-        .map(r => `${r.name}|${r.weight}|${r.description || r.name}`)
-        .join('\n');
-
-    const systemPrompt = [
-        "You are an impartial writing evaluator. Your task is to evaluate the essay according to the rubric.",
-        "Return ONLY a JSON object with exactly these fields:",
-        "- model: string (your model name)",
-        "- categories: array of objects, each with:",
-        "  - key: string (matching rubric name)",
-        "  - score: number (0-100)",
-        "  - comment: string (specific feedback)",
-        "- overallFeedback: string (general advice)",
-        "IMPORTANT: No markdown, no extra text, ONLY valid JSON"
-    ].join('\n');
-
-    const userPrompt = [
-        `Challenge: ${challenge.title}`,
-        `Language: ${challenge.language}`,
-        `Category: ${challenge.category}`,
-        `Difficulty: ${challenge.difficulty}`,
-        '',
-        'Original Prompt:',
-        challenge.prompt,
-        '',
-        'Rubric (name|weight|description):',
-        rubricLines,
-        '',
-        'Essay:',
-        `"""${essayText}"""`
-    ].join('\n');
-
     const started = Date.now();
-
+    
     try {
-        // Pre-validate the rubric
+        // Validate rubric
         const invalidRubric = challenge.rubric.find(r => 
             !r.name || typeof r.weight !== 'number' || r.weight < 0 || r.weight > 100
         );
@@ -120,83 +218,76 @@ export async function evaluateSubmission({ challenge, essayText }) {
             throw new Error(`Invalid rubric item: ${JSON.stringify(invalidRubric)}`);
         }
 
-        const evalFn = async () => {
-            const client = getGenAI();
-            if (!client) {
-                // Heuristic fallback: distribute pseudo-random but deterministic scores based on text hash & rubric weights
-                const hash = [...essayText].reduce((a, c) => (a + c.charCodeAt(0)) % 1000, 0);
-                const categories = challenge.rubric.map((r, i) => {
-                    const base = (hash + (i * 37)) % 101; // 0-100
-                    // Light weighting: nudge toward weight proportion
-                    const adjusted = Math.round((base * 0.7) + (r.weight * 0.3));
-                    return {
-                        key: r.name,
-                        label: r.name,
-                        score: Math.min(100, Math.max(0, adjusted)),
-                        comment: `Provisional heuristic score for ${r.name}. Provide a real API key to enable AI feedback.`
-                    };
-                });
-                return {
-                    model: 'heuristic-fallback',
-                    categories,
-                    overallFeedback: 'Heuristic fallback used (no GEMINI_API_KEY). Add API key for real AI evaluation.',
-                };
-            }
+        const client = getGenAI();
+        
+        // Use heuristic fallback if no API key
+        if (!client) {
+            console.log('[AI] Using heuristic fallback - no API key configured');
+            return {
+                ...generateHeuristicScores(challenge, essayText),
+                processingTimeMs: Date.now() - started
+            };
+        }
 
+        // Try AI evaluation with retry
+        const result = await retryWithBackoff(async () => {
+            const prompt = createEvaluationPrompt(challenge, essayText);
+            
             const model = client.getGenerativeModel({ 
-                model: process.env.GEMINI_MODEL || "gemini-1.5-flash",
-                safetySettings: [
-                    { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
-                    { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_NONE" }
-                ]
+                model: process.env.GEMINI_MODEL || "gemini-2.0-flash-exp"
             });
-
-            const result = await model.generateContent([
-                { text: systemPrompt },
-                { text: userPrompt }
-            ]);
-
-            if (!result.response) {
-                throw new Error('AI model returned empty response');
+            
+            const generationConfig = {
+                temperature: 0.4,
+                topK: 32,
+                topP: 1,
+                maxOutputTokens: 4096,
+            };
+            
+            const aiResult = await model.generateContent({
+                contents: [{ role: "user", parts: [{ text: prompt }] }],
+                generationConfig
+            });
+            
+            const response = aiResult.response;
+            const rawText = response.text();
+            
+            //console.log('[AI] Received response from Gemini');
+            
+            const parsed = safeParseJSON(rawText);
+            
+            if (!parsed) {
+                throw new Error('Failed to parse AI response as JSON');
             }
-
-            const response = result.response;
-            const content = response.text() || '';
-
-            // Try to extract JSON even if there's surrounding text
-            const jsonMatch = content.match(/\{[\s\S]*\}/);
-            if (!jsonMatch) {
-                throw new Error('No JSON object found in AI response');
-            }
-
-            const parsed = JSON.parse(jsonMatch[0]);
+            
             validateAIResponse(parsed);
-
-            // Normalize category keys to match rubric
-            const rubricMap = new Map(challenge.rubric.map(r => [r.name.toLowerCase(), r]));
-            parsed.categories = parsed.categories.map(cat => ({
-                ...cat,
-                key: cat.key || cat.label || 'unknown',
-                label: cat.label || cat.key || 'Unknown',
-                score: Math.min(100, Math.max(0, Math.round(cat.score)))
-            })).filter(cat => rubricMap.has(cat.key.toLowerCase()));
-
-            return parsed;
-        };
-
-        const result = await retryWithBackoff(evalFn);
-        return { ...result, processingTimeMs: Date.now() - started };
-
+            
+            return {
+                model: process.env.GEMINI_MODEL || "gemini-2.0-flash-exp",
+                categories: parsed.categories.map(cat => ({
+                    key: cat.key,
+                    label: cat.key,
+                    score: Math.round(cat.score),
+                    comment: cat.comment || ''
+                })),
+                overallFeedback: parsed.overallFeedback,
+                processingTimeMs: Date.now() - started
+            };
+        }, 2, 1000);
+        
+        return result;
+        
     } catch (error) {
-        // Add context to the error
-        const enhancedError = new Error(`AI evaluation failed: ${error.message}`);
-        enhancedError.code = 'AI_EVAL_ERROR';
-        enhancedError.originalError = error;
-        enhancedError.context = {
-            challengeId: challenge._id,
-            essayLength: essayText.length,
-            rubricSize: challenge.rubric.length
+        //console.error('[AI] Evaluation failed:', error.message);
+        
+        // Fallback to heuristic on any error
+        console.log('[AI] Falling back to heuristic scoring due to error');
+        return {
+            ...generateHeuristicScores(challenge, essayText),
+            processingTimeMs: Date.now() - started,
+            error: error.message
         };
-        throw enhancedError;
     }
 }
+
+export default { evaluateSubmission };

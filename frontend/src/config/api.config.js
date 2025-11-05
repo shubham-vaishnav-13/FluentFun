@@ -1,31 +1,24 @@
 import axios from 'axios';
 
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
+
 // Create axios instance with base URL
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1', // configured via Vite env; fallback matches current backend port
-  withCredentials: true, // send cookies for auth if backend sets them
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
-
-// Create a separate instance for auth endpoints
-export const authApi = axios.create({
-  baseURL: import.meta.env.VITE_API_URL 
-    ? `${import.meta.env.VITE_API_URL.split('/api')[0]}/api` 
-    : 'http://localhost:3000/api', // Direct to base API path for auth
+  baseURL: BASE_URL,
+  timeout: 30000, // 30 seconds
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
+    Accept: 'application/json',
   },
 });
 
-// Add request interceptor to add auth token to requests
+// Request Interceptor - adds auth token
 api.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem('accessToken');
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
+    const accessToken = localStorage.getItem('accessToken');
+    if (accessToken) {
+      config.headers.Authorization = `Bearer ${accessToken}`;
     }
     return config;
   },
@@ -34,10 +27,24 @@ api.interceptors.request.use(
   }
 );
 
-// Simple pass-through response handling (no refresh flow configured)
+// Response Interceptor - handles errors & 401 redirects
 api.interceptors.response.use(
   (response) => response,
-  (error) => Promise.reject(error)
+  (error) => {
+    if (error.response) {
+      const { status } = error.response;
+      if (status === 401) {
+        // Unauthorized - clear tokens and redirect to login
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('refreshToken');
+        localStorage.removeItem('user');
+        window.location.href = '/login';
+      }
+      // For other statuses, do not trigger global UI toasts; let callers handle.
+    }
+    // For timeouts or network errors, avoid global toasts to prevent duplicates; let callers decide.
+    return Promise.reject(error);
+  }
 );
 
 export default api;

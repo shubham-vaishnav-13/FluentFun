@@ -163,6 +163,8 @@ export const deleteUser = asyncHandler(async (req, res) => {
 export const getAllQuizzes = asyncHandler(async (req, res) => {
     const { page = 1, limit = 10, category = '', difficulty = '', search = '' } = req.query;
     
+    // [getAllQuizzes] Request received
+    
     const query = {};
     
     if (category) query.category = category;
@@ -175,22 +177,31 @@ export const getAllQuizzes = asyncHandler(async (req, res) => {
         ];
     }
 
-    const quizzes = await Quiz.find(query)
-        .populate('createdBy', 'username fullName')
-        .sort({ createdAt: -1 })
-        .limit(limit * 1)
-        .skip((page - 1) * limit);
+    // [getAllQuizzes] Using MongoDB query
 
-    const total = await Quiz.countDocuments(query);
+    try {
+        const quizzes = await Quiz.find(query)
+            .populate('createdBy', 'username fullName')
+            .sort({ createdAt: -1 })
+            .limit(limit * 1)
+            .skip((page - 1) * limit);
 
-    return res.status(200).json(
-        new ApiResponse(200, {
-            quizzes,
-            totalPages: Math.ceil(total / limit),
-            currentPage: page,
-            total
-        }, "Quizzes retrieved successfully")
-    );
+        const total = await Quiz.countDocuments(query);
+
+    // [getAllQuizzes] Results summarized
+
+        return res.status(200).json(
+            new ApiResponse(200, {
+                quizzes,
+                totalPages: Math.ceil(total / limit),
+                currentPage: page,
+                total
+            }, "Quizzes retrieved successfully")
+        );
+    } catch (err) {
+        console.error("[getAllQuizzes] Error:", err);
+        throw new ApiError(500, "Failed to retrieve quizzes", err.message);
+    }
 });
 
 export const createQuiz = asyncHandler(async (req, res) => {
@@ -327,6 +338,8 @@ export const deleteQuiz = asyncHandler(async (req, res) => {
 export const getAllWritingChallenges = asyncHandler(async (req, res) => {
     const { page = 1, limit = 10, category = '', difficulty = '', search = '' } = req.query;
     
+    // [getAllWritingChallenges] Request received
+    
     const query = {};
     
     if (category) query.category = category;
@@ -338,23 +351,32 @@ export const getAllWritingChallenges = asyncHandler(async (req, res) => {
             { tags: { $in: [new RegExp(search, 'i')] } }
         ];
     }
+    
+    // [getAllWritingChallenges] Using MongoDB query
+    
+    try {
+        const challenges = await WritingChallenge.find(query)
+            .populate('createdBy', 'username fullName')
+            .sort({ createdAt: -1 })
+            .limit(limit * 1)
+            .skip((page - 1) * limit);
 
-    const challenges = await WritingChallenge.find(query)
-        .populate('createdBy', 'username fullName')
-        .sort({ createdAt: -1 })
-        .limit(limit * 1)
-        .skip((page - 1) * limit);
+        const total = await WritingChallenge.countDocuments(query);
+        
+    // [getAllWritingChallenges] Results summarized
 
-    const total = await WritingChallenge.countDocuments(query);
-
-    return res.status(200).json(
-        new ApiResponse(200, {
-            challenges,
-            totalPages: Math.ceil(total / limit),
-            currentPage: page,
-            total
-        }, "Writing challenges retrieved successfully")
-    );
+        return res.status(200).json(
+            new ApiResponse(200, {
+                challenges,
+                totalPages: Math.ceil(total / limit),
+                currentPage: page,
+                total
+            }, "Writing challenges retrieved successfully")
+        );
+    } catch (err) {
+        console.error("[getAllWritingChallenges] Error:", err);
+        throw new ApiError(500, "Failed to retrieve writing challenges", err.message);
+    }
 });
 
 export const createWritingChallenge = asyncHandler(async (req, res) => {
@@ -462,7 +484,7 @@ export const createWritingChallenge = asyncHandler(async (req, res) => {
 
         if (errors.length) {
             if (process.env.NODE_ENV !== 'production') {
-                console.warn('[createWritingChallenge:preflight] Rejecting payload', { title: challengeData.title, language: challengeData.language, errors });
+                // [createWritingChallenge:preflight] Rejecting payload
             }
             throw new ApiError(400, 'Preflight validation failed: ' + errors.join('; '));
         }
@@ -529,4 +551,156 @@ export const deleteWritingChallenge = asyncHandler(async (req, res) => {
     return res.status(200).json(
         new ApiResponse(200, {}, "Writing challenge deleted successfully")
     );
+});
+
+// n8n Generators
+export const generateQuizzesViaN8n = asyncHandler(async (req, res) => {
+    const language = (req.body?.language || 'en');
+    const difficulty = (req.body?.difficulty || 'beginner');
+    const category = (req.body?.category || 'grammar');
+    const count = Number(req.body?.questionsCount ?? req.body?.count ?? 3);
+
+    const directUrl = process.env.N8N_WEBHOOK_QUIZ_URL; // optional full URL override
+    const base = process.env.N8N_BASE_URL;
+    const path = process.env.N8N_WEBHOOK_QUIZ_PATH || '/webhook/generate-quiz';
+    const url = directUrl
+        ? directUrl
+        : (() => {
+            if (!base) throw new ApiError(500, 'N8N_BASE_URL is not configured');
+            const b = base.endsWith('/') ? base.slice(0, -1) : base;
+            const p = path.startsWith('/') ? path : `/${path}`;
+            return `${b}${p}`;
+        })();
+    const headers = { 'Content-Type': 'application/json' };
+    if (process.env.N8N_API_KEY) headers['X-N8N-API-KEY'] = process.env.N8N_API_KEY;
+
+    const resp = await fetch(url, {
+        method: 'POST',
+        headers,
+        // Forward the structure your n8n workflow expects
+        body: JSON.stringify({ language, difficulty, questionsCount: count, category })
+    });
+    if (!resp.ok) {
+        const text = await resp.text().catch(() => '');
+        throw new ApiError(502, `n8n error ${resp.status}: ${text || resp.statusText}`);
+    }
+
+    const raw = await resp.json().catch(() => ({}));
+    let items = [];
+    if (Array.isArray(raw)) items = raw;
+    else if (Array.isArray(raw.items)) items = raw.items;
+    else if (raw && raw.data && Array.isArray(raw.data.items)) items = raw.data.items;
+    else if (raw) items = [raw];
+
+    const allowedLanguages = ['en', 'hi', 'gu', 'fr', 'es', 'de'];
+
+    const docs = items.map((item, i) => {
+        const lang = String(item.language || language || 'en').toLowerCase();
+        const normalizeOptions = (arr) => {
+            if (!Array.isArray(arr)) return ['Option A', 'Option B', 'Option C', 'Option D'];
+            const four = arr.map(v => String(v ?? '')).slice(0, 4);
+            while (four.length < 4) four.push(`Option ${String.fromCharCode(65 + four.length)}`);
+            return four;
+        };
+        const questions = (item.questions || []).map((q, qi) => ({
+            question: q.question || `Question ${qi + 1}`,
+            options: normalizeOptions(q.options || q.choices),
+            correctAnswer: typeof q.correctAnswer === 'number'
+                ? q.correctAnswer
+                : (typeof q.answerIndex === 'number' ? q.answerIndex : 0),
+            explanation: q.explanation || ''
+        })).slice(0, 50); // basic safety cap
+
+        return {
+            title: item.title || `Auto Quiz ${Date.now()}-${i + 1}`,
+            description: item.description || 'Auto-generated quiz',
+            category: item.category || category || 'grammar',
+            difficulty: item.difficulty || difficulty || 'beginner',
+            timeLimit: item.timeLimit || 300, // follow existing app convention
+            language: allowedLanguages.includes(lang) ? lang : 'en',
+            sequence: item.sequence || 1,
+            minScoreToUnlockNext: typeof item.minScoreToUnlockNext === 'number' ? item.minScoreToUnlockNext : 60,
+            tags: Array.isArray(item.tags) ? item.tags : [],
+            questions,
+            createdBy: req.user._id,
+            isActive: item.isActive !== false
+        };
+    }).filter(d => d.questions && d.questions.length > 0);
+
+    if (!docs.length) return res.status(200).json(new ApiResponse(200, { count: 0, quizzes: [] }, 'No quizzes generated'));
+
+    const inserted = await Quiz.insertMany(docs, { ordered: false });
+    const quizzes = await Quiz.find({ _id: { $in: inserted.map(d => d._id) } })
+        .populate('createdBy', 'username fullName');
+
+    return res.status(201).json(new ApiResponse(201, { count: quizzes.length, quizzes }, 'Quizzes generated and imported successfully'));
+});
+
+export const generateWritingChallengesViaN8n = asyncHandler(async (req, res) => {
+    const { language = 'en', difficulty = 'beginner', count = 3, category = 'essay' } = req.body || {};
+
+    const directUrl = process.env.N8N_WEBHOOK_WRITING_URL; // optional full URL override
+    const base = process.env.N8N_BASE_URL;
+    const path = process.env.N8N_WEBHOOK_WRITING_PATH || '/webhook/generate-writing';
+    const url = directUrl
+        ? directUrl
+        : (() => {
+            if (!base) throw new ApiError(500, 'N8N_BASE_URL is not configured');
+            const b = base.endsWith('/') ? base.slice(0, -1) : base;
+            const p = path.startsWith('/') ? path : `/${path}`;
+            return `${b}${p}`;
+        })();
+    const headers = { 'Content-Type': 'application/json' };
+    if (process.env.N8N_API_KEY) headers['X-N8N-API-KEY'] = process.env.N8N_API_KEY;
+
+    const resp = await fetch(url, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({ language, difficulty, count, category })
+    });
+    if (!resp.ok) {
+        const text = await resp.text().catch(() => '');
+        throw new ApiError(502, `n8n error ${resp.status}: ${text || resp.statusText}`);
+    }
+
+    let data = await resp.json().catch(() => ({}));
+    const items = Array.isArray(data) ? data : (Array.isArray(data.items) ? data.items : [data]).filter(Boolean);
+
+    const allowedLanguages = ['en', 'hi', 'gu', 'fr', 'es', 'de'];
+    const defaultRubric = [
+        { name: 'grammar', weight: 25, description: '' },
+        { name: 'vocabulary', weight: 25, description: '' },
+        { name: 'structure', weight: 25, description: '' },
+        { name: 'content', weight: 25, description: '' }
+    ];
+
+    const docs = items.map((item, i) => {
+        const lang = String(item.language || language || 'en').toLowerCase();
+        const wl = item.wordLimit && typeof item.wordLimit === 'object'
+            ? { min: Number(item.wordLimit.min ?? 150), max: Number(item.wordLimit.max ?? 300) }
+            : { min: Number(item.wordLimitMin ?? 150), max: Number(item.wordLimitMax ?? 300) };
+
+        return {
+            title: (item.title || `Auto Writing Challenge ${Date.now()}-${i + 1}`).toString(),
+            description: (item.description || 'Auto-generated writing challenge').toString(),
+            prompt: (item.prompt || item.description || 'Write your response based on the prompt.').toString(),
+            category: (item.category || category || 'essay').toString(),
+            difficulty: (item.difficulty || difficulty || 'beginner').toString(),
+            language: allowedLanguages.includes(lang) ? lang : 'en',
+            timeLimit: Number(item.timeLimit || item.timeLimitMinutes || 30),
+            wordLimit: { min: Math.max(50, parseInt(wl.min) || 150), max: Math.min(2000, parseInt(wl.max) || 300) },
+            rubric: Array.isArray(item.rubric) && item.rubric.length ? item.rubric : defaultRubric,
+            tags: Array.isArray(item.tags) ? item.tags : [],
+            isActive: item.isActive !== false,
+            createdBy: req.user._id
+        };
+    }).filter(d => d.title && d.prompt);
+
+    if (!docs.length) return res.status(200).json(new ApiResponse(200, { count: 0, challenges: [] }, 'No writing challenges generated'));
+
+    const inserted = await WritingChallenge.insertMany(docs, { ordered: false });
+    const challenges = await WritingChallenge.find({ _id: { $in: inserted.map(d => d._id) } })
+        .populate('createdBy', 'username fullName');
+
+    return res.status(201).json(new ApiResponse(201, { count: challenges.length, challenges }, 'Writing challenges generated and imported successfully'));
 });

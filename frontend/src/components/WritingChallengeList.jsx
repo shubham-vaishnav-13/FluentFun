@@ -1,3 +1,4 @@
+import { toast } from 'react-hot-toast';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -26,7 +27,7 @@ export default function WritingChallengeList() {
                 const data = await writingAPI.listAvailableChallenges({ language: selectedLanguage });
                 setChallenges(data);
             } catch (e) {
-                console.error('Failed to load challenges:', e);
+                toast.error('Failed to load challenges');
             } finally {
                 setLoading(false);
                 setFetching(false);
@@ -55,7 +56,7 @@ export default function WritingChallengeList() {
     useEffect(() => {
         writingAPI.listAvailableWritingLanguages()
             .then(langs => setAvailableLanguages(langs))
-            .catch(err => console.error('Failed to load writing languages', err));
+            .catch(() => toast.error('Failed to load writing languages'));
     }, []);
 
         // Language selection step (Quiz-style)

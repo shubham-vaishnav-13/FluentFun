@@ -1,36 +1,37 @@
 import api from '../config/api.config';
+import { API_PATHS } from '../config/apiPaths';
 
 export const writingAPI = {
     // Admin Endpoints
     createChallenge: async (data) => {
-        const res = await api.post('/admin/writing-challenges', data);
+        const res = await api.post(API_PATHS.ADMIN.CREATE_WRITING_CHALLENGE, data);
         return res.data.data;
     },
 
     updateChallenge: async (id, data) => {
-        const res = await api.patch(`/admin/writing-challenges/${id}`, data);
+        const res = await api.patch(API_PATHS.ADMIN.UPDATE_WRITING_CHALLENGE(id), data);
         return res.data.data;
     },
 
     deleteChallenge: async (id) => {
-        const res = await api.delete(`/admin/writing-challenges/${id}`);
+        const res = await api.delete(API_PATHS.ADMIN.DELETE_WRITING_CHALLENGE(id));
         return res.data.data;
     },
 
     listAllChallenges: async () => {
-        const res = await api.get('/admin/writing-challenges');
+        const res = await api.get(API_PATHS.ADMIN.GET_WRITING_CHALLENGES);
         return res.data.data.challenges || [];
     },
 
     // User Endpoints
     listAvailableChallenges: async (filters = {}) => {
         const params = new URLSearchParams(filters);
-        const res = await api.get(`/content/writing-challenges?${params}`);
+        const res = await api.get(`${API_PATHS.CONTENT.GET_WRITING_CHALLENGES}?${params}`);
         return res.data.data.challenges || [];
     },
 
     getChallenge: async (id) => {
-        const res = await api.get(`/content/writing-challenges/${id}`);
+        const res = await api.get(`${API_PATHS.CONTENT.GET_WRITING_CHALLENGES}/${id}`);
         return res.data.data;
     },
 

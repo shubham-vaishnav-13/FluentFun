@@ -1,0 +1,3888 @@
+[
+  {
+    "_id": "68c51835682296ebc500571d",
+    "language": "fr",
+    "title": "French Grammar Level 1",
+    "description": "Basic greetings, articles, and plurals.",
+    "category": "grammar",
+    "difficulty": "beginner",
+    "timeLimit": 6,
+    "questions": [
+      {
+        "question": "How do you say 'Hello' in French?",
+        "options": [
+          "Bonjour",
+          "Merci",
+          "Pomme",
+          "Chien"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Bonjour' signifie 'Hello' en français.",
+        "difficulty": "easy",
+        "points": 11,
+        "_id": "68c51835682296ebc500571e"
+      },
+      {
+        "question": "Choose the correct article: ___ chat (cat).",
+        "options": [
+          "Un",
+          "Une",
+          "Le",
+          "La"
+        ],
+        "correctAnswer": 0,
+        "explanation": "On dit 'un chat' car 'chat' est masculin.",
+        "difficulty": "easy",
+        "points": 11,
+        "_id": "68c51835682296ebc500571f"
+      },
+      {
+        "question": "Which of these means 'Thank you'?",
+        "options": [
+          "Merci",
+          "Salut",
+          "Pardon",
+          "Bonsoir"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Merci' veut dire 'Thank you'.",
+        "difficulty": "easy",
+        "points": 11,
+        "_id": "68c51835682296ebc5005720"
+      },
+      {
+        "question": "Plural form: One apple = une pomme. Two apples = ?",
+        "options": [
+          "des pommes",
+          "les pomme",
+          "les pommes",
+          "pomme"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Le pluriel est 'des pommes'.",
+        "difficulty": "easy",
+        "points": 11,
+        "_id": "68c51835682296ebc5005721"
+      },
+      {
+        "question": "How do you say 'Good night'?",
+        "options": [
+          "Bonne nuit",
+          "Bonsoir",
+          "Salut",
+          "Bonjour"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Bonne nuit' signifie 'Good night'.",
+        "difficulty": "easy",
+        "points": 11,
+        "_id": "68c51835682296ebc5005722"
+      }
+    ],
+    "totalPoints": 55,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "greetings",
+      "articles",
+      "plurals"
+    ],
+    "attemptsCount": 1,
+    "averageScore": 80,
+    "sequence": 1,
+    "minScoreToUnlockNext": 61,
+    "createdAt": "2025-09-13T07:07:33.664Z",
+    "updatedAt": "2025-09-13T07:09:11.119Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51835682296ebc500572c",
+    "language": "fr",
+    "title": "French Grammar Level 2",
+    "description": "Basic verbs and negations.",
+    "category": "grammar",
+    "difficulty": "beginner",
+    "timeLimit": 7,
+    "questions": [
+      {
+        "question": "How do you say 'I eat' in French?",
+        "options": [
+          "Je mange",
+          "Tu manges",
+          "Il mange",
+          "Nous mangeons"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Je mange' veut dire 'I eat'.",
+        "difficulty": "easy",
+        "points": 12,
+        "_id": "68c51835682296ebc500572d"
+      },
+      {
+        "question": "Form the negative: I do not like coffee.",
+        "options": [
+          "Je n'aime pas le café",
+          "Je ne aime pas café",
+          "Je pas aime le café",
+          "Je n'aimes pas le café"
+        ],
+        "correctAnswer": 0,
+        "explanation": "La forme correcte est 'Je n'aime pas le café'.",
+        "difficulty": "easy",
+        "points": 12,
+        "_id": "68c51835682296ebc500572e"
+      },
+      {
+        "question": "How do you say 'They play football'?",
+        "options": [
+          "Ils jouent au football",
+          "Ils joue au football",
+          "Ils jouer au football",
+          "Ils jouait au football"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Ils jouent' est la forme correcte pour 'They play'.",
+        "difficulty": "easy",
+        "points": 12,
+        "_id": "68c51835682296ebc500572f"
+      },
+      {
+        "question": "Translate: She sings.",
+        "options": [
+          "Elle chante",
+          "Elle chanté",
+          "Elle chanter",
+          "Elle chantes"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Elle chante' veut dire 'She sings'.",
+        "difficulty": "easy",
+        "points": 12,
+        "_id": "68c51835682296ebc5005730"
+      },
+      {
+        "question": "Which sentence is correct?",
+        "options": [
+          "Il n'aime pas le lait.",
+          "Il ne aime pas le lait.",
+          "Il n'aimes pas le lait.",
+          "Il pas aime le lait."
+        ],
+        "correctAnswer": 0,
+        "explanation": "La forme correcte est 'Il n'aime pas le lait.'",
+        "difficulty": "easy",
+        "points": 12,
+        "_id": "68c51835682296ebc5005731"
+      }
+    ],
+    "totalPoints": 60,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "verbs",
+      "negation"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 2,
+    "minScoreToUnlockNext": 62,
+    "createdAt": "2025-09-13T07:07:33.786Z",
+    "updatedAt": "2025-09-13T07:07:33.786Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51835682296ebc500573b",
+    "language": "fr",
+    "title": "French Grammar Level 3",
+    "description": "Simple questions and answers.",
+    "category": "grammar",
+    "difficulty": "beginner",
+    "timeLimit": 8,
+    "questions": [
+      {
+        "question": "How do you say 'What is your name?' in French?",
+        "options": [
+          "Comment tu t'appelles ?",
+          "Où est ton nom ?",
+          "Qui es-tu ?",
+          "Quel est ton âge ?"
+        ],
+        "correctAnswer": 0,
+        "explanation": "La bonne question est 'Comment tu t'appelles ?'.",
+        "difficulty": "easy",
+        "points": 13,
+        "_id": "68c51835682296ebc500573c"
+      },
+      {
+        "question": "Translate: Where do you live?",
+        "options": [
+          "Où habites-tu ?",
+          "Tu habites où ?",
+          "Où est ta maison ?",
+          "Habites-tu où ?"
+        ],
+        "correctAnswer": 0,
+        "explanation": "La bonne forme est 'Où habites-tu ?'.",
+        "difficulty": "easy",
+        "points": 13,
+        "_id": "68c51835682296ebc500573d"
+      },
+      {
+        "question": "How do you ask 'How are you?' formally?",
+        "options": [
+          "Comment allez-vous ?",
+          "Comment ça va ?",
+          "Ça va ?",
+          "Tu vas bien ?"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Comment allez-vous ?' est la forme polie.",
+        "difficulty": "easy",
+        "points": 13,
+        "_id": "68c51835682296ebc500573e"
+      },
+      {
+        "question": "Choose the correct question word: ___ est ton frère?",
+        "options": [
+          "Qui",
+          "Quel",
+          "Où",
+          "Quand"
+        ],
+        "correctAnswer": 0,
+        "explanation": "On utilise 'Qui' pour une personne.",
+        "difficulty": "easy",
+        "points": 13,
+        "_id": "68c51835682296ebc500573f"
+      },
+      {
+        "question": "Translate: Do you like music?",
+        "options": [
+          "Aimes-tu la musique ?",
+          "Tu es musique ?",
+          "Musique aimes ?",
+          "Vous musique aimez ?"
+        ],
+        "correctAnswer": 0,
+        "explanation": "La bonne traduction est 'Aimes-tu la musique ?'.",
+        "difficulty": "easy",
+        "points": 13,
+        "_id": "68c51835682296ebc5005740"
+      }
+    ],
+    "totalPoints": 65,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "questions",
+      "answers"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 3,
+    "minScoreToUnlockNext": 63,
+    "createdAt": "2025-09-13T07:07:33.917Z",
+    "updatedAt": "2025-09-13T07:07:33.917Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51836682296ebc500574a",
+    "language": "fr",
+    "title": "French Grammar Level 4",
+    "description": "Present tense conjugation practice.",
+    "category": "grammar",
+    "difficulty": "intermediate",
+    "timeLimit": 9,
+    "questions": [
+      {
+        "question": "Conjugate: I finish (finir).",
+        "options": [
+          "Je finis",
+          "Tu finis",
+          "Il finit",
+          "Nous finissons"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Je finis' est correct.",
+        "difficulty": "medium",
+        "points": 14,
+        "_id": "68c51836682296ebc500574b"
+      },
+      {
+        "question": "Which is correct: We are eating.",
+        "options": [
+          "Nous mangeons",
+          "Nous manger",
+          "Nous manges",
+          "Nous mangent"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Nous mangeons' est la bonne forme.",
+        "difficulty": "medium",
+        "points": 14,
+        "_id": "68c51836682296ebc500574c"
+      },
+      {
+        "question": "Translate: He is speaking.",
+        "options": [
+          "Il parle",
+          "Il parles",
+          "Il parlez",
+          "Il parlant"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Il parle' est correct.",
+        "difficulty": "medium",
+        "points": 14,
+        "_id": "68c51836682296ebc500574d"
+      },
+      {
+        "question": "How do you say: They are choosing (choisir)?",
+        "options": [
+          "Ils choisissent",
+          "Ils choisi",
+          "Ils choisit",
+          "Ils choisir"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Ils choisissent' est la bonne forme.",
+        "difficulty": "medium",
+        "points": 14,
+        "_id": "68c51836682296ebc500574e"
+      },
+      {
+        "question": "Conjugate: You (plural) are waiting (attendre).",
+        "options": [
+          "Vous attendez",
+          "Tu attends",
+          "Vous attend",
+          "Vous attendes"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Vous attendez' est correct.",
+        "difficulty": "medium",
+        "points": 14,
+        "_id": "68c51836682296ebc500574f"
+      }
+    ],
+    "totalPoints": 70,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "present",
+      "conjugation"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 4,
+    "minScoreToUnlockNext": 64,
+    "createdAt": "2025-09-13T07:07:34.268Z",
+    "updatedAt": "2025-09-13T07:07:34.268Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51836682296ebc5005759",
+    "language": "fr",
+    "title": "French Grammar Level 5",
+    "description": "Past tense (passé composé) basics.",
+    "category": "grammar",
+    "difficulty": "intermediate",
+    "timeLimit": 10,
+    "questions": [
+      {
+        "question": "Translate: I have eaten.",
+        "options": [
+          "J'ai mangé",
+          "J'ai mange",
+          "Je mangeais",
+          "J'avais mangé"
+        ],
+        "correctAnswer": 0,
+        "explanation": "La bonne forme est 'J'ai mangé'.",
+        "difficulty": "medium",
+        "points": 15,
+        "_id": "68c51836682296ebc500575a"
+      },
+      {
+        "question": "How do you say: She has gone.",
+        "options": [
+          "Elle est allée",
+          "Elle a allé",
+          "Elle allé",
+          "Elle alléé"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Elle est allée' est correct avec être.",
+        "difficulty": "medium",
+        "points": 15,
+        "_id": "68c51836682296ebc500575b"
+      },
+      {
+        "question": "Translate: We have seen the film.",
+        "options": [
+          "Nous avons vu le film",
+          "Nous avons voir le film",
+          "Nous vu le film",
+          "Nous voyons le film"
+        ],
+        "correctAnswer": 0,
+        "explanation": "La bonne traduction est 'Nous avons vu le film'.",
+        "difficulty": "medium",
+        "points": 15,
+        "_id": "68c51836682296ebc500575c"
+      },
+      {
+        "question": "Choose the correct: They have finished.",
+        "options": [
+          "Ils ont fini",
+          "Ils ont finir",
+          "Ils finissaient",
+          "Ils finit"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Ils ont fini' est correct.",
+        "difficulty": "medium",
+        "points": 15,
+        "_id": "68c51836682296ebc500575d"
+      },
+      {
+        "question": "Translate: You (singular) have taken the bus.",
+        "options": [
+          "Tu as pris le bus",
+          "Tu es pris le bus",
+          "Tu pris le bus",
+          "Tu prend le bus"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Tu as pris le bus' est correct.",
+        "difficulty": "medium",
+        "points": 15,
+        "_id": "68c51836682296ebc500575e"
+      }
+    ],
+    "totalPoints": 75,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "past tense",
+      "passé composé"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 5,
+    "minScoreToUnlockNext": 65,
+    "createdAt": "2025-09-13T07:07:34.395Z",
+    "updatedAt": "2025-09-13T07:07:34.395Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51836682296ebc5005768",
+    "language": "fr",
+    "title": "French Grammar Level 6",
+    "description": "Future tense (futur proche & futur simple).",
+    "category": "grammar",
+    "difficulty": "intermediate",
+    "timeLimit": 11,
+    "questions": [
+      {
+        "question": "Translate: I will eat.",
+        "options": [
+          "Je vais manger",
+          "J'ai manger",
+          "Je mange",
+          "Je mangeais"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Je vais manger' est le futur proche.",
+        "difficulty": "medium",
+        "points": 16,
+        "_id": "68c51836682296ebc5005769"
+      },
+      {
+        "question": "Translate: They will come tomorrow.",
+        "options": [
+          "Ils viendront demain",
+          "Ils venir demain",
+          "Ils viennent demain",
+          "Ils vont venir demain"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Ils viendront demain' est le futur simple.",
+        "difficulty": "medium",
+        "points": 16,
+        "_id": "68c51836682296ebc500576a"
+      },
+      {
+        "question": "How do you say: We will finish soon.",
+        "options": [
+          "Nous finirons bientôt",
+          "Nous finissons bientôt",
+          "Nous finir bientôt",
+          "Nous avons fini bientôt"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Nous finirons bientôt' est correct.",
+        "difficulty": "medium",
+        "points": 16,
+        "_id": "68c51836682296ebc500576b"
+      },
+      {
+        "question": "Translate: You will go to Paris.",
+        "options": [
+          "Tu iras à Paris",
+          "Tu es allé à Paris",
+          "Tu vas Paris",
+          "Tu allais à Paris"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Tu iras à Paris' est correct.",
+        "difficulty": "medium",
+        "points": 16,
+        "_id": "68c51836682296ebc500576c"
+      },
+      {
+        "question": "Translate: She will speak.",
+        "options": [
+          "Elle parlera",
+          "Elle parlait",
+          "Elle parle",
+          "Elle parlé"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Elle parlera' est correct.",
+        "difficulty": "medium",
+        "points": 16,
+        "_id": "68c51836682296ebc500576d"
+      }
+    ],
+    "totalPoints": 80,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "future tense"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 6,
+    "minScoreToUnlockNext": 66,
+    "createdAt": "2025-09-13T07:07:34.527Z",
+    "updatedAt": "2025-09-13T07:07:34.527Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51836682296ebc5005777",
+    "language": "fr",
+    "title": "French Grammar Level 7",
+    "description": "Intermediate grammar: pronouns and adjectives.",
+    "category": "grammar",
+    "difficulty": "intermediate",
+    "timeLimit": 12,
+    "questions": [
+      {
+        "question": "Translate: This is my book.",
+        "options": [
+          "Ceci est mon livre",
+          "C'est mon livre",
+          "Voici mon livre",
+          "Il est mon livre"
+        ],
+        "correctAnswer": 1,
+        "explanation": "La bonne phrase est 'C'est mon livre'.",
+        "difficulty": "medium",
+        "points": 17,
+        "_id": "68c51836682296ebc5005778"
+      },
+      {
+        "question": "Choose the correct pronoun: Marie et moi = ?",
+        "options": [
+          "Nous",
+          "Vous",
+          "Eux",
+          "Elles"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Marie et moi = 'Nous'.",
+        "difficulty": "medium",
+        "points": 17,
+        "_id": "68c51836682296ebc5005779"
+      },
+      {
+        "question": "Translate: Their house is big.",
+        "options": [
+          "Leur maison est grande",
+          "Eux maison est grande",
+          "Sa maison est grande",
+          "Ses maison est grande"
+        ],
+        "correctAnswer": 0,
+        "explanation": "On dit 'Leur maison est grande'.",
+        "difficulty": "medium",
+        "points": 17,
+        "_id": "68c51836682296ebc500577a"
+      },
+      {
+        "question": "Translate: I like this book.",
+        "options": [
+          "J'aime ce livre",
+          "J'aime cet livre",
+          "J'aime cette livre",
+          "J'aime ces livre"
+        ],
+        "correctAnswer": 0,
+        "explanation": "La bonne traduction est 'J'aime ce livre'.",
+        "difficulty": "medium",
+        "points": 17,
+        "_id": "68c51836682296ebc500577b"
+      },
+      {
+        "question": "Choose the correct: She is more intelligent than him.",
+        "options": [
+          "Elle est plus intelligente que lui",
+          "Elle est plus intelligent que lui",
+          "Elle est plus intelligente de lui",
+          "Elle est très intelligente que lui"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Elle est plus intelligente que lui' est correct.",
+        "difficulty": "medium",
+        "points": 17,
+        "_id": "68c51836682296ebc500577c"
+      }
+    ],
+    "totalPoints": 85,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "pronouns",
+      "adjectives"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 7,
+    "minScoreToUnlockNext": 67,
+    "createdAt": "2025-09-13T07:07:34.659Z",
+    "updatedAt": "2025-09-13T07:07:34.659Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51836682296ebc5005786",
+    "language": "fr",
+    "title": "French Grammar Level 8",
+    "description": "Complex sentences and relative clauses.",
+    "category": "grammar",
+    "difficulty": "advanced",
+    "timeLimit": 13,
+    "questions": [
+      {
+        "question": "Translate: The man who is speaking is my teacher.",
+        "options": [
+          "L'homme qui parle est mon professeur",
+          "L'homme quel parle est mon professeur",
+          "L'homme que parle est mon professeur",
+          "L'homme dont parle est mon professeur"
+        ],
+        "correctAnswer": 0,
+        "explanation": "La bonne traduction est 'L'homme qui parle est mon professeur'.",
+        "difficulty": "hard",
+        "points": 18,
+        "_id": "68c51836682296ebc5005787"
+      },
+      {
+        "question": "Translate: I know the girl that you saw.",
+        "options": [
+          "Je connais la fille que tu as vue",
+          "Je connais la fille qui tu as vue",
+          "Je connais la fille dont tu as vue",
+          "Je connais la fille laquelle tu as vue"
+        ],
+        "correctAnswer": 0,
+        "explanation": "La bonne traduction est 'la fille que tu as vue'.",
+        "difficulty": "hard",
+        "points": 18,
+        "_id": "68c51836682296ebc5005788"
+      },
+      {
+        "question": "Translate: We are eating when she arrives.",
+        "options": [
+          "Nous mangeons quand elle arrive",
+          "Nous mangeons lorsque elle arrive",
+          "Nous mangeons que elle arrive",
+          "Nous mangeons laquelle elle arrive"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Nous mangeons quand elle arrive' est correct.",
+        "difficulty": "hard",
+        "points": 18,
+        "_id": "68c51836682296ebc5005789"
+      },
+      {
+        "question": "Translate: The book that I read was interesting.",
+        "options": [
+          "Le livre que j'ai lu était intéressant",
+          "Le livre qui j'ai lu était intéressant",
+          "Le livre dont j'ai lu était intéressant",
+          "Le livre lequel j'ai lu était intéressant"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Le livre que j'ai lu était intéressant' est correct.",
+        "difficulty": "hard",
+        "points": 18,
+        "_id": "68c51836682296ebc500578a"
+      },
+      {
+        "question": "Translate: The city where I was born.",
+        "options": [
+          "La ville où je suis né",
+          "La ville quand je suis né",
+          "La ville que je suis né",
+          "La ville dont je suis né"
+        ],
+        "correctAnswer": 0,
+        "explanation": "On dit 'La ville où je suis né'.",
+        "difficulty": "hard",
+        "points": 18,
+        "_id": "68c51836682296ebc500578b"
+      }
+    ],
+    "totalPoints": 90,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "clauses",
+      "complex"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 8,
+    "minScoreToUnlockNext": 68,
+    "createdAt": "2025-09-13T07:07:34.795Z",
+    "updatedAt": "2025-09-13T07:07:34.795Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51836682296ebc5005795",
+    "language": "fr",
+    "title": "French Grammar Level 9",
+    "description": "Subjunctive mood and conditional tense.",
+    "category": "grammar",
+    "difficulty": "advanced",
+    "timeLimit": 14,
+    "questions": [
+      {
+        "question": "Translate: It is important that you study.",
+        "options": [
+          "Il est important que tu étudies",
+          "Il est important tu étudies",
+          "Il est important que tu étudie",
+          "Il est important que tu étudier"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Le subjonctif correct est 'que tu étudies'.",
+        "difficulty": "hard",
+        "points": 19,
+        "_id": "68c51836682296ebc5005796"
+      },
+      {
+        "question": "Translate: I would like to travel.",
+        "options": [
+          "Je voudrais voyager",
+          "Je veux voyager",
+          "Je voudrais voyagé",
+          "J'aimerais voyagé"
+        ],
+        "correctAnswer": 0,
+        "explanation": "La bonne phrase est 'Je voudrais voyager'.",
+        "difficulty": "hard",
+        "points": 19,
+        "_id": "68c51836682296ebc5005797"
+      },
+      {
+        "question": "Translate: If I had money, I would buy a car.",
+        "options": [
+          "Si j'avais de l'argent, j'achèterais une voiture",
+          "Si j'ai de l'argent, j'achète une voiture",
+          "Si j'aurais de l'argent, j'achèterai une voiture",
+          "Si j'avais argent, j'achète voiture"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Si j'avais de l'argent, j'achèterais une voiture' est correct.",
+        "difficulty": "hard",
+        "points": 19,
+        "_id": "68c51836682296ebc5005798"
+      },
+      {
+        "question": "Translate: I doubt that he will come.",
+        "options": [
+          "Je doute qu'il vienne",
+          "Je doute qu'il vient",
+          "Je doute il vient",
+          "Je doute qu'il venir"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Le subjonctif correct est 'qu'il vienne'.",
+        "difficulty": "hard",
+        "points": 19,
+        "_id": "68c51836682296ebc5005799"
+      },
+      {
+        "question": "Translate: We would go if it were sunny.",
+        "options": [
+          "Nous irions s'il faisait beau",
+          "Nous allons s'il fait beau",
+          "Nous irons s'il fera beau",
+          "Nous allions s'il fait beau"
+        ],
+        "correctAnswer": 0,
+        "explanation": "La bonne phrase est 'Nous irions s'il faisait beau'.",
+        "difficulty": "hard",
+        "points": 19,
+        "_id": "68c51836682296ebc500579a"
+      }
+    ],
+    "totalPoints": 95,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "subjunctive",
+      "conditional"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 9,
+    "minScoreToUnlockNext": 69,
+    "createdAt": "2025-09-13T07:07:34.937Z",
+    "updatedAt": "2025-09-13T07:07:34.937Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51837682296ebc50057a4",
+    "language": "fr",
+    "title": "French Grammar Level 10",
+    "description": "Advanced comprehension and idiomatic expressions.",
+    "category": "grammar",
+    "difficulty": "advanced",
+    "timeLimit": 15,
+    "questions": [
+      {
+        "question": "Translate the idiom: 'It's raining cats and dogs.'",
+        "options": [
+          "Il pleut des cordes",
+          "Il pleut des chiens et chats",
+          "Il pleut beaucoup",
+          "Il pleut comme un chien"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Il pleut des cordes' est l'expression correcte.",
+        "difficulty": "hard",
+        "points": 20,
+        "_id": "68c51837682296ebc50057a5"
+      },
+      {
+        "question": "Translate: Break a leg!",
+        "options": [
+          "Bonne chance",
+          "Casse une jambe",
+          "Bonne jambe",
+          "Chance cassée"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Bonne chance' est l'équivalent idiomatique.",
+        "difficulty": "hard",
+        "points": 20,
+        "_id": "68c51837682296ebc50057a6"
+      },
+      {
+        "question": "Translate: The early bird catches the worm.",
+        "options": [
+          "L'avenir appartient à ceux qui se lèvent tôt",
+          "L'oiseau tôt attrape le ver",
+          "Le matin attrape le ver",
+          "L'oiseau avance attrape"
+        ],
+        "correctAnswer": 0,
+        "explanation": "L'équivalent français est 'L'avenir appartient à ceux qui se lèvent tôt'.",
+        "difficulty": "hard",
+        "points": 20,
+        "_id": "68c51837682296ebc50057a7"
+      },
+      {
+        "question": "Reading: 'Il était une fois un roi qui vivait dans un château.' What does this mean?",
+        "options": [
+          "Once upon a time, a king lived in a castle",
+          "A king is living in a castle",
+          "The king will live in a castle",
+          "The castle has no king"
+        ],
+        "correctAnswer": 0,
+        "explanation": "La traduction est 'Once upon a time, a king lived in a castle'.",
+        "difficulty": "hard",
+        "points": 20,
+        "_id": "68c51837682296ebc50057a8"
+      },
+      {
+        "question": "Which sentence uses the subjunctive correctly?",
+        "options": [
+          "Il faut que tu sois à l'heure",
+          "Il faut que tu es à l'heure",
+          "Il faut tu sois à l'heure",
+          "Il faut tu être à l'heure"
+        ],
+        "correctAnswer": 0,
+        "explanation": "La phrase correcte est 'Il faut que tu sois à l'heure'.",
+        "difficulty": "hard",
+        "points": 20,
+        "_id": "68c51837682296ebc50057a9"
+      }
+    ],
+    "totalPoints": 100,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "idioms",
+      "advanced"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 10,
+    "minScoreToUnlockNext": 70,
+    "createdAt": "2025-09-13T07:07:35.080Z",
+    "updatedAt": "2025-09-13T07:07:35.080Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51949682296ebc5005945",
+    "language": "en",
+    "title": "English Grammar Level 1",
+    "description": "Basic greetings, articles, and plurals.",
+    "category": "grammar",
+    "difficulty": "beginner",
+    "timeLimit": 6,
+    "questions": [
+      {
+        "question": "How do you say 'Bonjour' in English?",
+        "options": [
+          "Hello",
+          "Thanks",
+          "Apple",
+          "Dog"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Hello' is the correct translation of 'Bonjour'.",
+        "difficulty": "easy",
+        "points": 11,
+        "_id": "68c51949682296ebc5005946"
+      },
+      {
+        "question": "Choose the correct article: ___ dog.",
+        "options": [
+          "A",
+          "An",
+          "The",
+          "No article"
+        ],
+        "correctAnswer": 0,
+        "explanation": "We use 'a' before consonant sounds.",
+        "difficulty": "easy",
+        "points": 11,
+        "_id": "68c51949682296ebc5005947"
+      },
+      {
+        "question": "Which of these means 'Merci'?",
+        "options": [
+          "Thank you",
+          "Goodbye",
+          "Sorry",
+          "Good night"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Thank you' means 'Merci'.",
+        "difficulty": "easy",
+        "points": 11,
+        "_id": "68c51949682296ebc5005948"
+      },
+      {
+        "question": "Plural form: One book = one book. Two books = ?",
+        "options": [
+          "books",
+          "bookes",
+          "book",
+          "boox"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The plural is 'books'.",
+        "difficulty": "easy",
+        "points": 11,
+        "_id": "68c51949682296ebc5005949"
+      },
+      {
+        "question": "How do you say 'Bonne nuit' in English?",
+        "options": [
+          "Good night",
+          "Good morning",
+          "Goodbye",
+          "Hello"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Good night' is the correct translation.",
+        "difficulty": "easy",
+        "points": 11,
+        "_id": "68c51949682296ebc500594a"
+      }
+    ],
+    "totalPoints": 55,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "greetings",
+      "articles",
+      "plurals"
+    ],
+    "attemptsCount": 8,
+    "averageScore": 57.5,
+    "sequence": 1,
+    "minScoreToUnlockNext": 61,
+    "createdAt": "2025-09-13T07:12:09.131Z",
+    "updatedAt": "2025-09-26T03:17:19.808Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51949682296ebc5005954",
+    "language": "en",
+    "title": "English Grammar Level 2",
+    "description": "Basic verbs and negations.",
+    "category": "grammar",
+    "difficulty": "beginner",
+    "timeLimit": 7,
+    "questions": [
+      {
+        "question": "How do you say 'Je mange' in English?",
+        "options": [
+          "I eat",
+          "You eat",
+          "He eats",
+          "We eat"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'I eat' is correct.",
+        "difficulty": "easy",
+        "points": 12,
+        "_id": "68c51949682296ebc5005955"
+      },
+      {
+        "question": "Form the negative: I do not like tea.",
+        "options": [
+          "I don't like tea",
+          "I no like tea",
+          "I not like tea",
+          "I doesn't like tea"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct form is 'I don't like tea'.",
+        "difficulty": "easy",
+        "points": 12,
+        "_id": "68c51949682296ebc5005956"
+      },
+      {
+        "question": "How do you say 'Ils jouent au football'?",
+        "options": [
+          "They play football",
+          "They plays football",
+          "They playing football",
+          "They played football"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'They play football' is correct.",
+        "difficulty": "easy",
+        "points": 12,
+        "_id": "68c51949682296ebc5005957"
+      },
+      {
+        "question": "Translate: 'Elle chante'.",
+        "options": [
+          "She sings",
+          "She sing",
+          "She sung",
+          "She singing"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'She sings' is correct.",
+        "difficulty": "easy",
+        "points": 12,
+        "_id": "68c51949682296ebc5005958"
+      },
+      {
+        "question": "Which sentence is correct?",
+        "options": [
+          "He doesn't like milk.",
+          "He don't like milk.",
+          "He no like milk.",
+          "He not likes milk."
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct sentence is 'He doesn't like milk.'",
+        "difficulty": "easy",
+        "points": 12,
+        "_id": "68c51949682296ebc5005959"
+      }
+    ],
+    "totalPoints": 60,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "verbs",
+      "negation"
+    ],
+    "attemptsCount": 2,
+    "averageScore": 60,
+    "sequence": 2,
+    "minScoreToUnlockNext": 62,
+    "createdAt": "2025-09-13T07:12:09.271Z",
+    "updatedAt": "2025-09-26T04:01:21.751Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51949682296ebc5005963",
+    "language": "en",
+    "title": "English Grammar Level 3",
+    "description": "Simple questions and answers.",
+    "category": "grammar",
+    "difficulty": "beginner",
+    "timeLimit": 8,
+    "questions": [
+      {
+        "question": "How do you say 'Comment tu t'appelles ?' in English?",
+        "options": [
+          "What is your name?",
+          "Where is your name?",
+          "Who are you?",
+          "How old are you?"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct translation is 'What is your name?'.",
+        "difficulty": "easy",
+        "points": 13,
+        "_id": "68c51949682296ebc5005964"
+      },
+      {
+        "question": "Translate: 'Où habites-tu ?'",
+        "options": [
+          "Where do you live?",
+          "Where are you?",
+          "Where is your house?",
+          "You live where?"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct form is 'Where do you live?'.",
+        "difficulty": "easy",
+        "points": 13,
+        "_id": "68c51949682296ebc5005965"
+      },
+      {
+        "question": "How do you ask 'Comment allez-vous ?' formally?",
+        "options": [
+          "How are you?",
+          "How are you doing?",
+          "Are you fine?",
+          "How do you go?"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct translation is 'How are you?'.",
+        "difficulty": "easy",
+        "points": 13,
+        "_id": "68c51949682296ebc5005966"
+      },
+      {
+        "question": "Choose the correct question word: ___ is your brother?",
+        "options": [
+          "Who",
+          "What",
+          "Where",
+          "When"
+        ],
+        "correctAnswer": 0,
+        "explanation": "We use 'Who' for a person.",
+        "difficulty": "easy",
+        "points": 13,
+        "_id": "68c51949682296ebc5005967"
+      },
+      {
+        "question": "Translate: 'Aimes-tu la musique ?'",
+        "options": [
+          "Do you like music?",
+          "You like music?",
+          "Are you music?",
+          "Like you music?"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct translation is 'Do you like music?'.",
+        "difficulty": "easy",
+        "points": 13,
+        "_id": "68c51949682296ebc5005968"
+      }
+    ],
+    "totalPoints": 65,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "questions",
+      "answers"
+    ],
+    "attemptsCount": 2,
+    "averageScore": 40,
+    "sequence": 3,
+    "minScoreToUnlockNext": 63,
+    "createdAt": "2025-09-13T07:12:09.515Z",
+    "updatedAt": "2025-11-03T16:55:38.032Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51949682296ebc5005972",
+    "language": "en",
+    "title": "English Grammar Level 4",
+    "description": "Present tense conjugation practice.",
+    "category": "grammar",
+    "difficulty": "intermediate",
+    "timeLimit": 9,
+    "questions": [
+      {
+        "question": "Conjugate: I finish.",
+        "options": [
+          "I finish",
+          "You finish",
+          "He finishes",
+          "We finish"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'I finish' is correct.",
+        "difficulty": "medium",
+        "points": 14,
+        "_id": "68c51949682296ebc5005973"
+      },
+      {
+        "question": "Which is correct: We are eating.",
+        "options": [
+          "We are eating",
+          "We eating",
+          "We eats",
+          "We eat"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'We are eating' is correct.",
+        "difficulty": "medium",
+        "points": 14,
+        "_id": "68c51949682296ebc5005974"
+      },
+      {
+        "question": "Translate: 'Il parle' in English.",
+        "options": [
+          "He speaks",
+          "He speak",
+          "He speaking",
+          "He spoken"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'He speaks' is correct.",
+        "difficulty": "medium",
+        "points": 14,
+        "_id": "68c51949682296ebc5005975"
+      },
+      {
+        "question": "How do you say: 'Ils choisissent'?",
+        "options": [
+          "They choose",
+          "They chooses",
+          "They chosen",
+          "They choosing"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'They choose' is correct.",
+        "difficulty": "medium",
+        "points": 14,
+        "_id": "68c51949682296ebc5005976"
+      },
+      {
+        "question": "Conjugate: You (plural) are waiting.",
+        "options": [
+          "You are waiting",
+          "You wait",
+          "You waits",
+          "You waiting"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'You are waiting' is correct.",
+        "difficulty": "medium",
+        "points": 14,
+        "_id": "68c51949682296ebc5005977"
+      }
+    ],
+    "totalPoints": 70,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "present",
+      "conjugation"
+    ],
+    "attemptsCount": 2,
+    "averageScore": 60,
+    "sequence": 4,
+    "minScoreToUnlockNext": 64,
+    "createdAt": "2025-09-13T07:12:09.654Z",
+    "updatedAt": "2025-09-28T08:11:37.342Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51949682296ebc5005981",
+    "language": "en",
+    "title": "English Grammar Level 5",
+    "description": "Past tense basics.",
+    "category": "grammar",
+    "difficulty": "intermediate",
+    "timeLimit": 10,
+    "questions": [
+      {
+        "question": "Translate: 'J'ai mangé'.",
+        "options": [
+          "I have eaten",
+          "I eat",
+          "I was eating",
+          "I ate"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'I have eaten' is the correct translation.",
+        "difficulty": "medium",
+        "points": 15,
+        "_id": "68c51949682296ebc5005982"
+      },
+      {
+        "question": "How do you say: 'Elle est allée'?",
+        "options": [
+          "She has gone",
+          "She go",
+          "She going",
+          "She gone"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'She has gone' is correct.",
+        "difficulty": "medium",
+        "points": 15,
+        "_id": "68c51949682296ebc5005983"
+      },
+      {
+        "question": "Translate: 'Nous avons vu le film'.",
+        "options": [
+          "We have seen the movie",
+          "We see the movie",
+          "We saw movie",
+          "We seen the movie"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'We have seen the movie' is correct.",
+        "difficulty": "medium",
+        "points": 15,
+        "_id": "68c51949682296ebc5005984"
+      },
+      {
+        "question": "Choose the correct: 'Ils ont fini'.",
+        "options": [
+          "They have finished",
+          "They finished",
+          "They finish",
+          "They finishing"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'They have finished' is correct.",
+        "difficulty": "medium",
+        "points": 15,
+        "_id": "68c51949682296ebc5005985"
+      },
+      {
+        "question": "Translate: 'Tu as pris le bus'.",
+        "options": [
+          "You have taken the bus",
+          "You take bus",
+          "You took bus",
+          "You are taking the bus"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'You have taken the bus' is correct.",
+        "difficulty": "medium",
+        "points": 15,
+        "_id": "68c51949682296ebc5005986"
+      }
+    ],
+    "totalPoints": 75,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "past tense"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 5,
+    "minScoreToUnlockNext": 65,
+    "createdAt": "2025-09-13T07:12:09.795Z",
+    "updatedAt": "2025-09-13T07:12:09.795Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51949682296ebc5005990",
+    "language": "en",
+    "title": "English Grammar Level 6",
+    "description": "Future tense (will/going to).",
+    "category": "grammar",
+    "difficulty": "intermediate",
+    "timeLimit": 11,
+    "questions": [
+      {
+        "question": "Translate: 'Je vais manger'.",
+        "options": [
+          "I will eat",
+          "I eat",
+          "I am eating",
+          "I ate"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'I will eat' is correct.",
+        "difficulty": "medium",
+        "points": 16,
+        "_id": "68c51949682296ebc5005991"
+      },
+      {
+        "question": "Translate: 'Ils viendront demain'.",
+        "options": [
+          "They will come tomorrow",
+          "They come tomorrow",
+          "They are coming tomorrow",
+          "They came tomorrow"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'They will come tomorrow' is correct.",
+        "difficulty": "medium",
+        "points": 16,
+        "_id": "68c51949682296ebc5005992"
+      },
+      {
+        "question": "How do you say: 'Nous finirons bientôt'.",
+        "options": [
+          "We will finish soon",
+          "We finish soon",
+          "We finished soon",
+          "We finishing soon"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'We will finish soon' is correct.",
+        "difficulty": "medium",
+        "points": 16,
+        "_id": "68c51949682296ebc5005993"
+      },
+      {
+        "question": "Translate: 'Tu iras à Paris'.",
+        "options": [
+          "You will go to Paris",
+          "You go to Paris",
+          "You are going to Paris",
+          "You went to Paris"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'You will go to Paris' is correct.",
+        "difficulty": "medium",
+        "points": 16,
+        "_id": "68c51949682296ebc5005994"
+      },
+      {
+        "question": "Translate: 'Elle parlera'.",
+        "options": [
+          "She will speak",
+          "She speaks",
+          "She speaking",
+          "She spoken"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'She will speak' is correct.",
+        "difficulty": "medium",
+        "points": 16,
+        "_id": "68c51949682296ebc5005995"
+      }
+    ],
+    "totalPoints": 80,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "future tense"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 6,
+    "minScoreToUnlockNext": 66,
+    "createdAt": "2025-09-13T07:12:09.929Z",
+    "updatedAt": "2025-09-13T07:12:09.929Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c5194a682296ebc500599f",
+    "language": "en",
+    "title": "English Grammar Level 7",
+    "description": "Intermediate grammar: pronouns and adjectives.",
+    "category": "grammar",
+    "difficulty": "intermediate",
+    "timeLimit": 12,
+    "questions": [
+      {
+        "question": "Translate: 'C'est mon livre'.",
+        "options": [
+          "This is my book",
+          "Here is my book",
+          "It is book",
+          "Book is mine"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'This is my book' is correct.",
+        "difficulty": "medium",
+        "points": 17,
+        "_id": "68c5194a682296ebc50059a0"
+      },
+      {
+        "question": "Choose the correct pronoun: Marie and I = ?",
+        "options": [
+          "We",
+          "You",
+          "They",
+          "She"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Marie and I = 'We'.",
+        "difficulty": "medium",
+        "points": 17,
+        "_id": "68c5194a682296ebc50059a1"
+      },
+      {
+        "question": "Translate: 'Leur maison est grande'.",
+        "options": [
+          "Their house is big",
+          "His house is big",
+          "Her house is big",
+          "The house is big"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'Their house is big'.",
+        "difficulty": "medium",
+        "points": 17,
+        "_id": "68c5194a682296ebc50059a2"
+      },
+      {
+        "question": "Translate: 'J'aime ce livre'.",
+        "options": [
+          "I like this book",
+          "I liked this book",
+          "I am liking book",
+          "I liking this book"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'I like this book'.",
+        "difficulty": "medium",
+        "points": 17,
+        "_id": "68c5194a682296ebc50059a3"
+      },
+      {
+        "question": "Choose the correct: 'Elle est plus intelligente que lui'.",
+        "options": [
+          "She is more intelligent than him",
+          "She is most intelligent than him",
+          "She is intelligent than him",
+          "She is much intelligent than him"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'She is more intelligent than him'.",
+        "difficulty": "medium",
+        "points": 17,
+        "_id": "68c5194a682296ebc50059a4"
+      }
+    ],
+    "totalPoints": 85,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "pronouns",
+      "adjectives"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 7,
+    "minScoreToUnlockNext": 67,
+    "createdAt": "2025-09-13T07:12:10.103Z",
+    "updatedAt": "2025-09-13T07:12:10.103Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c5194a682296ebc50059ae",
+    "language": "en",
+    "title": "English Grammar Level 8",
+    "description": "Complex sentences and relative clauses.",
+    "category": "grammar",
+    "difficulty": "advanced",
+    "timeLimit": 13,
+    "questions": [
+      {
+        "question": "Translate: 'L'homme qui parle est mon professeur'.",
+        "options": [
+          "The man who is speaking is my teacher",
+          "The man that speaking is my teacher",
+          "The man which speaks is my teacher",
+          "The man talks is my teacher"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'The man who is speaking is my teacher' is correct.",
+        "difficulty": "hard",
+        "points": 18,
+        "_id": "68c5194a682296ebc50059af"
+      },
+      {
+        "question": "Translate: 'Je connais la fille que tu as vue'.",
+        "options": [
+          "I know the girl that you saw",
+          "I know the girl who you saw",
+          "I know girl that you saw",
+          "I know the girl saw"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct translation is 'I know the girl that you saw'.",
+        "difficulty": "hard",
+        "points": 18,
+        "_id": "68c5194a682296ebc50059b0"
+      },
+      {
+        "question": "Translate: 'Nous mangeons quand elle arrive'.",
+        "options": [
+          "We eat when she arrives",
+          "We eating when she arrives",
+          "We eaten when she arrive",
+          "We eats when she arrives"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'We eat when she arrives'.",
+        "difficulty": "hard",
+        "points": 18,
+        "_id": "68c5194a682296ebc50059b1"
+      },
+      {
+        "question": "Translate: 'Le livre que j'ai lu était intéressant'.",
+        "options": [
+          "The book that I read was interesting",
+          "The book which I read is interesting",
+          "The book that I read interesting",
+          "The book I read were interesting"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'The book that I read was interesting'.",
+        "difficulty": "hard",
+        "points": 18,
+        "_id": "68c5194a682296ebc50059b2"
+      },
+      {
+        "question": "Translate: 'La ville où je suis né'.",
+        "options": [
+          "The city where I was born",
+          "The city I was born",
+          "The city which I born",
+          "The city where born"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'The city where I was born'.",
+        "difficulty": "hard",
+        "points": 18,
+        "_id": "68c5194a682296ebc50059b3"
+      }
+    ],
+    "totalPoints": 90,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "clauses",
+      "complex"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 8,
+    "minScoreToUnlockNext": 68,
+    "createdAt": "2025-09-13T07:12:10.354Z",
+    "updatedAt": "2025-09-13T07:12:10.354Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c5194a682296ebc50059bd",
+    "language": "en",
+    "title": "English Grammar Level 9",
+    "description": "Subjunctive mood and conditional tense.",
+    "category": "grammar",
+    "difficulty": "advanced",
+    "timeLimit": 14,
+    "questions": [
+      {
+        "question": "Translate: 'Il est important que tu étudies'.",
+        "options": [
+          "It is important that you study",
+          "It is important you study",
+          "It important that you study",
+          "It is important that you studied"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'It is important that you study'.",
+        "difficulty": "hard",
+        "points": 19,
+        "_id": "68c5194a682296ebc50059be"
+      },
+      {
+        "question": "Translate: 'Je voudrais voyager'.",
+        "options": [
+          "I would like to travel",
+          "I want to travel",
+          "I like to travel",
+          "I travel"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'I would like to travel'.",
+        "difficulty": "hard",
+        "points": 19,
+        "_id": "68c5194a682296ebc50059bf"
+      },
+      {
+        "question": "Translate: 'Si j'avais de l'argent, j'achèterais une voiture'.",
+        "options": [
+          "If I had money, I would buy a car",
+          "If I have money, I buy a car",
+          "If I would have money, I buy a car",
+          "If I had money, I buy car"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'If I had money, I would buy a car'.",
+        "difficulty": "hard",
+        "points": 19,
+        "_id": "68c5194a682296ebc50059c0"
+      },
+      {
+        "question": "Translate: 'Je doute qu'il vienne'.",
+        "options": [
+          "I doubt that he will come",
+          "I doubt he comes",
+          "I doubt he come",
+          "I doubt that he coming"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'I doubt that he will come'.",
+        "difficulty": "hard",
+        "points": 19,
+        "_id": "68c5194a682296ebc50059c1"
+      },
+      {
+        "question": "Translate: 'Nous irions s'il faisait beau'.",
+        "options": [
+          "We would go if it were sunny",
+          "We go if it is sunny",
+          "We will go if it will be sunny",
+          "We gone if it was sunny"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'We would go if it were sunny'.",
+        "difficulty": "hard",
+        "points": 19,
+        "_id": "68c5194a682296ebc50059c2"
+      }
+    ],
+    "totalPoints": 95,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "subjunctive",
+      "conditional"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 9,
+    "minScoreToUnlockNext": 69,
+    "createdAt": "2025-09-13T07:12:10.511Z",
+    "updatedAt": "2025-09-13T07:12:10.511Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c5194a682296ebc50059cc",
+    "language": "en",
+    "title": "English Grammar Level 10",
+    "description": "Advanced comprehension and idiomatic expressions.",
+    "category": "grammar",
+    "difficulty": "advanced",
+    "timeLimit": 15,
+    "questions": [
+      {
+        "question": "Translate the idiom: 'Il pleut des cordes'.",
+        "options": [
+          "It's raining cats and dogs",
+          "It's raining ropes",
+          "It's raining hard",
+          "It rains a lot"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'It's raining cats and dogs' is the idiomatic translation.",
+        "difficulty": "hard",
+        "points": 20,
+        "_id": "68c5194a682296ebc50059cd"
+      },
+      {
+        "question": "Translate: 'Bonne chance!'",
+        "options": [
+          "Good luck!",
+          "Break a leg!",
+          "Be lucky!",
+          "Wish luck!"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Good luck!' is the correct translation.",
+        "difficulty": "hard",
+        "points": 20,
+        "_id": "68c5194a682296ebc50059ce"
+      },
+      {
+        "question": "Translate: 'L'avenir appartient à ceux qui se lèvent tôt'.",
+        "options": [
+          "The early bird catches the worm",
+          "The future belongs to those who wake up early",
+          "Wake early to succeed",
+          "Morning people succeed"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'The early bird catches the worm' is the idiomatic translation.",
+        "difficulty": "hard",
+        "points": 20,
+        "_id": "68c5194a682296ebc50059cf"
+      },
+      {
+        "question": "Reading: 'Once upon a time, there was a king who lived in a castle.' Translate to French meaning.",
+        "options": [
+          "Il était une fois un roi qui vivait dans un château",
+          "Un roi vit dans un château",
+          "Le roi vivait dans un château",
+          "Il y avait un roi dans le château"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct translation is 'Il était une fois un roi qui vivait dans un château'.",
+        "difficulty": "hard",
+        "points": 20,
+        "_id": "68c5194a682296ebc50059d0"
+      },
+      {
+        "question": "Which sentence uses the subjunctive correctly?",
+        "options": [
+          "It is necessary that he be on time",
+          "It is necessary he is on time",
+          "It is necessary that he is on time",
+          "It is necessary he be on time"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'It is necessary that he be on time'.",
+        "difficulty": "hard",
+        "points": 20,
+        "_id": "68c5194a682296ebc50059d1"
+      }
+    ],
+    "totalPoints": 100,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "idioms",
+      "advanced"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 10,
+    "minScoreToUnlockNext": 70,
+    "createdAt": "2025-09-13T07:12:10.704Z",
+    "updatedAt": "2025-09-13T07:12:10.704Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51c7c682296ebc5005b0e",
+    "language": "es",
+    "title": "Spanish Grammar Level 1",
+    "description": "Basic greetings, articles, and plurals.",
+    "category": "grammar",
+    "difficulty": "beginner",
+    "timeLimit": 6,
+    "questions": [
+      {
+        "question": "How do you say 'Hello' in Spanish?",
+        "options": [
+          "Hola",
+          "Gracias",
+          "Manzana",
+          "Perro"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Hola' is the correct translation of 'Hello'.",
+        "difficulty": "easy",
+        "points": 11,
+        "_id": "68c51c7c682296ebc5005b0f"
+      },
+      {
+        "question": "Choose the correct article: ___ perro.",
+        "options": [
+          "El",
+          "La",
+          "Un",
+          "Una"
+        ],
+        "correctAnswer": 0,
+        "explanation": "We use 'el' with masculine nouns like 'perro'.",
+        "difficulty": "easy",
+        "points": 11,
+        "_id": "68c51c7c682296ebc5005b10"
+      },
+      {
+        "question": "Which of these means 'Thank you'?",
+        "options": [
+          "Gracias",
+          "Adiós",
+          "Lo siento",
+          "Buenas noches"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Gracias' means 'Thank you'.",
+        "difficulty": "easy",
+        "points": 11,
+        "_id": "68c51c7c682296ebc5005b11"
+      },
+      {
+        "question": "Plural form: Un libro = one book. Dos libros = ?",
+        "options": [
+          "libros",
+          "libroes",
+          "libro",
+          "librox"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The plural is 'libros'.",
+        "difficulty": "easy",
+        "points": 11,
+        "_id": "68c51c7c682296ebc5005b12"
+      },
+      {
+        "question": "How do you say 'Good night' in Spanish?",
+        "options": [
+          "Buenas noches",
+          "Buenos días",
+          "Adiós",
+          "Hola"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Buenas noches' is the correct translation.",
+        "difficulty": "easy",
+        "points": 11,
+        "_id": "68c51c7c682296ebc5005b13"
+      }
+    ],
+    "totalPoints": 55,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "greetings",
+      "articles",
+      "plurals"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 1,
+    "minScoreToUnlockNext": 61,
+    "createdAt": "2025-09-13T07:25:48.271Z",
+    "updatedAt": "2025-09-13T07:25:48.271Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51c7c682296ebc5005b1d",
+    "language": "es",
+    "title": "Spanish Grammar Level 2",
+    "description": "Basic verbs and negations.",
+    "category": "grammar",
+    "difficulty": "beginner",
+    "timeLimit": 7,
+    "questions": [
+      {
+        "question": "How do you say 'I eat' in Spanish?",
+        "options": [
+          "Yo como",
+          "Tú comes",
+          "Él come",
+          "Nosotros comemos"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Yo como' is correct.",
+        "difficulty": "easy",
+        "points": 12,
+        "_id": "68c51c7c682296ebc5005b1e"
+      },
+      {
+        "question": "Form the negative: No me gusta el té.",
+        "options": [
+          "I don't like tea",
+          "I no like tea",
+          "I not like tea",
+          "I doesn't like tea"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'No me gusta el té' means 'I don't like tea'.",
+        "difficulty": "easy",
+        "points": 12,
+        "_id": "68c51c7c682296ebc5005b1f"
+      },
+      {
+        "question": "How do you say 'They play soccer'?",
+        "options": [
+          "Ellos juegan fútbol",
+          "Ellos juegas fútbol",
+          "Ellos jugando fútbol",
+          "Ellos jugaron fútbol"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Ellos juegan fútbol' is correct.",
+        "difficulty": "easy",
+        "points": 12,
+        "_id": "68c51c7c682296ebc5005b20"
+      },
+      {
+        "question": "Translate: 'She sings'.",
+        "options": [
+          "Ella canta",
+          "Ella cantar",
+          "Ella cantó",
+          "Ella cantando"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Ella canta' is correct.",
+        "difficulty": "easy",
+        "points": 12,
+        "_id": "68c51c7c682296ebc5005b21"
+      },
+      {
+        "question": "Which sentence is correct?",
+        "options": [
+          "A él no le gusta la leche.",
+          "Él no gusta la leche.",
+          "Él no gustar leche.",
+          "Él no gustas la leche."
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct sentence is 'A él no le gusta la leche.'",
+        "difficulty": "easy",
+        "points": 12,
+        "_id": "68c51c7c682296ebc5005b22"
+      }
+    ],
+    "totalPoints": 60,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "verbs",
+      "negation"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 2,
+    "minScoreToUnlockNext": 62,
+    "createdAt": "2025-09-13T07:25:48.416Z",
+    "updatedAt": "2025-09-13T07:25:48.416Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51c7c682296ebc5005b2c",
+    "language": "es",
+    "title": "Spanish Grammar Level 3",
+    "description": "Simple questions and answers.",
+    "category": "grammar",
+    "difficulty": "beginner",
+    "timeLimit": 8,
+    "questions": [
+      {
+        "question": "How do you say 'What is your name?' in Spanish?",
+        "options": [
+          "¿Cómo te llamas?",
+          "¿Dónde está tu nombre?",
+          "¿Quién eres?",
+          "¿Cuántos años tienes?"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct translation is '¿Cómo te llamas?'.",
+        "difficulty": "easy",
+        "points": 13,
+        "_id": "68c51c7c682296ebc5005b2d"
+      },
+      {
+        "question": "Translate: 'Where do you live?'",
+        "options": [
+          "¿Dónde vives?",
+          "¿Dónde estás?",
+          "¿Dónde está tu casa?",
+          "¿Vives dónde?"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct form is '¿Dónde vives?'.",
+        "difficulty": "easy",
+        "points": 13,
+        "_id": "68c51c7c682296ebc5005b2e"
+      },
+      {
+        "question": "How do you ask 'How are you?' formally?",
+        "options": [
+          "¿Cómo está usted?",
+          "¿Cómo estás?",
+          "¿Está bien?",
+          "¿Cómo va usted?"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct formal translation is '¿Cómo está usted?'.",
+        "difficulty": "easy",
+        "points": 13,
+        "_id": "68c51c7c682296ebc5005b2f"
+      },
+      {
+        "question": "Choose the correct question word: ¿___ es tu hermano?",
+        "options": [
+          "Quién",
+          "Qué",
+          "Dónde",
+          "Cuándo"
+        ],
+        "correctAnswer": 0,
+        "explanation": "We use 'Quién' for a person.",
+        "difficulty": "easy",
+        "points": 13,
+        "_id": "68c51c7c682296ebc5005b30"
+      },
+      {
+        "question": "Translate: 'Do you like music?'",
+        "options": [
+          "¿Te gusta la música?",
+          "¿Tú gustas música?",
+          "¿Eres música?",
+          "¿Gustas tú música?"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct translation is '¿Te gusta la música?'.",
+        "difficulty": "easy",
+        "points": 13,
+        "_id": "68c51c7c682296ebc5005b31"
+      }
+    ],
+    "totalPoints": 65,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "questions",
+      "answers"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 3,
+    "minScoreToUnlockNext": 63,
+    "createdAt": "2025-09-13T07:25:48.542Z",
+    "updatedAt": "2025-09-13T07:25:48.542Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51c7c682296ebc5005b3b",
+    "language": "es",
+    "title": "Spanish Grammar Level 4",
+    "description": "Present tense conjugation practice.",
+    "category": "grammar",
+    "difficulty": "intermediate",
+    "timeLimit": 9,
+    "questions": [
+      {
+        "question": "Conjugate: Yo termino.",
+        "options": [
+          "I finish",
+          "You finish",
+          "He finishes",
+          "We finish"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Yo termino' means 'I finish'.",
+        "difficulty": "medium",
+        "points": 14,
+        "_id": "68c51c7c682296ebc5005b3c"
+      },
+      {
+        "question": "Which is correct: 'We are eating.'",
+        "options": [
+          "Nosotros estamos comiendo",
+          "Nosotros comiendo",
+          "Nosotros comes",
+          "Nosotros comer"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Nosotros estamos comiendo' is correct.",
+        "difficulty": "medium",
+        "points": 14,
+        "_id": "68c51c7c682296ebc5005b3d"
+      },
+      {
+        "question": "Translate: 'He speaks' in Spanish.",
+        "options": [
+          "Él habla",
+          "Él hablar",
+          "Él hablando",
+          "Él hablado"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Él habla' is correct.",
+        "difficulty": "medium",
+        "points": 14,
+        "_id": "68c51c7c682296ebc5005b3e"
+      },
+      {
+        "question": "How do you say: 'They choose'?",
+        "options": [
+          "Ellos eligen",
+          "Ellos eligir",
+          "Ellos eligieron",
+          "Ellos eligiendo"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Ellos eligen' is correct.",
+        "difficulty": "medium",
+        "points": 14,
+        "_id": "68c51c7c682296ebc5005b3f"
+      },
+      {
+        "question": "Conjugate: 'You (plural) are waiting.'",
+        "options": [
+          "Ustedes están esperando",
+          "Ustedes esperar",
+          "Ustedes esperas",
+          "Ustedes esperando"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Ustedes están esperando' is correct.",
+        "difficulty": "medium",
+        "points": 14,
+        "_id": "68c51c7c682296ebc5005b40"
+      }
+    ],
+    "totalPoints": 70,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "present",
+      "conjugation"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 4,
+    "minScoreToUnlockNext": 64,
+    "createdAt": "2025-09-13T07:25:48.721Z",
+    "updatedAt": "2025-09-13T07:25:48.721Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51c7c682296ebc5005b4a",
+    "language": "es",
+    "title": "Spanish Grammar Level 5",
+    "description": "Past tense basics (preterite).",
+    "category": "grammar",
+    "difficulty": "intermediate",
+    "timeLimit": 10,
+    "questions": [
+      {
+        "question": "Translate: 'Yo comí'.",
+        "options": [
+          "I ate",
+          "I eat",
+          "I was eating",
+          "I have eaten"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Yo comí' means 'I ate'.",
+        "difficulty": "medium",
+        "points": 15,
+        "_id": "68c51c7c682296ebc5005b4b"
+      },
+      {
+        "question": "How do you say: 'She went'?",
+        "options": [
+          "Ella fue",
+          "Ella va",
+          "Ella yendo",
+          "Ella ido"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Ella fue' is correct.",
+        "difficulty": "medium",
+        "points": 15,
+        "_id": "68c51c7c682296ebc5005b4c"
+      },
+      {
+        "question": "Translate: 'Nosotros vimos la película'.",
+        "options": [
+          "We saw the movie",
+          "We see the movie",
+          "We have seen the movie",
+          "We were seeing the movie"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'We saw the movie' is correct.",
+        "difficulty": "medium",
+        "points": 15,
+        "_id": "68c51c7c682296ebc5005b4d"
+      },
+      {
+        "question": "Choose the correct: 'Ellos terminaron'.",
+        "options": [
+          "They finished",
+          "They finish",
+          "They have finished",
+          "They were finishing"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'They finished' is correct.",
+        "difficulty": "medium",
+        "points": 15,
+        "_id": "68c51c7c682296ebc5005b4e"
+      },
+      {
+        "question": "Translate: 'Tú tomaste el autobús'.",
+        "options": [
+          "You took the bus",
+          "You take the bus",
+          "You have taken the bus",
+          "You are taking the bus"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'You took the bus' is correct.",
+        "difficulty": "medium",
+        "points": 15,
+        "_id": "68c51c7c682296ebc5005b4f"
+      }
+    ],
+    "totalPoints": 75,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "past tense",
+      "preterite"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 5,
+    "minScoreToUnlockNext": 65,
+    "createdAt": "2025-09-13T07:25:48.875Z",
+    "updatedAt": "2025-09-13T07:25:48.875Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51c7d682296ebc5005b59",
+    "language": "es",
+    "title": "Spanish Grammar Level 6",
+    "description": "Future tense.",
+    "category": "grammar",
+    "difficulty": "intermediate",
+    "timeLimit": 11,
+    "questions": [
+      {
+        "question": "Translate: 'Yo comeré'.",
+        "options": [
+          "I will eat",
+          "I eat",
+          "I am eating",
+          "I ate"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Yo comeré' means 'I will eat'.",
+        "difficulty": "medium",
+        "points": 16,
+        "_id": "68c51c7d682296ebc5005b5a"
+      },
+      {
+        "question": "Translate: 'Ellos vendrán mañana'.",
+        "options": [
+          "They will come tomorrow",
+          "They come tomorrow",
+          "They are coming tomorrow",
+          "They came tomorrow"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'They will come tomorrow' is correct.",
+        "difficulty": "medium",
+        "points": 16,
+        "_id": "68c51c7d682296ebc5005b5b"
+      },
+      {
+        "question": "How do you say: 'Nosotros terminaremos pronto'.",
+        "options": [
+          "We will finish soon",
+          "We finish soon",
+          "We finished soon",
+          "We are finishing soon"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'We will finish soon' is correct.",
+        "difficulty": "medium",
+        "points": 16,
+        "_id": "68c51c7d682296ebc5005b5c"
+      },
+      {
+        "question": "Translate: 'Tú irás a París'.",
+        "options": [
+          "You will go to Paris",
+          "You go to Paris",
+          "You are going to Paris",
+          "You went to Paris"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'You will go to Paris' is correct.",
+        "difficulty": "medium",
+        "points": 16,
+        "_id": "68c51c7d682296ebc5005b5d"
+      },
+      {
+        "question": "Translate: 'Ella hablará'.",
+        "options": [
+          "She will speak",
+          "She speaks",
+          "She is speaking",
+          "She spoke"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'She will speak' is correct.",
+        "difficulty": "medium",
+        "points": 16,
+        "_id": "68c51c7d682296ebc5005b5e"
+      }
+    ],
+    "totalPoints": 80,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "future tense"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 6,
+    "minScoreToUnlockNext": 66,
+    "createdAt": "2025-09-13T07:25:49.032Z",
+    "updatedAt": "2025-09-13T07:25:49.032Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51c7d682296ebc5005b68",
+    "language": "es",
+    "title": "Spanish Grammar Level 7",
+    "description": "Intermediate grammar: pronouns and adjectives.",
+    "category": "grammar",
+    "difficulty": "intermediate",
+    "timeLimit": 12,
+    "questions": [
+      {
+        "question": "Translate: 'Este es mi libro'.",
+        "options": [
+          "This is my book",
+          "Here is my book",
+          "It is book",
+          "Book is mine"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'This is my book' is correct.",
+        "difficulty": "medium",
+        "points": 17,
+        "_id": "68c51c7d682296ebc5005b69"
+      },
+      {
+        "question": "Choose the correct pronoun: María y yo = ?",
+        "options": [
+          "Nosotros",
+          "Ustedes",
+          "Ellos",
+          "Ella"
+        ],
+        "correctAnswer": 0,
+        "explanation": "María y yo = 'Nosotros' (we).",
+        "difficulty": "medium",
+        "points": 17,
+        "_id": "68c51c7d682296ebc5005b6a"
+      },
+      {
+        "question": "Translate: 'Su casa es grande'.",
+        "options": [
+          "Their house is big",
+          "His house is big",
+          "Her house is big",
+          "The house is big"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'Their house is big' (su can mean his/her/their).",
+        "difficulty": "medium",
+        "points": 17,
+        "_id": "68c51c7d682296ebc5005b6b"
+      },
+      {
+        "question": "Translate: 'Me gusta este libro'.",
+        "options": [
+          "I like this book",
+          "I liked this book",
+          "I am liking this book",
+          "I will like this book"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'I like this book'.",
+        "difficulty": "medium",
+        "points": 17,
+        "_id": "68c51c7d682296ebc5005b6c"
+      },
+      {
+        "question": "Choose the correct: 'Ella es más inteligente que él'.",
+        "options": [
+          "She is more intelligent than him",
+          "She is most intelligent than him",
+          "She is intelligent than him",
+          "She is much intelligent than him"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'She is more intelligent than him'.",
+        "difficulty": "medium",
+        "points": 17,
+        "_id": "68c51c7d682296ebc5005b6d"
+      }
+    ],
+    "totalPoints": 85,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "pronouns",
+      "adjectives"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 7,
+    "minScoreToUnlockNext": 67,
+    "createdAt": "2025-09-13T07:25:49.415Z",
+    "updatedAt": "2025-09-13T07:25:49.415Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51c7d682296ebc5005b77",
+    "language": "es",
+    "title": "Spanish Grammar Level 8",
+    "description": "Complex sentences and relative clauses.",
+    "category": "grammar",
+    "difficulty": "advanced",
+    "timeLimit": 13,
+    "questions": [
+      {
+        "question": "Translate: 'El hombre que habla es mi profesor'.",
+        "options": [
+          "The man who is speaking is my teacher",
+          "The man that speaking is my teacher",
+          "The man which speaks is my teacher",
+          "The man talks is my teacher"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'The man who is speaking is my teacher' is correct.",
+        "difficulty": "hard",
+        "points": 18,
+        "_id": "68c51c7d682296ebc5005b78"
+      },
+      {
+        "question": "Translate: 'Conozco a la chica que viste'.",
+        "options": [
+          "I know the girl that you saw",
+          "I know the girl who you saw",
+          "I know girl that you saw",
+          "I know the girl saw"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct translation is 'I know the girl that you saw'.",
+        "difficulty": "hard",
+        "points": 18,
+        "_id": "68c51c7d682296ebc5005b79"
+      },
+      {
+        "question": "Translate: 'Comemos cuando ella llega'.",
+        "options": [
+          "We eat when she arrives",
+          "We eating when she arrives",
+          "We eaten when she arrive",
+          "We eats when she arrives"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'We eat when she arrives'.",
+        "difficulty": "hard",
+        "points": 18,
+        "_id": "68c51c7d682296ebc5005b7a"
+      },
+      {
+        "question": "Translate: 'El libro que leí era interesante'.",
+        "options": [
+          "The book that I read was interesting",
+          "The book which I read is interesting",
+          "The book that I read interesting",
+          "The book I read were interesting"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'The book that I read was interesting'.",
+        "difficulty": "hard",
+        "points": 18,
+        "_id": "68c51c7d682296ebc5005b7b"
+      },
+      {
+        "question": "Translate: 'La ciudad donde nací'.",
+        "options": [
+          "The city where I was born",
+          "The city I was born",
+          "The city which I born",
+          "The city where born"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'The city where I was born'.",
+        "difficulty": "hard",
+        "points": 18,
+        "_id": "68c51c7d682296ebc5005b7c"
+      }
+    ],
+    "totalPoints": 90,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "clauses",
+      "complex"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 8,
+    "minScoreToUnlockNext": 68,
+    "createdAt": "2025-09-13T07:25:49.549Z",
+    "updatedAt": "2025-09-13T07:25:49.549Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51c7d682296ebc5005b86",
+    "language": "es",
+    "title": "Spanish Grammar Level 9",
+    "description": "Subjunctive mood and conditional tense.",
+    "category": "grammar",
+    "difficulty": "advanced",
+    "timeLimit": 14,
+    "questions": [
+      {
+        "question": "Translate: 'Es importante que estudies'.",
+        "options": [
+          "It is important that you study",
+          "It is important you study",
+          "It important that you study",
+          "It is important that you studied"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'It is important that you study'.",
+        "difficulty": "hard",
+        "points": 19,
+        "_id": "68c51c7d682296ebc5005b87"
+      },
+      {
+        "question": "Translate: 'Me gustaría viajar'.",
+        "options": [
+          "I would like to travel",
+          "I want to travel",
+          "I like to travel",
+          "I travel"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'I would like to travel'.",
+        "difficulty": "hard",
+        "points": 19,
+        "_id": "68c51c7d682296ebc5005b88"
+      },
+      {
+        "question": "Translate: 'Si tuviera dinero, compraría un carro'.",
+        "options": [
+          "If I had money, I would buy a car",
+          "If I have money, I buy a car",
+          "If I would have money, I buy a car",
+          "If I had money, I buy car"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'If I had money, I would buy a car'.",
+        "difficulty": "hard",
+        "points": 19,
+        "_id": "68c51c7d682296ebc5005b89"
+      },
+      {
+        "question": "Translate: 'Dudo que él venga'.",
+        "options": [
+          "I doubt that he will come",
+          "I doubt he comes",
+          "I doubt he come",
+          "I doubt that he coming"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'I doubt that he will come'.",
+        "difficulty": "hard",
+        "points": 19,
+        "_id": "68c51c7d682296ebc5005b8a"
+      },
+      {
+        "question": "Translate: 'Iríamos si hiciera buen tiempo'.",
+        "options": [
+          "We would go if it were nice weather",
+          "We go if it is nice weather",
+          "We will go if it will be nice weather",
+          "We gone if it was nice weather"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'We would go if it were nice weather'.",
+        "difficulty": "hard",
+        "points": 19,
+        "_id": "68c51c7d682296ebc5005b8b"
+      }
+    ],
+    "totalPoints": 95,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "subjunctive",
+      "conditional"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 9,
+    "minScoreToUnlockNext": 69,
+    "createdAt": "2025-09-13T07:25:49.682Z",
+    "updatedAt": "2025-09-13T07:25:49.682Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51c7d682296ebc5005b95",
+    "language": "es",
+    "title": "Spanish Grammar Level 10",
+    "description": "Advanced comprehension and idiomatic expressions.",
+    "category": "grammar",
+    "difficulty": "advanced",
+    "timeLimit": 15,
+    "questions": [
+      {
+        "question": "Translate the idiom: 'Llueve a cántaros'.",
+        "options": [
+          "It's raining cats and dogs",
+          "It's raining buckets",
+          "It's raining hard",
+          "It rains a lot"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'It's raining cats and dogs' is the idiomatic translation.",
+        "difficulty": "hard",
+        "points": 20,
+        "_id": "68c51c7d682296ebc5005b96"
+      },
+      {
+        "question": "Translate: '¡Buena suerte!'",
+        "options": [
+          "Good luck!",
+          "Break a leg!",
+          "Be lucky!",
+          "Wish luck!"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Good luck!' is the correct translation.",
+        "difficulty": "hard",
+        "points": 20,
+        "_id": "68c51c7d682296ebc5005b97"
+      },
+      {
+        "question": "Translate: 'Al que madruga, Dios le ayuda'.",
+        "options": [
+          "The early bird catches the worm",
+          "God helps those who wake up early",
+          "Wake early to succeed",
+          "Morning people succeed"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'The early bird catches the worm' is the idiomatic translation.",
+        "difficulty": "hard",
+        "points": 20,
+        "_id": "68c51c7d682296ebc5005b98"
+      },
+      {
+        "question": "Reading: 'Érase una vez un rey que vivía en un castillo.' What does this mean?",
+        "options": [
+          "Once upon a time there was a king who lived in a castle",
+          "A king lives in a castle",
+          "The king lived in a castle",
+          "There was a king in the castle"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct translation is 'Once upon a time there was a king who lived in a castle'.",
+        "difficulty": "hard",
+        "points": 20,
+        "_id": "68c51c7d682296ebc5005b99"
+      },
+      {
+        "question": "Which sentence uses the subjunctive correctly?",
+        "options": [
+          "Es necesario que él llegue a tiempo",
+          "Es necesario él llega a tiempo",
+          "Es necesario que él llega a tiempo",
+          "Es necesario él llegue a tiempo"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct is 'Es necesario que él llegue a tiempo'.",
+        "difficulty": "hard",
+        "points": 20,
+        "_id": "68c51c7d682296ebc5005b9a"
+      }
+    ],
+    "totalPoints": 100,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "idioms",
+      "advanced"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 10,
+    "minScoreToUnlockNext": 70,
+    "createdAt": "2025-09-13T07:25:49.876Z",
+    "updatedAt": "2025-09-13T07:25:49.876Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51d53682296ebc5005c54",
+    "language": "de",
+    "title": "German Grammar Level 1",
+    "description": "Basic greetings, articles, and plurals.",
+    "category": "grammar",
+    "difficulty": "beginner",
+    "timeLimit": 6,
+    "questions": [
+      {
+        "question": "How do you say 'Hello' in German?",
+        "options": [
+          "Hallo",
+          "Danke",
+          "Apfel",
+          "Hund"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Hallo' is the correct translation of 'Hello'.",
+        "difficulty": "easy",
+        "points": 11,
+        "_id": "68c51d53682296ebc5005c55"
+      },
+      {
+        "question": "Choose the correct article: ___ Hund.",
+        "options": [
+          "der",
+          "die",
+          "das",
+          "den"
+        ],
+        "correctAnswer": 0,
+        "explanation": "We use 'der' with masculine nouns like 'Hund'.",
+        "difficulty": "easy",
+        "points": 11,
+        "_id": "68c51d53682296ebc5005c56"
+      },
+      {
+        "question": "Which of these means 'Thank you'?",
+        "options": [
+          "Danke",
+          "Auf Wiedersehen",
+          "Entschuldigung",
+          "Gute Nacht"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Danke' means 'Thank you'.",
+        "difficulty": "easy",
+        "points": 11,
+        "_id": "68c51d53682296ebc5005c57"
+      },
+      {
+        "question": "Plural form: Ein Buch = one book. Zwei Bücher = ?",
+        "options": [
+          "books",
+          "bookes",
+          "book",
+          "boox"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The plural 'Bücher' means 'books'.",
+        "difficulty": "easy",
+        "points": 11,
+        "_id": "68c51d53682296ebc5005c58"
+      },
+      {
+        "question": "How do you say 'Good night' in German?",
+        "options": [
+          "Gute Nacht",
+          "Guten Morgen",
+          "Auf Wiedersehen",
+          "Hallo"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Gute Nacht' is the correct translation.",
+        "difficulty": "easy",
+        "points": 11,
+        "_id": "68c51d53682296ebc5005c59"
+      }
+    ],
+    "totalPoints": 55,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "greetings",
+      "articles",
+      "plurals"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 1,
+    "minScoreToUnlockNext": 61,
+    "createdAt": "2025-09-13T07:29:23.326Z",
+    "updatedAt": "2025-09-13T07:29:23.326Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51d53682296ebc5005c63",
+    "language": "de",
+    "title": "German Grammar Level 2",
+    "description": "Basic verbs and negations.",
+    "category": "grammar",
+    "difficulty": "beginner",
+    "timeLimit": 7,
+    "questions": [
+      {
+        "question": "How do you say 'I eat' in German?",
+        "options": [
+          "Ich esse",
+          "Du isst",
+          "Er isst",
+          "Wir essen"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Ich esse' is correct.",
+        "difficulty": "easy",
+        "points": 12,
+        "_id": "68c51d53682296ebc5005c64"
+      },
+      {
+        "question": "Form the negative: Ich mag keinen Tee.",
+        "options": [
+          "I don't like tea",
+          "I no like tea",
+          "I not like tea",
+          "I doesn't like tea"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Ich mag keinen Tee' means 'I don't like tea'.",
+        "difficulty": "easy",
+        "points": 12,
+        "_id": "68c51d53682296ebc5005c65"
+      },
+      {
+        "question": "How do you say 'They play soccer'?",
+        "options": [
+          "Sie spielen Fußball",
+          "Sie spielt Fußball",
+          "Sie spielend Fußball",
+          "Sie spielten Fußball"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Sie spielen Fußball' is correct.",
+        "difficulty": "easy",
+        "points": 12,
+        "_id": "68c51d53682296ebc5005c66"
+      },
+      {
+        "question": "Translate: 'She sings'.",
+        "options": [
+          "Sie singt",
+          "Sie singen",
+          "Sie sang",
+          "Sie singend"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Sie singt' is correct.",
+        "difficulty": "easy",
+        "points": 12,
+        "_id": "68c51d53682296ebc5005c67"
+      },
+      {
+        "question": "Which sentence is correct?",
+        "options": [
+          "Er mag keine Milch.",
+          "Er nicht mag Milch.",
+          "Er kein mag Milch.",
+          "Er mag nicht Milch."
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct sentence is 'Er mag keine Milch.'",
+        "difficulty": "easy",
+        "points": 12,
+        "_id": "68c51d53682296ebc5005c68"
+      }
+    ],
+    "totalPoints": 60,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "verbs",
+      "negation"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 2,
+    "minScoreToUnlockNext": 62,
+    "createdAt": "2025-09-13T07:29:23.473Z",
+    "updatedAt": "2025-09-13T07:29:23.473Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51d53682296ebc5005c72",
+    "language": "de",
+    "title": "German Grammar Level 3",
+    "description": "Simple questions and answers.",
+    "category": "grammar",
+    "difficulty": "beginner",
+    "timeLimit": 8,
+    "questions": [
+      {
+        "question": "How do you say 'What is your name?' in German?",
+        "options": [
+          "Wie heißt du?",
+          "Wo ist dein Name?",
+          "Wer bist du?",
+          "Wie alt bist du?"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct translation is 'Wie heißt du?'.",
+        "difficulty": "easy",
+        "points": 13,
+        "_id": "68c51d53682296ebc5005c73"
+      },
+      {
+        "question": "Translate: 'Where do you live?'",
+        "options": [
+          "Wo wohnst du?",
+          "Wo bist du?",
+          "Wo ist dein Haus?",
+          "Du wohnst wo?"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct form is 'Wo wohnst du?'.",
+        "difficulty": "easy",
+        "points": 13,
+        "_id": "68c51d53682296ebc5005c74"
+      },
+      {
+        "question": "How do you ask 'How are you?' formally?",
+        "options": [
+          "Wie geht es Ihnen?",
+          "Wie geht es dir?",
+          "Geht es gut?",
+          "Wie gehen Sie?"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct formal translation is 'Wie geht es Ihnen?'.",
+        "difficulty": "easy",
+        "points": 13,
+        "_id": "68c51d53682296ebc5005c75"
+      },
+      {
+        "question": "Choose the correct question word: ___ ist dein Bruder?",
+        "options": [
+          "Wer",
+          "Was",
+          "Wo",
+          "Wann"
+        ],
+        "correctAnswer": 0,
+        "explanation": "We use 'Wer' for a person.",
+        "difficulty": "easy",
+        "points": 13,
+        "_id": "68c51d53682296ebc5005c76"
+      },
+      {
+        "question": "Translate: 'Do you like music?'",
+        "options": [
+          "Magst du Musik?",
+          "Du magst Musik?",
+          "Bist du Musik?",
+          "Magst Musik du?"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct translation is 'Magst du Musik?'.",
+        "difficulty": "easy",
+        "points": 13,
+        "_id": "68c51d53682296ebc5005c77"
+      }
+    ],
+    "totalPoints": 65,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "questions",
+      "answers"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 3,
+    "minScoreToUnlockNext": 63,
+    "createdAt": "2025-09-13T07:29:23.616Z",
+    "updatedAt": "2025-09-13T07:29:23.616Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51d53682296ebc5005c81",
+    "language": "de",
+    "title": "German Grammar Level 4",
+    "description": "Present tense conjugation and modal verbs.",
+    "category": "grammar",
+    "difficulty": "intermediate",
+    "timeLimit": 9,
+    "questions": [
+      {
+        "question": "Conjugate: Ich kann schwimmen.",
+        "options": [
+          "I can swim",
+          "You can swim",
+          "He can swim",
+          "We can swim"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Ich kann schwimmen' means 'I can swim'.",
+        "difficulty": "medium",
+        "points": 14,
+        "_id": "68c51d53682296ebc5005c82"
+      },
+      {
+        "question": "Which is correct: 'We are working.'",
+        "options": [
+          "Wir arbeiten",
+          "Wir arbeitend",
+          "Wir arbeitet",
+          "Wir arbeiten sind"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Wir arbeiten' is correct.",
+        "difficulty": "medium",
+        "points": 14,
+        "_id": "68c51d53682296ebc5005c83"
+      },
+      {
+        "question": "Translate: 'He must go' in German.",
+        "options": [
+          "Er muss gehen",
+          "Er geht müssen",
+          "Er gehend muss",
+          "Er gegangen muss"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Er muss gehen' is correct.",
+        "difficulty": "medium",
+        "points": 14,
+        "_id": "68c51d53682296ebc5005c84"
+      },
+      {
+        "question": "How do you say: 'They want to learn'?",
+        "options": [
+          "Sie wollen lernen",
+          "Sie lernen wollen",
+          "Sie wollten lernen",
+          "Sie lernend wollen"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Sie wollen lernen' is correct.",
+        "difficulty": "medium",
+        "points": 14,
+        "_id": "68c51d53682296ebc5005c85"
+      },
+      {
+        "question": "Conjugate: 'You (formal) should come.'",
+        "options": [
+          "Sie sollten kommen",
+          "Sie kommen sollten",
+          "Sie sollen kommen",
+          "Sie kommend sollen"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Sie sollten kommen' is correct for formal 'you'.",
+        "difficulty": "medium",
+        "points": 14,
+        "_id": "68c51d53682296ebc5005c86"
+      }
+    ],
+    "totalPoints": 70,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "present",
+      "conjugation",
+      "modal verbs"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 4,
+    "minScoreToUnlockNext": 64,
+    "createdAt": "2025-09-13T07:29:23.779Z",
+    "updatedAt": "2025-09-13T07:29:23.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51d53682296ebc5005c90",
+    "language": "de",
+    "title": "German Grammar Level 5",
+    "description": "German cases - Nominative and Accusative.",
+    "category": "grammar",
+    "difficulty": "intermediate",
+    "timeLimit": 10,
+    "questions": [
+      {
+        "question": "Choose the correct article: Ich sehe ___ Hund (accusative).",
+        "options": [
+          "den",
+          "der",
+          "dem",
+          "des"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Accusative masculine article is 'den'.",
+        "difficulty": "medium",
+        "points": 15,
+        "_id": "68c51d53682296ebc5005c91"
+      },
+      {
+        "question": "Translate: 'The woman reads a book.'",
+        "options": [
+          "Die Frau liest ein Buch",
+          "Der Frau liest eine Buch",
+          "Die Frau liest einen Buch",
+          "Das Frau liest ein Buch"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Die Frau liest ein Buch' is correct.",
+        "difficulty": "medium",
+        "points": 15,
+        "_id": "68c51d53682296ebc5005c92"
+      },
+      {
+        "question": "Choose the correct: Ich kaufe ___ Auto (neuter, accusative).",
+        "options": [
+          "das",
+          "den",
+          "die",
+          "dem"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Neuter accusative article remains 'das'.",
+        "difficulty": "medium",
+        "points": 15,
+        "_id": "68c51d53682296ebc5005c93"
+      },
+      {
+        "question": "Translate: 'We have the keys.'",
+        "options": [
+          "Wir haben die Schlüssel",
+          "Wir haben der Schlüssel",
+          "Wir haben den Schlüssel",
+          "Wir haben des Schlüssel"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Wir haben die Schlüssel' is correct (plural accusative).",
+        "difficulty": "medium",
+        "points": 15,
+        "_id": "68c51d53682296ebc5005c94"
+      },
+      {
+        "question": "Choose the correct: Der Mann gibt ___ Kind ein Geschenk (dative).",
+        "options": [
+          "dem",
+          "den",
+          "der",
+          "das"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Dative neuter article is 'dem'.",
+        "difficulty": "medium",
+        "points": 15,
+        "_id": "68c51d53682296ebc5005c95"
+      }
+    ],
+    "totalPoints": 75,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "cases",
+      "nominative",
+      "accusative"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 5,
+    "minScoreToUnlockNext": 65,
+    "createdAt": "2025-09-13T07:29:23.923Z",
+    "updatedAt": "2025-09-13T07:29:23.923Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51d54682296ebc5005c9f",
+    "language": "de",
+    "title": "German Grammar Level 6",
+    "description": "Past tense (Perfekt) and separable verbs.",
+    "category": "grammar",
+    "difficulty": "intermediate",
+    "timeLimit": 11,
+    "questions": [
+      {
+        "question": "Translate: 'Ich bin gegangen'.",
+        "options": [
+          "I have gone",
+          "I go",
+          "I am going",
+          "I went"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Ich bin gegangen' means 'I have gone'.",
+        "difficulty": "medium",
+        "points": 16,
+        "_id": "68c51d54682296ebc5005ca0"
+      },
+      {
+        "question": "How do you say: 'She came back'?",
+        "options": [
+          "Sie ist zurückgekommen",
+          "Sie zurückkommt",
+          "Sie kam zurück",
+          "Sie zurückgekommen"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Sie ist zurückgekommen' is correct.",
+        "difficulty": "medium",
+        "points": 16,
+        "_id": "68c51d54682296ebc5005ca1"
+      },
+      {
+        "question": "Translate: 'Wir haben das Buch gelesen'.",
+        "options": [
+          "We have read the book",
+          "We read the book",
+          "We were reading the book",
+          "We will read the book"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'We have read the book' is correct.",
+        "difficulty": "medium",
+        "points": 16,
+        "_id": "68c51d54682296ebc5005ca2"
+      },
+      {
+        "question": "Choose the correct: 'Er ruft mich an.' (present)",
+        "options": [
+          "He calls me",
+          "He called me",
+          "He will call me",
+          "He is calling me"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'He calls me' is correct for separable verb 'anrufen'.",
+        "difficulty": "medium",
+        "points": 16,
+        "_id": "68c51d54682296ebc5005ca3"
+      },
+      {
+        "question": "Translate: 'They turned off the TV.'",
+        "options": [
+          "Sie haben den Fernseher ausgemacht",
+          "Sie machen den Fernseher aus",
+          "Sie machten den Fernseher aus",
+          "Sie den Fernseher ausgemacht"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Sie haben den Fernseher ausgemacht' is correct.",
+        "difficulty": "medium",
+        "points": 16,
+        "_id": "68c51d54682296ebc5005ca4"
+      }
+    ],
+    "totalPoints": 80,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "past tense",
+      "perfekt",
+      "separable verbs"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 6,
+    "minScoreToUnlockNext": 66,
+    "createdAt": "2025-09-13T07:29:24.091Z",
+    "updatedAt": "2025-09-13T07:29:24.091Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51d54682296ebc5005cae",
+    "language": "de",
+    "title": "German Grammar Level 7",
+    "description": "Dative case and prepositions.",
+    "category": "grammar",
+    "difficulty": "intermediate",
+    "timeLimit": 12,
+    "questions": [
+      {
+        "question": "Translate: 'Ich helfe meinem Freund'.",
+        "options": [
+          "I help my friend",
+          "I helped my friend",
+          "My friend helps me",
+          "I am helping friend"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'I help my friend' is correct (dative case).",
+        "difficulty": "medium",
+        "points": 17,
+        "_id": "68c51d54682296ebc5005caf"
+      },
+      {
+        "question": "Choose the correct: Das Buch liegt auf ___ Tisch.",
+        "options": [
+          "dem",
+          "den",
+          "der",
+          "das"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'auf dem Tisch' uses dative after 'auf' (position).",
+        "difficulty": "medium",
+        "points": 17,
+        "_id": "68c51d54682296ebc5005cb0"
+      },
+      {
+        "question": "Translate: 'Wir gehen mit unseren Eltern'.",
+        "options": [
+          "We go with our parents",
+          "We went with our parents",
+          "Our parents go with us",
+          "We are going parents"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'We go with our parents' is correct (mit + dative).",
+        "difficulty": "medium",
+        "points": 17,
+        "_id": "68c51d54682296ebc5005cb1"
+      },
+      {
+        "question": "Choose the correct: Er kommt aus ___ Schweiz.",
+        "options": [
+          "der",
+          "die",
+          "den",
+          "dem"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'aus der Schweiz' uses dative feminine.",
+        "difficulty": "medium",
+        "points": 17,
+        "_id": "68c51d54682296ebc5005cb2"
+      },
+      {
+        "question": "Translate: 'The gift is for my sister.'",
+        "options": [
+          "Das Geschenk ist für meine Schwester",
+          "Das Geschenk ist für meiner Schwester",
+          "Das Geschenk ist zu meine Schwester",
+          "Das Geschenk ist an meine Schwester"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'für' takes accusative case: 'für meine Schwester'.",
+        "difficulty": "medium",
+        "points": 17,
+        "_id": "68c51d54682296ebc5005cb3"
+      }
+    ],
+    "totalPoints": 85,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "dative",
+      "prepositions"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 7,
+    "minScoreToUnlockNext": 67,
+    "createdAt": "2025-09-13T07:29:24.227Z",
+    "updatedAt": "2025-09-13T07:29:24.227Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51d54682296ebc5005cbd",
+    "language": "de",
+    "title": "German Grammar Level 8",
+    "description": "Genitive case and relative clauses.",
+    "category": "grammar",
+    "difficulty": "advanced",
+    "timeLimit": 13,
+    "questions": [
+      {
+        "question": "Translate: 'Der Mann, der spricht, ist mein Lehrer'.",
+        "options": [
+          "The man who is speaking is my teacher",
+          "The man that speaking is my teacher",
+          "The man which speaks is my teacher",
+          "The man talks is my teacher"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'The man who is speaking is my teacher' is correct.",
+        "difficulty": "hard",
+        "points": 18,
+        "_id": "68c51d54682296ebc5005cbe"
+      },
+      {
+        "question": "Choose the correct genitive: Das Auto ___ Mannes ist rot.",
+        "options": [
+          "des",
+          "der",
+          "dem",
+          "den"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Masculine genitive article is 'des'.",
+        "difficulty": "hard",
+        "points": 18,
+        "_id": "68c51d54682296ebc5005cbf"
+      },
+      {
+        "question": "Translate: 'Das ist das Haus meiner Großmutter'.",
+        "options": [
+          "That is my grandmother's house",
+          "That is the house with my grandmother",
+          "That is my grandmother house",
+          "That is house of grandmother"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Genitive shows possession: 'grandmother's house'.",
+        "difficulty": "hard",
+        "points": 18,
+        "_id": "68c51d54682296ebc5005cc0"
+      },
+      {
+        "question": "Translate: 'Die Frau, deren Buch ich lese'.",
+        "options": [
+          "The woman whose book I read",
+          "The woman which book I read",
+          "The woman that book I read",
+          "The woman her book I read"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'deren' means 'whose' for feminine/plural possessor.",
+        "difficulty": "hard",
+        "points": 18,
+        "_id": "68c51d54682296ebc5005cc1"
+      },
+      {
+        "question": "Choose the correct: Während ___ Winters bleibe ich zu Hause.",
+        "options": [
+          "des",
+          "dem",
+          "der",
+          "den"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'während' requires genitive: 'des Winters'.",
+        "difficulty": "hard",
+        "points": 18,
+        "_id": "68c51d54682296ebc5005cc2"
+      }
+    ],
+    "totalPoints": 90,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "genitive",
+      "relative clauses"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 8,
+    "minScoreToUnlockNext": 68,
+    "createdAt": "2025-09-13T07:29:24.369Z",
+    "updatedAt": "2025-09-13T07:29:24.369Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51d54682296ebc5005ccc",
+    "language": "de",
+    "title": "German Grammar Level 9",
+    "description": "Subjunctive mood (Konjunktiv) and conditional.",
+    "category": "grammar",
+    "difficulty": "advanced",
+    "timeLimit": 14,
+    "questions": [
+      {
+        "question": "Translate: 'Ich wünschte, ich hätte mehr Zeit'.",
+        "options": [
+          "I wish I had more time",
+          "I wished I have more time",
+          "I wish I have more time",
+          "I am wishing I had time"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Konjunktiv II expresses unreal wishes.",
+        "difficulty": "hard",
+        "points": 19,
+        "_id": "68c51d54682296ebc5005ccd"
+      },
+      {
+        "question": "Translate: 'Wenn ich reich wäre, würde ich reisen'.",
+        "options": [
+          "If I were rich, I would travel",
+          "If I am rich, I travel",
+          "If I was rich, I travel",
+          "When I am rich, I will travel"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Conditional sentence with Konjunktiv II.",
+        "difficulty": "hard",
+        "points": 19,
+        "_id": "68c51d54682296ebc5005cce"
+      },
+      {
+        "question": "Choose the polite form: ___ Sie mir bitte helfen?",
+        "options": [
+          "Könnten",
+          "Können",
+          "Konnten",
+          "Könnt"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'Könnten' is the polite conditional form.",
+        "difficulty": "hard",
+        "points": 19,
+        "_id": "68c51d54682296ebc5005ccf"
+      },
+      {
+        "question": "Translate: 'Er sagte, er sei müde' (indirect speech).",
+        "options": [
+          "He said he was tired",
+          "He says he is tired",
+          "He said he is tired",
+          "He was saying he tired"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Konjunktiv I for indirect speech.",
+        "difficulty": "hard",
+        "points": 19,
+        "_id": "68c51d54682296ebc5005cd0"
+      },
+      {
+        "question": "Choose the correct: 'Als ob er alles ___ ' (as if he knew everything).",
+        "options": [
+          "wüsste",
+          "weiß",
+          "wusste",
+          "gewusst"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'als ob' requires Konjunktiv II: 'wüsste'.",
+        "difficulty": "hard",
+        "points": 19,
+        "_id": "68c51d54682296ebc5005cd1"
+      }
+    ],
+    "totalPoints": 95,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "subjunctive",
+      "konjunktiv",
+      "conditional"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 9,
+    "minScoreToUnlockNext": 69,
+    "createdAt": "2025-09-13T07:29:24.504Z",
+    "updatedAt": "2025-09-13T07:29:24.504Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c51d54682296ebc5005cdb",
+    "language": "de",
+    "title": "German Grammar Level 10",
+    "description": "Advanced grammar and idiomatic expressions.",
+    "category": "grammar",
+    "difficulty": "advanced",
+    "timeLimit": 15,
+    "questions": [
+      {
+        "question": "Translate the idiom: 'Es regnet Bindfäden'.",
+        "options": [
+          "It's raining cats and dogs",
+          "It's raining strings",
+          "It's raining hard",
+          "It rains a lot"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'It's raining cats and dogs' is the idiomatic translation.",
+        "difficulty": "hard",
+        "points": 20,
+        "_id": "68c51d54682296ebc5005cdc"
+      },
+      {
+        "question": "Translate the passive: 'Das Haus wird gebaut'.",
+        "options": [
+          "The house is being built",
+          "The house builds",
+          "The house was built",
+          "The house will build"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Present passive with 'werden + past participle'.",
+        "difficulty": "hard",
+        "points": 20,
+        "_id": "68c51d54682296ebc5005cdd"
+      },
+      {
+        "question": "Translate: 'Morgenstund hat Gold im Mund'.",
+        "options": [
+          "The early bird catches the worm",
+          "Morning hour has gold in mouth",
+          "Wake early to find gold",
+          "Morning people are golden"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'The early bird catches the worm' is the idiomatic translation.",
+        "difficulty": "hard",
+        "points": 20,
+        "_id": "68c51d54682296ebc5005cde"
+      },
+      {
+        "question": "Choose the correct word order: Ich glaube, dass er morgen ___ (comes).",
+        "options": [
+          "kommt",
+          "kommen",
+          "kam",
+          "gekommen"
+        ],
+        "correctAnswer": 0,
+        "explanation": "In subordinate clauses, verb goes to the end: 'dass er morgen kommt'.",
+        "difficulty": "hard",
+        "points": 20,
+        "_id": "68c51d54682296ebc5005cdf"
+      },
+      {
+        "question": "Translate: 'Das Buch ist bereits gelesen worden' (passive perfect).",
+        "options": [
+          "The book has already been read",
+          "The book already read",
+          "The book was already read",
+          "The book will already be read"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Perfect passive: 'ist...worden' = 'has been'.",
+        "difficulty": "hard",
+        "points": 20,
+        "_id": "68c51d54682296ebc5005ce0"
+      }
+    ],
+    "totalPoints": 100,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "idioms",
+      "advanced",
+      "passive voice"
+    ],
+    "attemptsCount": 0,
+    "averageScore": 0,
+    "sequence": 10,
+    "minScoreToUnlockNext": 70,
+    "createdAt": "2025-09-13T07:29:24.646Z",
+    "updatedAt": "2025-09-13T07:29:24.646Z",
+    "__v": 0
+  },
+  {
+    "_id": "68ccd83101c5a125267ec631",
+    "language": "en",
+    "title": "English Grammar Quiz for Beginners",
+    "description": "Test your knowledge of basic English grammar.",
+    "category": "grammar",
+    "difficulty": "beginner",
+    "timeLimit": 300,
+    "questions": [
+      {
+        "question": "Which sentence is grammatically correct?",
+        "options": [
+          "Me and him went to the store.",
+          "Him and me went to the store.",
+          "He and I went to the store.",
+          "I and he went to the store."
+        ],
+        "correctAnswer": 2,
+        "explanation": "Use subject pronouns (he, she, I, we, they) with verbs.",
+        "difficulty": "medium",
+        "points": 10,
+        "_id": "68ccd83101c5a125267ec632"
+      },
+      {
+        "question": "Choose the correct past tense of 'eat'.",
+        "options": [
+          "eated",
+          "eat",
+          "eaten",
+          "ate"
+        ],
+        "correctAnswer": 3,
+        "explanation": "'Ate' is the simple past tense of 'eat'.",
+        "difficulty": "medium",
+        "points": 10,
+        "_id": "68ccd83101c5a125267ec633"
+      },
+      {
+        "question": "What is the plural of 'child'?",
+        "options": [
+          "childs",
+          "childes",
+          "children",
+          "childer"
+        ],
+        "correctAnswer": 2,
+        "explanation": "'Children' is the irregular plural of 'child'.",
+        "difficulty": "medium",
+        "points": 10,
+        "_id": "68ccd83101c5a125267ec634"
+      },
+      {
+        "question": "Which sentence uses the correct article?",
+        "options": [
+          "I saw a elephant.",
+          "I saw an elephant.",
+          "I saw elephant.",
+          "I saw the elephant."
+        ],
+        "correctAnswer": 1,
+        "explanation": "Use 'an' before words beginning with a vowel sound.",
+        "difficulty": "medium",
+        "points": 10,
+        "_id": "68ccd83101c5a125267ec635"
+      }
+    ],
+    "totalPoints": 40,
+    "isActive": true,
+    "createdBy": "68c2428d20038d334927ceaf",
+    "tags": [
+      "grammar",
+      "beginner"
+    ],
+    "attemptsCount": 4,
+    "averageScore": 50,
+    "sequence": 1,
+    "minScoreToUnlockNext": 60,
+    "__v": 0,
+    "createdAt": "2025-09-19T04:12:33.058Z",
+    "updatedAt": "2025-09-26T03:17:48.812Z"
+  }
+]

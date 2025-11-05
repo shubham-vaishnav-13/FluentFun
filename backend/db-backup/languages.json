@@ -1,0 +1,56 @@
+[
+  {
+    "_id": "68c3961bd7bdb0df73827858",
+    "code": "en",
+    "name": "English",
+    "isActive": true,
+    "createdAt": "2025-09-12T03:40:11.544Z",
+    "updatedAt": "2025-09-12T03:40:11.544Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c3961bd7bdb0df7382785c",
+    "code": "hi",
+    "name": "Hindi",
+    "isActive": true,
+    "createdAt": "2025-09-12T03:40:11.666Z",
+    "updatedAt": "2025-09-12T03:40:11.666Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c3961bd7bdb0df7382785f",
+    "code": "gu",
+    "name": "Gujarati",
+    "isActive": true,
+    "createdAt": "2025-09-12T03:40:11.799Z",
+    "updatedAt": "2025-09-12T03:40:11.799Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c3961bd7bdb0df73827862",
+    "code": "fr",
+    "name": "French",
+    "isActive": true,
+    "createdAt": "2025-09-12T03:40:11.911Z",
+    "updatedAt": "2025-09-12T03:40:11.911Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c3961cd7bdb0df73827865",
+    "code": "es",
+    "name": "Spanish",
+    "isActive": true,
+    "createdAt": "2025-09-12T03:40:12.021Z",
+    "updatedAt": "2025-09-12T03:40:12.021Z",
+    "__v": 0
+  },
+  {
+    "_id": "68c3961cd7bdb0df73827868",
+    "code": "de",
+    "name": "German",
+    "isActive": true,
+    "createdAt": "2025-09-12T03:40:12.140Z",
+    "updatedAt": "2025-09-12T03:40:12.140Z",
+    "__v": 0
+  }
+]

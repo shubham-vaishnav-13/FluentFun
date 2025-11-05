@@ -29,7 +29,7 @@ export default function WritingChallenge() {
                 setChallenge(data);
                 setTimeLeft(data.timeLimit * 60); // convert to seconds
             } catch (e) {
-                console.error('Failed to load challenge:', e);
+                toast.error('Failed to load challenge');
                 toast.error('Failed to load challenge');
                 navigate('/challenges');
             }
@@ -44,7 +44,7 @@ export default function WritingChallenge() {
                 const subs = await writingAPI.listMySubmissions(challengeId);
                 setPreviousSubmissions(subs);
             } catch (e) {
-                console.error('Failed to load submissions:', e);
+                toast.error('Failed to load submissions');
             }
         };
         loadSubmissions();
@@ -120,7 +120,7 @@ export default function WritingChallenge() {
                 toast.success('Submission evaluated successfully!');
             }
         } catch (e) {
-            console.error('Submission failed:', e);
+            toast.error('Submission failed');
             toast.error(e.response?.data?.message || 'Submission failed');
         } finally {
             setSubmitting(false);
@@ -133,7 +133,7 @@ export default function WritingChallenge() {
             setLeaderboard(data);
             setShowLeaderboard(true);
         } catch (e) {
-            console.error('Failed to load leaderboard:', e);
+            toast.error('Failed to load leaderboard');
             toast.error('Failed to load leaderboard');
         }
     };
@@ -259,7 +259,7 @@ export default function WritingChallenge() {
                             <div className="space-y-4">
                                 {previousSubmissions.map((sub, idx) => (
                                     <div
-                                        key={sub._id}
+                                        key={sub._id || idx}
                                         className="flex items-center justify-between p-3 rounded-lg border border-app/50"
                                     >
                                         <div>
@@ -298,20 +298,26 @@ export default function WritingChallenge() {
                                 </h2>
                             </div>
                             <div className="space-y-2">
-                                {leaderboard.map((entry, idx) => (
-                                    <div
-                                        key={entry._id}
-                                        className="flex items-center justify-between p-3 rounded-lg border border-app/50"
-                                    >
-                                        <div className="flex items-center space-x-3">
-                                            <span className="font-mono w-6 text-center">#{idx + 1}</span>
-                                            <span>{entry.user.username}</span>
-                                        </div>
-                                        <div className="font-bold text-app">
-                                            {entry.totalScore.toFixed(1)}
-                                        </div>
+                                {leaderboard.length === 0 ? (
+                                    <div className="text-center text-sm muted-text py-4">
+                                        No student yet submitted.
                                     </div>
-                                ))}
+                                ) : (
+                                    leaderboard.map((entry, idx) => (
+                                        <div
+                                            key={entry._id || idx}
+                                            className="flex items-center justify-between p-3 rounded-lg border border-app/50"
+                                        >
+                                            <div className="flex items-center space-x-3">
+                                                <span className="font-mono w-6 text-center">#{idx + 1}</span>
+                                                <span>{entry.user.username}</span>
+                                            </div>
+                                            <div className="font-bold text-app">
+                                                {entry.totalScore.toFixed(1)}
+                                            </div>
+                                        </div>
+                                    ))
+                                )}
                             </div>
                         </div>
                     )}

@@ -8,15 +8,15 @@ const PrivateRoute = () => {
   useEffect(() => {
     // Log authentication state for debugging
     if (!loading) {
-      console.log('Authentication state in PrivateRoute:', { 
-        isAuthenticated, 
-        hasUser: !!user, 
-        user: user ? { 
-          id: user._id,
-          email: user.email,
-          name: user.fullName || user.username
-        } : null
-      });
+      // console.log('Authentication state in PrivateRoute:', { 
+      //   isAuthenticated, 
+      //   hasUser: !!user, 
+      //   user: user ? { 
+      //     id: user._id,
+      //     email: user.email,
+      //     name: user.fullName || user.username
+      //   } : null
+      // });
     }
   }, [loading, isAuthenticated, user]);
 

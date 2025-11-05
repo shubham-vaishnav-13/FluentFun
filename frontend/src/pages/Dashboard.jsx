@@ -1,3 +1,4 @@
+import { toast } from 'react-hot-toast';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -6,6 +7,7 @@ import { levelBoundaries } from '../utils/level';
 import { useAuth } from '../context/AuthContext';
 import Navbar from '../components/Navbar';
 import api from '../config/api.config.js';
+import { API_PATHS } from '../config/apiPaths.js';
 
 const Dashboard = () => {
   const { user, logout } = useAuth();
@@ -68,7 +70,7 @@ const Dashboard = () => {
     const fetchLanguages = async () => {
       try {
         setLanguagesLoading(true);
-        const response = await api.get('/content/languages');
+        const response = await api.get(API_PATHS.CONTENT.GET_LANGUAGES);
         if (response.data.success && response.data.data) {
           const langMap = {};
           response.data.data.forEach(lang => {
@@ -76,11 +78,11 @@ const Dashboard = () => {
           });
           setLanguageMap(langMap);
         } else {
-          console.error('Failed to fetch languages: Invalid response');
+          toast.error('Failed to fetch languages: Invalid response');
           setLanguageMap({});
         }
       } catch (error) {
-        console.error('Failed to fetch languages:', error);
+  toast.error('Failed to fetch languages');
         setLanguageMap({});
       } finally {
         setLanguagesLoading(false);
