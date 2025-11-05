@@ -18,7 +18,8 @@ app.use((req, res, next) => {
 });
 
 // CORS middleware (dev-friendly defaults)
-const rawOrigins = process.env.CORS_ORIGIN || "http://localhost:5173,http://localhost:5174"; // Vite default + backup port
+// Allow multiple origins via comma-separated env. Provide sane defaults for local dev and production frontend.
+const rawOrigins = process.env.CORS_ORIGIN || "https://fluentfun.vercel.app"; // Vite defaults + production URL
 const allowedOrigins = rawOrigins
   .split(",")
   .map(o => o.trim())
@@ -29,7 +30,12 @@ app.use(
     origin: (origin, callback) => {
       // allow requests with no origin (like mobile apps or curl/Postman)
       if (!origin) return callback(null, true);
+      // Allow exact matches from configured list
       if (allowedOrigins.includes(origin)) return callback(null, true);
+      // Optionally allow Vercel preview deployments if enabled
+      if (process.env.ALLOW_VERCEL_PREVIEWS === 'true' && /https:\/\/.*\.vercel\.app$/.test(origin)) {
+        return callback(null, true);
+      }
       return callback(new Error(`CORS blocked for origin: ${origin}`));
     },
     credentials: true,

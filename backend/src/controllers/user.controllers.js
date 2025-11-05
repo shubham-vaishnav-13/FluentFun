@@ -151,9 +151,12 @@ const loginUser = asyncHandler(async (req, res) => {
     throw new ApiError(500, "Something went wrong while logging in ...");
   }
 
+  const isProd = process.env.NODE_ENV === "production";
   const options = {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure: isProd,
+    // Cross-site cookies (frontend on Vercel, backend on Render) require SameSite=None
+    sameSite: isProd ? 'none' : 'lax'
   };
 
   return res
@@ -184,9 +187,11 @@ const logoutUser = asyncHandler(async (req, res) => {
     { new: true }
   );
 
+  const isProd = process.env.NODE_ENV === "production";
   const options = {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure: isProd,
+    sameSite: isProd ? 'none' : 'lax'
   };
 
   // add for frontend validation

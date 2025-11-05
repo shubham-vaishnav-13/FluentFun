@@ -67,6 +67,7 @@ const Login = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full pl-10 pr-4 py-2.5 border border-brand-border rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent transition"
                   placeholder="Email Address"
+                  autoComplete="email"
                   required
                 />
               </div>
@@ -82,6 +83,7 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full pl-10 pr-10 py-2.5 border border-brand-border rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent transition"
                   placeholder="Password"
+                  autoComplete="current-password"
                   required
                 />
                 <button
