@@ -116,8 +116,8 @@ const Login = () => {
               onClick={() => {
                 const toastId = toast.loading('Redirecting to Google...');
                 try {
-                  // Use the API_URL from environment if available
-                  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+                  // Use the API_URL from environment - points to Render backend
+                  const apiUrl ='https://fluentfun.onrender.com/api/v1';
                   const googleAuthUrl = `${apiUrl.split('/api')[0]}/api/auth/google`;
                   
                   // Redirecting to Google OAuth

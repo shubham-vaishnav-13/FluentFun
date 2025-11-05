@@ -7,7 +7,6 @@ dotenv.config({
     path: './.env',
     quiet: true
 });
-//http://localhost:3000/api/auth/google/callback
 passport.use(
     new GoogleStrategy(
         {
