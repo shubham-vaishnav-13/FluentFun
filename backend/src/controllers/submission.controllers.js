@@ -14,6 +14,7 @@ function countWords(text) {
   return tokens.length;
 }
 
+
 export const createSubmission = asyncHandler(async (req, res) => {
   // Prepare submission data
   const submissionData = {
@@ -208,7 +209,6 @@ export const challengeLeaderboard = asyncHandler(async (req, res) => {
     throw new ApiError(400, 'Invalid challenge ID');
   }
 
-  // Aggregation: best (highest totalScore) submission per user
   const top = await Submission.aggregate([
     { $match: { challenge: new mongoose.Types.ObjectId(challengeId) } },
     // Sort so first doc per (user) in group stage is the best (highest totalScore, earliest createdAt as tiebreaker)

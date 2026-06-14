@@ -76,6 +76,13 @@ export default function WritingChallenge() {
         setWordCount(countWords(text));
     }, [text, countWords]);
 
+    // Load leaderboard after submission
+    useEffect(() => {
+        if (result) {
+            loadLeaderboard();
+        }
+    }, [result]);
+
     // Format time display
     const formatTime = (seconds) => {
         if (seconds === null) return '--:--';
@@ -167,7 +174,7 @@ export default function WritingChallenge() {
                 {/* Writing Area */}
                 <div className="lg:col-span-2 space-y-6">
                     <div className="bg-surface glass neon-card rounded-2xl border border-app p-6">
-                        <h2 className="text-xl font-semibold text-app mb-4">Writing Prompt</h2>
+                        <h2 className="text-xl font-semibold text-app mb-4">Question</h2>
                         <p className="mb-6">{challenge.prompt}</p>
                         
                         <textarea

@@ -53,6 +53,7 @@ const userSchema = new Schema(
         isActive: {
             type: Boolean,
             default: true,
+            index: true,
         },
         lastLogin: {
             type: Date,
@@ -76,7 +77,6 @@ userSchema.pre("save", async function (next) {
     next();
 });
 
-// Compare the password - safely handle OAuth users who don't have passwords
 userSchema.methods.isPasswordCorrect = async function (password) {
     if (!this.password) return false;
     return await bcrypt.compare(password, this.password);

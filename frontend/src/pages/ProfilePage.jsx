@@ -317,7 +317,7 @@ const ProfilePage = () => {
             </motion.div>
 
             {/* Recent Activity */}
-            <motion.div 
+            {/* <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
@@ -338,7 +338,7 @@ const ProfilePage = () => {
                   <span className="muted-text">Streak: {streak} days</span>
                 </div>
               </div>
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </main>

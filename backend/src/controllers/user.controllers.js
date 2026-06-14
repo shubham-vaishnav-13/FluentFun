@@ -1,7 +1,6 @@
 import { asyncHandler } from "../utils/async.js";
 import { ApiError } from "../utils/ApiError.js";
 import { User } from "../models/user.models.js";
-import { QuizAttempt } from "../models/quizAttempt.models.js";
 import {
   uploadOnClodinary,
   deleteFromCloudinary,
@@ -86,16 +85,7 @@ const registerUser = asyncHandler(async (req, res) => {
     if (uploadedImage?.public_id) {
       await deleteFromCloudinary(uploadedImage.public_id);
     }
-    // Duplicate key (username/email)
-    if (error?.code === 11000) {
-      throw new ApiError(409, "User with email or username already exists");
-    }
-    // Mongoose validation error
-    if (error?.name === 'ValidationError') {
-      const messages = Object.values(error.errors).map((e) => e.message).join(', ');
-      throw new ApiError(400, messages || 'Invalid input');
-    }
-    // Re-throw the error to be handled by the global error handler
+   
     throw new ApiError(500, error.message || "Something went wrong while registering the user");
   }
 });
@@ -117,23 +107,21 @@ const loginUser = asyncHandler(async (req, res) => {
     throw new ApiError(400, "Email or username and password are required ...");
   }
 
-  // Build query conditions properly - only include fields that have values
   const queryConditions = [];
   if (email) queryConditions.push({ email });
   if (username) queryConditions.push({ username });
   
-  // query conditions prepared
 
 
   const user = await User.findOne({
     $or: queryConditions,
   });
 
-  // user search result
-
+  if (!user) {
+    throw new ApiError(404, "User not found. Please check your email or username.");
+  }
 
   const isPasswordValid = await user.isPasswordCorrect(password);
-  // password validated
   
   if (!isPasswordValid) {
     throw new ApiError(401, "Invalid password ...");
@@ -155,7 +143,6 @@ const loginUser = asyncHandler(async (req, res) => {
   const options = {
     httpOnly: true,
     secure: isProd,
-    // Cross-site cookies (frontend on Vercel, backend on Render) require SameSite=None
     sameSite: isProd ? 'none' : 'lax'
   };
 
@@ -182,7 +169,7 @@ const logoutUser = asyncHandler(async (req, res) => {
   await User.findByIdAndUpdate(
     req.user._id,
     {
-      $unset: { refreshToken: 1 }, // Fixed: $set with undefined -> $unset
+      $unset: { refreshToken: 1 }, 
     },
     { new: true }
   );
@@ -221,12 +208,7 @@ const getCurrentUser = asyncHandler(async (req, res) => {
   );
 });
 
-// exports consolidated at end of file (including updateProfile)
 
-/*
-  Update current user's profile (multipart/form-data supported)
-  Accepts optional fields: fullName, email, username, profileImage (file), preferredLanguages (comma separated or array)
-*/
 const updateProfile = asyncHandler(async (req, res) => {
   const userId = req.user?._id;
   if (!userId) throw new ApiError(401, 'Unauthorized');
@@ -345,5 +327,5 @@ const getLeaderboard = asyncHandler(async (req, res) => {
 });
 
 // Final exports (single consolidated)
-export { registerUser, loginUser, logoutUser, getCurrentUser, updateProfile, getLeaderboard };
+export { registerUser, loginUser, logoutUser, getCurrentUser, updateProfile, getLeaderboard ,generateAccessAndRefreshToken};
 

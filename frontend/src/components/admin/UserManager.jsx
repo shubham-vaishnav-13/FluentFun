@@ -79,18 +79,10 @@ const UserManager = () => {
         throw new Error('Name and email are required');
       }
 
-      // Here you would make an API call to update the user
-  // Updating user
-      
-      // Mock API call - replace with real API
-      // await AdminAPI.updateUserStatus(editingUser._id || editingUser.id, {
-      //   isActive: userForm.isActive,
-      //   isAdmin: userForm.isAdmin
-      // });
-
-      
-      // Mock update for now
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await AdminAPI.updateUserStatus(editingUser._id || editingUser.id, {
+        isActive: userForm.isActive,
+        isAdmin: userForm.isAdmin
+      });
 
       setUsers(prev => prev.map(u => 
         u._id === editingUser._id ? { ...u, ...userForm } : u
@@ -305,10 +297,9 @@ const UserManager = () => {
                   <td className="p-4">
                     <div className="flex items-center space-x-2 text-sm muted-text">
                       <Calendar className="w-4 h-4" />
-                      <span>Member since {formatDate(user.createdAt)}</span>
+                      <span>{formatDate(user.createdAt)}</span>
                     </div>
                   </td>
-
                   <td className="p-4">
                     <span className="text-sm muted-text">
                       {user.lastLogin ? formatDate(user.lastLogin) : 'Never'}

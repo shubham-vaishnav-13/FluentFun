@@ -458,13 +458,7 @@ const WritingChallengeManager = () => {
                   </div>
                 </div>
               </div>
-              {challenge.status === 'active' ? (
-                <CheckCircle className={`w-5 h-5 ${getStatusColor(challenge.status)}`} />
-              ) : challenge.status === 'draft' ? (
-                <Clock className={`w-5 h-5 ${getStatusColor(challenge.status)}`} />
-              ) : (
-                <XCircle className={`w-5 h-5 ${getStatusColor(challenge.status)}`} />
-              )}
+             
             </div>
 
             <div className="mb-4">

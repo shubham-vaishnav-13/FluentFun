@@ -20,7 +20,6 @@ const rubricCriteriaSchema = new Schema({
 
 const writingChallengeSchema = new Schema(
     {
-        // Specific language code for the writing challenge (ISO-like short codes)
         language: {
             type: String,
             required: true,
@@ -177,9 +176,6 @@ writingChallengeSchema.pre('validate', function(next) {
     next();
 });
 
-// Weighted text index with field weights (optional refinement)
-// Text index: disable built-in stemming for unsupported languages (Gujarati/Hindi) to avoid
-// MongoServerError: language override unsupported. We set default_language 'none'.
 writingChallengeSchema.index(
     { title: 'text', description: 'text', tags: 'text' },
     {

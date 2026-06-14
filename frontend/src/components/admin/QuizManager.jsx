@@ -498,20 +498,20 @@ const QuizManager = () => {
               ) : null}
             </div>
 
-            {/* <div className="grid grid-cols-3 gap-4 mb-4 text-center">
+            <div className="grid grid-cols-3 gap-4 mb-4 text-center">
               <div>
-                <p className="text-lg font-bold text-app">{quiz.questionsCount}</p>
+                <p className="text-lg font-bold text-app">{quiz.questions?.length ?? quiz.questionsCount ?? '—'}</p>
                 <p className="text-xs muted-text">Questions</p>
               </div>
               <div>
-                <p className="text-lg font-bold text-app">{quiz.completions}</p>
+                <p className="text-lg font-bold text-app">{quiz.completions ?? 0}</p>
                 <p className="text-xs muted-text">Completions</p>
               </div>
               <div>
-                <p className="text-lg font-bold text-app">{quiz.avgScore}%</p>
+                <p className="text-lg font-bold text-app">{quiz.avgScore != null ? `${quiz.avgScore}%` : '—'}</p>
                 <p className="text-xs muted-text">Avg Score</p>
               </div>
-            </div> */}
+            </div>
 
             <div className="flex space-x-2">
               <button

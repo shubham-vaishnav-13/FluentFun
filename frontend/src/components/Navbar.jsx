@@ -35,9 +35,9 @@ function Navbar({ borderClass = 'border-brand-border' }) {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-brand-dark rounded-lg flex items-center justify-center">
+              {/* <div className="w-8 h-8 bg-brand-dark rounded-lg flex items-center justify-center">
                 <Zap className="w-5 h-5 text-white" />
-              </div>
+              </div> */}
               <span className="font-bold text-xl text-brand-dark">FluentFun</span>
             </Link>
           </div>
@@ -69,9 +69,9 @@ function Navbar({ borderClass = 'border-brand-border' }) {
             {/* User Menu */}
             <div className="flex items-center space-x-3">
               {/* Theme toggle */}
-              <button onClick={toggleTheme} className="p-2 rounded-lg hover:bg-gray-100">
+              {/* <button onClick={toggleTheme} className="p-2 rounded-lg hover:bg-gray-100">
                 {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-              </button>
+              </button> */}
               <div className="flex items-center space-x-2 bg-yellow-100 text-yellow-800 px-3 py-1.5 rounded-lg text-sm font-semibold">
                 <Zap className="w-4 h-4" />
                 <span>{xp}</span>

@@ -6,9 +6,6 @@ import { upload } from "../middlewares/multer.middlewares.js";
 import passport from "../middlewares/passport.middlewares.js";
 
 const router = Router();
-// unsecured routes - these routes can be accessed without authentication
-
-
 router.route("/register").post(
     upload.fields([
         {
@@ -20,16 +17,9 @@ router.route("/register").post(
 
 router.route("/login").post(loginUser)
 
-
-// Google OAuth routes moved to auth.routes.js
-
-// secured routes - these routes can only be accessed with authentication
 router.route("/logout").get(verifyJWT, logoutUser);
-router.route("/me").get(verifyJWT, getCurrentUser);
-router.route("/me").patch(verifyJWT, upload.fields([{ name: 'profileImage', maxCount: 1 }]), updateProfile);
-
-// Leaderboard (requires auth for now to personalize rank)
+router.route("/me").get(verifyJWT, getCurrentUser); // getting data
+router.route("/me").patch(verifyJWT, upload.fields([{ name: 'profileImage', maxCount: 1 }]), updateProfile); // update user data
 router.route('/leaderboard').get(verifyJWT, getLeaderboard);
 
-// 981
 export default router;

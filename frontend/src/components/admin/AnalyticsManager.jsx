@@ -1,338 +1,244 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  BarChart3, 
-  TrendingUp, 
-  TrendingDown,
-  Users, 
-  BookOpen, 
-  Mic, 
-  PenTool,
-  Calendar,
-  Clock,
-  Award,
-  Target
+import {
+  Users, BookOpen, PenTool, Mic, TrendingUp,
+  Award, Activity, BarChart2, RefreshCw
 } from 'lucide-react';
+import AdminAPI from '../../services/adminAPI';
+import toast from 'react-hot-toast';
+
+// ── Minimal bar chart using CSS ──────────────────────────────────
+const BarChart = ({ data, color = 'bg-brand-purple', maxValue }) => {
+  const max = maxValue || Math.max(...data.map(d => d.value), 1);
+  return (
+    <div className="flex items-end gap-2 h-28 w-full">
+      {data.map((item, i) => (
+        <div key={i} className="flex-1 flex flex-col items-center gap-1">
+          <div className="w-full flex flex-col justify-end" style={{ height: '88px' }}>
+            <div
+              className={`w-full rounded-t-md ${color} opacity-80 transition-all duration-500`}
+              style={{ height: `${Math.round((item.value / max) * 88)}px`, minHeight: item.value > 0 ? '4px' : '0' }}
+              title={`${item.label}: ${item.value}`}
+            />
+          </div>
+          <span className="text-xs muted-text truncate w-full text-center" title={item.label}>
+            {item.shortLabel || item.label}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+// ── Donut-style stat ring ─────────────────────────────────────────
+const StatRing = ({ value, max, label, color }) => {
+  const pct = max > 0 ? Math.min(Math.round((value / max) * 100), 100) : 0;
+  const r = 28, cx = 36, cy = 36;
+  const circ = 2 * Math.PI * r;
+  const dash = (pct / 100) * circ;
+  return (
+    <div className="flex flex-col items-center">
+      <svg width="72" height="72" className="-rotate-90">
+        <circle cx={cx} cy={cy} r={r} fill="none" stroke="currentColor" strokeWidth="7" className="opacity-10 text-gray-400" />
+        <circle
+          cx={cx} cy={cy} r={r} fill="none"
+          stroke={color} strokeWidth="7"
+          strokeDasharray={`${dash} ${circ}`}
+          strokeLinecap="round"
+        />
+      </svg>
+      <p className="text-lg font-bold text-app -mt-1">{value}</p>
+      <p className="text-xs muted-text text-center">{label}</p>
+    </div>
+  );
+};
 
 const AnalyticsManager = () => {
-  const [analyticsData, setAnalyticsData] = useState({});
-  const [timeRange, setTimeRange] = useState('7days');
-  const [loading, setLoading] = useState(false);
+  const [stats, setStats] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [lastRefreshed, setLastRefreshed] = useState(null);
 
-  // Mock analytics data
-  useEffect(() => {
-    const mockData = {
-      overview: {
-        totalUsers: 1234,
-        activeUsers: 856,
-        totalQuizzes: 45,
-        totalChallenges: 41,
-        userGrowth: 12.5,
-        engagementRate: 78.3,
-        completionRate: 65.8,
-        avgSessionTime: 24.5
-      },
-      userEngagement: {
-        dailyActiveUsers: [
-          { date: '2024-01-25', count: 120 },
-          { date: '2024-01-26', count: 135 },
-          { date: '2024-01-27', count: 98 },
-          { date: '2024-01-28', count: 156 },
-          { date: '2024-01-29', count: 143 },
-          { date: '2024-01-30', count: 178 },
-          { date: '2024-01-31', count: 165 }
-        ],
-        topPerformingContent: [
-          { title: 'English Grammar Basics', type: 'quiz', completions: 245, avgScore: 78 },
-          { title: 'Pronunciation Practice', type: 'speaking', completions: 187, avgScore: 82 },
-          { title: 'Describe Your Hometown', type: 'writing', completions: 234, avgScore: 76 },
-          { title: 'Advanced Vocabulary', type: 'quiz', completions: 189, avgScore: 65 },
-          { title: 'Conversation Starter', type: 'speaking', completions: 156, avgScore: 75 }
-        ],
-        difficultyDistribution: {
-          beginner: 45,
-          intermediate: 35,
-          advanced: 20
-        }
-      },
-      contentStats: {
-        quizzes: {
-          total: 45,
-          completed: 1567,
-          avgScore: 73.2,
-          popularCategories: ['grammar', 'vocabulary', 'reading']
-        },
-        speaking: {
-          total: 23,
-          completed: 892,
-          avgScore: 76.8,
-          popularCategories: ['pronunciation', 'conversation', 'fluency']
-        },
-        writing: {
-          total: 18,
-          completed: 634,
-          avgScore: 71.5,
-          popularCategories: ['essay', 'descriptive', 'opinion']
-        }
-      }
-    };
-    setAnalyticsData(mockData);
-  }, [timeRange]);
+  const fetchStats = async () => {
+    setLoading(true);
+    try {
+      const res = await AdminAPI.getDashboardStats();
+      setStats(res.data);
+      setLastRefreshed(new Date());
+    } catch {
+      toast.error('Failed to load analytics');
+    } finally {
+      setLoading(false);
+    }
+  };
 
-  const StatCard = ({ title, value, change, icon: Icon, trend }) => (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="bg-surface glass neon-card rounded-2xl border border-app p-6"
-    >
-      <div className="flex items-center justify-between mb-4">
-        <div className="p-3 rounded-xl bg-brand-purple/10">
-          <Icon className="w-6 h-6 text-brand-purple" />
-        </div>
-        {change && (
-          <div className={`flex items-center space-x-1 text-sm ${
-            trend === 'up' ? 'text-green-500' : 'text-red-500'
-          }`}>
-            {trend === 'up' ? <TrendingUp className="w-4 h-4" /> : <TrendingDown className="w-4 h-4" />}
-            <span>{change}%</span>
-          </div>
-        )}
-      </div>
-      <h3 className="text-2xl font-bold text-app mb-1">{value}</h3>
-      <p className="text-sm muted-text">{title}</p>
-    </motion.div>
-  );
+  useEffect(() => { fetchStats(); }, []);
 
-  const ContentTypeCard = ({ title, data, icon: Icon, color }) => (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="bg-surface glass neon-card rounded-2xl border border-app p-6"
-    >
-      <div className="flex items-center space-x-3 mb-4">
-        <div className={`p-3 rounded-xl ${color.bg}`}>
-          <Icon className={`w-6 h-6 ${color.text}`} />
-        </div>
-        <h3 className="text-lg font-semibold text-app">{title}</h3>
-      </div>
-      
-      <div className="grid grid-cols-2 gap-4 mb-4">
-        <div>
-          <p className="text-2xl font-bold text-app">{data.total}</p>
-          <p className="text-sm muted-text">Total Created</p>
-        </div>
-        <div>
-          <p className="text-2xl font-bold text-app">{data.completed}</p>
-          <p className="text-sm muted-text">Completions</p>
-        </div>
-      </div>
-      
-      <div className="mb-4">
-        <p className="text-lg font-semibold text-app">{data.avgScore}%</p>
-        <p className="text-sm muted-text">Average Score</p>
-      </div>
-      
-      <div>
-        <p className="text-sm font-medium text-app mb-2">Popular Categories:</p>
-        <div className="flex flex-wrap gap-1">
-          {data.popularCategories.map((category, index) => (
-            <span key={index} className="px-2 py-1 rounded-full text-xs font-medium bg-white/10 text-app">
-              {category}
-            </span>
-          ))}
-        </div>
-      </div>
-    </motion.div>
-  );
-
-  if (!analyticsData.overview) {
+  if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-brand-purple"></div>
+      <div className="flex items-center justify-center py-24">
+        <div className="animate-spin w-8 h-8 border-4 border-brand-purple border-t-transparent rounded-full" />
       </div>
     );
   }
 
+  if (!stats) {
+    return (
+      <div className="text-center py-16 muted-text">
+        <BarChart2 className="w-12 h-12 mx-auto mb-3 opacity-30" />
+        <p>No analytics data available.</p>
+      </div>
+    );
+  }
+
+  const { overview = {}, content = {}, engagement = {} } = stats;
+
+  // Build bar chart data from available stats
+  const contentData = [
+    { label: 'Quizzes', shortLabel: 'Quiz', value: content.totalQuizzes || 0 },
+    { label: 'Writing', shortLabel: 'Write', value: content.totalWritingChallenges || 0 },
+    { label: 'Speaking', shortLabel: 'Speak', value: content.totalSpeakingChallenges || 0 },
+  ];
+
+  const userSplit = [
+    { label: 'Active Users', shortLabel: 'Active', value: overview.activeUsers || 0 },
+    { label: 'Inactive Users', shortLabel: 'Inactive', value: (overview.totalUsers || 0) - (overview.activeUsers || 0) },
+    { label: 'Admins', shortLabel: 'Admin', value: overview.adminUsers || 0 },
+  ];
+
+  const summaryCards = [
+    { label: 'Total Users', value: overview.totalUsers ?? '—', icon: Users, color: 'text-blue-500', bg: 'bg-blue-500/10' },
+    { label: 'Active Users', value: overview.activeUsers ?? '—', icon: Activity, color: 'text-green-500', bg: 'bg-green-500/10' },
+    { label: 'Total Quizzes', value: content.totalQuizzes ?? '—', icon: BookOpen, color: 'text-purple-500', bg: 'bg-purple-500/10' },
+    { label: 'Writing Challenges', value: content.totalWritingChallenges ?? '—', icon: PenTool, color: 'text-pink-500', bg: 'bg-pink-500/10' },
+    { label: 'Speaking Challenges', value: content.totalSpeakingChallenges ?? '—', icon: Mic, color: 'text-orange-500', bg: 'bg-orange-500/10' },
+    { label: 'Total Submissions', value: engagement?.totalSubmissions ?? engagement?.quizAttempts ?? '—', icon: TrendingUp, color: 'text-yellow-500', bg: 'bg-yellow-500/10' },
+  ];
+
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+      <div className="flex justify-between items-center">
         <div>
           <h2 className="text-2xl font-bold text-app">Analytics Dashboard</h2>
-          <p className="muted-text">Platform insights and performance metrics</p>
+          <p className="muted-text text-sm">
+            {lastRefreshed ? `Last updated: ${lastRefreshed.toLocaleTimeString()}` : 'Loading…'}
+          </p>
         </div>
-        <select
-          value={timeRange}
-          onChange={(e) => setTimeRange(e.target.value)}
-          className="px-4 py-2.5 border border-app rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent transition bg-transparent"
+        <button
+          onClick={fetchStats}
+          disabled={loading}
+          className="flex items-center gap-2 px-4 py-2 rounded-lg border border-app hover:bg-white/5 transition text-sm disabled:opacity-50"
         >
-          <option value="7days">Last 7 days</option>
-          <option value="30days">Last 30 days</option>
-          <option value="90days">Last 90 days</option>
-          <option value="1year">Last year</option>
-        </select>
+          <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
+          Refresh
+        </button>
       </div>
 
-      {/* Overview Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <StatCard
-          title="Total Users"
-          value={analyticsData.overview.totalUsers.toLocaleString()}
-          change={analyticsData.overview.userGrowth}
-          trend="up"
-          icon={Users}
-        />
-        <StatCard
-          title="Active Users"
-          value={analyticsData.overview.activeUsers.toLocaleString()}
-          change={8.2}
-          trend="up"
-          icon={Target}
-        />
-        <StatCard
-          title="Engagement Rate"
-          value={`${analyticsData.overview.engagementRate}%`}
-          change={5.3}
-          trend="up"
-          icon={TrendingUp}
-        />
-        <StatCard
-          title="Avg Session Time"
-          value={`${analyticsData.overview.avgSessionTime}m`}
-          change={2.1}
-          trend="down"
-          icon={Clock}
-        />
+      {/* Summary Cards */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        {summaryCards.map((card, i) => {
+          const Icon = card.icon;
+          return (
+            <motion.div
+              key={card.label}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.07 }}
+              className="bg-surface glass neon-card rounded-2xl border border-app p-4 flex flex-col items-center text-center"
+            >
+              <div className={`p-2 rounded-xl ${card.bg} mb-2`}>
+                <Icon className={`w-5 h-5 ${card.color}`} />
+              </div>
+              <p className="text-2xl font-bold text-app">{card.value}</p>
+              <p className="text-xs muted-text mt-1">{card.label}</p>
+            </motion.div>
+          );
+        })}
       </div>
 
-      {/* Content Performance */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <ContentTypeCard
-          title="Quizzes"
-          data={analyticsData.contentStats.quizzes}
-          icon={BookOpen}
-          color={{ bg: 'bg-blue-500/10', text: 'text-blue-500' }}
-        />
-        <ContentTypeCard
-          title="Speaking Challenges"
-          data={analyticsData.contentStats.speaking}
-          icon={Mic}
-          color={{ bg: 'bg-purple-500/10', text: 'text-purple-500' }}
-        />
-        <ContentTypeCard
-          title="Writing Challenges"
-          data={analyticsData.contentStats.writing}
-          icon={PenTool}
-          color={{ bg: 'bg-orange-500/10', text: 'text-orange-500' }}
-        />
-      </div>
-
-      {/* Detailed Analytics */}
+      {/* Charts row */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Top Performing Content */}
+        {/* Content breakdown bar chart */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
           className="bg-surface glass neon-card rounded-2xl border border-app p-6"
         >
-          <h3 className="text-lg font-semibold text-app mb-4">Top Performing Content</h3>
-          <div className="space-y-3">
-            {analyticsData.userEngagement.topPerformingContent.map((item, index) => (
-              <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-white/5">
-                <div className="flex items-center space-x-3">
-                  <div className={`p-2 rounded-lg ${
-                    item.type === 'quiz' ? 'bg-blue-500/10' :
-                    item.type === 'speaking' ? 'bg-purple-500/10' : 'bg-orange-500/10'
-                  }`}>
-                    {item.type === 'quiz' ? <BookOpen className="w-4 h-4" /> :
-                     item.type === 'speaking' ? <Mic className="w-4 h-4" /> : <PenTool className="w-4 h-4" />}
-                  </div>
-                  <div>
-                    <p className="font-medium text-app">{item.title}</p>
-                    <p className="text-sm muted-text">{item.completions} completions</p>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <p className="font-semibold text-app">{item.avgScore}%</p>
-                  <p className="text-xs muted-text">avg score</p>
-                </div>
+          <h3 className="text-lg font-semibold text-app mb-6 flex items-center gap-2">
+            <BookOpen className="w-5 h-5 text-purple-500" />
+            Content Distribution
+          </h3>
+          <BarChart data={contentData} color="bg-purple-500" />
+          <div className="flex justify-around mt-4">
+            {contentData.map(d => (
+              <div key={d.label} className="text-center">
+                <p className="text-xl font-bold text-app">{d.value}</p>
+                <p className="text-xs muted-text">{d.label}</p>
               </div>
             ))}
           </div>
         </motion.div>
 
-        {/* User Activity Chart */}
+        {/* User activity rings */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
           className="bg-surface glass neon-card rounded-2xl border border-app p-6"
         >
-          <h3 className="text-lg font-semibold text-app mb-4">Daily Active Users</h3>
-          <div className="space-y-3">
-            {analyticsData.userEngagement.dailyActiveUsers.map((day, index) => (
-              <div key={index} className="flex items-center justify-between">
-                <span className="text-sm muted-text">
-                  {new Date(day.date).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}
-                </span>
-                <div className="flex items-center space-x-3">
-                  <div className="w-32 h-2 bg-white/10 rounded-full overflow-hidden">
-                    <div 
-                      className="h-full bg-brand-purple rounded-full"
-                      style={{ width: `${(day.count / 200) * 100}%` }}
-                    />
-                  </div>
-                  <span className="text-sm font-medium text-app w-8">{day.count}</span>
-                </div>
-              </div>
-            ))}
+          <h3 className="text-lg font-semibold text-app mb-6 flex items-center gap-2">
+            <Users className="w-5 h-5 text-blue-500" />
+            User Activity Breakdown
+          </h3>
+          <div className="flex justify-around items-center py-2">
+            <StatRing
+              value={overview.activeUsers || 0}
+              max={overview.totalUsers || 1}
+              label="Active"
+              color="#22c55e"
+            />
+            <StatRing
+              value={(overview.totalUsers || 0) - (overview.activeUsers || 0)}
+              max={overview.totalUsers || 1}
+              label="Inactive"
+              color="#ef4444"
+            />
+            <StatRing
+              value={overview.adminUsers || 0}
+              max={overview.totalUsers || 1}
+              label="Admins"
+              color="#a855f7"
+            />
           </div>
+          <BarChart data={userSplit} color="bg-blue-500" />
         </motion.div>
       </div>
 
-      {/* Difficulty Distribution */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="bg-surface glass neon-card rounded-2xl border border-app p-6"
-      >
-        <h3 className="text-lg font-semibold text-app mb-4">Content Difficulty Distribution</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {Object.entries(analyticsData.userEngagement.difficultyDistribution).map(([level, percentage]) => (
-            <div key={level} className="text-center">
-              <div className="relative w-24 h-24 mx-auto mb-3">
-                <svg className="w-24 h-24 transform -rotate-90" viewBox="0 0 100 100">
-                  <circle
-                    cx="50"
-                    cy="50"
-                    r="40"
-                    stroke="currentColor"
-                    strokeWidth="8"
-                    fill="transparent"
-                    className="text-white/10"
-                  />
-                  <circle
-                    cx="50"
-                    cy="50"
-                    r="40"
-                    stroke="currentColor"
-                    strokeWidth="8"
-                    fill="transparent"
-                    strokeDasharray={`${(percentage / 100) * 251.2} 251.2`}
-                    className={
-                      level === 'beginner' ? 'text-green-500' :
-                      level === 'intermediate' ? 'text-yellow-500' : 'text-red-500'
-                    }
-                  />
-                </svg>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-lg font-bold text-app">{percentage}%</span>
-                </div>
+      {/* Engagement stats */}
+      {engagement && Object.keys(engagement).length > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="bg-surface glass neon-card rounded-2xl border border-app p-6"
+        >
+          <h3 className="text-lg font-semibold text-app mb-4 flex items-center gap-2">
+            <TrendingUp className="w-5 h-5 text-yellow-500" />
+            Engagement Metrics
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {Object.entries(engagement).map(([key, value]) => (
+              <div key={key} className="text-center p-4 rounded-xl bg-white/5 border border-app/30">
+                <p className="text-2xl font-bold text-app">{value ?? '—'}</p>
+                <p className="text-xs muted-text mt-1 capitalize">
+                  {key.replace(/([A-Z])/g, ' $1').trim()}
+                </p>
               </div>
-              <p className="font-medium text-app capitalize">{level}</p>
-            </div>
-          ))}
-        </div>
-      </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      )}
     </div>
   );
 };

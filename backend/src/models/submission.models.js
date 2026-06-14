@@ -31,7 +31,6 @@ const submissionSchema = new Schema(
     wordCount: { type: Number, required: true, min: 1 },
     scores: [categoryScoreSchema],
     totalScore: { type: Number, required: true, min: 0, max: 100, index: true },
-    // XP awarded for this submission (computed at creation). Allows historical tracking & UI display.
     xpAwarded: { type: Number, required: true, min: 0, default: 0 },
     feedback: { type: String, trim: true, maxlength: 20000 },
     aiModel: { type: String, trim: true },

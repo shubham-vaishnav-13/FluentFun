@@ -90,9 +90,7 @@ const Register = () => {
       >
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center space-x-2">
-            <div className="w-10 h-10 bg-brand-dark rounded-lg flex items-center justify-center">
-              <Zap className="w-6 h-6 text-white" />
-            </div>
+            
             <span className="font-bold text-2xl text-brand-dark">FluentFun</span>
           </Link>
         </div>

@@ -1,8 +1,10 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://fluentfun.onrender.com/api/v1';
+const BASE_URL = import.meta.env.VITE_API_URL || 'https://fluentfun-backend.onrender.com/api/v1';
 
-// Create axios instance with base URL
+// Export base URL for components that use fetch instead of axios
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://fluentfun-backend.onrender.com';
+
 const api = axios.create({
   baseURL: BASE_URL,
   timeout: 30000, // 30 seconds
@@ -40,9 +42,7 @@ api.interceptors.response.use(
         localStorage.removeItem('user');
         window.location.href = '/login';
       }
-      // For other statuses, do not trigger global UI toasts; let callers handle.
     }
-    // For timeouts or network errors, avoid global toasts to prevent duplicates; let callers decide.
     return Promise.reject(error);
   }
 );

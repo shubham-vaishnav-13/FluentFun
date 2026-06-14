@@ -4,6 +4,7 @@ import { ApiResponse } from '../utils/ApiResponse.js';
 import { User } from '../models/user.models.js';
 import { Quiz } from '../models/quiz.models.js';
 import { WritingChallenge } from '../models/writingChallenge.models.js';
+import { SpeakingChallenge } from '../models/speakingChallenge.models.js';
 import mongoose from 'mongoose';
 
 // Dashboard Analytics
@@ -11,6 +12,7 @@ export const getDashboardStats = asyncHandler(async (req, res) => {
     const totalUsers = await User.countDocuments();
     const totalQuizzes = await Quiz.countDocuments();
     const totalWritingChallenges = await WritingChallenge.countDocuments();
+    const totalSpeakingChallenges = await SpeakingChallenge.countDocuments();
     const activeUsers = await User.countDocuments({ isActive: true });
     const adminUsers = await User.countDocuments({ isAdmin: true });
 
@@ -38,11 +40,12 @@ export const getDashboardStats = asyncHandler(async (req, res) => {
             totalUsers,
             activeUsers,
             adminUsers,
-            totalContent: totalQuizzes + totalWritingChallenges,
+            totalContent: totalQuizzes + totalWritingChallenges + totalSpeakingChallenges,
         },
         content: {
             totalQuizzes,
             totalWritingChallenges,
+            totalSpeakingChallenges,
         },
         recent: {
             newUsersThisWeek: recentUsers,

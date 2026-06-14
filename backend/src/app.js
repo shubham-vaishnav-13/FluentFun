@@ -1,25 +1,20 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import passport from "./middlewares/passport.middlewares.js"; // Import passport
-
+import passport from "./middlewares/passport.middlewares.js"; 
+import userRouter from "./routes/user.routes.js"
+import authRouter from "./routes/auth.routes.js"
+import adminRouter from "./routes/admin.routes.js"
+import contentRouter from "./routes/content.routes.js"
+import submissionRouter from "./routes/submission.routes.js"
+import speakingChallengeRouter from "./routes/speakingChallenge.routes.js"
 
 const app = express();
 app.use(express.json());
 
-// Early request logging (before routes & body parsing side-effects) for debugging
-app.use((req, res, next) => {
-  const start = Date.now();
-  res.on('finish', () => {
-    const ms = Date.now() - start;
-  // Request completed
-  });
-  next();
-});
 
-// CORS middleware (dev-friendly defaults)
-// Allow multiple origins via comma-separated env. Provide sane defaults for local dev and production frontend.
-const rawOrigins = process.env.CORS_ORIGIN || "https://fluentfun.vercel.app"; // Vite defaults + production URL
+// CORS middleware
+const rawOrigins = process.env.CORS_ORIGIN || "https://fluentfun.vercel.app" || "http://localhost:5173"; 
 const allowedOrigins = rawOrigins
   .split(",")
   .map(o => o.trim())
@@ -28,11 +23,8 @@ const allowedOrigins = rawOrigins
 app.use(
   cors({
     origin: (origin, callback) => {
-      // allow requests with no origin (like mobile apps or curl/Postman)
       if (!origin) return callback(null, true);
-      // Allow exact matches from configured list
       if (allowedOrigins.includes(origin)) return callback(null, true);
-      // Optionally allow Vercel preview deployments if enabled
       if (process.env.ALLOW_VERCEL_PREVIEWS === 'true' && /https:\/\/.*\.vercel\.app$/.test(origin)) {
         return callback(null, true);
       }
@@ -63,25 +55,17 @@ app.get("/", (req, res) => {
 
 // routes
 
-// import healthcheckRouter from "./routes/healthcheck.routes.js"
-import userRouter from "./routes/user.routes.js"
-import authRouter from "./routes/auth.routes.js"
-import adminRouter from "./routes/admin.routes.js"
-import contentRouter from "./routes/content.routes.js"
-import submissionRouter from "./routes/submission.routes.js"
-// import { errorHandler } from "./middlewares/error.middleares.js";
 
-// app.use("/api/v1/healthcheck",healthcheckRouter)
 app.use("/api/v1/users",userRouter)
 app.use("/api/v1/admin",adminRouter)
 app.use("/api/v1/content",contentRouter)
 app.use("/api/v1", submissionRouter)
+app.use("/api/v1/speaking-challenges", speakingChallengeRouter)
 
 // Special route for Google OAuth
 app.use("/api/auth", authRouter)
 
 
-// (moved request logging earlier)
 
 // Global error handler (enhanced)
 app.use((err, req, res, next) => {
@@ -95,31 +79,6 @@ app.use((err, req, res, next) => {
     query: req.query,
     user: req.user?._id
   });
-
-  // Handle specific error types
-  if (err.name === 'ValidationError') {
-    return res.status(400).json({
-      success: false,
-      message: 'Validation failed',
-      errors: Object.values(err.errors).map(e => e.message)
-    });
-  }
-
-  if (err.code === 'AI_EVAL_ERROR') {
-    return res.status(500).json({
-      success: false,
-      message: 'AI evaluation failed',
-      detail: err.message,
-      context: err.context
-    });
-  }
-
-  if (err.name === 'CastError' && err.kind === 'ObjectId') {
-    return res.status(400).json({
-      success: false,
-      message: 'Invalid ID format'
-    });
-  }
 
   const status = err.statusCode || err.status || 500;
   const message = err.message || "Internal Server Error";

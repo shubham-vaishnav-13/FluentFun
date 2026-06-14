@@ -10,7 +10,6 @@ router.route("/google").get(
   })
 );
 
-// Route that Google redirects to after successful authentication
 router.route("/google/callback").get(
   passport.authenticate("google", {
     session: false,

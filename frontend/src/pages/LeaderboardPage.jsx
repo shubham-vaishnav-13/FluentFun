@@ -64,11 +64,9 @@ function LeaderboardPage() {
       <Navbar borderClass="border-brand-border" />
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
           className="text-center mb-8"
         >
-          <Trophy className="w-12 h-12 mx-auto text-yellow-500 mb-4" />
+          {/* <Trophy className="w-12 h-12 mx-auto text-yellow-500 mb-4" /> */}
           <h1 className="text-4xl font-bold text-brand-dark">Leaderboard</h1>
           <p className="text-gray-500 mt-2">See where you stand among the top learners.</p>
         </motion.div>
@@ -109,9 +107,6 @@ function LeaderboardPage() {
             return (
               <motion.div
                 key={player.id}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.03 }}
                 className={`group flex items-center p-4 rounded-2xl border transition-all glass neon-card hover:shadow-md hover:-translate-y-[1px] ${
                   current ? 'border-2 border-yellow-400 ring-2 ring-yellow-300/50 bg-yellow-400/10 text-brand-dark ring-offset-4 ring-offset-yellow-300/50' : 'border-brand-border bg-white/5 text-app'
                 }`}
@@ -130,7 +125,6 @@ function LeaderboardPage() {
                   </div>
                 </div>
                 <div className="flex items-center space-x-1.5 font-bold text-lg text-inherit">
-                  <Zap className="w-5 h-5 text-yellow-500" />
                   <span>{player.xp?.toLocaleString?.() || 0}</span>
                 </div>
               </motion.div>

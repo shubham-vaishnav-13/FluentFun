@@ -1,7 +1,5 @@
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
-// Bring in models that need index synchronization
-import { QuizAttempt } from '../models/quizAttempt.models.js';
 import { DB_NAME } from '../constant.js';
 
 dotenv.config({
@@ -11,18 +9,7 @@ dotenv.config({
 
 const connectDB = async () => {
     try {
-        
-        const connectionInstance = await mongoose.connect(process.env.MONGODB_URI, {
-            dbName: DB_NAME
-        });
-    // DB connected
-
-        try {
-            await QuizAttempt.syncIndexes();
-            // Indexes synchronized
-        } catch (e) {
-            console.error('[DB] QuizAttempt.syncIndexes failed:', e?.message || e);
-        }
+        await mongoose.connect(process.env.MONGODB_URI, {dbName: DB_NAME});
     } catch (error) {
         console.error("MongoDb Connection Error", error);
         process.exit(1);

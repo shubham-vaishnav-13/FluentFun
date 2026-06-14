@@ -1,56 +1,59 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import {
-  Zap,
-  Brain,
-  Trophy,
-  MessageCircle,
-  PenTool,
-  Mic,
-  ArrowRight,
-  Sun,
-  Moon,
-} from "lucide-react";
-import { useTheme } from "../context/ThemeContext";
+import { Link, useNavigate } from "react-router-dom";
+import { Zap, ArrowRight, Sparkles } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 
+// import icons from assets folder
+import brainIcon from "../assets/ai.png";
+import trophyIcon from "../assets/creative-writing.png";
+import messageCircleIcon from "../assets/joystick.png";
+import penToolIcon from "../assets/onboarding.png";
+import micIcon from "../assets/quiz.png";
+import zapAssetIcon from "../assets/talking.png";
+
 function LandingPage() {
-  const { theme, toggleTheme } = useTheme();
   const { user, loading } = useAuth();
+  const navigate = useNavigate();
+
+  const handleCTA = () => {
+    if (!loading) {
+      if (user) navigate("/dashboard");
+      else navigate("/signup");
+    }
+  };
 
   const features = [
     {
-      icon: Brain,
+      icon: brainIcon,
       title: "AI-Powered Learning",
       description:
         "Personalized feedback on grammar, vocabulary, and pronunciation.",
     },
     {
-      icon: Trophy,
+      icon: trophyIcon,
       title: "Gamified Experience",
       description: "Earn XP, unlock achievements, and climb the leaderboards.",
     },
     {
-      icon: MessageCircle,
+      icon: messageCircleIcon,
       title: "Interactive Quizzes",
       description:
         "Adaptive quizzes that adjust to your skill level and learning pace.",
     },
     {
-      icon: PenTool,
+      icon: penToolIcon,
       title: "Writing Practice",
       description:
         "Guided exercises with instant AI feedback on your compositions.",
     },
     {
-      icon: Mic,
+      icon: micIcon,
       title: "Speaking Challenges",
       description:
         "Practice conversation with advanced speech recognition technology.",
     },
     {
-      icon: Zap,
+      icon: zapAssetIcon,
       title: "Automated Content",
       description: "Endless practice with our auto-generated learning content.",
     },
@@ -63,25 +66,13 @@ function LandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-brand-dark rounded-lg flex items-center justify-center">
-                <Zap className="w-5 h-5 text-white" />
-              </div>
+              
               <span className="font-bold text-xl text-brand-dark">
                 FluentFun
               </span>
             </div>
             <div className="flex items-center space-x-2">
-              <button
-                onClick={toggleTheme}
-                aria-label="Toggle theme"
-                className="px-3 py-2 rounded-lg border border-brand-border hover:bg-brand-gray transition"
-              >
-                {theme === "dark" ? (
-                  <Sun className="w-5 h-5" />
-                ) : (
-                  <Moon className="w-5 h-5" />
-                )}
-              </button>
+              
               {/* Auth-aware nav actions */}
               {!loading && user ? (
                 <>
@@ -119,46 +110,39 @@ function LandingPage() {
         </div>
       </header>
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h1 className="text-5xl md:text-7xl font-extrabold text-brand-dark tracking-tighter mb-6">
-            The New Way to
-            <br />
-            <span className="brand-gradient-text">Master Languages</span>
-          </h1>
-          <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-            FluentFun combines gamification and cutting-edge AI to create a
-            language learning experience that's both effective and incredibly
-            fun.
-          </p>
-          {!loading && user ? (
-            <div className="flex gap-4 justify-center">
-              <Link
-                to="/dashboard"
-                className="px-6 py-3 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 inline-flex items-center"
-                style={{ backgroundColor: "#111", color: "#fff" }}
-              >
-                Start Learning Free
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
+      {/* Simplified Hero */}
+      <section className="max-w-7xl min-h-[calc(70vh-4rem)] mt-20 mx-auto px-4 sm:px-6 lg:px-8 pt-12 md:pt-24">
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-10 md:gap-20">
+          {/* Left: Heading */}
+          <div className="w-full md:w-1/2">
+            {/* Badge */}
+            <div className="flex items-center mb-4">
+             
             </div>
-          ) : (
-            <div className="flex gap-4 justify-center">
-              <Link
-                to="/signup"
-                className="px-6 py-3 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 inline-flex items-center"
-                style={{ backgroundColor: "#111", color: "#fff" }}
-              >
-                Start Learning Free
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
-            </div>
-          )}
-        </motion.div>
+
+            <h1 className="text-3xl md:text-5xl text-brand-dark font-semibold leading-tight tracking-tight">
+              <span className="block mb-3">Master Languages with</span>
+              <span className="inline-block text-transparent bg-clip-text bg-[radial-gradient(circle,#FF9324_0%,#FCD760_100%)] bg-size-[200%_200%] animate-text-shine font-bold whitespace-nowrap">
+                AI‑Powered
+              </span>{" "}
+              <span className="font-semibold">FluentFun</span>
+            </h1>
+          </div>
+
+          {/* Right: Copy + CTA */}
+          <div className="w-full md:w-1/2">
+            <p className="text-base md:text-lg text-gray-700 max-w-xl mb-6">
+              Adaptive quizzes, instant feedback, speaking challenges, and smart practice—all in one place. Your personalized language growth companion.
+            </p>
+            <button
+              onClick={handleCTA}
+              className="bg-black text-white text-sm font-semibold px-7 py-3 rounded-full hover:bg-amber-100 hover:text-black border border-transparent hover:border-amber-300 transition-colors inline-flex items-center"
+            >
+              {user ? "Go to Dashboard" : "Get Started"}
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </button>
+          </div>
+        </div>
       </section>
 
       {/* Features Section */}
@@ -173,132 +157,33 @@ function LandingPage() {
               retention.
             </p>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-  {features.map((feature, index) => {
-    const Icon = feature.icon;
-    return (
-      <motion.div
-        key={index}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: index * 0.1 }}
-        whileHover={{
-          scale: 1.05,
-          y: -12,
-          rotateY: 5,
-          rotateX: 2,
-        }}
-        whileTap={{ scale: 0.98 }}
-        className="group relative bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-white/20 shadow-lg hover:shadow-2xl hover:shadow-blue-500/20 cursor-pointer transition-all duration-500 ease-out overflow-hidden"
-        style={{
-          background: 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%)',
-          backdropFilter: 'blur(20px)',
-        }}
-      >
-        {/* Animated background gradient on hover */}
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-blue-400/10 via-purple-400/5 to-pink-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-          initial={false}
-        />
-        
-        {/* Subtle border glow effect */}
-        <motion.div
-          className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          style={{
-            background: 'linear-gradient(135deg, rgba(59,130,246,0.3), rgba(147,51,234,0.3), rgba(236,72,153,0.3))',
-            padding: '1px',
-            mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-            maskComposite: 'xor',
-          }}
-        />
+            {features.map((feature, index) => {
+              return (
+                <div
+                  key={index}
+                  className="bg-white p-8 rounded-3xl border border-gray-200 shadow"
+                >
+                  <div className="w-16 h-16  rounded-2xl flex items-center justify-center mb-6">
+                    <img
+                      src={feature.icon}
+                      alt={`${feature.title} icon`}
+                      className="w-8 h-8 object-contain"
+                    />
+                  </div>
 
-        {/* Floating particles effect */}
-        <div className="absolute inset-0 overflow-hidden rounded-3xl">
-          {[...Array(6)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-blue-400/30 rounded-full opacity-0 group-hover:opacity-100"
-              style={{
-                left: `${20 + i * 15}%`,
-                top: `${10 + i * 10}%`,
-              }}
-              animate={{
-                y: [0, -20, 0],
-                opacity: [0, 1, 0],
-              }}
-              transition={{
-                duration: 2 + i * 0.5,
-                repeat: Infinity,
-                delay: i * 0.3,
-              }}
-            />
-          ))}
-        </div>
-        
-        <motion.div
-          whileHover={{ 
-            rotate: 15, 
-            scale: 1.2,
-            filter: "drop-shadow(0 8px 16px rgba(59,130,246,0.3))"
-          }}
-          transition={{ 
-            type: "spring", 
-            stiffness: 400, 
-            damping: 20,
-            duration: 0.6
-          }}
-          className="relative w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:shadow-xl transition-shadow duration-500"
-        >
-          <Icon className="w-8 h-8 text-white filter drop-shadow-sm" />
-          
-          {/* Icon glow effect */}
-          <motion.div
-            className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-400 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"
-            animate={{
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-            }}
-          />
-        </motion.div>
-        
-        <motion.h3 
-          className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-700 transition-colors duration-300"
-          whileHover={{ x: 4 }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
-          {feature.title}
-        </motion.h3>
-        
-        <motion.p 
-          className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300"
-          whileHover={{ x: 2 }}
-          transition={{ type: "spring", stiffness: 300, delay: 0.05 }}
-        >
-          {feature.description}
-        </motion.p>
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">
+                    {feature.title}
+                  </h3>
 
-        {/* Bottom shine effect */}
-        <motion.div
-          className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-400/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-          animate={{
-            scaleX: [0, 1, 0],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            repeatDelay: 3,
-          }}
-        />
-
-        {/* Corner accent */}
-        <div className="absolute top-4 right-4 w-2 h-2 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-0 group-hover:opacity-60 transition-opacity duration-200" />
-      </motion.div>
-    );
-  })}
-</div>
+                  <p className="text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
       <section className="py-24">
@@ -336,9 +221,7 @@ function LandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <div className="w-8 h-8 bg-brand-dark rounded-lg flex items-center justify-center">
-                <Zap className="w-5 h-5 text-white" />
-              </div>
+              
               <span className="font-bold text-xl">FluentFun</span>
             </div>
             <p className="text-sm text-gray-500">

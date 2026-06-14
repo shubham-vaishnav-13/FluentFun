@@ -3,11 +3,17 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Brain, PenTool, Mic, Flame, Star, Zap, ArrowRight } from 'lucide-react';
+import brainIcon from '../assets/ai.png';
+import trophyIcon from '../assets/creative-writing.png';
+import messageCircleIcon from '../assets/joystick.png';
 import { levelBoundaries } from '../utils/level';
 import { useAuth } from '../context/AuthContext';
 import Navbar from '../components/Navbar';
 import api from '../config/api.config.js';
 import { API_PATHS } from '../config/apiPaths.js';
+import penToolIcon from "../assets/onboarding.png";
+import micIcon from "../assets/quiz.png";
+import zapAssetIcon from "../assets/talking.png";
 
 const Dashboard = () => {
   const { user, logout } = useAuth();
@@ -31,14 +37,14 @@ const Dashboard = () => {
   const language = user.language || 'your language';
 
   const learningModules = [
-    { id: 'quiz', title: 'Interactive Quizzes', description: 'Test your knowledge', icon: Brain, color: 'text-brand-blue', path: '/quiz-list', xp: 25, available: true },
-    { id: 'writing', title: 'Writing Practice', description: 'Improve with AI feedback', icon: PenTool, color: 'text-green-500', path: '/challenges/writing', xp: 50, available: true },
-    { id: 'speaking', title: 'Speaking Challenges', description: 'Coming soon – practice pronunciation with AI', icon: Mic, color: 'text-brand-purple', path: null, xp: 75, available: false }
+    { id: 'quiz', title: 'Interactive Quizzes', description: 'Test your knowledge', icon: micIcon, color: 'text-brand-blue', path: '/quiz-list', xp: 25, available: true },
+    { id: 'writing', title: 'Writing Practice', description: 'Improve with AI feedback', icon: penToolIcon, color: 'text-green-500', path: '/challenges/writing', xp: 50, available: true },
+    { id: 'speaking', title: 'Speaking Challenges', description: 'Practice pronunciation with AI', icon: zapAssetIcon, color: 'text-brand-purple', path: '/speaking-challenges', xp: 75, available: true }
   ];
 
   const stats = [
-    { label: 'Total XP', value: xp, icon: Zap, color: 'text-yellow-500' },
-    { label: 'Current Level', value: level, icon: Star, color: 'text-brand-purple' }
+    { label: 'Total XP', value: xp, icon: trophyIcon, color: 'text-yellow-500' },
+    { label: 'Current Level', value: level, icon: brainIcon, color: 'text-brand-purple' }
   ];
 
   // prefer languages from authenticated user, fallback to localStorage
@@ -133,7 +139,7 @@ const Dashboard = () => {
               <div className="bg-white rounded-2xl p-5 border border-brand-border flex items-center justify-between neon-card">
                 <div>
                   <p className="text-xs uppercase tracking-wide text-gray-500 font-semibold">Total XP</p>
-                  <p className="text-2xl font-bold text-brand-dark mt-1 flex items-center gap-2"><Zap className="w-5 h-5 text-yellow-500" /> {xp}</p>
+                  <p className="text-2xl font-bold text-brand-dark mt-1 flex items-center gap-2">           <img src={trophyIcon} alt={`icon`} className="w-5 h-5 object-contain" />{xp}</p>
                 </div>
               </div>
               <div className="bg-white rounded-2xl p-5 border border-brand-border flex items-center justify-between neon-card">
@@ -180,7 +186,11 @@ const Dashboard = () => {
                         <Link to={module.path} className="block group">
                           <div className="bg-white rounded-2xl p-6 border border-brand-border hover:border-brand-purple transition-colors flex items-center space-x-4 neon-card">
                             <div className={`p-3 rounded-xl bg-gray-100 ${module.color}`}>
-                              <Icon className="w-6 h-6" />
+                              {typeof Icon === 'string' ? (
+                                <img src={Icon} alt={`${module.title} icon`} className="w-6 h-6 object-contain" />
+                              ) : (
+                                <Icon className="w-6 h-6" />
+                              )}
                             </div>
                             <div className="flex-1">
                               <h3 className="font-semibold text-brand-dark">{module.title}</h3>
@@ -196,7 +206,11 @@ const Dashboard = () => {
                         <div className="block group cursor-not-allowed select-none">
                           <div className="bg-white rounded-2xl p-6 border border-brand-border flex items-center space-x-4 neon-card opacity-80">
                             <div className={`p-3 rounded-xl bg-gray-100 ${module.color}`}>
-                              <Icon className="w-6 h-6" />
+                              {typeof Icon === 'string' ? (
+                                <img src={Icon} alt={`${module.title} icon`} className="w-6 h-6 object-contain" />
+                              ) : (
+                                <Icon className="w-6 h-6" />
+                              )}
                             </div>
                             <div className="flex-1">
                               <h3 className="font-semibold text-brand-dark">{module.title}</h3>
@@ -237,7 +251,11 @@ const Dashboard = () => {
                   return (
                     <div key={stat.label} className="flex items-center space-x-3">
                       <div className={`p-2.5 rounded-xl bg-gray-100`}>
-                        <Icon className={`w-5 h-5 ${stat.color}`} />
+                        {typeof stat.icon === 'string' ? (
+                          <img src={stat.icon} alt={`${stat.label} icon`} className="w-5 h-5 object-contain" />
+                        ) : (
+                          <Icon className={`w-5 h-5 ${stat.color}`} />
+                        )}
                       </div>
                       <div>
                         <p className="text-sm text-gray-500">{stat.label}</p>

@@ -4,14 +4,16 @@ import {
   Users, 
   BookOpen, 
   PenTool, 
-  BarChart3
+  BarChart3,
+  Mic
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import Navbar from '../components/Navbar';
 import QuizManager from '../components/admin/QuizManager';
 import WritingChallengeManager from '../components/admin/WritingChallengeManager';
 import UserManager from '../components/admin/UserManager';
-// import AnalyticsManager from '../components/admin/AnalyticsManager';
+import SpeakingChallengeManager from '../components/admin/SpeakingChallengeManager';
+import AnalyticsManager from '../components/admin/AnalyticsManager';
 import AdminAPI from '../services/adminAPI';
 import toast from 'react-hot-toast';
 
@@ -56,8 +58,9 @@ const AdminPage = () => {
     { id: 'overview', label: 'Overview', icon: BarChart3 },
     { id: 'quizzes', label: 'Quizzes', icon: BookOpen },
     { id: 'writing', label: 'Writing Challenges', icon: PenTool },
+    { id: 'speaking', label: 'Speaking Challenges', icon: Mic },
     { id: 'users', label: 'Users', icon: Users },
-    // { id: 'analytics', label: 'Analytics', icon: BarChart3 },
+    { id: 'analytics', label: 'Analytics', icon: BarChart3 },
   ];
 
   // Generate overview stats from API data or use defaults
@@ -90,13 +93,7 @@ const AdminPage = () => {
       color: 'text-pink-500', 
       bg: 'bg-pink-500/10' 
     },
-    { 
-      label: 'New Users This Week', 
-      value: dashboardStats.recent.newUsersThisWeek.toString(), 
-      icon: Users, 
-      color: 'text-cyan-500', 
-      bg: 'bg-cyan-500/10' 
-    },
+    
   ] : [
     { label: 'Total Users', value: '...', icon: Users, color: 'text-blue-500', bg: 'bg-blue-500/10' },
     { label: 'Active Quizzes', value: '...', icon: BookOpen, color: 'text-green-500', bg: 'bg-green-500/10' },
@@ -144,7 +141,7 @@ const AdminPage = () => {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3 p-3 rounded-lg bg-white/5">
                     <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span className="text-sm">New user registered: John Doe</span>
+                    <span className="text-sm">New user registered: Shubham Vaishnav</span>
                   </div>
                   <div className="flex items-center space-x-3 p-3 rounded-lg bg-white/5">
                     <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
@@ -180,6 +177,13 @@ const AdminPage = () => {
                     <span className="text-sm">Add Writing</span>
                   </button>
                   <button 
+                    onClick={() => setActiveTab('speaking')}
+                    className="flex flex-col items-center p-4 rounded-lg border border-app hover:bg-white/5 transition"
+                  >
+                    <Mic className="w-6 h-6 text-purple-500 mb-2" />
+                    <span className="text-sm">Add Speaking</span>
+                  </button>
+                  <button 
                     onClick={() => setActiveTab('users')}
                     className="flex flex-col items-center p-4 rounded-lg border border-app hover:bg-white/5 transition"
                   >
@@ -195,10 +199,12 @@ const AdminPage = () => {
         return <QuizManager />;
       case 'writing':
         return <WritingChallengeManager />;
+      case 'speaking':
+        return <SpeakingChallengeManager />;
       case 'users':
         return <UserManager />;
-      // case 'analytics':
-      //   return <AnalyticsManager />;
+      case 'analytics':
+        return <AnalyticsManager />;
       default:
         return <div>Select a tab</div>;
     }

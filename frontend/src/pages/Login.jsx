@@ -45,9 +45,7 @@ const Login = () => {
       >
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center space-x-2">
-            <div className="w-10 h-10 bg-brand-dark rounded-lg flex items-center justify-center">
-              <Zap className="w-6 h-6 text-white" />
-            </div>
+            
             <span className="font-bold text-2xl text-brand-dark">FluentFun</span>
           </Link>
         </div>
@@ -118,19 +116,17 @@ const Login = () => {
               onClick={() => {
                 const toastId = toast.loading('Redirecting to Google...');
                 try {
-                  // Use the API_URL from environment - points to Render backend
-                  const apiUrl ='https://fluentfun.onrender.com/api/v1';
-                  const googleAuthUrl = `${apiUrl.split('/api')[0]}/api/auth/google`;
-                  
-                  // Redirecting to Google OAuth
+                  // Derive API root (strip /api/v1 if present)
+                  const apiV1 = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
+                  const apiRoot = apiV1.replace(/\/api\/v1$/, '');
+                  const googleAuthUrl = `${apiRoot}/api/auth/google`;
                   window.location.href = googleAuthUrl;
                 } catch (error) {
                   toast.error('Failed to start Google OAuth');
-                  toast.error('Failed to redirect to Google authentication');
                   toast.dismiss(toastId);
                 }
               }}
-              className="w-full flex items-center justify-center space-x-2 border border-gray-300 py-2.5 rounded-lg hover:bg-black-100 transition-colors  text-black"
+              className="w-full flex items-center justify-center space-x-2 border border-gray-300 py-2.5 rounded-lg hover:bg-black-100 transition-colors text-black"
             >
               <img src="https://www.svgrepo.com/show/355037/google.svg" className="w-6 h-6" alt="Google" />
               <span>Sign in with Google</span>
