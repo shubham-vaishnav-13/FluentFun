@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const BASE_URL = import.meta.env.VITE_API_URL || 'https://fluentfun-backend.onrender.com/api/v1';
+const BASE_URL = import.meta.env.VITE_API_URL || 'https://fluentfun.onrender.com/api/v1';
 
 // Export base URL for components that use fetch instead of axios
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://fluentfun-backend.onrender.com';
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://fluentfun.onrender.com';
 
 const api = axios.create({
   baseURL: BASE_URL,
