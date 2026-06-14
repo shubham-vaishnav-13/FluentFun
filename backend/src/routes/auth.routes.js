@@ -13,7 +13,7 @@ router.route("/google").get(
 router.route("/google/callback").get(
   passport.authenticate("google", {
     session: false,
-    failureRedirect: `${process.env.FRONTEND_URL || 'http://localhost:5173'}/login`,
+    failureRedirect: `${process.env.FRONTEND_URL || 'https://fluentfun.vercel.app'}/login`,
   }),
   (req, res) => {
     try {
@@ -26,11 +26,11 @@ router.route("/google/callback").get(
       req.user.save({ validateBeforeSave: false });
       
       // Redirect to frontend with tokens
-      const frontendURL = process.env.FRONTEND_URL || "http://localhost:5173";
+      const frontendURL = process.env.FRONTEND_URL || "https://fluentfun.vercel.app";
       res.redirect(`${frontendURL}/oauth-callback?accessToken=${accessToken}&refreshToken=${refreshToken}`);
     } catch (error) {
       console.error("Error in Google callback:", error);
-      res.redirect(`${process.env.FRONTEND_URL || 'http://localhost:5173'}/login?error=authentication_failed`);
+      res.redirect(`${process.env.FRONTEND_URL || 'https://fluentfun.vercel.app'}/login?error=authentication_failed`);
     }
   }
 );

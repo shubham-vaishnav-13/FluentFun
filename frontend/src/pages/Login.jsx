@@ -117,7 +117,7 @@ const Login = () => {
                 const toastId = toast.loading('Redirecting to Google...');
                 try {
                   // Derive API root (strip /api/v1 if present)
-                  const apiV1 = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
+                  const apiV1 = import.meta.env.VITE_API_URL || 'https://fluentfun-backend.onrender.com/api/v1';
                   const apiRoot = apiV1.replace(/\/api\/v1$/, '');
                   const googleAuthUrl = `${apiRoot}/api/auth/google`;
                   window.location.href = googleAuthUrl;
